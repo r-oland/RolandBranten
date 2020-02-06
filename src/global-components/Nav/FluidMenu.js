@@ -24,16 +24,20 @@ const Menu = styled(motion.div)`
   transform: translateX(-50%);
   z-index: 152;
 
-  margin-top: 15vh;
+  margin-top: 12vh;
 
   button {
-    margin-bottom: 5vh;
+    margin-bottom: 4vh;
+  }
+
+  .active {
+    color: ${({ theme: { white } }) => white};
   }
 
   a {
-    color: ${({ theme: { white } }) => white};
     font-size: 20px;
-    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    font-family: Poppins;
+    font-weight: 700;
   }
 `;
 
@@ -70,16 +74,29 @@ export default function FluidMenu() {
         initial={false}
       >
         <button onClick={changeMenu}>
-          <MTLink to="/">{intl.formatMessage({ id: "nav1" })}</MTLink>
+          <MTLink to="/" activeClassName="active">
+            {intl.formatMessage({ id: "nav0" })}
+          </MTLink>
         </button>
         <button onClick={changeMenu}>
-          <MTLink to="/">{intl.formatMessage({ id: "nav2" })}</MTLink>
+          <MTLink to="/about" activeClassName="active">
+            {intl.formatMessage({ id: "nav1" })}
+          </MTLink>
         </button>
         <button onClick={changeMenu}>
-          <MTLink to="/">{intl.formatMessage({ id: "nav3" })}</MTLink>
+          <MTLink to="/work" activeClassName="active">
+            {intl.formatMessage({ id: "nav2" })}
+          </MTLink>
         </button>
         <button onClick={changeMenu}>
-          <MTLink to="/">{intl.formatMessage({ id: "nav4" })}</MTLink>
+          <MTLink to="/faq" activeClassName="active">
+            {intl.formatMessage({ id: "nav3" })}
+          </MTLink>
+        </button>
+        <button onClick={changeMenu}>
+          <MTLink to="/contact" activeClassName="active">
+            {intl.formatMessage({ id: "nav4" })}
+          </MTLink>
         </button>
       </Menu>
       <Blur

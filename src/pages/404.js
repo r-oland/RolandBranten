@@ -8,8 +8,8 @@ import Layout from "../global-components/Layout/Layout";
 // =========================
 
 const Smiley = styled.p`
-  ${flexUnit(2.4, 40, 50, "vw", "font-size")}
-  margin-top: ${({ theme: { spacing } }) => spacing.s3};;
+  ${flexUnit(2.4, 40, 50, "vw", "font-size")};
+  margin-top: ${({ theme: { spacing } }) => spacing.s3};
 `;
 
 const Container404 = styled(Container)`
