@@ -14,6 +14,13 @@ import FluidMenu from "./FluidMenu";
 const NavWrapper = styled(motion.div)`
   width: 100vw;
   position: fixed;
+  background: "none";
+  transition: 0.4s;
+
+  @media screen and (min-width: 800px) {
+    background: ${({ theme: { primary, white }, inView }) =>
+      inView === true ? white : primary.s4};
+  }
 `;
 
 const TopRef = styled.div`
@@ -77,20 +84,9 @@ export default function Nav() {
   const intl = useIntl();
 
   return (
-    <>
-      <NavWrapper
-        animate={inView ? "top" : "else"}
-        variants={{
-          else: {
-            backgroundColor: themeContext.primary.s4
-          },
-          top: {
-            backgroundColor: themeContext.gray.s1
-          }
-        }}
-        initial={false}
-      >
-        <TopRef ref={ref} />
+    <div>
+      <TopRef ref={ref} />
+      <NavWrapper inView={inView}>
         <FlexContainer>
           <MTLink to="/404">
             <Logo
@@ -108,12 +104,18 @@ export default function Nav() {
 
           <Flex>
             <MenuItems>
-              <MTLink to="/">
-                <li>{intl.formatMessage({ id: "nav1" })}</li>
-              </MTLink>
-              <li>{intl.formatMessage({ id: "nav2" })}</li>
-              <li>{intl.formatMessage({ id: "nav3" })}</li>
-              <li>{intl.formatMessage({ id: "nav4" })}</li>
+              <li>
+                <MTLink to="/">{intl.formatMessage({ id: "nav1" })} </MTLink>
+              </li>
+              <li>
+                <MTLink to="/">{intl.formatMessage({ id: "nav2" })} </MTLink>
+              </li>
+              <li>
+                <MTLink to="/">{intl.formatMessage({ id: "nav3" })} </MTLink>
+              </li>
+              <li>
+                <MTLink to="/">{intl.formatMessage({ id: "nav4" })} </MTLink>
+              </li>
             </MenuItems>
             <LanguageSwitch />
           </Flex>
@@ -121,6 +123,6 @@ export default function Nav() {
       </NavWrapper>
       <FluidHamburger />
       <FluidMenu />
-    </>
+    </div>
   );
 }

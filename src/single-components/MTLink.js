@@ -25,7 +25,7 @@ export default function MTLink({ to, language, children, onClick, ...rest }) {
         return (
           <TransitionLink
             entry={{
-              delay: 0.2
+              length: 0.2
             }}
             exit={{
               length: 0.2

@@ -11,6 +11,7 @@ export default function Index({ data }) {
   return (
     <Layout>
       <Head title={t.title} description={t.description} keywords={t.keywords} />
+      <div style={{ height: "150vh" }}></div>
     </Layout>
   );
 }
