@@ -1,6 +1,7 @@
 // Components==============
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import TransitionEffect from "../../single-components/TransitionEffect";
 import GlobalStyles from "../../style/GlobalStyles";
 import { OverFlowFix } from "../../style/Mixins";
 import { Variables } from "../../style/themes";
@@ -15,8 +16,10 @@ export default function Layout({ children }) {
       <IEWarning />
       <OverFlowFix>
         <Nav />
-        {children}
-        <Footer />
+        <TransitionEffect>
+          {children}
+          <Footer />
+        </TransitionEffect>
       </OverFlowFix>
       <GlobalStyles />
     </ThemeProvider>

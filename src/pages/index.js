@@ -3,19 +3,14 @@ import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
 import Layout from "../global-components/Layout/Layout";
-import LanguageSwitch from "../single-components/LanguageSwitch";
 // =========================
 
 export default function Index({ data }) {
+  const t = data.file.childIndexJson;
+
   return (
     <Layout>
-      <Head
-        title="Home"
-        description="Page description goes here"
-        keywords="content"
-      />
-      <p>{data.file.childIndexJson.title}</p>
-      <LanguageSwitch />
+      <Head title={t.title} description={t.description} keywords={t.keywords} />
     </Layout>
   );
 }
@@ -25,6 +20,8 @@ export const query = graphql`
     file(name: { eq: $language }, relativeDirectory: { eq: "index" }) {
       childIndexJson {
         title
+        description
+        keywords
       }
     }
   }

@@ -15,7 +15,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify`,
-
+    `gatsby-plugin-transition-link`,
     "gatsby-transformer-json",
     {
       resolve: `gatsby-plugin-intl`,

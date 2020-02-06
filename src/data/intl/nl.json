@@ -1,3 +1,18 @@
 {
-  "test": "NL"
+  "nav1": "Over mij",
+  "nav2": "Werk",
+  "nav3": "FAQ",
+  "nav4": "Contact",
+
+  "homeOL": "Onder de indruk?",
+  "workOL": "Zie je mogelijkheden?",
+  "aboutOL": "Interesante kerel? Dat ben ik!",
+  "faqOL": "Bevallen de antwoorden?",
+
+  "followUp1": "Ik ben momenteel beschikbaar voor freelance werk",
+  "followUp2": "Als je een project hebt waar je graag mee aan de slag wilt, denkt mijn hulp ergens bij te kunnen gebruiken of gewoon even hallo wil zeggen.",
+  "button": "Neem contact op",
+  "location1": "Ontwikkeld met",
+  "location2": "in Eindhoven",
+  "copyright": "© 2020 Roland Branten | Alle rechten voorbehouden. "
 }
