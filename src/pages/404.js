@@ -1,4 +1,5 @@
 // Components==============
+import { useIntl } from "gatsby-plugin-intl";
 import { Container, flexUnit } from "mixins";
 import React from "react";
 import styled from "styled-components";
@@ -12,14 +13,21 @@ const Smiley = styled.p`
 `;
 
 const Container404 = styled(Container)`
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 40vh;
+
+  h2 {
+    margin: ${({ theme: { spacing } }) => `${spacing.s4} 0`};
+  }
 `;
 
-export default function notFound() {
+export default function NotFound() {
+  const intl = useIntl();
+
   return (
     <Layout>
       <Head
@@ -27,8 +35,8 @@ export default function notFound() {
         description="Could not found the page you where looking for"
         keywords="404, unavailable, not found"
       />
-      <Container404>
-        <h2>I could not find what you where looking for.</h2>
+      <Container404 style={{ marginTop: "2em" }}>
+        <h2>{intl.formatMessage({ id: "notFound" })}</h2>
         {/* eslint-disable-next-line */}
         <Smiley>😟</Smiley>
       </Container404>

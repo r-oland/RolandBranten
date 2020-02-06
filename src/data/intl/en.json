@@ -14,5 +14,7 @@
   "button": "Message me",
   "location1": "Developed with",
   "location2": "in Eindhoven, the Netherlands",
-  "copyright": "© 2020 Roland Branten | All rights reserved. "
+  "copyright": "© 2020 Roland Branten | All rights reserved. ",
+
+  "notFound": "I could not fid what you where looking for"
 }

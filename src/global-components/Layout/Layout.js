@@ -1,5 +1,5 @@
 // Components==============
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import TransitionEffect from "../../single-components/TransitionEffect";
 import GlobalStyles from "../../style/GlobalStyles";
@@ -10,18 +10,33 @@ import Nav from "../Nav/Nav";
 import IEWarning from "./IE/IEWarning";
 // =========================
 
+export const HamburgerContext = React.createContext();
+
 export default function Layout({ children }) {
+  const [menuState, setMenuState] = useState("closed");
+
+  const changeMenu = () => {
+    menuState === "closed" ? setMenuState("open") : setMenuState("closed");
+  };
+
+  const contextValue = {
+    menuState,
+    changeMenu
+  };
+
   return (
     <ThemeProvider theme={Variables}>
-      <IEWarning />
-      <OverFlowFix>
-        <Nav />
-        <TransitionEffect>
-          {children}
-          <Footer />
-        </TransitionEffect>
-      </OverFlowFix>
-      <GlobalStyles />
+      <HamburgerContext.Provider value={contextValue}>
+        <IEWarning />
+        <OverFlowFix>
+          <Nav />
+          <TransitionEffect>
+            {children}
+            <Footer />
+          </TransitionEffect>
+        </OverFlowFix>
+        <GlobalStyles />
+      </HamburgerContext.Provider>
     </ThemeProvider>
   );
 }

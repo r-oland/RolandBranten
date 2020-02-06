@@ -18,6 +18,7 @@ export default function TransitionEffect({ children }) {
             initial={false}
             animate={mount ? "visible" : "hidden"}
             variants={variants}
+            style={{ marginTop: "4em" }}
           >
             {children}
           </motion.div>
