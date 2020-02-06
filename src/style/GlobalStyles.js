@@ -1,0 +1,216 @@
+// Components==============
+import { createGlobalStyle } from "styled-components";
+import woff700 from "../assets/fonts/poppins-v9-latin-700.woff";
+import woff2_700 from "../assets/fonts/poppins-v9-latin-700.woff2";
+import woff500 from "../assets/fonts/raleway-v14-latin-500.woff";
+import woff2_500 from "../assets/fonts/raleway-v14-latin-500.woff2";
+import woff600 from "../assets/fonts/raleway-v14-latin-600.woff";
+import woff2_600 from "../assets/fonts/raleway-v14-latin-600.woff2";
+import regular from "../assets/fonts/raleway-v14-latin-regular.woff";
+import regular2 from "../assets/fonts/raleway-v14-latin-regular.woff2";
+import { flexUnit } from "./Mixins";
+// =========================
+
+const GlobalStyles = createGlobalStyle`
+   
+   /* =========================================*/
+   /* Global style ============================*/
+   /* =========================================*/
+   
+   html {
+      font-family: Raleway;
+      background-color: ${({ theme: { gray } }) => gray.s1};
+      height: 100%;
+
+      input, select, textarea, label{
+         font-family: Raleway;
+         font-size: 14px;
+      }
+   }
+
+   body {
+      color: ${({ theme: { black } }) => black};
+      height: 100%;
+   }
+
+   #___gatsby {
+      height: 100%;
+   }
+
+   #gatsby-focus-wrapper {
+      height: 100%;
+   }
+
+   svg{
+      display: block;
+   }
+
+   /* =========================================*/
+   /* Font ====================================*/
+   /* =========================================*/
+
+   /* raleway-regular - latin */
+   @font-face {
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Raleway'), local('Raleway-Regular'),
+         url('${regular2}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('${regular}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   /* raleway-500 - latin */
+   @font-face {
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 500;
+   src: local('Raleway Medium'), local('Raleway-Medium'),
+         url('${woff2_500}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('${woff500}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   /* raleway-600 - latin */
+   @font-face {
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 600;
+   src: local('Raleway SemiBold'), local('Raleway-SemiBold'),
+         url('${woff2_600}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('${woff600}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+
+   /* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Poppins Bold'), local('Poppins-Bold'),
+         url('${woff2_700}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('${woff700}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+   h1 {
+      font-family: Poppins;
+      ${flexUnit(4, 40, 55, "vw", "font-size")};
+   }
+
+   h2 {      
+      font-family: Poppins;
+      ${flexUnit(3, 25, 41, "vw", "font-size")};
+   }
+
+   h3 {
+      font-family: Poppins;
+      ${flexUnit(2, 20, 35, "vw", "font-size")};
+   }
+
+   p,
+   a,
+   strong,
+   span, 
+   li
+    {
+      ${flexUnit(2.5, 16, 17, "vw", "font-size")};
+   }
+
+   /* =========================================*/
+   /* Reset ===================================*/
+   /* =========================================*/
+
+   *,
+   ::before,
+   ::after {
+      box-sizing: border-box;
+   }
+
+
+   body,
+   h1,
+   h2,
+   h3,
+   h4,
+   p,
+   ul,
+   ol,
+   li,
+   figure,
+   figcaption,
+   blockquote,
+   dl,
+   dd {
+   margin: 0;
+   }
+
+   p,
+   ul,
+   ol,
+   dl,
+   address,
+   button
+    {
+      line-height: ${({ theme }) => theme.lineHeight.s3};
+      padding: 0;
+   }
+
+   button {
+      background: none;
+      color: ${({ theme: { black } }) => black};
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: inherit;
+      outline: inherit;
+      ${flexUnit(2.5, 16, 17, "vw", "font-size")};
+   }
+
+   pre {
+      white-space: pre-wrap;
+   }
+
+   hr {
+      border: 0.5px solid;
+   }
+
+   ul {
+      list-style: none;
+   }
+
+   ol {
+      padding-left: 1em;
+   }
+
+   a {
+      color: black;
+      text-decoration: none;
+   }
+
+   img,
+   video,
+   canvas,
+   audio,
+   iframe,
+   embed,
+   object {
+      display: block;
+   }
+
+   img,
+   video,
+   canvas,
+   audio,
+   iframe,
+   embed,
+   object {
+      vertical-align: middle;
+   }
+
+   img,
+   video {
+      max-width: 100%;
+      height: auto;
+   }
+
+   img {
+      border-style: none;
+   }
+   `;
+
+export default GlobalStyles;

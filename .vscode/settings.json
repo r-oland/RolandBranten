@@ -1,0 +1,40 @@
+{
+  "files.exclude": {
+    ".cache": true,
+    "icon": true,
+    "node_modules": true,
+    "public": true,
+    ".gitignore": true,
+    "desktop.ini": true,
+    "gatsby-browser.js": true,
+    // "gatsby-node.js": true,
+    // "gatsby-config.js": true,
+    "package-lock.json": true,
+    "package.json": true,
+    "jsconfig.json": true
+  },
+
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+
+  "vsicons.associations.folders": [
+    {
+      "icon": "config",
+      "extensions": ["react"]
+    },
+    {
+      "icon": "paket",
+      "extensions": ["global-components"]
+    },
+    {
+      "icon": "model",
+      "extensions": ["page-components"]
+    },
+    {
+      "icon": "component",
+      "extensions": ["single-components"]
+    }
+  ],
+  "cSpell.language": "nl, en"
+}
