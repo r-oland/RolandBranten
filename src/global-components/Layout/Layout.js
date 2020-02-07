@@ -30,7 +30,7 @@ export default function Layout({ children, page, display }) {
         <IEWarning />
         <OverFlowFix>
           <Nav />
-          <TransitionEffect>
+          <TransitionEffect page={page}>
             {children}
             <Footer page={page} display={display} />
           </TransitionEffect>

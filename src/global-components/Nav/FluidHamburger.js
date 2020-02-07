@@ -6,7 +6,7 @@ import { HamburgerContext } from "../Layout/Layout";
 // =========================
 
 const Wrapper = styled.div`
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     display: none;
   }
 `;

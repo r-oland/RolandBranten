@@ -57,10 +57,8 @@ export default function Footer({ page, display }) {
   const intl = useIntl();
 
   return (
-    <>
-      <Wrapper
-        style={{ display: display === "notFoundPage" ? "none" : "block" }}
-      >
+    <div style={{ display: display === "notFoundPage" ? "none" : "block" }}>
+      <Wrapper>
         <Container>
           <OneLiner>{intl.formatMessage({ id: `${page}` })}</OneLiner>
           <FollowUp1>{intl.formatMessage({ id: "followUp1" })}</FollowUp1>
@@ -79,6 +77,6 @@ export default function Footer({ page, display }) {
           <Copyright>{intl.formatMessage({ id: "copyright" })}</Copyright>
         </Flex>
       </Wrapper2>
-    </>
+    </div>
   );
 }

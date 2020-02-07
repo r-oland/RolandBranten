@@ -13,13 +13,13 @@ import FluidMenu from "./FluidMenu";
 
 const NavWrapper = styled(motion.div)`
   width: 100vw;
-  background: "none";
   transition: 0.4s;
+  background: ${({ theme: { primary } }) => primary.s4};
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     position: fixed;
-    background: ${({ theme: { primary, white }, inView }) =>
-      inView === true ? white : primary.s4};
+    background: ${({ theme: { white }, inView }) =>
+      inView === true ? white : "none"};
   }
 `;
 
@@ -35,7 +35,7 @@ const Logo = styled.svg`
   width: 160px;
   transform: translateY(3px);
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     width: 190px;
     transform: translateY(0);
   }
@@ -53,7 +53,7 @@ const MenuItems = styled.ul`
   justify-content: flex-end;
   align-items: center;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     display: flex;
   }
 

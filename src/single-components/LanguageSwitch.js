@@ -13,7 +13,7 @@ const Flex = styled.div`
   top: 23.5px;
   right: 85px;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     position: initial;
     padding-left: ${({ theme: { spacing } }) => spacing.s8};
   }
@@ -22,7 +22,7 @@ const Flex = styled.div`
     display: none;
     font-size: 18px;
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 850px) {
       display: inline;
       padding: 2px 3px 0px;
     }
@@ -35,7 +35,7 @@ const NL = styled.button`
   font-size: 18px;
   opacity: ${({ language }) => (language === "nl" ? 1 : 0)};
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     position: initial;
 
     opacity: 1;
@@ -51,7 +51,7 @@ const EN = styled.button`
   font-size: 18px;
   opacity: ${({ language }) => (language === "en" ? 1 : 0)};
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     position: initial;
     opacity: 1;
   }
