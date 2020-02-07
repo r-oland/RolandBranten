@@ -13,13 +13,13 @@ export const Variables = {
     s9: "rgba(43, 43, 43, 1)"
   },
   primary: {
-    s7: "#FFB800",
-    s6: "#FFC326",
-    s5: "#FFCA40",
-    s4: "#FFC719",
-    s3: "#FFCF3A",
-    s2: "#FFD963",
-    s1: "#FFE9A3"
+    s7: "rgba(255, 184, 0, 1)",
+    s6: "rgba(255, 195, 38, 1)",
+    s5: "rgba(255, 202, 64, 1)",
+    s4: "rgba(255, 199, 25, 1)",
+    s3: "rgba(255, 207, 58, 1)",
+    s2: "rgba(255, 217, 99, 1)",
+    s1: "rgba(255, 233, 163, 1)"
   },
   secondary: {},
   borderRadius: "8px",
