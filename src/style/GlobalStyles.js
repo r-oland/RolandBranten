@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
    }
 
    body {
-      color: ${({ theme: { black } }) => black};
+      color: ${({ theme: { gray } }) => gray.s9};
       height: 100%;
    }
 

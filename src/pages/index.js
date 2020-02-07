@@ -21,6 +21,7 @@ export default function Index({ data }) {
         keywords={t.keywords}
         hello={t.hello}
         explanation={t.explanation}
+        headshot={data.Headshot.childImageSharp.fluid}
       />
       <Sale
         title1={t.title1}
@@ -70,6 +71,13 @@ export const query = graphql`
         title7
         title8
         explanation7
+      }
+    }
+    Headshot: file(relativePath: { eq: "Roland-Branten.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

@@ -29,7 +29,7 @@ export default function Layout({ children, page, display }) {
       <HamburgerContext.Provider value={contextValue}>
         <IEWarning />
         <OverFlowFix>
-          <Nav />
+          <Nav page={page} />
           <TransitionEffect page={page}>
             {children}
             <Footer page={page} display={display} />

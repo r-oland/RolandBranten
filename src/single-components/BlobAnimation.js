@@ -6,17 +6,17 @@ import styled from "styled-components";
 
 const Blob = styled(motion.div)`
   position: absolute;
-  height: 40vh;
-  width: 80vw;
-  top: 30vh;
-  right: 10vw;
-  background: ${({ theme: { primary } }) => primary.s4};
+  display: none;
+  z-index: 2;
+  background: ${({ theme: { black } }) => black.replace("1)", "0.04)")};
 
-  @media screen and (min-width: 800px) {
-    right: -25vw;
-    top: -100vh;
-    height: 200vh;
-    width: 80vw;
+  right: -25vw;
+  top: -100vh;
+  height: 200vh;
+  width: 80vw;
+
+  @media screen and (min-width: 850px) {
+    display: block;
   }
 `;
 
@@ -36,7 +36,7 @@ export default function BlobAnimation() {
         ]
       }}
       transition={{
-        duration: 12,
+        duration: 10,
         loop: Infinity,
         ease: "linear"
       }}

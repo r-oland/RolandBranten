@@ -14,12 +14,14 @@ import FluidMenu from "./FluidMenu";
 const NavWrapper = styled(motion.div)`
   width: 100vw;
   transition: 0.4s;
-  background: ${({ theme: { primary } }) => primary.s4};
+  background: ${({ theme: { primary }, page }) =>
+    page === "homeOL" ? primary.s4 : "none"};
 
   @media screen and (min-width: 850px) {
     position: fixed;
     background: ${({ theme: { white }, inView }) =>
       inView === true ? white : "none"};
+    z-index: 4;
   }
 `;
 
@@ -78,7 +80,7 @@ const Flex = styled.div`
   justify-content: flex-end;
 `;
 
-export default function Nav() {
+export default function Nav({ page }) {
   const [ref, inView] = useInView({ threshold: 0 });
   const themeContext = useContext(ThemeContext);
   const intl = useIntl();
@@ -86,7 +88,7 @@ export default function Nav() {
   return (
     <div>
       <TopRef ref={ref} />
-      <NavWrapper inView={inView}>
+      <NavWrapper inView={inView} page={page}>
         <FlexContainer>
           <MTLink to="/">
             <Logo

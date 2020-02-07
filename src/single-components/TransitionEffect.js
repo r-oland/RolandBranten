@@ -6,7 +6,7 @@ import styled from "styled-components";
 // =========================
 
 const Wrapper = styled(motion.div)`
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     margin-top: ${({ theme: { spacing }, page }) =>
       page !== "homeOL" ? spacing.s9 : 0};
   }
