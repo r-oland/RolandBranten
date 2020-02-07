@@ -1,4 +1,6 @@
 // Components==============
+import Divider1DImp from "assets/Divider1D.inline.svg";
+import Divider1MImp from "assets/Divider1M.inline.svg";
 import Img from "gatsby-image";
 import React from "react";
 import styled from "styled-components";
@@ -109,7 +111,32 @@ const IMG = styled(Img)`
   }
 `;
 
+const Divider1DSvg = styled(Divider1DImp)`
+  position: absolute;
+  bottom: -30px;
+  width: 110vw;
+  left: -5px;
+`;
+
+const Divider1MSvg = styled(Divider1MImp)`
+  position: absolute;
+  bottom: -30px;
+  width: 110vw;
+  left: -5px;
+`;
+
 export default function Hero({ hello, explanation, headshot }) {
+  const Divider = () => {
+    const Query =
+      typeof window !== "undefined" && window.matchMedia("(min-width: 450px)");
+
+    if (Query.matches) {
+      return <Divider1DSvg />;
+    } else {
+      return <Divider1MSvg />;
+    }
+  };
+
   return (
     <>
       <Wrapper>
@@ -134,6 +161,7 @@ export default function Hero({ hello, explanation, headshot }) {
           alt="Roland-Branten"
         />
         <BlobAnimation />
+        <Divider />
       </Wrapper>
     </>
   );

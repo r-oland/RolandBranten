@@ -1,21 +1,39 @@
 // Components==============
 import { motion } from "framer-motion";
 import React from "react";
+import styled from "styled-components";
 // =========================
+
+const Svg = styled.svg`
+  position: relative;
+  max-width: 450px;
+  justify-self: end;
+`;
 
 export default function Wallet() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="540px"
-      viewBox="0 0 557.3855 510.432"
-    >
+    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 567 510">
+      <defs>
+        <filter id="dropshadow" height="130%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+          <feOffset dx="2" dy="4" result="offsetblur" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.5" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
       <g id="wallet">
         <g id="plateau">
           <g id="Path_745-2" data-name="Path 745-2">
             <path
               d="M529.6341,359.4975C335.3805,571.38,232.3653,537.0428,29.9653,398.6406S723.8877,147.6149,529.6341,359.4975Z"
+              id="shadow"
               fill="#fbfbfb"
+              filter="url(#dropshadow)"
             />
           </g>
         </g>
@@ -68,6 +86,6 @@ export default function Wallet() {
           fill="none"
         />
       </g>
-    </svg>
+    </Svg>
   );
 }

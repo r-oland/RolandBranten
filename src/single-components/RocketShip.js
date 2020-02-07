@@ -1,22 +1,39 @@
 // Components==============
 import { motion } from "framer-motion";
 import React from "react";
+import styled from "styled-components";
 // =========================
+
+const Svg = styled.svg`
+  position: relative;
+  max-width: 450px;
+  justify-self: end;
+`;
 
 export default function RocketShip() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="500px"
-      viewBox="0 0 643.99 366.17"
-    >
+    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 653.99 376.17">
+      <defs>
+        <filter id="dropshadow" height="130%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+          <feOffset dx="2" dy="4" result="offsetblur" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.5" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
       <g id="spaceship">
         <g id="background">
           <path
             id="Path_1114-2"
             data-name="Path 1114-2"
             d="M584.92,273.55C272.07,449.3,174.69,364,16.5,110S897.77,97.8,584.92,273.55Z"
-            fill="#474747"
+            fill="#212121"
+            filter="url(#dropshadow)"
           />
           <ellipse cx="151.39" cy="87.58" rx="46" ry="45.5" fill="#fbfbfb" />
           <path
@@ -213,6 +230,6 @@ export default function RocketShip() {
           </g>
         </motion.g>
       </g>
-    </svg>
+    </Svg>
   );
 }

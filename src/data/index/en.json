@@ -6,7 +6,7 @@
   "hello": "Hi, I'm Roland",
   "explanation": "I build blazing fast and highly scalable websites by utilizing the ",
 
-  "title1": "JAMstack sites are",
+  "title1": "are",
   "title2": "Fast in every way that matters",
   "explanation2": "Sites build with the modern JAMstack-philosophy serve static files to the browser trough a CDN. With this technologie, you won't have to let your users wait for pages to get generated. This often results in load times of less then a second.",
   "title3": "Build like a fortress",

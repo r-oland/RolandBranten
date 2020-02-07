@@ -1,20 +1,34 @@
 // Components==============
 import { motion } from "framer-motion";
 import React from "react";
+import styled from "styled-components";
 // =========================
+
+const Svg = styled.svg`
+  position: relative;
+  max-width: 450px;
+  justify-self: start;
+  left: -10%;
+`;
 
 export default function Castle() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="197.4448mm"
-      height="121.9018mm"
-      viewBox="0 0 559.6861 345.5483"
-    >
+    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559.6861 355.5483">
       <defs>
         <clipPath id="clip-path" transform="translate(0 -0.8983)">
           <rect id="clipmask" x="409.6861" width="84" height="51" fill="none" />
         </clipPath>
+        <filter id="dropshadow" height="130%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+          <feOffset dx="2" dy="4" result="offsetblur" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.5" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
       </defs>
       <g id="castle">
         <g id="plateau">
@@ -22,6 +36,7 @@ export default function Castle() {
             d="M19.6961,292.77c23.87-9.93,54.4-17.97,88.9-24.05,1.68-.3,3.37-.6,5.07-.88,11.83-2.01,24.11-3.79,36.72-5.34q5.175-.63,10.42-1.22c21.95-2.46,44.8-4.24,68.03-5.34q2.565-.135,5.13-.24c1.75-.08,3.51-.15,5.27-.21,1.72-.07,3.45-.14,5.18-.19q12.075-.435,24.22-.59c1.75-.03,3.5-.06,5.25-.06,8.04-.09,16.1-.09,24.13-.01,1.74.02,3.48.04,5.21.07,1.75.02,3.51.05,5.26.08,1.71.03,3.43.07,5.15.11,28.44.66,56.49,2.34,83.18,5.06q8.04.825,15.93,1.78,7.515.9,14.86,1.93c1.7.23,3.39.47,5.08.73,31.58,4.61,60.33,10.87,84.36,18.81C717.4261,358.46-138.8039,372.51,19.6961,292.77Z"
             transform="translate( -0.8983)"
             fill="#fff"
+            filter="url(#dropshadow)"
           />
           <path
             id="Path_1214-2"
@@ -313,6 +328,6 @@ export default function Castle() {
           }}
         />
       </g>
-    </svg>
+    </Svg>
   );
 }

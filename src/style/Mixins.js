@@ -76,7 +76,7 @@ export const H1 = styled.p`
 
 export const H2 = styled.p`
   font-family: Poppins;
-  ${flexUnit(3, 25, 41, "vw", "font-size")};
+  ${flexUnit(3, 25, 38, "vw", "font-size")};
   font-weight: 700;
 `;
 

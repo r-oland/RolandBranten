@@ -94,7 +94,7 @@ const GlobalStyles = createGlobalStyle`
 
    h2 {      
       font-family: Poppins;
-      ${flexUnit(3, 25, 41, "vw", "font-size")};
+      ${flexUnit(3, 25, 38, "vw", "font-size")};
    }
 
    h3 {
