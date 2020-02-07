@@ -44,6 +44,10 @@ const Hello = styled(H2)`
   @media screen and (min-width: 850px) {
     padding: ${({ theme: { spacing } }) => `${spacing.s9} 0 ${spacing.s2}`};
   }
+
+  @media screen and (min-width: 1600px) {
+    padding-top: ${({ theme: { spacing } }) => spacing.s10};
+  }
 `;
 
 const Explanation = styled.div`

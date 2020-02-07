@@ -3,10 +3,10 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: `New project`,
+    title: `Roland Branten`,
     description: `undefined`,
-    author: `Roland Branten`
-    //siteUrl: ``,
+    author: `Roland Branten`,
+    siteUrl: `https://rolandbranten.nl/`
   },
   plugins: [
     // `gatsby-plugin-sitemap`,
@@ -54,11 +54,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `new`,
-        short_name: `new`,
-        start_url: `/`,
-        background_color: `#fbf4ea`,
-        theme_color: `#fbf4ea`,
+        name: `Roland Branten`,
+        short_name: `Roland`,
+        start_url: `https://rolandbranten.nl/`,
+        background_color: `#FFC719`,
+        theme_color: `#FFC719`,
         display: `standalone`,
         icon: `icon/icon.png`
       }
