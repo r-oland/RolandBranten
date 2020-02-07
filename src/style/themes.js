@@ -22,7 +22,7 @@ export const Variables = {
     s7: "#FFE9A3"
   },
   secondary: {},
-  borderRadius: "5px",
+  borderRadius: "8px",
   borderRadius2: "15px",
   fontWeight: {
     normal: "400",
@@ -34,7 +34,9 @@ export const Variables = {
     s2: "1.2",
     s3: "1.4",
     s4: "1.6",
-    s5: "1.8"
+    s5: "1.8",
+    s6: "2.0",
+    s7: "2.2"
   },
   letterSpacing: {
     tight: "-0.05em",

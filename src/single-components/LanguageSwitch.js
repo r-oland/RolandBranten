@@ -11,7 +11,7 @@ const Flex = styled.div`
   position: ${({ menuState }) => (menuState === "open" ? "fixed" : "absolute")};
   z-index: 153;
   top: 23.5px;
-  right: 90px;
+  right: 85px;
 
   @media screen and (min-width: 800px) {
     position: initial;
@@ -20,9 +20,11 @@ const Flex = styled.div`
 
   span {
     display: none;
+    font-size: 18px;
 
     @media screen and (min-width: 800px) {
       display: inline;
+      padding: 2px 3px 0px;
     }
   }
 `;
@@ -30,7 +32,7 @@ const Flex = styled.div`
 const NL = styled.button`
   position: absolute;
   right: 0;
-
+  font-size: 18px;
   opacity: ${({ language }) => (language === "nl" ? 1 : 0)};
 
   @media screen and (min-width: 800px) {
@@ -46,7 +48,7 @@ const NL = styled.button`
 const EN = styled.button`
   position: absolute;
   right: 0;
-
+  font-size: 18px;
   opacity: ${({ language }) => (language === "en" ? 1 : 0)};
 
   @media screen and (min-width: 800px) {

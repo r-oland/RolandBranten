@@ -12,7 +12,7 @@ import IEWarning from "./IE/IEWarning";
 
 export const HamburgerContext = React.createContext();
 
-export default function Layout({ children }) {
+export default function Layout({ children, page, display }) {
   const [menuState, setMenuState] = useState("closed");
 
   const changeMenu = () => {
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
           <Nav />
           <TransitionEffect>
             {children}
-            <Footer />
+            <Footer page={page} display={display} />
           </TransitionEffect>
         </OverFlowFix>
         <GlobalStyles />

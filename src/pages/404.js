@@ -29,7 +29,7 @@ export default function NotFound() {
   const intl = useIntl();
 
   return (
-    <Layout>
+    <Layout display={"notFoundPage"}>
       <Head
         title="404 NOT FOUND"
         description="Could not found the page you where looking for"

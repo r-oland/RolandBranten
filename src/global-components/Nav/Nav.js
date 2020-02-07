@@ -13,11 +13,11 @@ import FluidMenu from "./FluidMenu";
 
 const NavWrapper = styled(motion.div)`
   width: 100vw;
-  position: fixed;
   background: "none";
   transition: 0.4s;
 
   @media screen and (min-width: 800px) {
+    position: fixed;
     background: ${({ theme: { primary, white }, inView }) =>
       inView === true ? white : primary.s4};
   }
@@ -88,7 +88,7 @@ export default function Nav() {
       <TopRef ref={ref} />
       <NavWrapper inView={inView}>
         <FlexContainer>
-          <MTLink to="/404">
+          <MTLink to="/">
             <Logo
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 178.216 13.583"
@@ -105,16 +105,20 @@ export default function Nav() {
           <Flex>
             <MenuItems>
               <li>
-                <MTLink to="/">{intl.formatMessage({ id: "nav1" })} </MTLink>
+                <MTLink to="/about">
+                  {intl.formatMessage({ id: "nav1" })}
+                </MTLink>
               </li>
               <li>
-                <MTLink to="/">{intl.formatMessage({ id: "nav2" })} </MTLink>
+                <MTLink to="/work">{intl.formatMessage({ id: "nav2" })}</MTLink>
               </li>
               <li>
-                <MTLink to="/">{intl.formatMessage({ id: "nav3" })} </MTLink>
+                <MTLink to="/faq">{intl.formatMessage({ id: "nav3" })} </MTLink>
               </li>
               <li>
-                <MTLink to="/">{intl.formatMessage({ id: "nav4" })} </MTLink>
+                <MTLink to="/contact">
+                  {intl.formatMessage({ id: "nav4" })}
+                </MTLink>
               </li>
             </MenuItems>
             <LanguageSwitch />

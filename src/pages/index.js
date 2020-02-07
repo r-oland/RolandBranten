@@ -9,9 +9,8 @@ export default function Index({ data }) {
   const t = data.file.childIndexJson;
 
   return (
-    <Layout>
+    <Layout page="homeOL">
       <Head title={t.title} description={t.description} keywords={t.keywords} />
-      <div style={{ height: "150vh" }}></div>
     </Layout>
   );
 }

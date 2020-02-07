@@ -39,14 +39,14 @@ export const OverFlowFix = styled.div`
 // Container
 
 export const Container = styled.div`
-  margin: 0 5%;
+  margin: 0 7%;
 
   @media screen and (min-width: 768px) {
-    margin: 0 6.5%;
+    margin: 0 8%;
   }
 
   @media screen and (min-width: 1200px) {
-    margin: 0 8%;
+    margin: 0 10%;
   }
 `;
 
@@ -57,15 +57,33 @@ export const Xs = styled.p`
 `;
 
 export const S = styled.p`
-  ${flexUnit(2.5, 15, 16, "vw", "font-size")}
+  ${flexUnit(2.5, 15, 16, "vw", "font-size")};
 `;
 
 export const M = styled.p`
-  ${flexUnit(2.5, 16, 17, "vw", "font-size")}
+  ${flexUnit(2.5, 16, 17, "vw", "font-size")};
 `;
 
 export const L = styled.p`
-  ${flexUnit(2.5, 18, 19, "vw", "font-size")}
+  ${flexUnit(2.5, 18, 19, "vw", "font-size")};
+`;
+
+export const H1 = styled.p`
+  font-family: Poppins;
+  ${flexUnit(4, 40, 55, "vw", "font-size")};
+  font-weight: 700;
+`;
+
+export const H2 = styled.p`
+  font-family: Poppins;
+  ${flexUnit(3, 25, 41, "vw", "font-size")};
+  font-weight: 700;
+`;
+
+export const H3 = styled.p`
+  font-family: Poppins;
+  ${flexUnit(2, 20, 35, "vw", "font-size")};
+  font-weight: 700;
 `;
 
 // styled underline
@@ -85,5 +103,23 @@ export const StyledUnderline = styled.span`
         primary.s4.replace("1)", "0)")} inset;
     background-color: ${({ theme: { primary } }) =>
       primary.s4.replace("1)", "0.3)")};
+  }
+`;
+
+// Button
+
+export const Button = styled.button`
+  ${flexUnit(2.5, 18, 19, "vw", "font-size")};
+  background-color: ${({ theme: { primary } }) => primary.s4};
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+  padding: ${({ theme: { spacing } }) => `${spacing.s2} ${spacing.s6}`};
+  display: inline-block;
+  border-radius: ${({ theme: { borderRadius } }) => borderRadius};
+  box-shadow: ${({ theme: { shadow } }) => shadow.small};
+
+  &:hover {
+    background-color: ${({ theme: { primary } }) => primary.s5};
+    box-shadow: ${({ theme: { doubleShadow } }) => doubleShadow.small};
+    transition: all 0.2s ease-in-out;
   }
 `;
