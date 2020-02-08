@@ -39,8 +39,20 @@ export default function Index({ data }) {
         linkOL={t.linkOL}
         linkButton={t.linkButton}
       />
-      <PopularQ title7={t.title7} />
-      <Technologies title8={t.title8} explanation7={t.explanation7} />
+      <PopularQ
+        title7={t.title7}
+        img={data.ProfilePic.childImageSharp.fluid}
+        question1={t.question1}
+        answer1={t.answer1}
+        question2={t.question2}
+        answer2={t.answer2}
+        question3={t.question3}
+        answer3={t.answer3}
+      />
+      <Technologies
+        title8={t.title8}
+        TechnologyText={data.TechnologyText.childrenEnJson}
+      />
     </Layout>
   );
 }
@@ -69,13 +81,33 @@ export const query = graphql`
         linkOL
         linkButton
         title7
+        question1
+        answer1
+        question2
+        answer2
+        question3
+        answer3
         title8
-        explanation7
+      }
+    }
+    TechnologyText: file(
+      name: { eq: $language }
+      relativeDirectory: { eq: "indexInfo" }
+    ) {
+      childrenEnJson {
+        text
       }
     }
     Headshot: file(relativePath: { eq: "Roland-Branten.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ProfilePic: file(relativePath: { eq: "Profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 150, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }

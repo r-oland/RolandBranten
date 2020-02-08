@@ -21,7 +21,7 @@ const NavWrapper = styled(motion.div)`
     position: fixed;
     background: ${({ theme: { white }, inView }) =>
       inView === true ? white : "none"};
-    z-index: 4;
+    z-index: 20;
   }
 `;
 

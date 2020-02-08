@@ -23,7 +23,12 @@
   "linkButton": "Show me the rest",
 
   "title7": "Popular questions",
+  "question1": "How much does a JAMstack site cost?",
+  "answer1": "Straight to the point huh, Sure! Click me to find out.",
+  "question2": "Why should my site be bould with the JAMstack?",
+  "answer2": "Well I'm glad you asked, click me to find out.",
+  "question3": "Are you the right person for my site?",
+  "answer3": "I probably am, but their are a few exceptions. click me to find out",
 
-  "title8": "Technologies",
-  "explanation7": "Until recently, creating dynamic websites with tools like WordPress was common practice. Compared to modern technologies though, this approach oftentimes seems inflexible and clunky, especially regarding the performance and scalability of the resulting website. So let's simplify this and while we're ad it, let's make it a lot better. The alternative approach is to fetch data through the integration of a Headless CMS, this allows for an infinite amount of flexibility. This data will be fed into a static site generator witch generates, surprise, static files. These files will be deployed to a CDN and from this CDN directly to your users. This method is called the JAMstack and will result in a blazing fast, scalable site. Don't worry if you don't full understand these concepts, you don't have to! The only thing that matters is that these technologies will resolve in the best possible web experience for your users."
+  "title8": "Technologies"
 }

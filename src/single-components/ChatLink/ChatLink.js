@@ -12,7 +12,7 @@ import RightImp from "./Right.inline.svg";
 // =========================
 
 const ChatWrapper = styled.div`
-  margin: 0 auto;
+  margin: 0 auto ${({ theme: { spacing } }) => spacing.s12};
   background: ${({ theme: { white } }) => white};
   border-radius: 20px;
   overflow: hidden;
@@ -77,10 +77,17 @@ const Circle = styled.div`
 `;
 
 const Image = styled(Img)`
-  width: 120px;
+  width: 50px;
+
+  @media screen and (min-width: 950px) {
+    width: 80px;
+  }
+
   position: relative;
-  right: 30px;
+  left: 0;
+  bottom: 0;
 `;
+
 const ChatArea = styled.div`
   padding: ${({ theme: { spacing } }) =>
     ` ${spacing.s7} ${spacing.s3} ${spacing.s5}`};
@@ -201,13 +208,21 @@ function Roland({ children, to }) {
   );
 }
 
-export default function ChatLink({ stock }) {
+export default function ChatLink({
+  img,
+  question1,
+  answer1,
+  question2,
+  answer2,
+  question3,
+  answer3
+}) {
   return (
     <ChatWrapper>
       <Top>
         <Flex>
           <Circle>
-            <Image fluid={stock} alt="StockImg" />
+            <Image fluid={img} alt="StockImg" />
           </Circle>
           <p>Roland</p>
         </Flex>
@@ -217,16 +232,12 @@ export default function ChatLink({ stock }) {
         </Flex>
       </Top>
       <ChatArea>
-        <Me to="/#">How much does a JAMstack site cost?</Me>
-        <Roland to="/#">
-          Straight to the point huh, Sure! Click me to find out.
-        </Roland>
-        <Me to="/#">Why should my site be bould with the JAMstack?</Me>
-        <Roland to="/#"> Well I'm glad you asked, click me to find out.</Roland>
-        <Me to="/#">Are you the right person for my site?</Me>
-        <Roland to="/#">
-          I probably am, but their are a few exceptions. click me to find out
-        </Roland>
+        <Me to="/#">{question1}</Me>
+        <Roland to="/#">{answer1}</Roland>
+        <Me to="/#">{question2}</Me>
+        <Roland to="/#">{answer2}</Roland>
+        <Me to="/#">{question3}</Me>
+        <Roland to="/#">{answer3}</Roland>
       </ChatArea>
     </ChatWrapper>
   );

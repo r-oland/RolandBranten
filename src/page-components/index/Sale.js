@@ -25,10 +25,6 @@ const Wrapper = styled.div`
     }
   }
 
-  .rocket {
-    margin-top: ${({ theme: { spacing } }) => spacing.s8};
-  }
-
   #aboveWallet {
     margin-bottom: 0;
   }
