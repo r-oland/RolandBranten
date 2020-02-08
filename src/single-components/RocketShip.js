@@ -10,9 +10,13 @@ const Svg = styled.svg`
   justify-self: end;
 `;
 
-export default function RocketShip() {
+export default function RocketShip({ ship, shipInView }) {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 653.99 376.17">
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 653.99 376.17"
+      ref={ship}
+    >
       <defs>
         <filter id="dropshadow" height="130%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
@@ -63,9 +67,16 @@ export default function RocketShip() {
         </g>
         <motion.g
           id="ship"
-          animate={{
-            x: [0, 20, 20, 0],
-            y: [0, 5, 0]
+          animate={shipInView ? "animate" : "stop"}
+          variants={{
+            animate: {
+              x: [0, 20, 20, 0],
+              y: [0, 5, 0]
+            },
+            stop: {
+              x: [0, 0, 0, 0],
+              y: [0, 0, 0]
+            }
           }}
           transition={{
             loop: Infinity,
@@ -117,8 +128,14 @@ export default function RocketShip() {
           />
           <motion.g
             id="beam1"
-            animate={{
-              x: [3, 0, 3]
+            animate={shipInView ? "animate" : "stop"}
+            variants={{
+              animate: {
+                x: [3, 0, 3]
+              },
+              stop: {
+                x: [0, 0, 0]
+              }
             }}
             transition={{
               duration: 2,
@@ -142,8 +159,14 @@ export default function RocketShip() {
           </motion.g>
           <motion.g
             id="beam2"
-            animate={{
-              x: [3, 0, 3]
+            animate={shipInView ? "animate" : "stop"}
+            variants={{
+              animate: {
+                x: [3, 0, 3]
+              },
+              stop: {
+                x: [0, 0, 0]
+              }
             }}
             transition={{
               duration: 2,
@@ -166,8 +189,14 @@ export default function RocketShip() {
           </motion.g>
           <motion.g
             id="beam3"
-            animate={{
-              x: [3, 0, 3]
+            animate={shipInView ? "animate" : "stop"}
+            variants={{
+              animate: {
+                x: [3, 0, 3]
+              },
+              stop: {
+                x: [0, 0, 0]
+              }
             }}
             transition={{
               duration: 2,
@@ -191,8 +220,14 @@ export default function RocketShip() {
           </motion.g>
           <motion.g
             id="beam4"
-            animate={{
-              x: [3, 0, 3]
+            animate={shipInView ? "animate" : "stop"}
+            variants={{
+              animate: {
+                x: [3, 0, 3]
+              },
+              stop: {
+                x: [0, 0, 0]
+              }
             }}
             transition={{
               duration: 2,

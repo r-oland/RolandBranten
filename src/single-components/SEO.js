@@ -11,9 +11,9 @@ const Svg = styled.svg`
   left: -10%;
 `;
 
-export default function SEO() {
+export default function SEO({ seo, seoInView }) {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 549 358">
+    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 549 358" ref={seo}>
       <defs>
         <filter id="dropshadow" height="130%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
@@ -53,9 +53,16 @@ export default function SEO() {
       </g>
       <motion.g
         id="SearchGlass"
-        animate={{
-          x: [150, 100, 80, 150, 80, -50, 0],
-          y: [90, 50, 70, 90, 50, -20, 0]
+        animate={seoInView ? "animate" : "stop"}
+        variants={{
+          animate: {
+            x: [150, 100, 80, 150, 80, -50, 0],
+            y: [90, 50, 70, 90, 50, -20, 0]
+          },
+          stop: {
+            x: [0, 0, 0, 0, 0, 0, 0],
+            y: [0, 0, 0, 0, 0, 0, 0]
+          }
         }}
         transition={{
           duration: 1.5,

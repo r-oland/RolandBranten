@@ -3,6 +3,7 @@ import Divider1DImp from "assets/Divider1D.inline.svg";
 import Divider1MImp from "assets/Divider1M.inline.svg";
 import Img from "gatsby-image";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import BlobAnimation from "../../single-components/BlobAnimation";
 import TextSwitchAnimation from "../../single-components/TextSwitchAnimation";
@@ -137,13 +138,19 @@ export default function Hero({ hello, explanation, headshot }) {
     }
   };
 
+  const [ref, inView] = useInView({
+    threshold: 0,
+    triggerOnce: false,
+    rootMargin: "500px"
+  });
+
   return (
     <>
       <Wrapper>
         <Wrapper2>
-          <Hello>{hello}</Hello>
-          <h1>
-            Freelance <br /> web <TextSwitchAnimation />
+          <Hello> {hello}</Hello>
+          <h1 ref={ref}>
+            Freelance <br /> web <TextSwitchAnimation inView={inView} />
           </h1>
           <Explanation>
             {explanation}

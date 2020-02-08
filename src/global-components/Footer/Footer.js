@@ -60,21 +60,36 @@ export default function Footer({ page, display }) {
     <div style={{ display: display === "notFoundPage" ? "none" : "block" }}>
       <Wrapper>
         <Container>
-          <OneLiner>{intl.formatMessage({ id: `${page}` })}</OneLiner>
-          <FollowUp1>{intl.formatMessage({ id: "followUp1" })}</FollowUp1>
-          <FollowUp2>{intl.formatMessage({ id: "followUp2" })}</FollowUp2>
+          <OneLiner>
+            {display !== "notFoundPage" &&
+              intl.formatMessage({ id: `${page}` })}
+          </OneLiner>
+          <FollowUp1>
+            {display !== "notFoundPage" &&
+              intl.formatMessage({ id: "followUp1" })}
+          </FollowUp1>
+          <FollowUp2>
+            {display !== "notFoundPage" &&
+              intl.formatMessage({ id: "followUp2" })}
+          </FollowUp2>
           <Button style={{ marginBottom: "2.5em" }}>
-            {intl.formatMessage({ id: "button" })}
+            {display !== "notFoundPage" && intl.formatMessage({ id: "button" })}
           </Button>
         </Container>
       </Wrapper>
       <Wrapper2>
         <Flex>
           <Location>
-            {intl.formatMessage({ id: "location1" })} <Hearth src={src} />{" "}
-            {intl.formatMessage({ id: "location2" })}
+            {display !== "notFoundPage" &&
+              intl.formatMessage({ id: "location1" })}{" "}
+            <Hearth src={src} />{" "}
+            {display !== "notFoundPage" &&
+              intl.formatMessage({ id: "location2" })}
           </Location>
-          <Copyright>{intl.formatMessage({ id: "copyright" })}</Copyright>
+          <Copyright>
+            {display !== "notFoundPage" &&
+              intl.formatMessage({ id: "copyright" })}
+          </Copyright>
         </Flex>
       </Wrapper2>
     </div>

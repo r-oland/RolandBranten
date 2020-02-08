@@ -90,6 +90,7 @@ export const H3 = styled.p`
 
 export const StyledUnderline = styled.span`
   cursor: pointer;
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
   border-bottom: 1px solid
     ${({ theme: { primary } }) => primary.s4.replace("1)", "0.3)")};
   box-shadow: 0px -4px 0px ${({ theme: { primary } }) =>

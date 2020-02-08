@@ -11,9 +11,13 @@ const Svg = styled.svg`
   left: -10%;
 `;
 
-export default function Castle() {
+export default function Castle({ castle, castleInView }) {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559.6861 355.5483">
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 559.6861 355.5483"
+      ref={castle}
+    >
       <defs>
         <clipPath id="clip-path" transform="translate(0 -0.8983)">
           <rect id="clipmask" x="409.6861" width="84" height="51" fill="none" />
@@ -250,8 +254,14 @@ export default function Castle() {
           <g clipPath="url(#clip-path)">
             <motion.g
               id="flag"
-              animate={{
-                x: ["-5%", "10%"]
+              animate={castleInView ? "animate" : "stop"}
+              variants={{
+                animate: {
+                  x: ["-5%", "10%"]
+                },
+                stop: {
+                  x: ["0%", "0%"]
+                }
               }}
               transition={{
                 duration: 2,
@@ -318,8 +328,14 @@ export default function Castle() {
           d="M497.2561,4.2388v41.7a2.0508,2.0508,0,0,1-2.0447,2.0509L491.6861,48V2h3.3312A2.2387,2.2387,0,0,1,497.2561,4.2388Z"
           transform="translate(0 -0.8983)"
           fill="#1a1a1a"
-          animate={{
-            y: ["0.3%", "-0.3%", "0.3%"]
+          animate={castleInView ? "animate" : "stop"}
+          variants={{
+            animate: {
+              y: ["0.3%", "-0.3%", "0.3%"]
+            },
+            stop: {
+              y: ["0%", "0%", "0%"]
+            }
           }}
           transition={{
             duration: 1,

@@ -10,9 +10,9 @@ const Svg = styled.svg`
   justify-self: end;
 `;
 
-export default function Wallet() {
+export default function Wallet({ wallet, walletInView }) {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 567 510">
+    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 567 510" ref={wallet}>
       <defs>
         <filter id="dropshadow" height="130%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
@@ -46,9 +46,19 @@ export default function Wallet() {
           fill="#fdc61a"
         />
         <motion.g
-          animate={{
-            y: [0, 135],
-            rotate: [-50, -4]
+          animate={walletInView ? "animate" : "stop"}
+          variants={{
+            animate: {
+              y: [0, 135],
+              rotate: [-50, -4]
+            },
+            stop: {
+              y: [0, 0],
+              rotate: [0, 0]
+            }
+          }}
+          transition={{
+            duration: 0.6
           }}
         >
           <path
