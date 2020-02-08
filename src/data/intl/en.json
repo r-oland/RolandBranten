@@ -17,5 +17,7 @@
   "location2": "in Eindhoven, the Netherlands",
   "copyright": "© 2020 Roland Branten | All rights reserved. ",
 
-  "notFound": "I could not fid what you where looking for"
+  "notFound": "I could not fid what you where looking for",
+
+  "success": "Hi! I received your message. I will get back at you as soon as I can. "
 }

@@ -1,6 +1,7 @@
 // Components==============
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
+import SForm from "../../single-components/SForm";
 import TransitionEffect from "../../single-components/TransitionEffect";
 import GlobalStyles from "../../style/GlobalStyles";
 import { OverFlowFix } from "../../style/Mixins";
@@ -11,12 +12,18 @@ import IEWarning from "./IE/IEWarning";
 // =========================
 
 export const HamburgerContext = React.createContext();
+export const ModalContext = React.createContext();
 
 export default function Layout({ children, page, display }) {
   const [menuState, setMenuState] = useState("closed");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const changeMenu = () => {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
+  };
+
+  const handleChange = () => {
+    modalIsOpen === true ? setModalIsOpen(false) : setModalIsOpen(true);
   };
 
   const contextValue = {
@@ -24,18 +31,26 @@ export default function Layout({ children, page, display }) {
     changeMenu
   };
 
+  const modalValue = {
+    modalIsOpen,
+    handleChange
+  };
+
   return (
     <ThemeProvider theme={Variables}>
       <HamburgerContext.Provider value={contextValue}>
-        <IEWarning />
-        <OverFlowFix>
-          <Nav page={page} />
-          <TransitionEffect page={page}>
-            {children}
-            <Footer page={page} display={display} />
-          </TransitionEffect>
-        </OverFlowFix>
-        <GlobalStyles />
+        <ModalContext.Provider value={modalValue}>
+          <IEWarning />
+          <SForm />
+          <OverFlowFix>
+            <Nav page={page} />
+            <TransitionEffect page={page}>
+              {children}
+              <Footer page={page} display={display} />
+            </TransitionEffect>
+          </OverFlowFix>
+          <GlobalStyles />
+        </ModalContext.Provider>
       </HamburgerContext.Provider>
     </ThemeProvider>
   );

@@ -7,6 +7,11 @@ import styled from "styled-components";
 const Svg = styled.svg`
   position: relative;
   max-width: 450px;
+
+  @media screen and (min-width: 1000px) {
+    bottom: 30px;
+  }
+
   @media screen and (min-width: 1200px) {
     max-width: 500px;
   }

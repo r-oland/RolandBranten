@@ -1,0 +1,26 @@
+{
+  "en": {
+    "greeting": "Hi Roland! My name is",
+    "yourName": "Your name",
+    "partOf": "and I'm part of",
+    "CompanyName": "Company name",
+    "reason": ". I think what you are proposing sound promising! I'm reaching out because I have the following in mind:",
+    "describe": "Describe your project",
+    "kindWords": "I'd love to connect and see if we're a good fit. You can reach out back to me at",
+    "email": "Your email",
+    "send": "Send",
+    "preference": "Prefer tot email directly? Sure!"
+  },
+  "nl": {
+    "greeting": "Hi Roland! My name is",
+    "yourName": "Your name",
+    "partOf": "and I'm part of",
+    "CompanyName": "Company name",
+    "reason": ". I think what you are proposing sound promising! I'm reaching out because I have the following in mind:",
+    "describe": "Describe your project",
+    "kindWords": "I'd love to connect and see if we're a good fit. You can reach out back to me at",
+    "email": "Your email",
+    "send": "Send",
+    "preference": "Prefer tot email directly? Sure!"
+  }
+}

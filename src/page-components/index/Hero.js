@@ -144,6 +144,11 @@ export default function Hero({ hello, explanation, headshot }) {
     rootMargin: "500px"
   });
 
+  const [blob, blobInView] = useInView({
+    threshold: 0,
+    triggerOnce: false
+  });
+
   return (
     <>
       <Wrapper>
@@ -167,7 +172,7 @@ export default function Hero({ hello, explanation, headshot }) {
           fluid={headshot}
           alt="Roland-Branten"
         />
-        <BlobAnimation />
+        <BlobAnimation blob={blob} blobInView={blobInView} />
         <Divider />
       </Wrapper>
     </>

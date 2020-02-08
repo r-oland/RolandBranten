@@ -2,8 +2,9 @@
 import src from "assets/hearth.svg";
 import { useIntl } from "gatsby-plugin-intl";
 import { Button, Container, H2, H3, L, S } from "mixins";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ModalContext } from "../Layout/Layout";
 // =========================
 
 const Wrapper = styled.div`
@@ -56,6 +57,8 @@ const Copyright = styled(S)``;
 export default function Footer({ page, display }) {
   const intl = useIntl();
 
+  const { handleChange } = useContext(ModalContext);
+
   return (
     <div style={{ display: display === "notFoundPage" ? "none" : "block" }}>
       <Wrapper>
@@ -72,7 +75,7 @@ export default function Footer({ page, display }) {
             {display !== "notFoundPage" &&
               intl.formatMessage({ id: "followUp2" })}
           </FollowUp2>
-          <Button style={{ marginBottom: "2.5em" }}>
+          <Button style={{ marginBottom: "2.5em" }} onClick={handleChange}>
             {display !== "notFoundPage" && intl.formatMessage({ id: "button" })}
           </Button>
         </Container>

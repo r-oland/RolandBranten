@@ -25,6 +25,14 @@ const Wrapper = styled.div`
     }
   }
 
+  .rocket {
+    margin-top: ${({ theme: { spacing } }) => spacing.s7};
+
+    @media screen and (min-width: 1000px) {
+      margin-top: 0;
+    }
+  }
+
   #aboveWallet {
     margin-bottom: 0;
   }
@@ -267,6 +275,7 @@ export default function Sale({
             <Title className="rocket">{title2}</Title>
             <Explanation>{explanation2}</Explanation>
           </TWrap>
+
           <SvgWrap className="R" id="R1">
             <RocketShip ship={ship} shipInView={shipInView} />
           </SvgWrap>
