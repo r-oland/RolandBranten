@@ -7,18 +7,25 @@ import styled from "styled-components";
 const Svg = styled.svg`
   position: relative;
   max-width: 450px;
-  justify-self: end;
+  @media screen and (min-width: 1200px) {
+    max-width: 500px;
+  }
 `;
 
 export default function Wallet({ wallet, walletInView }) {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 567 510" ref={wallet}>
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 577 515"
+      ref={wallet}
+      className="right"
+    >
       <defs>
         <filter id="dropshadow" height="130%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
           <feOffset dx="2" dy="4" result="offsetblur" />
           <feComponentTransfer>
-            <feFuncA type="linear" slope="0.5" />
+            <feFuncA type="linear" slope="0.3" />
           </feComponentTransfer>
           <feMerge>
             <feMergeNode />
@@ -49,16 +56,16 @@ export default function Wallet({ wallet, walletInView }) {
           animate={walletInView ? "animate" : "stop"}
           variants={{
             animate: {
-              y: [0, 135],
-              rotate: [-50, -4]
+              y: 135,
+              rotate: -4
             },
             stop: {
-              y: [0, 0],
-              rotate: [0, 0]
+              y: 0,
+              rotate: -50
             }
           }}
           transition={{
-            duration: 0.6
+            duration: 0.8
           }}
         >
           <path

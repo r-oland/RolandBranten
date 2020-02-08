@@ -6,25 +6,24 @@ import styled from "styled-components";
 
 const Svg = styled.svg`
   position: relative;
-  max-width: 550px;
+  max-width: 510px;
   width: 130%;
-  right: -17.5%;
-  justify-self: end;
+  right: 10%;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 475px) {
     width: 100%;
     right: 0;
   }
 
   #mobile {
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 475px) {
       display: none;
     }
   }
 
   #desktop {
     display: none;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 475px) {
       display: block;
     }
   }
@@ -36,18 +35,34 @@ export default function Bounce({ bounce, bounceInView }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 603.3 449.5"
       ref={bounce}
+      className="right"
     >
+      <defs>
+        <filter id="dropshadow" height="130%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+          <feOffset dx="2" dy="4" result="offsetblur" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.3" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
       <g data-name="Layer 2">
         <g>
           <path
             fill="#181919"
             id="mobile"
             d="M499.3 408.4c-115 41.6-328.9 43-398.4-24.6S38.4 183 87.6 89s325-63.8 434.2 20.2 92.6 257.5-22.5 299.2z"
+            filter="url(#dropshadow)"
           ></path>
           <path
             fill="#181919"
             id="desktop"
             d="M497.2 417.3c-127.3 46-363.7 47.6-440.6-27.2S-12.5 168 41.8 64 401.4-6.5 522 86.5s102.4 284.7-24.8 330.8z"
+            filter="url(#dropshadow)"
           ></path>
           <motion.rect
             id="stat1"

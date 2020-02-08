@@ -19,28 +19,125 @@ const Wrapper = styled.div`
 
   h2 {
     text-align: center;
+
+    @media screen and (min-width: 1000px) {
+      margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
+    }
+  }
+
+  .rocket {
+    margin-top: ${({ theme: { spacing } }) => spacing.s8};
   }
 
   #aboveWallet {
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s2};
+    margin-bottom: 0;
+  }
+`;
+
+const CustomContainer = styled(Container)`
+  @media screen and (min-width: 1000px) {
+    margin: 0 auto;
+    max-width: 78.5%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    max-width: 70%;
   }
 `;
 
 const Title = styled(H3)`
-  margin: ${({ theme: { spacing } }) => `${spacing.s9} 0 ${spacing.s4}`};
+  margin: ${({ theme: { spacing } }) => `${spacing.s10} 0 ${spacing.s4}`};
+  max-width: 600px;
+
+  @media screen and (min-width: 1000px) {
+    margin-top: 0;
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s2};
+  }
 `;
 
 const Explanation = styled(L)`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s5};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s8};
+  max-width: 510px;
+
+  @media screen and (min-width: 1000px) {
+    margin: 0;
+  }
 `;
 
 const SvgWrap = styled.div`
   width: 110%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 475px) {
+    .right {
+      align-self: flex-end;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    /* align-self: flex-start; */
+  }
+
+  @media screen and (min-width: 550px) {
     width: 100%;
+  }
+
+  .tempRight {
+    @media screen and (min-width: 850px) {
+      align-self: flex-end;
+    }
+
+    @media screen and (min-width: 1000px) {
+      align-self: initial;
+    }
+  }
+`;
+
+const TWrap = styled.div`
+  @media screen and (min-width: 1000px) {
+    margin: ${({ theme: { spacing } }) => `${spacing.s12} 0 ${spacing.s12}`};
+  }
+
+  @media screen and (min-width: 1600px) {
+    margin: 14em 0 14em;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-column-gap: ${({ theme: { spacing } }) => spacing.s9};
+
+    .L {
+      grid-column: 1;
+    }
+
+    .R {
+      grid-column: 2;
+    }
+
+    #R1 {
+      grid-row: 1;
+    }
+    #R2 {
+      grid-row: 2;
+    }
+    #R3 {
+      grid-row: 3;
+    }
+    #R4 {
+      grid-row: 4;
+    }
+    #R5 {
+      grid-row: 5;
+    }
   }
 `;
 
@@ -55,13 +152,14 @@ const Divider2MSvg = styled(Divider2MImp)`
 const Divider2DSvg = styled(Divider2DImp)`
   width: 100vw;
   position: absolute;
-  top: 0;
+  top: calc(160px + 10vw);
   z-index: -1;
 `;
 
 const Source = styled.p`
   color: ${({ theme: { gray } }) => gray.s6};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
+  margin-top: ${({ theme: { spacing } }) => spacing.s6};
   margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
 `;
 
@@ -78,9 +176,32 @@ const Sources = styled.a`
   }
 `;
 
+const SourceWrap = styled.div`
+  @media screen and (min-width: 700px) {
+    position: absolute;
+    width: 400px;
+  }
+
+  right: 10%;
+
+  bottom: -110px;
+
+  @media screen and (min-width: 1250px) {
+    left: 7.5vw;
+  }
+`;
+
 const LinkOL = styled.p`
   margin-top: ${({ theme: { spacing } }) => spacing.s9};
   text-align: center;
+
+  @media screen and (min-width: 700px) {
+    margin-top: ${({ theme: { spacing } }) => spacing.s12};
+  }
+
+  @media screen and (min-width: 1000px) {
+    margin-top: ${({ theme: { spacing } }) => spacing.s10};
+  }
 `;
 
 const Link = styled(StyledUnderline)`
@@ -131,7 +252,7 @@ export default function Sale({
     triggerOnce: true
   });
 
-  const [seo, seoInView] = useInView({ threshold: 0.5, triggerOnce: true });
+  const [seo, seoInView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const [bounce, bounceInView] = useInView({
     threshold: 0.3,
@@ -141,55 +262,70 @@ export default function Sale({
   return (
     <Wrapper>
       <Divider />
-      <Container>
+      <CustomContainer>
         <h2>
           JAMstack sites <H2 as="span">{title1}</H2>
         </h2>
-        <Title>{title2}</Title>
-        <Explanation>{explanation2}</Explanation>
-        <SvgWrap>
-          <RocketShip ship={ship} shipInView={shipInView} />
-        </SvgWrap>
-        <Title>{title3}</Title>
-        <Explanation>{explanation3}</Explanation>
-        <SvgWrap>
-          <Castle castle={castle} castleInView={castleInView} />
-        </SvgWrap>
-        <Title>{title4}</Title>
-        <Explanation id="aboveWallet">{explanation4}</Explanation>
-        <SvgWrap>
-          <Wallet wallet={wallet} walletInView={walletInView} />
-        </SvgWrap>
-        <Title>{title5}</Title>
-        <Explanation>{explanation5}</Explanation>
-        <SvgWrap>
-          <SEO seo={seo} seoInView={seoInView} />
-        </SvgWrap>
-        <Title>{title6}</Title>
-        <Explanation>{explanation6}</Explanation>
-        <SvgWrap>
-          <Bounce bounce={bounce} bounceInView={bounceInView} />
-        </SvgWrap>
-        <Source>{source}:</Source>
-        <Sources
-          href="https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Google Deep Neural Network Bounce Rate Tests
-        </Sources>
-        <Sources
-          href="https://backlinko.com/page-speed-stats"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Backlinko page speed test
-        </Sources>
+        <Grid>
+          <TWrap className="L" id="R1">
+            <Title className="rocket">{title2}</Title>
+            <Explanation>{explanation2}</Explanation>
+          </TWrap>
+          <SvgWrap className="R" id="R1">
+            <RocketShip ship={ship} shipInView={shipInView} />
+          </SvgWrap>
+          <TWrap className="R" id="R2">
+            <Title>{title3}</Title>
+            <Explanation>{explanation3}</Explanation>
+          </TWrap>
+          <SvgWrap className="L" id="R2">
+            <Castle castle={castle} castleInView={castleInView} />
+          </SvgWrap>
+          <TWrap className="L" id="R3">
+            <Title>{title4}</Title>
+            <Explanation id="aboveWallet">{explanation4}</Explanation>
+          </TWrap>
+          <SvgWrap className="R" id="R3">
+            <Wallet wallet={wallet} walletInView={walletInView} />
+          </SvgWrap>
+          <TWrap className="R" id="R4">
+            <Title>{title5}</Title>
+            <Explanation>{explanation5}</Explanation>
+          </TWrap>
+          <SvgWrap className="L" id="R4">
+            <SEO seo={seo} seoInView={seoInView} />
+          </SvgWrap>
+          <TWrap className="L" id="R5">
+            <Title>{title6}</Title>
+            <Explanation>{explanation6}</Explanation>
+          </TWrap>
+          <SvgWrap className="R" id="R5">
+            <Bounce bounce={bounce} bounceInView={bounceInView} />
+            <SourceWrap className="R">
+              <Source>{source}:</Source>
+              <Sources
+                href="https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Deep Neural Network Bounce Rate Tests
+              </Sources>
+              <Sources
+                href="https://backlinko.com/page-speed-stats"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Backlinko page speed test
+              </Sources>
+            </SourceWrap>
+          </SvgWrap>
+        </Grid>
+
         <LinkOL>{linkOL}</LinkOL>
         <Link as="div">
           <MTLink to="/faq">{linkButton}</MTLink>
         </Link>
-      </Container>
+      </CustomContainer>
     </Wrapper>
   );
 }

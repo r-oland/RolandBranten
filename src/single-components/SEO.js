@@ -7,19 +7,32 @@ import styled from "styled-components";
 const Svg = styled.svg`
   position: relative;
   max-width: 450px;
-  justify-self: start;
+
   left: -10%;
+
+  @media screen and (min-width: 475px) {
+    left: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 500px;
+  }
 `;
 
 export default function SEO({ seo, seoInView }) {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 549 358" ref={seo}>
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="-5 0 549 358"
+      ref={seo}
+      className="tempRight"
+    >
       <defs>
         <filter id="dropshadow" height="130%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
           <feOffset dx="2" dy="4" result="offsetblur" />
           <feComponentTransfer>
-            <feFuncA type="linear" slope="0.5" />
+            <feFuncA type="linear" slope="0.3" />
           </feComponentTransfer>
           <feMerge>
             <feMergeNode />

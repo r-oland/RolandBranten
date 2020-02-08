@@ -7,7 +7,10 @@ import styled from "styled-components";
 const Svg = styled.svg`
   position: relative;
   max-width: 450px;
-  justify-self: end;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 500px;
+  }
 `;
 
 export default function RocketShip({ ship, shipInView }) {
@@ -16,13 +19,14 @@ export default function RocketShip({ ship, shipInView }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 653.99 376.17"
       ref={ship}
+      className="right"
     >
       <defs>
         <filter id="dropshadow" height="130%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
           <feOffset dx="2" dy="4" result="offsetblur" />
           <feComponentTransfer>
-            <feFuncA type="linear" slope="0.5" />
+            <feFuncA type="linear" slope="0.3" />
           </feComponentTransfer>
           <feMerge>
             <feMergeNode />

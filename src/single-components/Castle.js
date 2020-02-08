@@ -7,8 +7,14 @@ import styled from "styled-components";
 const Svg = styled.svg`
   position: relative;
   max-width: 450px;
-  justify-self: start;
   left: -10%;
+
+  @media screen and (min-width: 475px) {
+    left: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 500px;
+  }
 `;
 
 export default function Castle({ castle, castleInView }) {
@@ -17,6 +23,7 @@ export default function Castle({ castle, castleInView }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 559.6861 355.5483"
       ref={castle}
+      className="tempRight"
     >
       <defs>
         <clipPath id="clip-path" transform="translate(0 -0.8983)">
@@ -26,7 +33,7 @@ export default function Castle({ castle, castleInView }) {
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
           <feOffset dx="2" dy="4" result="offsetblur" />
           <feComponentTransfer>
-            <feFuncA type="linear" slope="0.5" />
+            <feFuncA type="linear" slope="0.3" />
           </feComponentTransfer>
           <feMerge>
             <feMergeNode />
@@ -264,7 +271,7 @@ export default function Castle({ castle, castleInView }) {
                 }
               }}
               transition={{
-                duration: 2,
+                duration: 2.8,
                 loop: Infinity,
                 ease: "linear"
               }}
@@ -338,7 +345,7 @@ export default function Castle({ castle, castleInView }) {
             }
           }}
           transition={{
-            duration: 1,
+            duration: 1.4,
             loop: Infinity,
             ease: "linear"
           }}
