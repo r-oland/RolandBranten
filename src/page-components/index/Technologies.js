@@ -3,7 +3,7 @@ import ContentfulImg from "assets/Contentful.svg";
 import Divider3DImp from "assets/Divider3D.inline.svg";
 import Divider3MImp from "assets/Divider3M.inline.svg";
 import GatsbyImg from "assets/Gatsby.svg";
-import GraphQlImg from "assets/GraphQL.svg";
+import GraphQlImg from "assets/GraphQl.svg";
 import NetlifyImg from "assets/Netlify.svg";
 import ReactImg from "assets/React.svg";
 import React from "react";
