@@ -1,0 +1,22 @@
+{
+  "SEO": [{ "title": "" }, { "description": "" }, { "keywords": "" }],
+  "Title": [
+    { "title": "Right.. this is the part where I have to talk about myself." }
+  ],
+  "FirstText": [
+    {
+      "firstText": "Alright well, I'm a Eindhoven based developer/designer who loves to create things that he would have deemed out of his capabilities yesterday. Next to that, I'm really passionate about music. You probably care more about the first category, so let's just continue with that!"
+    }
+  ],
+  "Text": [
+    {
+      "text": "I spend the majority of my time on the very thing your looking at right now. The reason I choose this route is because I love the creative aspect of design and the complexity of programming. Next to that, I always envisioned myself self-employed, so the role of freelance web developer/designer has my name written all over it!"
+    },
+    {
+      "text": "Now, this job isn't all technologie and working individually, that would get lonely real quick. Luckily, I'm also able to enjoy the people aspect of working directly with other driven individuals/teams to help them achieve their own vision and goals."
+    },
+    {
+      "text": "Oh and I'll just save you the trouble, I don't have any social media. No their is nothing wrong with me, I just get distracted enough as it is."
+    }
+  ]
+}

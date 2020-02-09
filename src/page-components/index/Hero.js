@@ -113,10 +113,16 @@ const IMG = styled(Img)`
 `;
 
 const Divider1DSvg = styled(Divider1DImp)`
+  display: none;
   position: absolute;
   bottom: -30px;
   width: 110vw;
   left: -5px;
+  z-index: 5;
+
+  @media screen and (min-width: 450px) {
+    display: block;
+  }
 `;
 
 const Divider1MSvg = styled(Divider1MImp)`
@@ -124,20 +130,14 @@ const Divider1MSvg = styled(Divider1MImp)`
   bottom: -30px;
   width: 110vw;
   left: -5px;
+  z-index: 5;
+
+  @media screen and (min-width: 450px) {
+    display: none;
+  }
 `;
 
 export default function Hero({ hello, explanation, headshot }) {
-  const Divider = () => {
-    const Query =
-      typeof window !== "undefined" && window.matchMedia("(min-width: 450px)");
-
-    if (Query.matches) {
-      return <Divider1DSvg />;
-    } else {
-      return <Divider1MSvg />;
-    }
-  };
-
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: false,
@@ -152,6 +152,8 @@ export default function Hero({ hello, explanation, headshot }) {
   return (
     <>
       <Wrapper>
+        <Divider1MSvg />;
+        <Divider1DSvg />
         <Wrapper2>
           <Hello> {hello}</Hello>
           <h1 ref={ref}>
@@ -173,7 +175,6 @@ export default function Hero({ hello, explanation, headshot }) {
           alt="Roland-Branten"
         />
         <BlobAnimation blob={blob} blobInView={blobInView} />
-        <Divider />
       </Wrapper>
     </>
   );

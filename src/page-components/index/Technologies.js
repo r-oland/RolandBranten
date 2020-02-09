@@ -133,10 +133,15 @@ const Arrow2 = styled.svg`
 `;
 
 const Divider3DSvg = styled(Divider3DImp)`
+  display: none;
   position: absolute;
   width: 100vw;
   bottom: -125px;
   z-index: -1;
+
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
 `;
 
 const Divider3MSvg = styled(Divider3MImp)`
@@ -144,6 +149,10 @@ const Divider3MSvg = styled(Divider3MImp)`
   width: 100vw;
   bottom: -125px;
   z-index: -1;
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
 `;
 
 export default function Technologies({ title8, TechnologyText }) {
@@ -158,17 +167,6 @@ export default function Technologies({ title8, TechnologyText }) {
       </div>
     );
   });
-
-  const Divider = () => {
-    const Query =
-      typeof window !== "undefined" && window.matchMedia("(min-width: 450px)");
-
-    if (Query.matches) {
-      return <Divider3DSvg />;
-    } else {
-      return <Divider3MSvg />;
-    }
-  };
 
   return (
     <Wrapper>
@@ -207,7 +205,8 @@ export default function Technologies({ title8, TechnologyText }) {
           <Netlify src={NetlifyImg} alt="Netlify" />
         </Grid>
       </Container>
-      <Divider />
+      <Divider3DSvg />
+      <Divider3MSvg />
     </Wrapper>
   );
 }

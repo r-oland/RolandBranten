@@ -151,13 +151,21 @@ const Divider2MSvg = styled(Divider2MImp)`
   top: 425px;
   z-index: -1;
   transform: scale(1.2);
+  @media screen and (min-width: 700px) {
+    display: none;
+  }
 `;
 
 const Divider2DSvg = styled(Divider2DImp)`
+  display: none;
   width: 100vw;
   position: absolute;
   top: calc(160px + 10vw);
   z-index: -1;
+
+  @media screen and (min-width: 700px) {
+    display: block;
+  }
 `;
 
 const Source = styled.p`
@@ -233,17 +241,6 @@ export default function Sale({
   linkOL,
   linkButton
 }) {
-  const Divider = () => {
-    const Query =
-      typeof window !== "undefined" && window.matchMedia("(min-width: 700px)");
-
-    if (Query.matches) {
-      return <Divider2DSvg />;
-    } else {
-      return <Divider2MSvg />;
-    }
-  };
-
   const [ship, shipInView] = useInView({ threshold: 0, triggerOnce: false });
 
   const [castle, castleInView] = useInView({
@@ -265,7 +262,8 @@ export default function Sale({
 
   return (
     <Wrapper>
-      <Divider />
+      <Divider2DSvg />
+      <Divider2MSvg />
       <CustomContainer>
         <h2>
           JAMstack sites <H2 as="span">{title1}</H2>

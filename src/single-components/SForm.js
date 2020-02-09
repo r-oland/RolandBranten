@@ -126,6 +126,7 @@ export default function SForm() {
         animate={modalIsOpen ? "open" : "closed"}
         variants={BgVariants}
         initial={false}
+        onClick={handleChange}
       />
       <FormCard
         animate={modalIsOpen ? "open" : "closed"}
