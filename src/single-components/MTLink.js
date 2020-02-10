@@ -24,12 +24,8 @@ export default function MTLink({ to, language, children, onClick, ...rest }) {
 
         return (
           <TransitionLink
-            entry={{
-              length: 0.4
-            }}
-            exit={{
-              length: 0.4
-            }}
+            exit={{ length: 0.4 }}
+            entry={{ delay: 0.4 }}
             {...rest}
             to={link}
             onClick={handleClick}
