@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import styled, { ThemeContext } from "styled-components";
 import LanguageSwitch from "../../single-components/LanguageSwitch";
 import MTLink from "../../single-components/MTLink";
+import { ModalContext } from "../Layout/Layout";
 import FluidHamburger from "./FluidHamburger";
 import FluidMenu from "./FluidMenu";
 // =========================
@@ -70,7 +71,8 @@ const MenuItems = styled.ul`
     }
   }
 
-  a {
+  button {
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
   }
 `;
 
@@ -83,6 +85,7 @@ const Flex = styled.div`
 export default function Nav({ page }) {
   const [ref, inView] = useInView({ threshold: 0 });
   const themeContext = useContext(ThemeContext);
+  const { handleChange } = useContext(ModalContext);
   const intl = useIntl();
 
   return (
@@ -118,9 +121,9 @@ export default function Nav({ page }) {
                 <MTLink to="/faq">{intl.formatMessage({ id: "nav3" })} </MTLink>
               </li>
               <li>
-                <MTLink to="/contact">
+                <button onClick={handleChange}>
                   {intl.formatMessage({ id: "nav4" })}
-                </MTLink>
+                </button>
               </li>
             </MenuItems>
             <LanguageSwitch />

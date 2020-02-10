@@ -6,7 +6,7 @@ import Layout from "../global-components/Layout/Layout";
 import Content from "../page-components/about/Content";
 // =========================
 
-export default function Index({ data }) {
+export default function About({ data }) {
   const t = data.file.childAboutJson;
 
   return (
