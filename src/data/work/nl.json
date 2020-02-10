@@ -1,12 +1,14 @@
 {
   "SEO": [{ "title": "work", "description": "", "keywords": "" }],
   "button": [{ "name": "Visit site" }],
-  "business": [
+  "BizData": [
     {
       "name": "Biz logistics",
       "type": "Logistics company",
       "work": "DESIGN - DEVELOPMENT"
-    },
+    }
+  ],
+  "BrantenData": [
     {
       "name": "Branten Maatwerk",
       "type": "Interior construction",
