@@ -25,10 +25,10 @@ export default function MTLink({ to, language, children, onClick, ...rest }) {
         return (
           <TransitionLink
             entry={{
-              length: 0.2
+              length: 0.4
             }}
             exit={{
-              length: 0.2
+              length: 0.4
             }}
             {...rest}
             to={link}
