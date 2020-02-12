@@ -85,13 +85,13 @@ export default function LanguageSwitch({ inView2 }) {
         return (
           <Flex
             animate={
-              (inView2 === true && menuState === "closed"
+              (inView2 === false && menuState === "closed"
                 ? "visible"
-                : inView2 === true && menuState === "open") || query.matches
+                : inView2 === false && menuState === "open") || query.matches
                 ? "visible"
-                : (inView2 === false && menuState === "open") || query.matches
+                : (inView2 === true && menuState === "open") || query.matches
                 ? "visible"
-                : (inView2 === false && menuState === "closed") ||
+                : (inView2 === true && menuState === "closed") ||
                   query.matches !== true
                 ? "hidden"
                 : "hidden"

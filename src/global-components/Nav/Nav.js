@@ -3,11 +3,15 @@ import { motion } from "framer-motion";
 import { useIntl } from "gatsby-plugin-intl";
 import { Container } from "mixins";
 import React, { useContext } from "react";
-import { useInView } from "react-intersection-observer";
 import styled, { ThemeContext } from "styled-components";
 import LanguageSwitch from "../../single-components/LanguageSwitch";
 import MTLink from "../../single-components/MTLink";
-import { FaqContext, HamburgerContext, ModalContext } from "../Layout/Layout";
+import {
+  FaqContext,
+  HamburgerContext,
+  ModalContext,
+  ObserverContext
+} from "../Layout/Layout";
 import FluidHamburger from "./FluidHamburger";
 import FluidMenu from "./FluidMenu";
 // =========================
@@ -21,18 +25,10 @@ const NavWrapper = styled(motion.div)`
   @media screen and (min-width: 850px) {
     position: fixed;
     background: ${({ theme: { white }, inView }) =>
-      inView === false ? white : "none"};
+      inView === true ? white : "none"};
+    box-shadow: ${({ theme: { shadow }, inView }) =>
+      inView === true ? shadow.small : "none"};
   }
-`;
-
-const TopRef = styled.div`
-  position: absolute;
-  visibility: hidden;
-`;
-
-const TopRef2 = styled.div`
-  position: absolute;
-  visibility: hidden;
 `;
 
 const Logo = styled.svg`
@@ -67,8 +63,13 @@ const MenuItems = styled.ul`
     font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
     transition: 0.3s;
 
-    &:hover {
-      transform: translateY(-2px);
+    a,
+    button {
+      transition: 0.2s;
+      &:hover {
+        color: ${({ theme: { primary }, inView, page }) =>
+          inView === false && page === "homeOL" ? `white` : primary.s7};
+      }
     }
   }
 
@@ -84,8 +85,7 @@ const Flex = styled.div`
 `;
 
 export default function Nav({ page }) {
-  const [ref, inView] = useInView({ threshold: 0 });
-  const [ref2, inView2] = useInView({ threshold: 0 });
+  const { inView, inView2 } = useContext(ObserverContext);
   const { menuState } = useContext(HamburgerContext);
   const themeContext = useContext(ThemeContext);
   const { handleChange } = useContext(ModalContext);
@@ -94,8 +94,6 @@ export default function Nav({ page }) {
 
   return (
     <div>
-      <TopRef ref={ref} />
-      <TopRef2 ref={ref2} />
       <NavWrapper inView={inView} page={page}>
         <FlexContainer>
           <MTLink to="/">
@@ -125,7 +123,7 @@ export default function Nav({ page }) {
           </MTLink>
 
           <Flex>
-            <MenuItems>
+            <MenuItems inView={inView} page={page}>
               <li>
                 <MTLink to="/about">
                   {intl.formatMessage({ id: "nav1" })}

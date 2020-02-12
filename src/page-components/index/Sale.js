@@ -326,16 +326,16 @@ export default function Sale({
           </SvgWrap>
         </Grid>
 
-        <LinkOL
-          onClick={() => {
-            setFAQSelected(0);
-            // localStorage.setItem(`FAQSelected`, 0);
-          }}
-        >
-          {linkOL}
-        </LinkOL>
+        <LinkOL>{linkOL}</LinkOL>
         <Link as="div">
-          <MTLink to="/faq">{linkButton}</MTLink>
+          <MTLink
+            to="/faq"
+            onClick={() => {
+              setFAQSelected(0);
+            }}
+          >
+            {linkButton}
+          </MTLink>
         </Link>
       </CustomContainer>
     </Wrapper>

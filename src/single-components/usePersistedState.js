@@ -5,7 +5,6 @@ export default function usePersistedState(key, defaultValue) {
 
   const [state, setState] = useState(() => JSON.parse(LocalValue));
   useEffect(() => {
-    console.log(state);
     localStorage.setItem(key, JSON.stringify(state));
   }, [key, state]);
   return [state, setState];

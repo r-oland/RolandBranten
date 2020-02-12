@@ -1,10 +1,11 @@
 // Components==============
 import { motion } from "framer-motion";
-import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { S } from "mixins";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { FaqContext } from "../../global-components/Layout/Layout";
+import MTLink from "../MTLink";
 import Arrow from "./Arrow.svg";
 import Cross from "./Cross.svg";
 import LeftImp from "./Left.inline.svg";
@@ -152,6 +153,7 @@ const Right = styled(BoxStyling)`
   &:hover {
     #color {
       fill: ${({ theme: { primary } }) => primary.s4};
+      stroke: ${({ theme: { primary } }) => primary.s4};
     }
   }
 `;
@@ -184,30 +186,6 @@ const Message = styled(S)`
   position: relative;
 `;
 
-function Me({ children, to }) {
-  return (
-    <Left>
-      <Link to={to}>
-        <LeftSvg />
-        <Sender>Me</Sender>
-        <Message>{children}</Message>
-      </Link>
-    </Left>
-  );
-}
-
-function Roland({ children, to }) {
-  return (
-    <Right>
-      <Link to={to}>
-        <RightSvg />
-        <Sender>Roland</Sender>
-        <Message>{children}</Message>
-      </Link>
-    </Right>
-  );
-}
-
 export default function ChatLink({
   img,
   question1,
@@ -217,6 +195,42 @@ export default function ChatLink({
   question3,
   answer3
 }) {
+  const { setFAQSelected } = useContext(FaqContext);
+
+  function Me({ children, to, faq }) {
+    return (
+      <Left>
+        <MTLink
+          to={to}
+          onClick={() => {
+            setFAQSelected(faq);
+          }}
+        >
+          <LeftSvg />
+          <Sender>Me</Sender>
+          <Message>{children}</Message>
+        </MTLink>
+      </Left>
+    );
+  }
+
+  function Roland({ children, to, faq }) {
+    return (
+      <Right>
+        <MTLink
+          to={to}
+          onClick={() => {
+            setFAQSelected(faq);
+          }}
+        >
+          <RightSvg />
+          <Sender>Roland</Sender>
+          <Message>{children}</Message>
+        </MTLink>
+      </Right>
+    );
+  }
+
   return (
     <ChatWrapper>
       <Top>
@@ -232,12 +246,24 @@ export default function ChatLink({
         </Flex>
       </Top>
       <ChatArea>
-        <Me to="/#">{question1}</Me>
-        <Roland to="/#">{answer1}</Roland>
-        <Me to="/#">{question2}</Me>
-        <Roland to="/#">{answer2}</Roland>
-        <Me to="/#">{question3}</Me>
-        <Roland to="/#">{answer3}</Roland>
+        <Me to="/faq" faq={1}>
+          {question1}
+        </Me>
+        <Roland to="/faq" faq={1}>
+          {answer1}
+        </Roland>
+        <Me to="/faq" faq={0}>
+          {question2}
+        </Me>
+        <Roland to="/faq" faq={0}>
+          {answer2}
+        </Roland>
+        <Me to="/faq" faq={2}>
+          {question3}
+        </Me>
+        <Roland to="/faq" faq={2}>
+          {answer3}
+        </Roland>
       </ChatArea>
     </ChatWrapper>
   );

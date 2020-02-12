@@ -3,16 +3,20 @@ import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { FaqContext } from "../../global-components/Layout/Layout";
-import { Container, H3 } from "../../style/Mixins";
+import { Container, flexUnit } from "../../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
-  margin: 0 auto;
+  margin: 0 auto ${({ theme: { spacing } }) => spacing.s10};
   max-width: 950px;
   overflow: hidden;
 `;
 
-const Title = styled(H3)``;
+const Title = styled.h3`
+  line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
+  margin-top: ${({ theme: { spacing } }) => spacing.s4};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s5};
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -69,6 +73,42 @@ const Answer = styled(motion.div)`
   grid-column: 2/4;
   grid-row: 3;
   margin: ${({ theme: { spacing } }) => ` ${spacing.s6} 0 ${spacing.s6}`};
+
+  p {
+    line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s3};
+  }
+
+  .bold {
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+  }
+
+  .end {
+    padding-bottom: ${({ theme: { spacing } }) => spacing.s5};
+  }
+
+  .boldSpan {
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
+    display: inline;
+    margin: 0;
+  }
+
+  .inline {
+    display: inline;
+  }
+
+  .inline2 {
+    display: inline;
+  }
+
+  .paddingTop {
+    padding-top: ${({ theme: { spacing } }) => spacing.s4};
+  }
+
+  .li {
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
+    ${flexUnit(2.5, 15, 16, "vw", "font-size")};
+  }
 `;
 
 const lineVariants = {

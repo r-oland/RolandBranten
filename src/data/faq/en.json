@@ -2,7 +2,7 @@
   "SEO": [{ "title": "faq", "description": "", "keywords": "" }],
   "Title": [
     {
-      "title": "I can imagine you might have some questions.. Your not alone! Here are the most common ones."
+      "title": "The most frequently asked questions."
     }
   ],
   "FaqList": [
@@ -23,7 +23,7 @@
         },
         {
           "answer": "This results in some of the fastest sites online and often leads to load times of less than one second and a great user experience.",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "Security",
@@ -35,7 +35,7 @@
         },
         {
           "answer": "This way, you don't need to worry about server or database vulnerabilities",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "Cost",
@@ -43,7 +43,7 @@
         },
         {
           "answer": "For most projects, the hosting of static files is about ‎€0.-. That's right, most of the time hosting will be free! If that isn't enough, JAMstack sites don't require any technical maintenance since the files are static. An added benefit to this is that your site won't break either. this means no unexpected costs that can ad up. This way you will only pay to build and upgrade your site, like it should be.",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "SEO",
@@ -51,7 +51,7 @@
         },
         {
           "answer": "JAMstack sites are optimized to be found by Google. This is because the site is static, for this reason the site will be easy to index. Combine this with the performance (Google likes good performing sites) and you will have a really solid foundation when it comes to search engine optimization.",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "Convenience",
@@ -63,7 +63,7 @@
         },
         {
           "answer": "Another Convenience is that, just like you would be able to do with a Wordpress site, you can manage your own content. This way you can tweak your site as it grows with your project.",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "Scalability",
@@ -75,7 +75,7 @@
         },
         {
           "answer": "JAMstack sites have the technical capability to scale with your projects. Next to that, in the event that your site suddenly goes viral and has many active users, the CDN seamlessly compensates.",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "Flexibility",
@@ -83,7 +83,7 @@
         },
         {
           "answer": "Their are no restrictions when it comes to what kind of content you want to display or how you want to display it to your users. There are no templates, rules or limitations that are holding back the end result of your ideal site. This way, you can realize your site exactly how you envisioned it.",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "Future proof",
@@ -91,7 +91,7 @@
         },
         {
           "answer": "Static JAMstack sites are the way to go for a increasing amount of developers. One of the reasons for this is that a JAMstack site utilizes the most modern web technologies. The nice thing about this for you is that, In the unlikely event that something might happen where you need another developer to work on your JAMstack site, there is and will be a increasing amount of options available to take on this function.",
-          "class": ""
+          "class": "end"
         },
         {
           "answer": "PWA",
@@ -99,7 +99,7 @@
         },
         {
           "answer": "A JAMstack site is also automatically a PWA (progressive web app). At the moment this is still a bit of a upcoming trend but it might hold some real potential for the future. What a PWA basically does is, it turns your website into a desktop app and a mobile app. That's right, with a PWA you have the capability to add your site to the home screen of your smartphone, just like you would with a regular app. With the PWA functionality, you will be able to turn your website into a mobile application.",
-          "class": ""
+          "class": "end"
         }
       ]
     },
@@ -112,19 +112,19 @@
         },
         {
           "answer": "For the average site, It's probably somewhere between",
-          "class": ""
+          "class": "inline"
         },
         {
-          "answer": "‎€750,- and ‎€1500,-",
+          "answer": " ‎€750,- and ‎€1500,- ",
           "class": "boldSpan"
         },
         {
           "answer": "These numbers aren't set in stone, it's just a rough ballpark of what a typical site would cost. It could be that your site is a bit more expensive depending on the features that your project requires. On the other hand, it could also be less if the site doesn't require much complexity. The best way to find out is to reach out and tell me about your project.",
-          "class": ""
+          "class": "inline"
         },
         {
           "answer": "As you might have noticed, I try to be as transparant as possible. This transparantie also applies to the way I handle transactions. My preferred method is to not charge by the hour. I like to agree upon a single price for the whole project. This way, if there happen to be any missteps in the process, you aren't the one who has to make up for it.",
-          "class": ""
+          "class": "paddingTop"
         }
       ]
     },
@@ -162,11 +162,11 @@
           "class": ""
         },
         {
-          "answer": "I will make sure that you're site is technically optimized for Google to find you and for a lot of sites this will be more then enough to ensure your visibility on Google. But if you are looking to further optimize performance, it gets to a more marketing oriented territory real fast.",
+          "answer": "I will make sure that you're site is technically optimized for Google to find you and for a lot of sites this will be more then enough to ensure your visibility on Google. But if you are looking to further optimize performance, it gets towards a more marketing oriented territory real fast.",
           "class": ""
         },
         {
-          "answer": "So yes your site will technically be fully optimized for SEO, but since I'm no marketeer, there will still be a lot of room for improvements. This could be outsourced or you could give it a shot yourself if you feel brave enough.",
+          "answer": "So yes your site will technically be fully optimized for SEO, but since I'm no marketeer, there will still be a lot of room for improvements. This could be outsourced or you could do this yourself from this point.",
           "class": ""
         }
       ]
@@ -183,7 +183,7 @@
           "class": ""
         },
         {
-          "answer": "Luckily, the amount of users that are using Internet Explorer, nowadays, is at it's lowest point ever. You can check the most recent stats here. In the rare event that your user is using Internet Explorer, he/she will receive a pop up message with a short explanation.",
+          "answer": "Luckily, the amount of users that are using Internet Explorer is decreasing every day. At the time of writing, Internet explorer usage is heading towards less then 1%. In the rare event that your user is using Internet Explorer, he/she will receive a pop up message with a similar explanationli.",
           "class": ""
         }
       ]
@@ -197,27 +197,27 @@
         },
         {
           "answer": "1. Do you just want a simple site that doesn't need much scalability or flexibility in the future?",
-          "class": ""
+          "class": "li"
         },
         {
           "answer": "2. Do you don't mind if you lose a big part of potential users because of slow load times?",
-          "class": ""
+          "class": "li"
         },
         {
           "answer": "3. Will you be satisfied with a site that will look like any other WordPress template site?",
-          "class": ""
+          "class": "li"
         },
         {
           "answer": "4. Do you don't mind spending time or resources towards fixing and maintaining WordPress plugins?",
-          "class": ""
+          "class": "li"
         },
         {
           "answer": "5. Are you not worrying about maximizing the security of your site?",
-          "class": ""
+          "class": "li"
         },
         {
           "answer": "6. Are you willing to pay for the additional monthly/yearly fees that come with a CMS like Wordpress?",
-          "class": ""
+          "class": "li"
         },
         {
           "answer": "If all these things don't matter for the project that you have in mind, by all means, go for it! WordPress has a great CMS and will set you up with a fully functional website.",
