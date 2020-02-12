@@ -76,20 +76,24 @@ export default function LanguageSwitch({ inView2 }) {
     }
   };
 
+  const query =
+    typeof window !== "undefined" && window.matchMedia("(min-width: 850px)");
+
   return (
     <IntlContextConsumer>
       {({ language }) => {
         return (
           <Flex
             animate={
-              inView2 === true && menuState === "open"
+              (inView2 === true && menuState === "closed"
                 ? "visible"
-                : inView2 === false && menuState === "open"
+                : inView2 === true && menuState === "open") || query.matches
                 ? "visible"
-                : inView2 === false && menuState === "closed"
+                : (inView2 === false && menuState === "open") || query.matches
+                ? "visible"
+                : (inView2 === false && menuState === "closed") ||
+                  query.matches !== true
                 ? "hidden"
-                : inView2 === true && menuState === "closed"
-                ? "visible"
                 : "hidden"
             }
             variants={variants}

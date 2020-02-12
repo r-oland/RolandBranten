@@ -9,6 +9,7 @@ import { Container, H3 } from "../../style/Mixins";
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 950px;
+  overflow: hidden;
 `;
 
 const Title = styled(H3)``;

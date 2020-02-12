@@ -329,6 +329,7 @@ export default function Sale({
         <LinkOL
           onClick={() => {
             setFAQSelected(0);
+            // localStorage.setItem(`FAQSelected`, 0);
           }}
         >
           {linkOL}

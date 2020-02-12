@@ -1,5 +1,5 @@
 // Components==============
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import SForm from "../../single-components/SForm";
 import TransitionEffect from "../../single-components/TransitionEffect";
@@ -20,9 +20,9 @@ export default function Layout({ children, page, display }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [FAQSelected, setFAQSelected] = usePersistedState(`FAQSelected`, null);
 
-  useEffect(() => {
-    console.log(FAQSelected);
-  }, [FAQSelected]);
+  // useEffect(() => {
+  //   console.log(FAQSelected);
+  // }, [FAQSelected]);
 
   const changeMenu = () => {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
