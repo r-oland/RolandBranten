@@ -54,7 +54,7 @@ module.exports = {
         short_name: `Roland`,
         start_url: `https://rolandbranten.nl/`,
         background_color: `#FFC719`,
-        theme_color: `#FFC719`,
+        theme_color: `#2B2B2B`,
         display: `standalone`,
         icon: `icon/icon.png`
       }

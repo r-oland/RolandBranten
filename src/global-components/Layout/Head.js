@@ -23,7 +23,7 @@ export default function Head({ title, description, keywords }) {
 
   return (
     <Helmet>
-      <meta name="theme-color" content={themeContext.primary.s4} />
+      <meta name="theme-color" content={themeContext.gray.s9} />
       <meta name="author" content="Roland Branten"></meta>
       <meta name="designer" content="Roland Branten"></meta>
       <meta name="description" content={description} />
