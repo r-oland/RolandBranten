@@ -1,9 +1,10 @@
 // Components==============
 import Divider2DImp from "assets/Divider2D.inline.svg";
 import Divider2MImp from "assets/Divider2M.inline.svg";
-import React from "react";
+import React, { useContext } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
+import { FaqContext } from "../../global-components/Layout/Layout";
 import Bounce from "../../single-components/Bounce";
 import Castle from "../../single-components/Castle";
 import MTLink from "../../single-components/MTLink";
@@ -242,6 +243,7 @@ export default function Sale({
   linkButton
 }) {
   const [ship, shipInView] = useInView({ threshold: 0, triggerOnce: false });
+  const { setFAQSelected } = useContext(FaqContext);
 
   const [castle, castleInView] = useInView({
     threshold: 0,
@@ -324,7 +326,13 @@ export default function Sale({
           </SvgWrap>
         </Grid>
 
-        <LinkOL>{linkOL}</LinkOL>
+        <LinkOL
+          onClick={() => {
+            setFAQSelected(0);
+          }}
+        >
+          {linkOL}
+        </LinkOL>
         <Link as="div">
           <MTLink to="/faq">{linkButton}</MTLink>
         </Link>

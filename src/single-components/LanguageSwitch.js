@@ -1,14 +1,15 @@
 // Components==============
+import { motion } from "framer-motion";
 import { changeLocale, IntlContextConsumer } from "gatsby-plugin-intl";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { HamburgerContext } from "../global-components/Layout/Layout";
 // ========================
 
-const Flex = styled.div`
+const Flex = styled(motion.div)`
   cursor: pointer;
   display: flex;
-  position: ${({ menuState }) => (menuState === "open" ? "fixed" : "absolute")};
+  position: fixed;
   z-index: 153;
   top: 23.5px;
   right: 85px;
@@ -60,18 +61,44 @@ const EN = styled.button`
     language === "en" ? fontWeight.bold : fontWeight.normal};
 `;
 
-export default function LanguageSwitch() {
+export default function LanguageSwitch({ inView2 }) {
   const { menuState } = useContext(HamburgerContext);
+
+  const variants = {
+    visible: {
+      opacity: 1,
+      visibility: "visible"
+    },
+
+    hidden: {
+      opacity: 0,
+      visibility: "hidden"
+    }
+  };
 
   return (
     <IntlContextConsumer>
       {({ language }) => {
         return (
           <Flex
+            animate={
+              inView2 === true && menuState === "open"
+                ? "visible"
+                : inView2 === false && menuState === "open"
+                ? "visible"
+                : inView2 === false && menuState === "closed"
+                ? "hidden"
+                : inView2 === true && menuState === "closed"
+                ? "visible"
+                : "hidden"
+            }
+            variants={variants}
+            initial={{
+              opacity: 1
+            }}
             onClick={() =>
               language === "en" ? changeLocale("nl") : changeLocale("en")
             }
-            menuState={menuState}
           >
             <NL language={language}>NL</NL>
             <span>/</span>

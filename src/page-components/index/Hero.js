@@ -19,8 +19,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  padding-top: ${({ theme: { spacing } }) => spacing.s9};
 
   @media screen and (min-width: 850px) {
+    padding-top: 0;
     height: 110vh;
     flex-direction: row-reverse;
     justify-content: center;

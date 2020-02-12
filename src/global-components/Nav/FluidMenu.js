@@ -4,7 +4,7 @@ import { useIntl } from "gatsby-plugin-intl";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import MTLink from "../../single-components/MTLink";
-import { HamburgerContext, ModalContext } from "../Layout/Layout";
+import { FaqContext, HamburgerContext, ModalContext } from "../Layout/Layout";
 // =========================
 
 const Hide = styled.div`
@@ -22,7 +22,7 @@ const Menu = styled(motion.div)`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 152;
+  z-index: 154;
 
   margin-top: 12vh;
 
@@ -56,6 +56,7 @@ const Blur = styled(motion.div)`
 export default function FluidMenu() {
   const { menuState, changeMenu } = useContext(HamburgerContext);
   const { handleChange } = useContext(ModalContext);
+  const { setFAQSelected } = useContext(FaqContext);
   const intl = useIntl();
 
   return (
@@ -90,7 +91,12 @@ export default function FluidMenu() {
             {intl.formatMessage({ id: "nav2" })}
           </MTLink>
         </button>
-        <button onClick={changeMenu}>
+        <button
+          onClick={() => {
+            changeMenu();
+            setFAQSelected(null);
+          }}
+        >
           <MTLink to="/faq" activeClassName="active">
             {intl.formatMessage({ id: "nav3" })}
           </MTLink>

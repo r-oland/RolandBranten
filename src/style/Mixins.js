@@ -31,9 +31,6 @@ export function flexUnit(amount, min, max, unit = "vw", prop = "font-size") {
 export const OverFlowFix = styled.div`
   overflow: hidden;
   position: relative;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
 `;
 
 // Container
