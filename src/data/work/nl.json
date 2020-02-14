@@ -1,5 +1,11 @@
 {
-  "SEO": [{ "title": "Werk", "description": "", "keywords": "" }],
+  "SEO": [
+    {
+      "title": "Werk",
+      "description": "Hier zijn een aantal JAMstack projecten die ik heb ontwikkeld in mijn carrière als freelance web developer.",
+      "keywords": "JAMstack, freelance, developer, designer"
+    }
+  ],
   "button": [{ "name": "Bezoek site" }],
   "BizData": [
     {

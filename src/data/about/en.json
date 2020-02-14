@@ -1,9 +1,15 @@
 {
-  "SEO": [{ "title": "About", "description": "", "keywords": "" }],
+  "SEO": [
+    {
+      "title": "About",
+      "description": "I'm a freelance developer and designer who utilizes the JAMstack to make blazing fast and highly scalable react websites.",
+      "keywords": "Roland Branten, Eindhoven, web developer, web designer"
+    }
+  ],
   "Title": [
     {
       "morning": "Good morning! I'm Roland.",
-      "afternoon": "Hi there    ! I'm Roland.",
+      "afternoon": "Hi there ! I'm Roland.",
       "evening": "Good evening! I'm Roland."
     }
   ],

@@ -1,5 +1,11 @@
 {
-  "SEO": [{ "title": "faq", "description": "", "keywords": "" }],
+  "SEO": [
+    {
+      "title": "faq",
+      "description": "Some of the most frequently asked questions about developing a JAMstack website.",
+      "keywords": "faq, frequently asked questions, JAMstack"
+    }
+  ],
   "Title": [
     {
       "title": "The most frequently asked questions."

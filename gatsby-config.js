@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   siteMetadata: {
     title: `Roland Branten`,
-    description: `undefined`,
+    description: `I'm a freelance web developer/designer from Eindhoven. I develop next level React websites by utilizing the JAMstack`,
     author: `Roland Branten`,
     siteUrl: `https://rolandbranten.nl/`
   },
@@ -22,7 +22,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/data/intl`,
         languages: [`en`, `nl`],
-        defaultLanguage: `en`,
+        defaultLanguage: `nl`,
         redirect: true
       }
     },

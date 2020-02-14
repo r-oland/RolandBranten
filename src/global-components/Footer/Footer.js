@@ -85,7 +85,7 @@ export default function Footer({ page, display }) {
           <Location>
             {display !== "notFoundPage" &&
               intl.formatMessage({ id: "location1" })}{" "}
-            <Hearth src={src} />{" "}
+            <Hearth src={src} alt="hearth" />{" "}
             {display !== "notFoundPage" &&
               intl.formatMessage({ id: "location2" })}
           </Location>

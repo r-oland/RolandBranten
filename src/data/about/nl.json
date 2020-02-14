@@ -1,5 +1,11 @@
 {
-  "SEO": [{ "title": "Over mij", "description": "", "keywords": "" }],
+  "SEO": [
+    {
+      "title": "Over mij",
+      "description": "Ik ben een freelance developer en designer die de JAMstack inzet om razend snelle en gebruiksvriendelijke react sites te maken.",
+      "keywords": "Roland Branten, Eindhoven, web developer, web designer"
+    }
+  ],
   "Title": [
     {
       "morning": "Goedemorgen! Mijn naam is Roland.",

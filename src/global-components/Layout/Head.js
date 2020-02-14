@@ -1,14 +1,12 @@
 // Components==============
 import { graphql, useStaticQuery } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl";
-import React, { useContext } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { ThemeContext } from "styled-components";
 // =========================
 
 export default function Head({ title, description, keywords }) {
   const intl = useIntl();
-  const themeContext = useContext(ThemeContext);
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -23,7 +21,7 @@ export default function Head({ title, description, keywords }) {
 
   return (
     <Helmet>
-      <meta name="theme-color" content={themeContext.white} />
+      <meta name="theme-color" content="#FFFFFF" />
       <meta name="author" content="Roland Branten"></meta>
       <meta name="designer" content="Roland Branten"></meta>
       <meta name="description" content={description} />

@@ -1,5 +1,11 @@
 {
-  "SEO": [{ "title": "work", "description": "", "keywords": "" }],
+  "SEO": [
+    {
+      "title": "work",
+      "description": "Here are some of the projects that I developed in my freelance career by utilizing JAMstack technologies.",
+      "keywords": "JAMstack, freelance, developer, designer"
+    }
+  ],
   "button": [{ "name": "Visit site" }],
   "BizData": [
     {
