@@ -158,10 +158,9 @@ const Divider3MSvg = styled(Divider3MImp)`
 export default function Technologies({ title8, TechnologyText }) {
   const Text = TechnologyText.map(edge => {
     const text = edge.text;
-    const id = edge.id;
 
     return (
-      <div key={id}>
+      <div key={text}>
         <p>{text}</p>
         <br />
       </div>

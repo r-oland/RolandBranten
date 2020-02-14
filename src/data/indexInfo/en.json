@@ -1,11 +1,13 @@
-[
-  {
-    "text": "Until recently, creating dynamic websites with tools like WordPress was common practice. Compared to modern technologies though, this approach oftentimes seems inflexible and clunky, especially regarding the performance and scalability of the resulting website."
-  },
-  {
-    "text": "So let's simplify this and while we're ad it, let's make it a lot better. The alternative approach is to fetch data through the integration of a Headless CMS, this allows for an infinite amount of flexibility. This data will be fed into a static site generator witch generates, surprise, static files. These files will be deployed to a CDN and from this CDN directly to your users. This method is called the JAMstack and will result in a blazing fast, scalable site."
-  },
-  {
-    "text": "Don't worry if you don't full understand these concepts, you don't have to! The only thing that matters is that these technologies will resolve in the best possible web experience for your users. "
-  }
-]
+{
+  "Text": [
+    {
+      "text": "Until recently, creating dynamic websites with tools like WordPress was common practice. Compared to modern technologies though, this approach oftentimes seems inflexible and clunky, especially regarding the performance and scalability of the resulting website."
+    },
+    {
+      "text": "So let's simplify this and while we're ad it, let's make it a lot better. The alternative approach is to fetch data through the integration of a Headless CMS, this allows for an infinite amount of flexibility. This data will be fed into a static site generator witch generates, surprise, static files. These files will be deployed to a CDN and from this CDN directly to your users. This method is called the JAMstack and will result in a blazing fast, scalable site."
+    },
+    {
+      "text": "Don't worry if you don't fully understand these concepts, you don't have to! The only thing that matters is that these technologies will resolve in the best possible web experience for your users. "
+    }
+  ]
+}

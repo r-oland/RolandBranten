@@ -62,10 +62,6 @@ const Form = styled.form`
     display: inline;
     line-height: 2;
     color: ${({ theme: { gray } }) => gray.s8};
-
-    @media screen and (min-width: 500px) {
-      ${flexUnit(2.5, 17, 18, "vw", "font-size")}
-    }
   }
 
   textarea {

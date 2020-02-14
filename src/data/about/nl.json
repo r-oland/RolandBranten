@@ -1,22 +1,26 @@
 {
-  "SEO": [{ "title": "" }, { "description": "" }, { "keywords": "" }],
+  "SEO": [{ "title": "Over mij", "description": "", "keywords": "" }],
   "Title": [
-    { "title": "Right.. this is the part where I have to talk about myself." }
+    {
+      "morning": "Goedemorgen! Mijn naam is Roland.",
+      "afternoon": "Goedemiddag! Mijn naam is Roland.",
+      "evening": "Goedeavond! Mijn naam is Roland."
+    }
   ],
   "FirstText": [
     {
-      "firstText": "Alright well, I'm a Eindhoven based developer/designer who loves to create things that he would have deemed out of his capabilities yesterday. Next to that, I'm really passionate about music. You probably care more about the first category, so let's just continue with that!"
+      "firstText": "Een web developer/designer uit Eindhoven. Ik hou er van om dingen te creëren die ik een dag eerder nog buiten mijn capaciteiten zou beschouwen. Of dit nou betrekking heeft tot programeren, design of muziek, ik hou van een uitdaging. Oja, muziek is een andere passie van me! Maar je hebt waarschijnlijk niet de hele dag, ik zal het wel bij de eerste 2 categorieën houden. "
     }
   ],
   "Text": [
     {
-      "text": "I spend the majority of my time on the very thing your looking at right now. The reason I choose this route is because I love the creative aspect of design and the complexity of programming. Next to that, I always envisioned myself self-employed, so the role of freelance web developer/designer has my name written all over it!"
+      "text": "Ik spendeer het grootste deel van mijn tijd aan het geen waar je nu naar kijkt, web projecten ontwikkelen waar ik trots op kan zijn. De reden dat ik voor dit pad heb gekozen is omdat ik het creative aspect van design in combinatie met de complexiteit van programmeren te gek vind. Daarnaast hou ik van de uitdaging in het zelfstandig ondernemerschap. "
     },
     {
-      "text": "Now, this job isn't all technologie and working individually, that would get lonely real quick. Luckily, I'm also able to enjoy the people aspect of working directly with other driven individuals/teams to help them achieve their own vision and goals."
+      "text": "Buiten het zelf ondernemerend zijn kijk ik er ook altijd naar uit om met andere gedreven zelfstandige of teams te werken. Een merkwaardige bijdragen kunnen leveren in het realiseren van de visie van andere is iets wat mij nooit zal vervelen!"
     },
     {
-      "text": "Oh and I'll just save you the trouble, I don't have any social media. No their is nothing wrong with me, I just get distracted enough as it is."
+      "text": "Oh en ik bespaar je de moeite. Ik heb geen social media. Nee ik heb niets te verbergen! Ik word simpelweg al genoeg afgeleid zonder."
     }
   ]
 }

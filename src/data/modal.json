@@ -4,7 +4,7 @@
     "yourName": "Your name",
     "partOf": "and I'm part of",
     "CompanyName": "Company name",
-    "reason": ". I think what you are proposing sound promising! I'm reaching out because I have the following in mind:",
+    "reason": ". These innovative technologies that you are talking about sound amazing! I'm reaching out because I have the following in mind:",
     "describe": "Describe your project",
     "kindWords": "I'd love to connect and see if we're a good fit. You can reach out back to me at",
     "email": "Your email",
@@ -12,15 +12,15 @@
     "preference": "Prefer tot email directly? Sure!"
   },
   "nl": {
-    "greeting": "Hi Roland! My name is",
-    "yourName": "Your name",
-    "partOf": "and I'm part of",
-    "CompanyName": "Company name",
-    "reason": ". I think what you are proposing sound promising! I'm reaching out because I have the following in mind:",
-    "describe": "Describe your project",
-    "kindWords": "I'd love to connect and see if we're a good fit. You can reach out back to me at",
-    "email": "Your email",
-    "send": "Send",
-    "preference": "Prefer tot email directly? Sure!"
+    "greeting": "Hé Roland! Mijn naam is",
+    "yourName": "Jou naam",
+    "partOf": "en ik maak deel uit van",
+    "CompanyName": "Bedrijfsnaam",
+    "reason": ". Deze innovatieve technologieën waar je het over hebt klinken veelbelovend! Ik rijk naar je uit omdat ik het volgende in gedachten heb:",
+    "describe": "Omschrijf je project",
+    "kindWords": "Ik wil graag contact met je opnemen om te kijken of we iets voor elkaar kunnen beteken. Je kunt mij bereiken via",
+    "email": "Jou email",
+    "send": "Verstuur",
+    "preference": "Voorkeur om direct te mailen? Tuurlijk"
   }
 }

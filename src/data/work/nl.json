@@ -1,17 +1,17 @@
 {
-  "SEO": [{ "title": "work", "description": "", "keywords": "" }],
-  "button": [{ "name": "Visit site" }],
+  "SEO": [{ "title": "Werk", "description": "", "keywords": "" }],
+  "button": [{ "name": "Bezoek site" }],
   "BizData": [
     {
       "name": "Biz logistics",
-      "type": "Logistics company",
+      "type": "Logistiek bedrijf",
       "work": "DESIGN - DEVELOPMENT"
     }
   ],
   "BrantenData": [
     {
       "name": "Branten Maatwerk",
-      "type": "Interior construction",
+      "type": "Interieurbouw",
       "work": "DESIGN - DEVELOPMENT"
     }
   ]

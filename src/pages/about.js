@@ -19,7 +19,7 @@ export default function About({ data }) {
       <Content
         firstText={t.FirstText[0].firstText}
         text={t.Text}
-        title={t.Title[0].title}
+        title={t.Title[0]}
         picture={data.AboutPicture.childImageSharp.fluid}
       />
     </Layout>
@@ -37,7 +37,9 @@ export const query = graphql`
           text
         }
         Title {
-          title
+          morning
+          afternoon
+          evening
         }
         SEO {
           title

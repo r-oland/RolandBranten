@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { FaqContext } from "../../global-components/Layout/Layout";
-import { Container, flexUnit } from "../../style/Mixins";
+import { Container } from "../../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -16,6 +16,12 @@ const Title = styled.h3`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
   margin-top: ${({ theme: { spacing } }) => spacing.s4};
   margin-bottom: ${({ theme: { spacing } }) => spacing.s5};
+
+  padding-left: 2.25em;
+
+  @media screen and (min-width: 950px) {
+    padding-left: 6.25%;
+  }
 `;
 
 const Grid = styled.div`
@@ -106,8 +112,8 @@ const Answer = styled(motion.div)`
   }
 
   .li {
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
-    ${flexUnit(2.5, 15, 16, "vw", "font-size")};
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s2};
+    padding-left: ${({ theme: { spacing } }) => spacing.s5};
   }
 `;
 

@@ -51,7 +51,7 @@ export default function Index({ data }) {
       />
       <Technologies
         title8={t.title8}
-        TechnologyText={data.TechnologyText.childrenEnJson}
+        TechnologyText={data.TechnologyText.childIndexInfoJson.Text}
       />
     </Layout>
   );
@@ -94,8 +94,10 @@ export const query = graphql`
       name: { eq: $language }
       relativeDirectory: { eq: "indexInfo" }
     ) {
-      childrenEnJson {
-        text
+      childIndexInfoJson {
+        Text {
+          text
+        }
       }
     }
     Headshot: file(relativePath: { eq: "Roland-Branten.png" }) {

@@ -8,7 +8,7 @@ const Blob = styled(motion.div)`
   position: absolute;
   display: none;
   z-index: 2;
-  background: ${({ theme: { black } }) => black.replace("1)", "0.04)")};
+  background: ${({ theme: { black } }) => black.replace("1)", "0.025)")};
 
   right: -25vw;
   top: -100vh;
@@ -52,7 +52,7 @@ export default function BlobAnimation({ blob, blobInView }) {
       }}
       animate={blobInView ? "animating" : "stop"}
       transition={{
-        duration: 10,
+        duration: 6,
         loop: Infinity,
         ease: "linear"
       }}

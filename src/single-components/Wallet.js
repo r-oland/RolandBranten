@@ -21,7 +21,7 @@ export default function Wallet({ wallet, walletInView }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 577 515"
+      viewBox="-10 -65 627 585"
       ref={wallet}
       className="right"
     >

@@ -112,6 +112,18 @@ const PictureWrapDesktop = styled.div`
 `;
 
 export default function Content({ firstText, text, title, picture }) {
+  const timeOfDay = () => {
+    const time = new Date().getHours();
+
+    return time >= 18
+      ? title.evening
+      : time >= 12
+      ? title.afternoon
+      : time >= 5
+      ? title.morning
+      : title.evening;
+  };
+
   const aboutText = text.map(edge => {
     return (
       <div key={edge.text}>
@@ -126,7 +138,7 @@ export default function Content({ firstText, text, title, picture }) {
       <Container>
         <Grid>
           <div>
-            <Title>{title}</Title>
+            <Title>{timeOfDay()}</Title>
             <FirstText>{firstText}</FirstText>
             <PictureWrapMobile>
               <Background />

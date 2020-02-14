@@ -218,8 +218,11 @@ const LinkOL = styled.p`
 `;
 
 const Link = styled(StyledUnderline)`
-  width: 150px;
-  margin: ${({ theme: { spacing } }) => `${spacing.s4} auto ${spacing.s12}`};
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: ${({ theme: { spacing } }) => spacing.s4};
 
   a {
     font-size: 18px;

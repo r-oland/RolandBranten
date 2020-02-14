@@ -14,11 +14,11 @@
           "class": "bold"
         },
         {
-          "answer": "Nowadays, every business can benefit from a website, but a site that's clunky, slow and difficult to manage or update can do more harm than good. Users trust businesses with clean, well performing, professional websites that stand out. If websites take a 'long time' to load, long meaning 3 or more seconds, users will quickly bounce away from your site to a site that does have decent performance.",
+          "answer": "Nowadays, every business and individual can benefit from a website, but a site that's clunky, slow and difficult to manage or update can do more harm than good. Users trust businesses with clean, well performing, professional websites that stand out. If websites take a 'long time' to load, long meaning 3 or more seconds, users will quickly bounce away from your site to a site that does have decent performance.",
           "class": ""
         },
         {
-          "answer": "Well, say hello to the JAMstack. To be more specific, a static site generator like Gatsby that is part of the stack. Gatsby converts your dynamic site into static files and serves them to a CDN. Next to this Gatsby has a bunch of magic tricks that makes your site even faster and more performant.",
+          "answer": "Well, say hello to the JAMstack. To be more specific, a static site generator like Gatsby that is part of the stack. Gatsby converts your dynamic site into static files and serves them to a CDN. Next to this Gatsby comes with smart tools like code splitting that makes your site even faster and more performant.",
           "class": ""
         },
         {
@@ -34,7 +34,7 @@
           "class": ""
         },
         {
-          "answer": "This way, you don't need to worry about server or database vulnerabilities",
+          "answer": "This way, you don't need to worry about server or database vulnerabilities.",
           "class": "end"
         },
         {
@@ -58,11 +58,11 @@
           "class": "bold"
         },
         {
-          "answer": "With a JAMstack site, you as a site owner don't have to spend any time or effort monitoring or updating plugins or other components. You don't event need to outsource this since non of these actions are required with a JAMstack site.",
+          "answer": "With a JAMstack site, you as a site owner don't have to spend any time or effort monitoring or updating plugins or other components. You don't even need to outsource this since non of these actions are required with a JAMstack site.",
           "class": ""
         },
         {
-          "answer": "Another Convenience is that, just like you would be able to do with a Wordpress site, you can manage your own content. This way you can tweak your site as it grows with your project.",
+          "answer": "Another Convenience is that, just like you would be able to do with a WordPress site, you can manage your own content. This way you can tweak your site as it grows with your project.",
           "class": "end"
         },
         {
@@ -70,7 +70,7 @@
           "class": "bold"
         },
         {
-          "answer": "The JAMstack utilizes the power of React. React is component based javascript library. What this means is that your site is very developer friendly and therefore cost effective to build upon for future expansions.",
+          "answer": "The JAMstack utilizes the power of React. React is a component based javascript library. What this means is that your site is very developer friendly and therefore cost effective to build upon for future expansions.",
           "class": ""
         },
         {
@@ -98,7 +98,7 @@
           "class": "bold"
         },
         {
-          "answer": "A JAMstack site is also automatically a PWA (progressive web app). At the moment this is still a bit of a upcoming trend but it might hold some real potential for the future. What a PWA basically does is, it turns your website into a desktop app and a mobile app. That's right, with a PWA you have the capability to add your site to the home screen of your smartphone, just like you would with a regular app. With the PWA functionality, you will be able to turn your website into a mobile application.",
+          "answer": "A JAMstack site is also automatically a PWA (progressive web app). At the moment this could be seen as more of a gimmick but it hold real potential for the future. What a PWA basically means is, that your website will instantly also become a desktop app and a mobile app. That's right, with a PWA you have the capability to add your site to the home screen of your smartphone, just like you would with a regular app. With the PWA functionality, you will be able to turn your website into a mobile application.",
           "class": "end"
         }
       ]
@@ -107,7 +107,7 @@
       "Question": "How much does a JAMstack site cost? ",
       "Answers": [
         {
-          "answer": "I probably got you all exited and you are now wondering how much this investment is going to be. I would be to. So let me just start of by saying that I can't give an exact price. Not without knowing the requirements of the project that you have in mind. There are a lot of different factors that should be taken in consideration first. What I can do is give you a rough estimation of my rates at the moment.",
+          "answer": "Let me just start of by saying that I can't give an exact price. Not without knowing the requirements of the project that you have in mind. There are a lot of different factors that should be taken in consideration first. What I can do is give you a rough estimation of my rates at the moment.",
           "class": ""
         },
         {
@@ -119,11 +119,11 @@
           "class": "boldSpan"
         },
         {
-          "answer": "These numbers aren't set in stone, it's just a rough ballpark of what a typical site would cost. It could be that your site is a bit more expensive depending on the features that your project requires. On the other hand, it could also be less if the site doesn't require much complexity. The best way to find out is to reach out and tell me about your project.",
+          "answer": "These numbers aren't set in stone, it's just a rough ballpark of what a typical site would cost. It could be that your site is a bit more expensive depending on the features that your project requires. On the other hand, it could also be less if the site doesn't require much complexity at all. The best way to find out is to reach out and tell me about your project.",
           "class": "inline"
         },
         {
-          "answer": "As you might have noticed, I try to be as transparant as possible. This transparantie also applies to the way I handle transactions. My preferred method is to not charge by the hour. I like to agree upon a single price for the whole project. This way, if there happen to be any missteps in the process, you aren't the one who has to make up for it.",
+          "answer": "I try to be as transparant as possible. This also applies to the way I handle transactions. My preferred method is to charge on a project base. This way, if there happen to be any missteps in the process, you aren't the one who has to make up for it.",
           "class": "paddingTop"
         }
       ]
@@ -136,11 +136,11 @@
           "class": ""
         },
         {
-          "answer": "However just like with any technology, the JAMstack is not perfect. Sites with content that has to update constantly would not be a great fit. A social media site would be an example of this. Another one is a site with a lot of pages that has to update content somewhat less frequent. A news site would be an example here. If neither of those examples bring up any worries for your project, you're probably good.",
+          "answer": "However just like with any technology, the JAMstack is not perfect. Sites with a lot of content that has to update constantly would not be a great fit. A social media site would be an example of this. I'm also more experienced in front-end development so projects with big data structures or a lot of backend code will have to be outsourced. If neither of those examples bring up any worries for your project, you're probably in the green.",
           "class": ""
         },
         {
-          "answer": "If you have a large project in mind and are wondering if I'm available for longer periods of time, send me a direct message. I'm curious to find out what it is. If you still have any doubts weather the JAMstack matches your project, don't be afraid to ask. I'm always open for a new challenge.",
+          "answer": "If you have a large project in mind and are wondering if I'm available for longer periods of time, send me a direct message. I'm curious to find out what it is. If you still have any doubts weather the JAMstack is a good fit for your project, don't be afraid to ask.",
           "class": ""
         }
       ]
@@ -149,7 +149,7 @@
       "Question": "Do you only work locally?",
       "Answers": [
         {
-          "answer": "Nope. I'm available to work with people all over the globe. If you are interested to let me help you with your projects and you are not in the area of Eindhoven, do reach out. I'm curious to hear what you have in mind.",
+          "answer": "Certainly not! I'm available to work with people all over the globe. If you are interested in letting me help you with your projects and you are not in the area of Eindhoven, do reach out. I'm curious to hear what you have in mind.",
           "class": ""
         }
       ]
@@ -162,11 +162,11 @@
           "class": ""
         },
         {
-          "answer": "I will make sure that you're site is technically optimized for Google to find you and for a lot of sites this will be more then enough to ensure your visibility on Google. But if you are looking to further optimize performance, it gets towards a more marketing oriented territory real fast.",
+          "answer": "I will make sure that you're site is technically optimized and for a lot of sites this will be more then enough to ensure your visibility on Google. But if you are looking to further optimize performance, it gets towards a more marketing oriented territory real fast.",
           "class": ""
         },
         {
-          "answer": "So yes your site will technically be fully optimized for SEO, but since I'm no marketeer, there will still be a lot of room for improvements. This could be outsourced or you could do this yourself from this point.",
+          "answer": "So yes your site will technically be fully optimized for SEO, but since I'm no marketeer, there will still be a lot of room for improvements. This could be outsourced or you could do this yourself from that point.",
           "class": ""
         }
       ]
@@ -175,7 +175,7 @@
       "Question": "Does my site support al browsers? ",
       "Answers": [
         {
-          "answer": "Your site will support all the modern browsers. This means that your site will not support Internet explorer. Why? You might ask. Internet explorer is discontinued since 2016. This means that is has strong limitations when it comes to the utilization of the modern web technologies. Working around these limitations will drastically slow down the development process.",
+          "answer": "Your site will support all the modern browsers. This means that your site will support all browsers except Internet explorer. Why not? Internet explorer is discontinued since 2016. This means that is has strong limitations when it comes to the utilization of the modern web technologies. Working around these limitations will drastically slow down the development process.",
           "class": ""
         },
         {
@@ -183,24 +183,28 @@
           "class": ""
         },
         {
-          "answer": "Luckily, the amount of users that are using Internet Explorer is decreasing every day. At the time of writing, Internet explorer usage is heading towards less then 1%. In the rare event that your user is using Internet Explorer, he/she will receive a pop up message with a similar explanationli.",
+          "answer": "Luckily, the amount of users that are using Internet Explorer is decreasing with each day. At the time of writing, Internet explorer usage is heading towards less then 1%. In the rare event that your user is using Internet Explorer, he/she will receive a pop up message with a similar explanation.",
           "class": ""
         }
       ]
     },
     {
-      "Question": "Why shouldn't I just go for a Wordpress site?",
+      "Question": "Why shouldn't I just go for a WordPress site?",
       "Answers": [
         {
-          "answer": "Before I go any further, let me just be clear that when I say WordPress site, I mean a budget WordPress site. WordPress is capable of amazing things (with limitations) in the hands of the right developer/designer. That being said, maybe you should, It depends on how you answer the following questions,",
+          "answer": "WordPress is capable of amazing things in the hands of the right developer/designer. Next to that, the market has been leaning heavily towards WordPress for a long time. This has resulted in a rich plugin-eco-system and a great CMS experience. WordPress has a lot of drawbacks and restrictions but the benefits should be mentioned as well.",
           "class": ""
         },
         {
-          "answer": "1. Do you just want a simple site that doesn't need much scalability or flexibility in the future?",
+          "answer": "So it might very well be that a solution like WordPress is fine for your project. I made a set of questions to help you in making the right decision.",
+          "class": ""
+        },
+        {
+          "answer": "1. Do you just want a simple site that doesn't need much scalability or flexibility, either now or in the future?",
           "class": "li"
         },
         {
-          "answer": "2. Do you don't mind if you lose a big part of potential users because of slow load times?",
+          "answer": "2. Is driving traffic to your site not a priority? I.e. You don't mind if you lose a big part of potential users and brand image because of slow load times.",
           "class": "li"
         },
         {
@@ -208,23 +212,23 @@
           "class": "li"
         },
         {
-          "answer": "4. Do you don't mind spending time or resources towards fixing and maintaining WordPress plugins?",
+          "answer": "4. Do you not mind spending time or resources towards fixing and maintaining WordPress plugins?",
           "class": "li"
         },
         {
-          "answer": "5. Are you not worrying about maximizing the security of your site?",
+          "answer": "5. Is or will their be any sensitive data linked to your site? (forums, users, database, etc.) If so do you want to maximize security for that data?",
           "class": "li"
         },
         {
-          "answer": "6. Are you willing to pay for the additional monthly/yearly fees that come with a CMS like Wordpress?",
+          "answer": "6. Are you willing to pay for the additional monthly/yearly fees that come with a CMS like WordPress?",
           "class": "li"
         },
         {
-          "answer": "If all these things don't matter for the project that you have in mind, by all means, go for it! WordPress has a great CMS and will set you up with a fully functional website.",
+          "answer": "If all these things don't matter for the project that you have in mind, go for it! WordPress has a great CMS and it will be able to set you up with a fully functional website.",
           "class": ""
         },
         {
-          "answer": "However, if you do care about having a site that is ready to grow with your projects needs, you might want to look further then the current industries 'default option'.",
+          "answer": "However, if you do care about having a site that is well armed for the future, you might want to look further then the current industries 'default option'.",
           "class": ""
         }
       ]

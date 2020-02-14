@@ -75,8 +75,8 @@ export const Text = data => {
 
 const floatVariants = {
   inSight: {
-    y: [0, 5, 0],
-    scale: [1, 1.01, 1]
+    y: [0, 10, 0],
+    scale: [1, 1.03, 1]
   },
   outOfSight: {
     y: [0, 0, 0],
@@ -98,7 +98,7 @@ export const Images = (Business, float, float2, alt, align) => {
         variants={floatVariants}
         transition={{
           loop: Infinity,
-          duration: 4,
+          duration: 5,
           delay: 1
         }}
       >
@@ -109,7 +109,7 @@ export const Images = (Business, float, float2, alt, align) => {
         variants={floatVariants}
         transition={{
           loop: Infinity,
-          duration: 4
+          duration: 5
         }}
       >
         <Img fluid={float2} alt={`${alt}3`} />
