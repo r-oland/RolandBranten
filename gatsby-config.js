@@ -52,7 +52,7 @@ module.exports = {
       options: {
         name: `Roland Branten`,
         short_name: `Roland`,
-        start_url: `https://rolandbranten.nl`,
+        start_url: `/`,
         background_color: `#FFC719`,
         theme_color: `#FFFFFF`,
         display: `standalone`,
