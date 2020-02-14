@@ -102,15 +102,15 @@ export const query = graphql`
     }
     Headshot: file(relativePath: { eq: "Roland-Branten.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000, quality: 100) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 900, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     ProfilePic: file(relativePath: { eq: "Profile.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 150, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

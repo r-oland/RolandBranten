@@ -51,7 +51,7 @@ export const query = graphql`
     AboutPicture: file(relativePath: { eq: "Roland-About.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

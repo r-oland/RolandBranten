@@ -22,7 +22,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/data/intl`,
         languages: [`en`, `nl`],
-        defaultLanguage: `nl`,
+        defaultLanguage: `en`,
         redirect: true
       }
     },

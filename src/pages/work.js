@@ -58,42 +58,42 @@ export const query = graphql`
     Biz: file(relativePath: { eq: "Biz-logistics.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     BizFloat: file(relativePath: { eq: "Biz-logistics-float.png" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     BizFloat2: file(relativePath: { eq: "Biz-logistics-float2.png" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     Branten: file(relativePath: { eq: "Branten-maatwerk.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     BrantenFloat: file(relativePath: { eq: "Branten-maatwerk-float.png" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     BrantenFloat2: file(relativePath: { eq: "Branten-maatwerk-float2.png" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
