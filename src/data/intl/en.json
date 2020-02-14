@@ -19,5 +19,7 @@
 
   "notFound": "I could not find what you where looking for",
 
-  "success": "Hi! I received your message. I will get back at you as soon as I can. "
+  "success": "Hi! I received your message. I will get back at you as soon as I can. ",
+  "IEMessage": "Internet Explorer is discontinued since 2016. Please use a modern browser to visit this site.",
+  "ignore": "ignore"
 }

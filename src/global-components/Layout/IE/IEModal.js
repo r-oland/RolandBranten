@@ -1,4 +1,5 @@
 // Components==============
+import { useIntl } from "gatsby-plugin-intl";
 import React from "react";
 import styled from "styled-components";
 // =========================
@@ -52,13 +53,15 @@ const OverflowDiv = styled.div`
 `;
 
 export default function IEModal({ modalIsOpen, children, handleChange }) {
+  const intl = useIntl();
+
   return (
     <div>
       <Shade modalIsOpen={modalIsOpen} />
       <Modal modalIsOpen={modalIsOpen}>
         <OverflowDiv>
           <button className="close" onClick={handleChange}>
-            Negeer
+            {intl.formatMessage({ id: "ignore" })}
           </button>
           {children}
         </OverflowDiv>

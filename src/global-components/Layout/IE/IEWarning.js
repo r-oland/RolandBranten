@@ -1,4 +1,5 @@
 // Components==============
+import { useIntl } from "gatsby-plugin-intl";
 import { flexUnit } from "mixins";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -13,6 +14,7 @@ const Text = styled.p`
 
 export default function IEWarning() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const intl = useIntl();
 
   useEffect(() => {
     const isIE = /*@cc_on!@*/ false || !!document.documentMode;
@@ -26,10 +28,7 @@ export default function IEWarning() {
   return (
     <div>
       <IEModal modalIsOpen={modalIsOpen} handleChange={handleChange}>
-        <Text>
-          Internet Explorer word sinds april 2017 niet meer ondersteund. Gebruik
-          a.u.b. een moderne browser om deze site te bezoeken.
-        </Text>
+        <Text>{intl.formatMessage({ id: "IEMessage" })}</Text>
       </IEModal>
     </div>
   );

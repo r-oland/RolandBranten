@@ -19,5 +19,7 @@
 
   "notFound": "Sorry! Deze pagina bestaat niet (meer)..",
 
-  "success": "Hé! Ik heb je bericht ontvangen. Ik zal zo snel mogelijk proberen terug te reageren."
+  "success": "Hé! Ik heb je bericht ontvangen. Ik zal zo snel mogelijk proberen terug te reageren.",
+  "IEMessage": "Internet Explorer word sinds 2016 niet meer ondersteund. Gebruik a.u.b. een moderne browser om deze site te bezoeken.",
+  "ignore": "Negeer"
 }
