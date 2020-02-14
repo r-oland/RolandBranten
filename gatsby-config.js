@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://rolandbranten.nl/`
   },
   plugins: [
-    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,

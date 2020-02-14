@@ -236,7 +236,7 @@ export default function ChatLink({
       <Top>
         <Flex>
           <Circle>
-            <Image fluid={img} alt="StockImg" />
+            <Image fluid={img} alt="Roland-headshot" />
           </Circle>
           <p>Roland</p>
         </Flex>
