@@ -6,7 +6,7 @@ module.exports = {
     title: `Roland Branten`,
     description: `I'm a freelance web developer/designer from Eindhoven. I develop next level React websites by utilizing the JAMstack`,
     author: `Roland Branten`,
-    siteUrl: `https://rolandbranten.nl/`
+    siteUrl: `https://rolandbranten.nl`
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -52,7 +52,7 @@ module.exports = {
       options: {
         name: `Roland Branten`,
         short_name: `Roland`,
-        start_url: `https://rolandbranten.nl/`,
+        start_url: `https://rolandbranten.nl`,
         background_color: `#FFC719`,
         theme_color: `#FFFFFF`,
         display: `standalone`,
