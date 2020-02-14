@@ -52,11 +52,18 @@ module.exports = {
       options: {
         name: `Roland Branten`,
         short_name: `Roland`,
+        lang: `en`,
         start_url: `/`,
         background_color: `#FFC719`,
         theme_color: `#FFFFFF`,
         display: `standalone`,
-        icon: `icon/icon.png`
+        icon: `icon/icon.png`,
+        localize: [
+          {
+            start_url: `/nl/`,
+            lang: `nl`
+          }
+        ]
       }
     },
     `gatsby-plugin-offline`,
