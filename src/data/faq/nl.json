@@ -14,7 +14,7 @@
           "class": "bold"
         },
         {
-          "answer": "Vandaag de dag kan ieder bedrijf of individu wel profeit halen uit een website, maar een site die langzaam, onhandig of moeilijk te onderhouden is kan meer slecht dan goed doen. Gebruikers vertrouwen bedrijven met een strakke, goed presterenede en professionele website die zichzelf onderscheid. Als websites er lang over doen om te laden, lang betekend 3 seconde of meer, dan zullen met de seconde meer gebruikers je site verlaten naar een site die wel goede performance heeft. ",
+          "answer": "Vandaag de dag kan ieder bedrijf of individu wel profiteren van een website, maar een site die langzaam, onhandig of moeilijk te onderhouden is kan meer slecht dan goed doen. Gebruikers vertrouwen bedrijven met een strakke, goed presterende en professionele website die zichzelf onderscheid. Als websites er lang over doen om te laden, lang betekend 3 seconde of meer, dan zullen met de seconde meer gebruikers je site verlaten naar een site die wel goede performance heeft. ",
           "class": ""
         },
         {
@@ -22,7 +22,7 @@
           "class": ""
         },
         {
-          "answer": "Dit restulteert in laattijden die makkelijk onder een seconde kunnen gaan en fantastische gebruikerservaringen.",
+          "answer": "Dit resulteert in fantastische gebruikerservaringen en laattijden die makkelijk onder een seconde kunnen gaan .",
           "class": "end"
         },
         {
@@ -42,7 +42,7 @@
           "class": "bold"
         },
         {
-          "answer": "Voor de meeste projecten is het hosten van statische bestanden zo'n €0,-. Ja dat klopt, voor de meeste sites zal het hosten volledig gratis zijn! Daarnaast hebben JAMstack sites geen onderhoud nodig omdat the bestanden statisch zijn. Een andere voordeel hieraan is dat componenten ook niet kunnen breken. Dit betekend geen onverwachte kosten of vaste kosten die langzaam opbouwen. Zo hoef je nog alleen te betalen om je site te ontwikkelen, zoals het hoort te zijn.",
+          "answer": "Voor de meeste projecten is het hosten van statische bestanden zo'n €0,-. Ja dat klopt, voor de meeste sites zal het hosten volledig gratis zijn! Daarnaast hebben JAMstack sites geen onderhoud nodig omdat de bestanden statisch zijn. Een ander voordeel hieraan is dat componenten ook niet kunnen breken. Dit betekend geen onverwachte kosten of vaste kosten die langzaam opbouwen. Zo hoef je nog alleen te betalen om je site te ontwikkelen, zoals het hoort te zijn.",
           "class": "end"
         },
         {
@@ -58,7 +58,7 @@
           "class": "bold"
         },
         {
-          "answer": "Met een JAMstack site hoe jij als site eigenaar geen tijd of moeite te stoppen in het monitoren of updaten van plugins of andere componenten. Je hoeft niet eens iemand anders te zoeken omdat deze acties niet van toepassing zijn bij een JAMstack.",
+          "answer": "Met een JAMstack site hoef jij als site eigenaar geen tijd of moeite te stoppen in het monitoren of updaten van plugins of andere componenten. Je hoeft niet eens iemand anders te zoeken omdat deze acties niet van toepassing zijn bij een JAMstack architecture.",
           "class": ""
         },
         {
@@ -70,7 +70,7 @@
           "class": "bold"
         },
         {
-          "answer": "De JAMstack maakt gebruik van de kracht van React. React is een super populaire componenten gebaseerde javascript library. Wat dit betekend is dat je site heel developer vriendelijk zal zijn. Daarbij komt voor jou het voordeel dat je site kosten efficient is voor later uitbreidingen.",
+          "answer": "De JAMstack maakt gebruik van de kracht van React. React is een super populaire componenten gebaseerde javascript library. Wat dit betekend is dat je site heel developer vriendelijk zal zijn. Daarbij komt voor jou als voordeel dat je site kosten efficient is voor later uitbreidingen.",
           "class": ""
         },
         {
@@ -82,7 +82,7 @@
           "class": "bold"
         },
         {
-          "answer": "Er zijn geen beperkingen wanneer het gaat over het type content dat je op je site wilt vertonen. Er zijn geen templates, regels of limitaties die je weerhouden tot het eindresultaat van je ideale site. Ook zijn er geen limitaties wanneer het gaat over waar je je data vandaan wilt halen. Op deze manier kun je de site realiseren zoals jij het in gedachten had.",
+          "answer": "Er zijn geen beperkingen wanneer het gaat over het type content dat je op je site wilt vertonen. Er zijn geen templates, regels of limitaties die je weerhouden tot het realiseren van je ideale site. Ook zijn er geen limitaties wanneer het gaat over waar je je data vandaan wilt halen. Dit resulteert in een site die op maat gemaakt is voor jou wensen en behoeftes.",
           "class": "end"
         },
         {
@@ -90,7 +90,7 @@
           "class": "bold"
         },
         {
-          "answer": "Statische JAMstack worden iedere dag populairder onder developers. Een van de redenen is dat de JAMstack gebruik maakt van de meest moderne web technologieën. Het fijne hieraan is dat, in de onwaarschijnlijke situatie dat je een andere developer nodig hebt, er een grote, groeiende hoeveelheid keuze is om deze rol over te nemen.",
+          "answer": "Statische JAMstack sites worden iedere dag populairder onder developers. Een van de redenen is dat de JAMstack gebruik maakt van de meest moderne web technologieën. Het fijne hieraan is dat, in de onwaarschijnlijke situatie dat je een andere developer nodig hebt, er een grote, groeiende hoeveelheid keuze is om deze rol over te nemen.",
           "class": "end"
         },
         {
@@ -98,7 +98,7 @@
           "class": "bold"
         },
         {
-          "answer": "Een JAMstack site is ook automatische een PWA (Progressive web app). Op het moment is nog meer een kleinigheidje, maar het houdt veel potentie in de nabije toekomst. Wat een PWA betekend is dat je website ook direct ingezet kan worden als desktop app of mobile app. Dat klopt, met een PWA heb je de capaciteit om je website in de vorm van een app aan je homescreen toe te voegen, net zoals je met een standaar app zou kunnen. Met de PWA functionaliteit kun je jou website omvormen in een mobile applicatie.",
+          "answer": "Een JAMstack site is ook automatische een PWA (Progressive web app). Op het moment is deze functie nog meer een kleinigheidje, maar het houdt veel potentie in de nabije toekomst. Wat een PWA betekend is dat je website ook direct ingezet kan worden als desktop app of mobile app. Dat klopt, met een PWA heb je de capaciteit om je website in de vorm van een app aan je homescreen toe te voegen, net zoals je met een standaar app zou kunnen. Met de PWA functionaliteit kun je jou website omvormen in een mobile applicatie.",
           "class": "end"
         }
       ]
@@ -107,7 +107,7 @@
       "Question": "Hoe duur is een JAMstack site?",
       "Answers": [
         {
-          "answer": "Voordat ik verder ga, het is belangrijk om te benomen dat ik geen exacte prijs kan geven. Niet zonder de details van het project dat je in gedachten hebt te weten. Er zijn een hoop factoren die komen kijken bij het maken van een prijs opgaven. Ik kan echter wel een grove indicatie geven op basis van mijn huidige prijsstelling.",
+          "answer": "Voordat ik verder ga, het is belangrijk om te benoemen dat ik geen exacte prijs kan geven. Niet zonder de details van het project dat je in gedachten hebt te weten. Er zijn een hoop factoren die komen kijken bij het maken van een prijs opgaven. Ik kan echter wel een grove indicatie geven op basis van mijn huidige prijsstelling.",
           "class": ""
         },
         {
@@ -123,7 +123,7 @@
           "class": "inline"
         },
         {
-          "answer": "Ik probeer zo transparant mogelijk te zijn. Dit geld ook voor de manier hoe ik transacties afhandel. Mijn voorkeur is om op een project basis te rekeken. Oftewel geen uurloon, maar 1 vast bedrag. Als er onvoorziene problemen optreden hoef jij er zo niet voor te betalen.",
+          "answer": "Ik probeer zo transparant mogelijk te zijn. Dit geld ook voor de manier hoe ik transacties afhandel. Mijn voorkeur gaat er naar uit om 1 vast bedrag voor start af te spreken. Als er onvoorziene problemen optreden hoef jij er op deze manier niet voor te betalen.",
           "class": "paddingTop"
         }
       ]
@@ -136,11 +136,11 @@
           "class": ""
         },
         {
-          "answer": "Net zoals iedere andere technologie, zijn er echter wel restricties. Een site met een hoop content die constant bijgewerkt moet worden is bijvoorbeeld niet ideaal. Een social media site is hier een goed voorbeeld van. Ik heb zelf ook een stuk meer evering in front-end development. Websites met grote data-structuren of complexe back-ends zullen dus wel verder uitbesteed moeten worden. ",
+          "answer": "Net zoals iedere andere technologie, zijn er echter wel restricties. Een site met een hoop content die constant bijgewerkt moet worden is bijvoorbeeld niet ideaal. Een social media site is hier een goed voorbeeld van. Ik heb zelf ook een stuk meer ervaring in front-end development. Websites met grote data-structuren of complexe back-ends zullen dus wel verder uitbesteed moeten worden. ",
           "class": ""
         },
         {
-          "answer": "Als je een groter project in gedachten hebt en je afvraagt of ik beschikbaar ben voor langere periodes, stuur me een bericht met wat je in gedachten hebt! Ik ben benieuwd.",
+          "answer": "Als je een groter project in gedachten hebt en je jezelf afvraagt of ik beschikbaar ben voor langere periodes, stuur me een bericht met wat je in gedachten hebt! Ik ben benieuwd.",
           "class": ""
         }
       ]
@@ -158,15 +158,15 @@
       "Question": "Is mijn site volledig geoptimaliseerd voor SEO?",
       "Answers": [
         {
-          "answer": "Ja en nee. Ik ben een developer en een designer en ik beschouw mezelf als capabel in beide van deze velden. SEO kan echter als een compleet ander beroep worden gezien. Als developer heb ik er zeker veel mee te maken en heb ik een hoop kennis en ervaring met SEO, maar enkel programeren kan je SEO maar zo ver brengen.",
+          "answer": "Ja en nee. Ik ben een developer en een designer en ik beschouw mezelf als capabel in beide van deze velden. SEO kan echter als een compleet ander beroep worden gezien. Als developer heb ik er zeker veel mee te maken en heb ik een hoop kennis en ervaring met SEO, maar enkel programmeren kan je SEO maar zo ver brengen.",
           "class": ""
         },
         {
-          "answer": "Ik zorg dat de SEO van je site technische geoptimaliseerd is en voor een hoop sites is dit meer dan genoeg om je zichtbaarheid op Google te verzekeren. Wanneer je meer wilt kom je direct in een marketing georiënteerd werkveld terrecht. ",
+          "answer": "Ik zorg dat de SEO van je site technisch geoptimaliseerd is en voor een hoop sites is dit meer dan genoeg om je zichtbaarheid op Google te verzekeren. Wanneer je meer wilt kom je direct in een marketing georiënteerd werkveld terecht. ",
           "class": ""
         },
         {
-          "answer": "Dus ja je site zal technische geoptimaliseerd zijn, maar aangezien ik geen marketier ben zal er nog een hoop ruimte voor groei zijn. Dit zou je kunnen uitbesten of zelf kunnen oppakken.",
+          "answer": "Dus ja je site zal technisch geoptimaliseerd zijn, maar aangezien ik geen marketier ben zal er nog een hoop ruimte voor groei zijn. Dit zou je kunnen uitbesteden of zelf kunnen oppakken.",
           "class": ""
         }
       ]
@@ -175,15 +175,15 @@
       "Question": "Ondersteund mijn site alle browsers? ",
       "Answers": [
         {
-          "answer": "Je site ondersteun alle moderne browsers. Dit betekend dat je site alle browsers ondersteund behalve Internet Explorer. Waarom niet? IE word sinds 2016 niet meer door Windows onderhouden. Dit betekend dat er stevige limitaties zijn voor het gebruiken van de meest moderne web-technologieën. Om deze limitaties heen werken is mogelijk, maar voegt een hoop tijd toe aan het development-process.",
+          "answer": "Je site ondersteund alle moderne browsers. Dit betekend dat je site alle browsers ondersteund behalve Internet Explorer. Waarom niet? IE word sinds 2016 niet meer door Windows onderhouden. Dit betekend dat er stevige limitaties zijn voor het gebruiken van de meest moderne web-technologieën. Om deze limitaties heen werken is mogelijk, maar voegt een hoop tijd toe aan het development-process.",
           "class": ""
         },
         {
-          "answer": "Dit zou zonde van het geld zijn aangezien nieuwe Windows pc's al jaren met de opvolger Microsoft Edge komen. Windows raad ook af om IE te gebruiken omdat de browser met dag onveiliger begint te worden voor cyber-chrminelen. ",
+          "answer": "Dit zou zonde van het geld zijn aangezien nieuwe Windows pc's al jaren met de opvolger Microsoft Edge geinstaleerd komen. Windows raad ook af om IE te gebruiken omdat de browser met de dag onveiliger begint te worden voor cybercriminelen. ",
           "class": ""
         },
         {
-          "answer": "Gelukkig is het aantal IE gebruikers iedere dag aan het dalen. Op het moment van schrijven begint het aantal IE gebruikers onder de 1% te zakken. In het onwaarschijnlijke geval dat een van je gebruikers toch op IE zit, krijgt hij/zij een pop-up met een soort gelijke uitleg.",
+          "answer": "Gelukkig is het aantal IE gebruikers iedere dag aan het dalen. Op het moment van schrijven begint het aantal IE gebruikers al minder dan 1% te worden. In het onwaarschijnlijke geval dat een van je gebruikers toch op IE zit, krijgt hij/zij een pop-up met een soort gelijke uitleg.",
           "class": ""
         }
       ]
@@ -204,7 +204,7 @@
           "class": "li"
         },
         {
-          "answer": "2. Is het drijven van gebruikers niet belangrijk voor je project? Met anderere woorden, Je hebt er geen moeite mee om groot deel van je klanten te verliezen aan slome laattijden.",
+          "answer": "2. Is het drijven van gebruikers niet belangrijk voor je project? Met andere woorden, Je hebt er geen moeite mee om een groot deel van je gebruikers te verliezen aan slome laattijden.",
           "class": "li"
         },
         {
@@ -224,7 +224,7 @@
           "class": "li"
         },
         {
-          "answer": "Als deze dingen niets uit maken voor jou project, ga voor WordPress! Je hebt een volledig functioneerende site, bent in eerste instantie waarschijnlijk net wat goedkoper uit hebt en top CMS.",
+          "answer": "Als deze dingen niets uit maken voor jou project, ga voor WordPress! Je hebt een volledig functioneerende site, bent in eerste instantie waarschijnlijk net wat goedkoper uit en hebt top CMS.",
           "class": ""
         },
         {
