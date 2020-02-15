@@ -20,12 +20,16 @@ export default function Work({ data }) {
         button={t.button[0].name}
         BizData={t.BizData[0]}
         BrantenData={t.BrantenData[0]}
+        ComponentsData={t.ComponentsData[0]}
         biz={data.Biz.childImageSharp.fluid}
         bizFloat={data.BizFloat.childImageSharp.fluid}
         bizFloat2={data.BizFloat2.childImageSharp.fluid}
         Branten={data.Branten.childImageSharp.fluid}
         BrantenFloat={data.BrantenFloat.childImageSharp.fluid}
         BrantenFloat2={data.BrantenFloat2.childImageSharp.fluid}
+        Components={data.Components.childImageSharp.fluid}
+        ComponentsFloat={data.ComponentsFloat.childImageSharp.fluid}
+        ComponentsFloat2={data.ComponentsFloat2.childImageSharp.fluid}
       />
     </Layout>
   );
@@ -49,6 +53,11 @@ export const query = graphql`
           work
         }
         BrantenData {
+          type
+          name
+          work
+        }
+        ComponentsData {
           type
           name
           work
@@ -91,6 +100,27 @@ export const query = graphql`
       }
     }
     BrantenFloat2: file(relativePath: { eq: "Branten-maatwerk-float2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    Components: file(relativePath: { eq: "Components.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    ComponentsFloat: file(relativePath: { eq: "Components-float.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    ComponentsFloat2: file(relativePath: { eq: "Components-float2.png" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp

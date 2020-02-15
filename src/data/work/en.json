@@ -20,5 +20,12 @@
       "type": "Interior construction",
       "work": "DESIGN - DEVELOPMENT"
     }
+  ],
+  "ComponentsData": [
+    {
+      "name": "Component library",
+      "type": "Personal tool",
+      "work": "DESIGN - DEVELOPMENT"
+    }
   ]
 }

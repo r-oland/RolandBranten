@@ -20,5 +20,12 @@
       "type": "Interieurbouw",
       "work": "DESIGN - DEVELOPMENT"
     }
+  ],
+  "ComponentsData": [
+    {
+      "name": "Component library",
+      "type": "Persoonlijke tool",
+      "work": "DESIGN - DEVELOPMENT"
+    }
   ]
 }

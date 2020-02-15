@@ -84,12 +84,16 @@ export default function Content({
   button,
   BizData,
   BrantenData,
+  ComponentsData,
   biz,
   bizFloat,
   bizFloat2,
   Branten,
   BrantenFloat,
-  BrantenFloat2
+  BrantenFloat2,
+  Components,
+  ComponentsFloat,
+  ComponentsFloat2
 }) {
   const Project = (text, image, link, align) => {
     return (
@@ -123,25 +127,42 @@ export default function Content({
     "left"
   );
 
-  const BrantenMaatwerk = Project(
-    BrantenText,
-    BrantenImages,
-    "https://www.brantenmaatwerk.nl/",
-    "left"
+  const ComponentsText = Text(ComponentsData);
+  const ComponentsImages = Images(
+    Components,
+    ComponentsFloat,
+    ComponentsFloat2,
+    "Components",
+    "right"
   );
 
-  const BizLogistics = Project(
+  const BizLogisticsSection = Project(
     BizText,
     BizImages,
     "https://www.bizlogistics.nl/",
     "right"
   );
 
+  const BrantenMaatwerkSection = Project(
+    BrantenText,
+    BrantenImages,
+    "https://www.brantenmaatwerk.nl/",
+    "left"
+  );
+
+  const ComponentsSection = Project(
+    ComponentsText,
+    ComponentsImages,
+    "https://componentsrb.netlify.com/",
+    "right"
+  );
+
   return (
     <Wrapper>
       <Container>
-        {BizLogistics}
-        {BrantenMaatwerk}
+        {BizLogisticsSection}
+        {BrantenMaatwerkSection}
+        {ComponentsSection}
       </Container>
     </Wrapper>
   );
