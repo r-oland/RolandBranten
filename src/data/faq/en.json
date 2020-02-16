@@ -24,7 +24,7 @@
           "class": ""
         },
         {
-          "answer": "Well, say hello to the JAMstack. To be more specific, a static site generator like Gatsby that is part of the stack. Gatsby converts your dynamic site into static files and serves them to a CDN. Next to this Gatsby comes with smart tools like code splitting that makes your site even faster and more performant.",
+          "answer": "To avoid this, we can use a static site generator like Gatsby. Gatsby converts your dynamic site into static files and serves them to a CDN. Next to this Gatsby comes with smart tools like code splitting that makes your site even faster and more performant.",
           "class": ""
         },
         {
@@ -113,10 +113,6 @@
       "Question": "How much does a JAMstack site cost? ",
       "Answers": [
         {
-          "answer": "Let me just start of by saying that I can't give an exact price. Not without knowing the requirements of the project that you have in mind. There are a lot of different factors that should be taken in consideration first. What I can do is give you a rough estimation of my rates at the moment.",
-          "class": ""
-        },
-        {
           "answer": "For the average site, It's probably somewhere between",
           "class": "inline"
         },
@@ -138,11 +134,11 @@
       "Question": "Are you the right choice for my site?",
       "Answers": [
         {
-          "answer": "In general the answer will be yes. This isn't a sales pitch, the JAMstack is just capable to handle the vast majority of the websites on the web. So statistically speaking, yours probably will be to.",
+          "answer": "In general the answer will be yes. However just like with any technology, the JAMstack is not perfect. Sites with a lot of content that has to update constantly would not be a great fit. A social media site would be an example of this. ",
           "class": ""
         },
         {
-          "answer": "However just like with any technology, the JAMstack is not perfect. Sites with a lot of content that has to update constantly would not be a great fit. A social media site would be an example of this. I'm also more experienced in front-end development so projects with big data structures or a lot of backend code will have to be outsourced. If neither of those examples bring up any worries for your project, you're probably in the green.",
+          "answer": "I'm also more experienced in front-end development so projects with big data structures or a lot of backend code will have to be outsourced. If neither of those examples bring up any worries for your project, you're probably in the green.",
           "class": ""
         },
         {
@@ -181,15 +177,15 @@
       "Question": "Does my site support al browsers? ",
       "Answers": [
         {
-          "answer": "Your site will support all the modern browsers. This means that your site will support all browsers except Internet explorer. Why not? Internet explorer is discontinued since 2016. This means that is has strong limitations when it comes to the utilization of the modern web technologies. Working around these limitations will drastically slow down the development process.",
+          "answer": "Your site will support all the modern browsers. This means that your site will support all browsers except Internet explorer. Why not? ",
           "class": ""
         },
         {
-          "answer": "This would be a waste of resources since new windows pc's come pre installed with it's successor Edge. Windows also advices against using Internet Explorer since it is becoming increasingly vulnerable to attacks and leaks.",
+          "answer": "IE is discontinued since 2016. This means that is has strong limitations when it comes to the utilization of modern web technologies. Working around these limitations will drastically slow down the development process. This would be a waste of resources since new windows pc's come pre installed with it's successor Edge. Windows also advices against using IE since it is becoming increasingly vulnerable to attacks and leaks.",
           "class": ""
         },
         {
-          "answer": "Luckily, the amount of users that are using Internet Explorer is decreasing with each day. At the time of writing, Internet explorer usage is heading towards less then 1%. In the rare event that your user is using Internet Explorer, he/she will receive a pop up message with a similar explanation.",
+          "answer": "Luckily, the amount of users that are using IE is decreasing with each day. At the time of writing, IE usage is heading towards less then 1%. In the rare event that your user is using IE, he/she will receive a pop up message with a similar explanation.",
           "class": ""
         }
       ]
@@ -198,11 +194,11 @@
       "Question": "Why shouldn't I just go for a WordPress site?",
       "Answers": [
         {
-          "answer": "WordPress is capable of amazing things in the hands of the right developer/designer. Next to that, the market has been leaning heavily towards WordPress for a long time. This has resulted in a rich plugin-eco-system and a great CMS experience. WordPress has a lot of drawbacks and restrictions but the benefits should be mentioned as well.",
+          "answer": "WordPress is capable of amazing things in the hands of the right developer/designer. Next to that, the market has been leaning heavily towards WordPress for a long time. This has resulted in a rich plugin-eco-system and a great CMS experience.",
           "class": ""
         },
         {
-          "answer": "So it might very well be that a solution like WordPress is fine for your project. I made a set of questions to help you in making the right decision.",
+          "answer": "However, WordPress does have a lot of drawbacks and restrictions. It might very well be that a solution like WordPress is fine for your project. I made a set of questions to help you in making the right decision.",
           "class": ""
         },
         {

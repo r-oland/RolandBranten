@@ -24,7 +24,7 @@
           "class": ""
         },
         {
-          "answer": "Zeg hallo tegen de JAMstack. Om meer specifiek te zijn, het deel van de JAMstack die statische sites genereerd, Gatsby. Gatsby zorgt ervoor dat je dynamische React app als statische bestanden aan je gebruikers geleverd kunnen worden. Daarnaast komt Gatsby out of the box ook met technologieën als code splitting, lazy loading, GraphQL en veel meer",
+          "answer": "Om dit te voorkomen gebruiken we een static site generator als Gatsby. Gatsby zorgt ervoor dat je dynamische React app als statische bestanden aan je gebruikers geleverd kunnen worden. Daarnaast komt Gatsby out of the box ook met technologieën als code splitting, lazy loading, GraphQL en veel meer",
           "class": ""
         },
         {
@@ -113,10 +113,6 @@
       "Question": "Hoe duur is een JAMstack site?",
       "Answers": [
         {
-          "answer": "Voordat ik verder ga, het is belangrijk om te benoemen dat ik geen exacte prijs kan geven. Niet zonder de details van het project dat je in gedachten hebt te weten. Er zijn een hoop factoren die komen kijken bij het maken van een prijs opgaven. Ik kan echter wel een grove indicatie geven op basis van mijn huidige prijsstelling.",
-          "class": ""
-        },
-        {
           "answer": "Voor de gemiddelde site zul je ongeveer tussen de",
           "class": "inline"
         },
@@ -138,11 +134,11 @@
       "Question": "Ben jij de juiste persoon voor mijn site?",
       "Answers": [
         {
-          "answer": "Grote kans van wel! Dat is geen sales pitch, de JAMstack is simpelweg in staat om de meerderheid van het web te voorzien. Dus statistisch gezien, zal jou site dat waarschijnlijk ook zijn.",
+          "answer": "Grote kans van wel! Net zoals iedere andere technologie, zijn er echter wel restricties. Een site met een hoop content die constant bijgewerkt moet worden is bijvoorbeeld niet ideaal. Een social media site is hier een goed voorbeeld van. ",
           "class": ""
         },
         {
-          "answer": "Net zoals iedere andere technologie, zijn er echter wel restricties. Een site met een hoop content die constant bijgewerkt moet worden is bijvoorbeeld niet ideaal. Een social media site is hier een goed voorbeeld van. Ik heb zelf ook een stuk meer ervaring in front-end development. Websites met grote data-structuren of complexe back-ends zullen dus wel verder uitbesteed moeten worden. ",
+          "answer": "Ik heb zelf ook een stuk meer ervaring in front-end development. Websites met grote data-structuren of complexe back-ends zullen dus wel verder uitbesteed moeten worden. ",
           "class": ""
         },
         {
@@ -181,15 +177,15 @@
       "Question": "Ondersteund mijn site alle browsers? ",
       "Answers": [
         {
-          "answer": "Je site ondersteund alle moderne browsers. Dit betekend dat je site alle browsers ondersteund behalve Internet Explorer. Waarom niet? IE word sinds 2016 niet meer door Windows onderhouden. Dit betekend dat er stevige limitaties zijn voor het gebruiken van de meest moderne web-technologieën. Om deze limitaties heen werken is mogelijk, maar voegt een hoop tijd toe aan het development-process.",
+          "answer": "Je site ondersteund alle moderne browsers. Dit betekend dat je site alle browsers ondersteund behalve Internet Explorer. Waarom niet?",
           "class": ""
         },
         {
-          "answer": "Dit zou zonde van het geld zijn aangezien nieuwe Windows pc's al jaren met de opvolger Microsoft Edge geinstaleerd komen. Windows raad ook af om IE te gebruiken omdat de browser met de dag onveiliger begint te worden voor cybercriminelen. ",
+          "answer": " IE word sinds 2016 niet meer ondersteund. Dit betekend dat er limitaties zijn wanneer het gaat over moderne web-technologieën. Om deze limitaties heen werken voegt een hoop tijd toe aan het development-process. Dit zou zonde van het geld zijn aangezien nieuwe Windows pc's al jaren met de opvolger Microsoft Edge geinstaleerd komen. Windows raad ook af om IE te gebruiken omdat de browser onveilig is geworden. ",
           "class": ""
         },
         {
-          "answer": "Gelukkig is het aantal IE gebruikers iedere dag aan het dalen. Op het moment van schrijven begint het aantal IE gebruikers al minder dan 1% te worden. In het onwaarschijnlijke geval dat een van je gebruikers toch op IE zit, krijgt hij/zij een pop-up met een soort gelijke uitleg.",
+          "answer": "Gelukkig is het aantal IE gebruikers iedere dag aan het dalen. Op het moment van schrijven zit het aantal gebruikers al bijna onder de 1%. In het onwaarschijnlijke geval dat een van je gebruikers toch op IE zit, krijgt hij/zij een pop-up met een soort gelijke uitleg.",
           "class": ""
         }
       ]
@@ -198,11 +194,11 @@
       "Question": "Waarom zou ik niet gewoon voor een WordPress site gaan?",
       "Answers": [
         {
-          "answer": "WordPress is in staat tot het produceren van prima sites in de handen van de juiste developer/designer. Daarnaast heeft een groot deel van de markt voor een lange tijd op WordPress geleund. Dit heeft geresulteerd in een rijk plugin-eco-systeem en een ontwikkelde CMS. WordPress heeft een hoop nadelen en beperkingen, maar de voordelen moeten ook zeker genoemd worden. ",
+          "answer": "WordPress is in staat tot het produceren van prima sites in de handen van de juiste developer/designer. Daarnaast heeft een groot deel van de markt voor een lange tijd op WordPress geleund. Dit heeft geresulteerd in een rijk plugin-eco-systeem en een ontwikkelde CMS. ",
           "class": ""
         },
         {
-          "answer": "Het zou goed kunnen dat een WordPress site prima is voor jou project. Ik heb een vragenlijst opgesteld om je te helpen in het maken van je beslissing:",
+          "answer": "Er zijn ook een hoop nadelen en beperkingen met een WordPress site maar, het zou goed kunnen dat dit een prima optie voor jou project is. Ik heb een vragenlijst opgesteld om je te helpen in het maken van je beslissing:",
           "class": ""
         },
         {
@@ -234,7 +230,7 @@
           "class": ""
         },
         {
-          "answer": "Als je het wel van belang vind dat je een site hebt die goed voorbereid is voor de toekomst, dan zou je misschien wat verder willen kijken dan de standaard optie.",
+          "answer": "Als je het wel van belang vind dat je een site hebt die goed voorbereid is voor de toekomst, dan zou je misschien wat verder willen kijken dan de huidige standaard optie.",
           "class": ""
         }
       ]
