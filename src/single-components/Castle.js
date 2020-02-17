@@ -15,6 +15,11 @@ const Svg = styled.svg`
   @media screen and (min-width: 1200px) {
     max-width: 500px;
   }
+
+  #ClipPathCastle {
+    clip-path: url(#clipPathCastle);
+    -webkit-clip-path: url(#clipPathCastle);
+  }
 `;
 
 export default function Castle({ castle, castleInView }) {
@@ -26,7 +31,7 @@ export default function Castle({ castle, castleInView }) {
       className="tempRight"
     >
       <defs>
-        <clipPath id="clip-path" transform="translate(0 -0.8983)">
+        <clipPath id="clipPathCastle" transform="translate(0 -0.8983)">
           <rect id="clipmask" x="409.6861" width="84" height="51" fill="none" />
         </clipPath>
         <filter id="dropshadow" height="130%">
@@ -258,7 +263,7 @@ export default function Castle({ castle, castleInView }) {
           />
         </g>
         <g id="clipgroup">
-          <g clipPath="url(#clip-path)">
+          <g id="ClipPathCastle">
             <motion.g
               id="flag"
               animate={castleInView ? "animate" : "stop"}

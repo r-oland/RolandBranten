@@ -11,6 +11,15 @@ const Svg = styled.svg`
   @media screen and (min-width: 1200px) {
     max-width: 500px;
   }
+
+  #ClipPathRocket {
+    clip-path: url(#clip-path-rocket);
+    -webkit-clip-path: url(#clip-path-rocket);
+  }
+
+  #DropShadow {
+    filter: url(#dropshadow);
+  }
 `;
 
 const starVariants = {
@@ -99,20 +108,15 @@ export default function RocketShip({ ship, shipInView }) {
       <g id="Layer_2" data-name="Layer 2">
         <g id="Background-2" data-name="Background">
           <path
-            id="background-3"
+            id="DropShadow"
             fill="#2b2b2b"
             d="M506.88 223.76C242.94 382.26 157.3 311.52 15.33 97.61s755.48-32.34 491.55 126.15z"
             data-name="background"
             transform="translate(856.24)"
-            filter="url(#dropshadow)"
           />
         </g>
-        <g id="clipPath">
-          <g
-            id="clipPath-2"
-            clipPath="url(#clip-path-rocket)"
-            data-name="clipPath"
-          >
+        <g>
+          <g data-name="clipPath" clipPath=" url(#clip-path-rocket)">
             <motion.g
               id="stars"
               fill="#fcfcfc"
