@@ -110,23 +110,47 @@
       ]
     },
     {
-      "Question": "Hoe duur is een JAMstack site?",
+      "Question": "Waarom zou ik niet gewoon voor een WordPress site gaan?",
       "Answers": [
         {
-          "answer": "Voor de gemiddelde site zul je ongeveer tussen de",
-          "class": "inline"
+          "answer": "WordPress is in staat tot het produceren van prima sites in de handen van de juiste developer/designer. Daarnaast heeft een groot deel van de markt voor een lange tijd op WordPress geleund. Dit heeft geresulteerd in een rijk plugin-eco-systeem en een ontwikkelde CMS. ",
+          "class": ""
         },
         {
-          "answer": " ‎€750,- and ‎€1500,- ",
-          "class": "boldSpan"
+          "answer": "Er zijn ook een hoop nadelen en beperkingen met een WordPress site maar, het zou goed kunnen dat dit een prima optie voor jou project is. Ik heb een vragenlijst opgesteld om je te helpen in het maken van je beslissing:",
+          "class": ""
         },
         {
-          "answer": "kwijt zijn. Deze bedragen zijn niet in steen gegraveerd, maar representeren meer een indicatie van wat je mag verwachten. Het zou goed kunnen dat je site duurder of goedkoper uitvalt. Dit komt uiteindelijk neer op complexiteit en kwantiteit. De beste manier om te weten waar jou project ongeveer zit is door even contact met mij op te nemen.",
-          "class": "inline"
+          "answer": "1. Wil je enkel een simpele site die niet veel flexibiliteit of schaalbaarheid nodig heeft, nu of in de toekomst?",
+          "class": "li"
         },
         {
-          "answer": "Ik probeer zo transparant mogelijk te zijn. Dit geld ook voor de manier hoe ik transacties afhandel. Mijn voorkeur gaat er naar uit om 1 vast bedrag voor start af te spreken. Als er onvoorziene problemen optreden hoef jij er op deze manier niet voor te betalen.",
-          "class": "paddingTop"
+          "answer": "2. Is het drijven van gebruikers niet belangrijk voor je project? Met andere woorden, Je hebt er geen moeite mee om een groot deel van je gebruikers te verliezen aan slome laattijden.",
+          "class": "li"
+        },
+        {
+          "answer": "3. Ben je tevreden als je site er hetzelfde uitziet als ieder ander WordPress template?",
+          "class": "li"
+        },
+        {
+          "answer": "4. Heb je er geen bezwaar tegen om middelen te besteden aan het onderhouden en updaten van WordPress plugins?",
+          "class": "li"
+        },
+        {
+          "answer": "5. Is er of word er gevoelige data aan je site gelinkt? (forums, gebruikers, database, enz.) Zo ja, Wil je deze gevens optimaal beschermen?",
+          "class": "li"
+        },
+        {
+          "answer": "6. Ben je bereid om voor de extra vaste kosten te gaan betalen die met een CMS als WordPress komen?",
+          "class": "li"
+        },
+        {
+          "answer": "Als deze dingen niets uit maken voor jou project, ga voor WordPress! Je hebt een volledig functioneerende site, bent in eerste instantie waarschijnlijk wat goedkoper uit en hebt een top CMS.",
+          "class": ""
+        },
+        {
+          "answer": "Als je het wel van belang vind dat je een site hebt die goed voorbereid is voor de toekomst, dan zou je misschien wat verder willen kijken dan de huidige standaard optie.",
+          "class": ""
         }
       ]
     },
@@ -186,51 +210,6 @@
         },
         {
           "answer": "Gelukkig is het aantal IE gebruikers iedere dag aan het dalen. Op het moment van schrijven zit het aantal gebruikers al bijna onder de 1%. In het onwaarschijnlijke geval dat een van je gebruikers toch op IE zit, krijgt hij/zij een pop-up met een soort gelijke uitleg.",
-          "class": ""
-        }
-      ]
-    },
-    {
-      "Question": "Waarom zou ik niet gewoon voor een WordPress site gaan?",
-      "Answers": [
-        {
-          "answer": "WordPress is in staat tot het produceren van prima sites in de handen van de juiste developer/designer. Daarnaast heeft een groot deel van de markt voor een lange tijd op WordPress geleund. Dit heeft geresulteerd in een rijk plugin-eco-systeem en een ontwikkelde CMS. ",
-          "class": ""
-        },
-        {
-          "answer": "Er zijn ook een hoop nadelen en beperkingen met een WordPress site maar, het zou goed kunnen dat dit een prima optie voor jou project is. Ik heb een vragenlijst opgesteld om je te helpen in het maken van je beslissing:",
-          "class": ""
-        },
-        {
-          "answer": "1. Wil je enkel een simpele site die niet veel flexibiliteit of schaalbaarheid nodig heeft, nu of in de toekomst?",
-          "class": "li"
-        },
-        {
-          "answer": "2. Is het drijven van gebruikers niet belangrijk voor je project? Met andere woorden, Je hebt er geen moeite mee om een groot deel van je gebruikers te verliezen aan slome laattijden.",
-          "class": "li"
-        },
-        {
-          "answer": "3. Ben je tevreden als je site er hetzelfde uitziet als ieder ander WordPress template?",
-          "class": "li"
-        },
-        {
-          "answer": "4. Heb je er geen bezwaar tegen om middelen te besteden aan het onderhouden en updaten van WordPress plugins?",
-          "class": "li"
-        },
-        {
-          "answer": "5. Is er of word er gevoelige data aan je site gelinkt? (forums, gebruikers, database, enz.) Zo ja, Wil je deze gevens optimaal beschermen?",
-          "class": "li"
-        },
-        {
-          "answer": "6. Ben je bereid om voor de extra vaste kosten te gaan betalen die met een CMS als WordPress komen?",
-          "class": "li"
-        },
-        {
-          "answer": "Als deze dingen niets uit maken voor jou project, ga voor WordPress! Je hebt een volledig functioneerende site, bent in eerste instantie waarschijnlijk net wat goedkoper uit en hebt top CMS.",
-          "class": ""
-        },
-        {
-          "answer": "Als je het wel van belang vind dat je een site hebt die goed voorbereid is voor de toekomst, dan zou je misschien wat verder willen kijken dan de huidige standaard optie.",
           "class": ""
         }
       ]

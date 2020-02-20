@@ -110,23 +110,47 @@
       ]
     },
     {
-      "Question": "How much does a JAMstack site cost? ",
+      "Question": "Why shouldn't I just go for a WordPress site?",
       "Answers": [
         {
-          "answer": "For the average site, It's probably somewhere between",
-          "class": "inline"
+          "answer": "WordPress is capable of amazing things in the hands of the right developer/designer. Next to that, the market has been leaning heavily towards WordPress for a long time. This has resulted in a rich plugin-eco-system and a great CMS experience.",
+          "class": ""
         },
         {
-          "answer": " ‎€750,- and ‎€1500,- ",
-          "class": "boldSpan"
+          "answer": "However, WordPress does have a lot of drawbacks and restrictions. It might very well be that a solution like WordPress is fine for your project. I made a set of questions to help you in making the right decision.",
+          "class": ""
         },
         {
-          "answer": "These numbers aren't set in stone, it's just a rough ballpark of what a typical site would cost. It could be that your site is a bit more expensive depending on the features that your project requires. On the other hand, it could also be less if the site doesn't require much complexity at all. The best way to find out is to reach out and tell me about your project.",
-          "class": "inline"
+          "answer": "1. Do you just want a simple site that doesn't need much scalability or flexibility, either now or in the future?",
+          "class": "li"
         },
         {
-          "answer": "I try to be as transparant as possible. This also applies to the way I handle transactions. My preferred method is to charge on a project base. This way, if there happen to be any missteps in the process, you aren't the one who has to make up for it.",
-          "class": "paddingTop"
+          "answer": "2. Is driving traffic to your site not a priority? I.e. You don't mind if you lose a big part of potential users and brand image because of slow load times.",
+          "class": "li"
+        },
+        {
+          "answer": "3. Will you be satisfied with a site that will look like any other WordPress template site?",
+          "class": "li"
+        },
+        {
+          "answer": "4. Do you not mind spending time or resources towards fixing and maintaining WordPress plugins?",
+          "class": "li"
+        },
+        {
+          "answer": "5. Is or will their be any sensitive data linked to your site? (forums, users, database, etc.) If so do you want to maximize security for that data?",
+          "class": "li"
+        },
+        {
+          "answer": "6. Are you willing to pay for the additional monthly/yearly fees that come with a CMS like WordPress?",
+          "class": "li"
+        },
+        {
+          "answer": "If all these things don't matter for the project that you have in mind, go for it! WordPress has a great CMS and it will be able to set you up with a fully functional website.",
+          "class": ""
+        },
+        {
+          "answer": "However, if you do care about having a site that is well armed for the future, you might want to look further then the current industries 'default option'.",
+          "class": ""
         }
       ]
     },
@@ -186,51 +210,6 @@
         },
         {
           "answer": "Luckily, the amount of users that are using IE is decreasing with each day. At the time of writing, IE usage is heading towards less then 1%. In the rare event that your user is using IE, he/she will receive a pop up message with a similar explanation.",
-          "class": ""
-        }
-      ]
-    },
-    {
-      "Question": "Why shouldn't I just go for a WordPress site?",
-      "Answers": [
-        {
-          "answer": "WordPress is capable of amazing things in the hands of the right developer/designer. Next to that, the market has been leaning heavily towards WordPress for a long time. This has resulted in a rich plugin-eco-system and a great CMS experience.",
-          "class": ""
-        },
-        {
-          "answer": "However, WordPress does have a lot of drawbacks and restrictions. It might very well be that a solution like WordPress is fine for your project. I made a set of questions to help you in making the right decision.",
-          "class": ""
-        },
-        {
-          "answer": "1. Do you just want a simple site that doesn't need much scalability or flexibility, either now or in the future?",
-          "class": "li"
-        },
-        {
-          "answer": "2. Is driving traffic to your site not a priority? I.e. You don't mind if you lose a big part of potential users and brand image because of slow load times.",
-          "class": "li"
-        },
-        {
-          "answer": "3. Will you be satisfied with a site that will look like any other WordPress template site?",
-          "class": "li"
-        },
-        {
-          "answer": "4. Do you not mind spending time or resources towards fixing and maintaining WordPress plugins?",
-          "class": "li"
-        },
-        {
-          "answer": "5. Is or will their be any sensitive data linked to your site? (forums, users, database, etc.) If so do you want to maximize security for that data?",
-          "class": "li"
-        },
-        {
-          "answer": "6. Are you willing to pay for the additional monthly/yearly fees that come with a CMS like WordPress?",
-          "class": "li"
-        },
-        {
-          "answer": "If all these things don't matter for the project that you have in mind, go for it! WordPress has a great CMS and it will be able to set you up with a fully functional website.",
-          "class": ""
-        },
-        {
-          "answer": "However, if you do care about having a site that is well armed for the future, you might want to look further then the current industries 'default option'.",
           "class": ""
         }
       ]
