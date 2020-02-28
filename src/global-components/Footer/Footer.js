@@ -1,9 +1,9 @@
 // Components==============
-import src from "assets/hearth.svg";
 import { useIntl } from "gatsby-plugin-intl";
 import { Button, Container, H2, H3, L, S } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { StyledUnderline } from "../../style/Mixins";
 import { ModalContext } from "../Layout/Layout";
 // =========================
 
@@ -37,19 +37,14 @@ const Wrapper2 = styled.div`
 `;
 
 const Flex = styled(Container)`
-  @media screen and (min-width: 900px) {
-    display: flex;
-    justify-content: space-between;
-  }
+  padding-bottom: ${({ theme: { spacing } }) => spacing.s4};
 `;
 
-const Location = styled(S)`
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s3};
-`;
-
-const Hearth = styled.img`
-  display: inline;
-  width: 15px;
+const FlexLinks = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  margin: 0 auto ${({ theme: { spacing } }) => spacing.s4};
 `;
 
 const Copyright = styled(S)``;
@@ -82,13 +77,24 @@ export default function Footer({ page, display }) {
       </Wrapper>
       <Wrapper2>
         <Flex>
-          <Location>
-            {display !== "notFoundPage" &&
-              intl.formatMessage({ id: "location1" })}{" "}
-            <Hearth src={src} alt="hearth" />{" "}
-            {display !== "notFoundPage" &&
-              intl.formatMessage({ id: "location2" })}
-          </Location>
+          <FlexLinks>
+            <StyledUnderline
+              as="a"
+              href="https://github.com/r-oland"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </StyledUnderline>
+            <StyledUnderline
+              as="a"
+              href="https://www.linkedin.com/in/rolandbranten"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </StyledUnderline>
+          </FlexLinks>
           <Copyright>
             {display !== "notFoundPage" &&
               intl.formatMessage({ id: "copyright" })}

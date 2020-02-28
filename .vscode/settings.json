@@ -7,7 +7,7 @@
     ".gitignore": true,
     "desktop.ini": true,
     "gatsby-browser.js": true,
-    "gatsby-node.js": true,
+    // "gatsby-node.js": true,
     // "gatsby-config.js": true,
     "package-lock.json": true,
     // "package.json": true,
