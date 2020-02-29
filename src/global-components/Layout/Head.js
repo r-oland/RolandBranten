@@ -13,11 +13,18 @@ export default function Head({ title, description, keywords }) {
       site {
         siteMetadata {
           title
+          siteUrl
         }
+      }
+      sitePage {
+        path
       }
     }
   `);
   const siteTitle = data.site.siteMetadata.title;
+  const path = data.sitePage.path;
+
+  console.log(path);
 
   return (
     <Helmet>

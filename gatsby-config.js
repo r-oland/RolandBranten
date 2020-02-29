@@ -27,10 +27,7 @@ module.exports = {
           `/en/dev-404-page`,
           `/en/404`,
           `/en/404.html`,
-          `/en/offline-plugin-app-shell-fallback`,
-          `/success`,
-          `/nl/success`,
-          `/en/success`
+          `/en/offline-plugin-app-shell-fallback`
         ]
       }
     },
