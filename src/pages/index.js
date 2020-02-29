@@ -14,7 +14,12 @@ export default function Index({ data }) {
 
   return (
     <Layout page="homeOL">
-      <Head title={t.title} description={t.description} keywords={t.keywords} />
+      <Head
+        title={t.title}
+        description={t.description}
+        keywords={t.keywords}
+        path=""
+      />
       <Hero
         title={t.title}
         description={t.description}

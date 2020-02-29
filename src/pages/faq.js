@@ -15,6 +15,7 @@ export default function About({ data }) {
         title={t.SEO[0].title}
         description={t.SEO[0].description}
         keywords={t.SEO[0].keywords}
+        path="faq"
       />
       <Content FaqList={t.FaqList} title={t.Title[0].title} />
     </Layout>

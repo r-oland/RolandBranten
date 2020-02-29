@@ -15,6 +15,7 @@ export default function Work({ data }) {
         title={t.SEO[0].title}
         description={t.SEO[0].description}
         keywords={t.SEO[0].keywords}
+        path="work"
       />
       <Content
         button={t.button[0].name}

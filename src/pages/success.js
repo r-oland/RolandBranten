@@ -21,7 +21,7 @@ export default function Success() {
 
   return (
     <Layout display={"notFoundPage"}>
-      <Head title="Success" />
+      <Head title="Success" path="success" />
       <Wrapper>
         <h2>{intl.formatMessage({ id: "success" })}</h2>;
       </Wrapper>

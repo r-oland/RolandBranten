@@ -34,6 +34,7 @@ export default function NotFound() {
         title="404 NOT FOUND"
         description="Could not found the page you where looking for"
         keywords="404, unavailable, not found"
+        path="404"
       />
       <Container404 style={{ marginTop: "2em" }}>
         <h2>{intl.formatMessage({ id: "notFound" })}</h2>
