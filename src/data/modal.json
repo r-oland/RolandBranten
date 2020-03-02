@@ -13,14 +13,14 @@
   },
   "nl": {
     "greeting": "Hé Roland! Mijn naam is",
-    "yourName": "Jou naam",
+    "yourName": "Je naam",
     "partOf": "en ik maak deel uit van",
     "CompanyName": "Bedrijfsnaam",
-    "reason": ". Deze innovatieve technologieën waar je het over hebt klinken veelbelovend! Ik rijk naar je uit omdat ik het volgende in gedachten heb:",
-    "describe": "Omschrijf je project",
+    "reason": ". Deze innovatieve technologieën waar je het over hebt klinken veelbelovend! Ik heb het volgende in gedachten:",
+    "describe": "Omschrijf je project/vraag",
     "kindWords": "Ik wil graag contact met je opnemen om te kijken of we iets voor elkaar kunnen betekenen. Je kunt mij bereiken via",
-    "email": "Jou email",
+    "email": "Je email",
     "send": "Verstuur",
-    "preference": "Voorkeur om direct te mailen? Tuurlijk"
+    "preference": "Voorkeur om direct te mailen? Tuurlijk:"
   }
 }
