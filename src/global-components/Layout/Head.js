@@ -34,12 +34,12 @@ export default function Head({ title, description, keywords, path }) {
     <Location>
       {({ location }) => (
         <Helmet>
-          <meta name="robots" content={noIndex(location)} />
           <meta name="theme-color" content="#FFFFFF" />
           <meta name="author" content="Roland Branten"></meta>
           <meta name="designer" content="Roland Branten"></meta>
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
+          <meta name="robots" content={noIndex(location)} />
           <link
             rel="canonical"
             href={`https://www.rolandbranten.nl/${intl.locale}/${path}`}
