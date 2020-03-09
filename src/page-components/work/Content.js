@@ -21,13 +21,11 @@ const ProjectWrapper = styled.div`
   @media screen and (min-width: 800px) {
     max-width: 1200px;
     padding: ${({ theme: { spacing } }) => `${spacing.s4} ${spacing.s9}`};
-    padding: ${({ theme: { spacing } }) =>
-      `${spacing.s10} auto ${spacing.s11}`};
+    margin: ${({ theme: { spacing } }) => `${spacing.s10} auto ${spacing.s11}`};
   }
 
   @media screen and (min-width: 1600px) {
-    padding: ${({ theme: { spacing } }) =>
-      `${spacing.s11} auto ${spacing.s12}`};
+    margin: ${({ theme: { spacing } }) => `${spacing.s11} auto ${spacing.s12}`};
   }
 `;
 
