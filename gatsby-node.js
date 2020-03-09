@@ -1,4 +1,14 @@
-const locales = require(`./locales`);
+const locales = {
+  nl: {
+    default: true,
+    path: `nl`,
+    locale: `nl`
+  },
+  en: {
+    path: `en`,
+    locale: `en`
+  }
+};
 
 removeTrailingSlash = path => (path === `/` ? path : path.replace(/\/$/, ``));
 

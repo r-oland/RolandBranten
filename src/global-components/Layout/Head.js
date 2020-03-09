@@ -21,16 +21,6 @@ export default function Head({ title, description, keywords, path }) {
   `);
   const siteTitle = data.site.siteMetadata.title;
 
-  const noIndex = location => {
-    const url = location.pathname;
-
-    if (url.includes("nl") || url.includes("en")) {
-      return ``;
-    } else {
-      return `noindex`;
-    }
-  };
-
   return (
     <Location>
       {({ location }) => (
@@ -40,7 +30,6 @@ export default function Head({ title, description, keywords, path }) {
           <meta name="designer" content="Roland Branten"></meta>
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
-          <meta name="robots" content={noIndex(location)} />
           <link
             rel="canonical"
             href={`https://www.rolandbranten.nl/${canonicalLoc}${path}`}
