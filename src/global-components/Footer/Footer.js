@@ -1,10 +1,10 @@
 // Components==============
-import { useIntl } from "gatsby-plugin-intl";
 import { Button, Container, H2, H3, L, S } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
+import intl from "../../data/intl/intl.json";
 import { StyledUnderline } from "../../style/Mixins";
-import { ModalContext } from "../Layout/Layout";
+import { LocaleContext, ModalContext } from "../Layout/Layout";
 // =========================
 
 const Wrapper = styled.div`
@@ -49,29 +49,40 @@ const FlexLinks = styled.div`
 
 const Copyright = styled(S)``;
 
-export default function Footer({ page, display }) {
-  const intl = useIntl();
-
+export default function Footer({ path }) {
   const { handleChange } = useContext(ModalContext);
+  const locale = useContext(LocaleContext);
+
+  const hideFooterPages =
+    path === "/success" ||
+    path === "/404" ||
+    path === "/en/404" ||
+    path === "/en/success";
+
+  const oneLiner =
+    path === "/en" || path === "/"
+      ? intl[locale].homeOL
+      : path === "/en/work" || path === "/work"
+      ? intl[locale].workOL
+      : path === "/en/about" || path === "/about"
+      ? intl[locale].aboutOL
+      : path === "/en/faq" || path === "/faq"
+      ? intl[locale].faqOL
+      : null;
 
   return (
-    <div style={{ display: display === "notFoundPage" ? "none" : "block" }}>
+    <div
+      style={{
+        display: hideFooterPages ? "none" : "block"
+      }}
+    >
       <Wrapper>
         <Container>
-          <OneLiner>
-            {display !== "notFoundPage" &&
-              intl.formatMessage({ id: `${page}` })}
-          </OneLiner>
-          <FollowUp1>
-            {display !== "notFoundPage" &&
-              intl.formatMessage({ id: "followUp1" })}
-          </FollowUp1>
-          <FollowUp2>
-            {display !== "notFoundPage" &&
-              intl.formatMessage({ id: "followUp2" })}
-          </FollowUp2>
+          <OneLiner>{oneLiner}</OneLiner>
+          <FollowUp1>{intl[locale].followUp1}</FollowUp1>
+          <FollowUp2>{intl[locale].followUp2}</FollowUp2>
           <Button style={{ marginBottom: "2.5em" }} onClick={handleChange}>
-            {display !== "notFoundPage" && intl.formatMessage({ id: "button" })}
+            {intl[locale].button}
           </Button>
         </Container>
       </Wrapper>
@@ -95,10 +106,7 @@ export default function Footer({ page, display }) {
               LinkedIn
             </StyledUnderline>
           </FlexLinks>
-          <Copyright>
-            {display !== "notFoundPage" &&
-              intl.formatMessage({ id: "copyright" })}
-          </Copyright>
+          <Copyright>{intl[locale].copyright}</Copyright>
         </Flex>
       </Wrapper2>
     </div>

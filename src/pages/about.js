@@ -2,7 +2,6 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
-import Layout from "../global-components/Layout/Layout";
 import Content from "../page-components/about/Content";
 // =========================
 
@@ -10,7 +9,7 @@ export default function About({ data }) {
   const t = data.file.childAboutJson;
 
   return (
-    <Layout page="aboutOL">
+    <>
       <Head
         title={t.SEO[0].title}
         description={t.SEO[0].description}
@@ -23,7 +22,7 @@ export default function About({ data }) {
         title={t.Title[0]}
         picture={data.AboutPicture.childImageSharp.fluid}
       />
-    </Layout>
+    </>
   );
 }
 

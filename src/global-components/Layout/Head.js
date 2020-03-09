@@ -1,13 +1,14 @@
 // Components==============
 import { Location } from "@reach/router";
 import { graphql, useStaticQuery } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
+import { LocaleContext } from "./Layout";
 // =========================
 
 export default function Head({ title, description, keywords, path }) {
-  const intl = useIntl();
+  const locale = useContext(LocaleContext);
+  const canonicalLoc = locale === "en" ? "en/" : "";
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -42,11 +43,11 @@ export default function Head({ title, description, keywords, path }) {
           <meta name="robots" content={noIndex(location)} />
           <link
             rel="canonical"
-            href={`https://www.rolandbranten.nl/${intl.locale}/${path}`}
+            href={`https://www.rolandbranten.nl/${canonicalLoc}${path}`}
           />
           <link
             rel="alternate"
-            href={`https://www.rolandbranten.nl/nl/${path}`}
+            href={`https://www.rolandbranten.nl/${path}`}
             hreflang="nl"
           />
           <link
@@ -56,11 +57,11 @@ export default function Head({ title, description, keywords, path }) {
           />
           <link
             rel="alternate"
-            href={`https://www.rolandbranten.nl/${path}`}
+            href={`https://www.rolandbranten.nl/en/${path}`}
             hreflang="x-default"
           />
           <title>{`${siteTitle} | ${title}`}</title>
-          <html lang={intl.locale} />
+          <html lang={locale} />
         </Helmet>
       )}
     </Location>

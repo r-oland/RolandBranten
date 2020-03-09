@@ -21,7 +21,7 @@ const variants = {
   hidden: { opacity: 0 }
 };
 
-export default function TransitionEffect({ children, page }) {
+export default function TransitionEffect({ children, path }) {
   return (
     <TransitionState>
       {({ mount }) => {
@@ -30,7 +30,7 @@ export default function TransitionEffect({ children, page }) {
             initial={false}
             animate={mount ? "visible" : "hidden"}
             variants={variants}
-            page={page}
+            path={path}
           >
             {children}
           </Wrapper>

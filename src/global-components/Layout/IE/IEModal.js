@@ -1,7 +1,8 @@
 // Components==============
-import { useIntl } from "gatsby-plugin-intl";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import intl from "../../../data/intl/intl.json";
+import { LocaleContext } from "../Layout";
 // =========================
 
 const Shade = styled.div`
@@ -53,7 +54,7 @@ const OverflowDiv = styled.div`
 `;
 
 export default function IEModal({ modalIsOpen, children, handleChange }) {
-  const intl = useIntl();
+  const locale = useContext(LocaleContext);
 
   return (
     <div>
@@ -61,7 +62,7 @@ export default function IEModal({ modalIsOpen, children, handleChange }) {
       <Modal modalIsOpen={modalIsOpen}>
         <OverflowDiv>
           <button className="close" onClick={handleChange}>
-            {intl.formatMessage({ id: "ignore" })}
+            {intl[locale].ignore}
           </button>
           {children}
         </OverflowDiv>

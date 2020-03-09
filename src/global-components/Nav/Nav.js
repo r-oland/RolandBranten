@@ -1,14 +1,15 @@
 // Components==============
 import { motion } from "framer-motion";
-import { useIntl } from "gatsby-plugin-intl";
 import { Container } from "mixins";
 import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
+import intl from "../../data/intl/intl.json";
 import LanguageSwitch from "../../single-components/LanguageSwitch";
 import MTLink from "../../single-components/MTLink";
 import {
   FaqContext,
   HamburgerContext,
+  LocaleContext,
   ModalContext,
   ObserverContext
 } from "../Layout/Layout";
@@ -67,8 +68,10 @@ const MenuItems = styled.ul`
     button {
       transition: 0.2s;
       &:hover {
-        color: ${({ theme: { primary }, inView, page }) =>
-          inView === false && page === "homeOL" ? `white` : primary.s7};
+        color: ${({ theme: { primary }, inView, path }) =>
+          inView === false && (path === "en" || path === "/en")
+            ? `white`
+            : primary.s7};
       }
     }
   }
@@ -84,17 +87,17 @@ const Flex = styled.div`
   justify-content: flex-end;
 `;
 
-export default function Nav({ page }) {
+export default function Nav({ path, oldPath }) {
   const { inView, inView2 } = useContext(ObserverContext);
   const { menuState } = useContext(HamburgerContext);
   const themeContext = useContext(ThemeContext);
   const { handleChange } = useContext(ModalContext);
   const { setFAQSelected } = useContext(FaqContext);
-  const intl = useIntl();
+  const locale = useContext(LocaleContext);
 
   return (
     <div>
-      <NavWrapper inView={inView} page={page}>
+      <NavWrapper inView={inView} path={path}>
         <FlexContainer>
           <MTLink to="/">
             <Logo
@@ -123,14 +126,12 @@ export default function Nav({ page }) {
           </MTLink>
 
           <Flex>
-            <MenuItems inView={inView} page={page}>
+            <MenuItems inView={inView}>
               <li>
-                <MTLink to="/about">
-                  {intl.formatMessage({ id: "nav1" })}
-                </MTLink>
+                <MTLink to="/about">{intl[locale].nav1}</MTLink>
               </li>
               <li>
-                <MTLink to="/work">{intl.formatMessage({ id: "nav2" })}</MTLink>
+                <MTLink to="/work">{intl[locale].nav2}</MTLink>
               </li>
               <li>
                 <MTLink
@@ -139,16 +140,14 @@ export default function Nav({ page }) {
                     setFAQSelected(null);
                   }}
                 >
-                  {intl.formatMessage({ id: "nav3" })}{" "}
+                  {intl[locale].nav3}
                 </MTLink>
               </li>
               <li>
-                <button onClick={handleChange}>
-                  {intl.formatMessage({ id: "nav4" })}
-                </button>
+                <button onClick={handleChange}>{intl[locale].nav4}</button>
               </li>
             </MenuItems>
-            <LanguageSwitch inView2={inView2} />
+            <LanguageSwitch inView2={inView2} path={oldPath} />
           </Flex>
         </FlexContainer>
       </NavWrapper>

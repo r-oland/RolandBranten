@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import styled, { ThemeProvider } from "styled-components";
 import SForm from "../../single-components/SForm";
-import TransitionEffect from "../../single-components/TransitionEffect";
 import usePersistedState from "../../single-components/usePersistedState";
 import GlobalStyles from "../../style/GlobalStyles";
 import { Variables } from "../../style/themes";
@@ -25,17 +24,30 @@ const ObserverRef2 = styled(ObserverStyle)`
   height: calc(100% - 101vh);
 `;
 
+const Wrapper = styled.div`
+  padding-top: ${({ theme: { spacing }, path }) =>
+    path !== "/" ? spacing.s9 : 0};
+
+  @media screen and (min-width: 850px) {
+    padding-top: ${({ theme: { spacing }, path }) =>
+      path !== "/" ? spacing.s9 : 0};
+  }
+`;
+
 export const HamburgerContext = React.createContext();
 export const ModalContext = React.createContext();
 export const FaqContext = React.createContext();
 export const ObserverContext = React.createContext();
+export const LocaleContext = React.createContext();
 
-export default function Layout({ children, page, display }) {
+export default function Layout({ children, path, pageContext }) {
   const [menuState, setMenuState] = useState("closed");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [FAQSelected, setFAQSelected] = usePersistedState(`FAQSelected`, null);
   const [ref, inView] = useInView({ threshold: 0 });
   const [ref2, inView2] = useInView({ threshold: 0 });
+
+  const locale = pageContext.language;
 
   const changeMenu = () => {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
@@ -61,30 +73,32 @@ export default function Layout({ children, page, display }) {
   };
 
   const observerValue = {
+    ref,
+    ref2,
     inView,
     inView2
   };
 
   return (
     <ThemeProvider theme={Variables}>
-      <HamburgerContext.Provider value={contextValue}>
-        <ModalContext.Provider value={modalValue}>
-          <FaqContext.Provider value={faqValue}>
-            <ObserverContext.Provider value={observerValue}>
-              <ObserverRef ref={ref} />
-              <ObserverRef2 ref={ref2} />
-              <IEWarning />
-              <SForm />
-              <Nav page={page} />
-              <TransitionEffect page={page}>
-                {children}
-                <Footer page={page} display={display} />
-              </TransitionEffect>
-              <GlobalStyles />
-            </ObserverContext.Provider>
-          </FaqContext.Provider>
-        </ModalContext.Provider>
-      </HamburgerContext.Provider>
+      <LocaleContext.Provider value={locale}>
+        <HamburgerContext.Provider value={contextValue}>
+          <ModalContext.Provider value={modalValue}>
+            <FaqContext.Provider value={faqValue}>
+              <ObserverContext.Provider value={observerValue}>
+                <ObserverRef ref={ref} />
+                <ObserverRef2 ref={ref2} />
+                <IEWarning />
+                <SForm />
+                <Nav path={path} oldPath={pageContext.oldPath} />
+                <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
+                <Footer path={path} />
+                <GlobalStyles />
+              </ObserverContext.Provider>
+            </FaqContext.Provider>
+          </ModalContext.Provider>
+        </HamburgerContext.Provider>
+      </LocaleContext.Provider>
     </ThemeProvider>
   );
 }

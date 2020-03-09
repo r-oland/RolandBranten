@@ -1,8 +1,9 @@
 // Components==============
-import { useIntl } from "gatsby-plugin-intl";
 import { flexUnit } from "mixins";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import intl from "../../../data/intl/intl.json";
+import { LocaleContext } from "../Layout";
 import IEModal from "./IEModal";
 // =========================
 
@@ -14,7 +15,7 @@ const Text = styled.p`
 
 export default function IEWarning() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const intl = useIntl();
+  const locale = useContext(LocaleContext);
 
   useEffect(() => {
     const isIE = /*@cc_on!@*/ false || !!document.documentMode;
@@ -28,7 +29,7 @@ export default function IEWarning() {
   return (
     <div>
       <IEModal modalIsOpen={modalIsOpen} handleChange={handleChange}>
-        <Text>{intl.formatMessage({ id: "IEMessage" })}</Text>
+        <Text>{intl[locale].IEMessage}</Text>
       </IEModal>
     </div>
   );

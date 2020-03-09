@@ -14,7 +14,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-transition-link`,
     "gatsby-transformer-json",
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -27,15 +26,6 @@ module.exports = {
           `/*/success`,
           `/success`
         ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-intl`,
-      options: {
-        path: `${__dirname}/src/data/intl`,
-        languages: [`en`, `nl`],
-        defaultLanguage: `en`,
-        redirect: true
       }
     },
     {
@@ -64,7 +54,7 @@ module.exports = {
       options: {
         name: `Roland Branten`,
         short_name: `Roland`,
-        lang: `en`,
+        lang: `nl`,
         start_url: `/`,
         background_color: `#FFC719`,
         theme_color: `#FFFFFF`,
@@ -72,8 +62,8 @@ module.exports = {
         icon: `icon/icon.png`,
         localize: [
           {
-            start_url: `/nl/`,
-            lang: `nl`
+            start_url: `/en/`,
+            lang: `en`
           }
         ]
       }

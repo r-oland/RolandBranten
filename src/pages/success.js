@@ -1,9 +1,9 @@
 // Components==============
-import { useIntl } from "gatsby-plugin-intl";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import intl from "../data/intl/intl.json";
 import Head from "../global-components/Layout/Head";
-import Layout from "../global-components/Layout/Layout";
+import { LocaleContext } from "../global-components/Layout/Layout";
 // ========================
 
 const Wrapper = styled.div`
@@ -17,14 +17,14 @@ const Wrapper = styled.div`
 `;
 
 export default function Success() {
-  const intl = useIntl();
+  const locale = useContext(LocaleContext);
 
   return (
-    <Layout display={"notFoundPage"}>
+    <>
       <Head title="Success" path="success" />
       <Wrapper>
-        <h2>{intl.formatMessage({ id: "success" })}</h2>;
+        <h2>{intl[locale].success}</h2>;
       </Wrapper>
-    </Layout>
+    </>
   );
 }

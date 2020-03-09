@@ -1,11 +1,13 @@
 // Components==============
 import { motion } from "framer-motion";
-import { useIntl } from "gatsby-plugin-intl";
 import { Button, flexUnit, StyledUnderline } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import text from "../data/modal.json";
-import { ModalContext } from "../global-components/Layout/Layout";
+import {
+  LocaleContext,
+  ModalContext
+} from "../global-components/Layout/Layout";
 // =========================
 
 const FormCard = styled(motion.div)`
@@ -113,8 +115,7 @@ export default function SForm() {
 
   const { modalIsOpen, handleChange } = useContext(ModalContext);
 
-  const intl = useIntl();
-  const locale = intl.locale;
+  const locale = useContext(LocaleContext);
 
   return (
     <div>

@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
    html {
       font-family: Raleway;
       background-color: ${({ theme: { gray } }) => gray.s1};
+      overflow-x: hidden;
 
       input, select, textarea, label{
          font-family: Raleway;
@@ -33,6 +34,10 @@ const GlobalStyles = createGlobalStyle`
 
    svg{
       display: block;
+   }
+
+   #gatsby-focus-wrapper{
+      position: relative;
    }
 
    /* =========================================*/

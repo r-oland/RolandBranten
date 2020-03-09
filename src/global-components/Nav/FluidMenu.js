@@ -1,10 +1,15 @@
 // Components==============
 import { motion } from "framer-motion";
-import { useIntl } from "gatsby-plugin-intl";
 import React, { useContext } from "react";
 import styled from "styled-components";
+import intl from "../../data/intl/intl.json";
 import MTLink from "../../single-components/MTLink";
-import { FaqContext, HamburgerContext, ModalContext } from "../Layout/Layout";
+import {
+  FaqContext,
+  HamburgerContext,
+  LocaleContext,
+  ModalContext
+} from "../Layout/Layout";
 // =========================
 
 const Hide = styled.div`
@@ -57,7 +62,7 @@ export default function FluidMenu() {
   const { menuState, changeMenu } = useContext(HamburgerContext);
   const { handleChange } = useContext(ModalContext);
   const { setFAQSelected } = useContext(FaqContext);
-  const intl = useIntl();
+  const locale = useContext(LocaleContext);
 
   return (
     <Hide>
@@ -78,17 +83,17 @@ export default function FluidMenu() {
       >
         <button onClick={changeMenu}>
           <MTLink to="/" activeClassName="active">
-            {intl.formatMessage({ id: "nav0" })}
+            {intl[locale].nav0}
           </MTLink>
         </button>
         <button onClick={changeMenu}>
           <MTLink to="/about" activeClassName="active">
-            {intl.formatMessage({ id: "nav1" })}
+            {intl[locale].nav1}
           </MTLink>
         </button>
         <button onClick={changeMenu}>
           <MTLink to="/work" activeClassName="active">
-            {intl.formatMessage({ id: "nav2" })}
+            {intl[locale].nav2}
           </MTLink>
         </button>
         <button
@@ -98,7 +103,7 @@ export default function FluidMenu() {
           }}
         >
           <MTLink to="/faq" activeClassName="active">
-            {intl.formatMessage({ id: "nav3" })}
+            {intl[locale].nav3}
           </MTLink>
         </button>
         <button
@@ -108,7 +113,7 @@ export default function FluidMenu() {
             changeMenu();
           }}
         >
-          {intl.formatMessage({ id: "nav4" })}
+          {intl[locale].nav4}
         </button>
       </Menu>
       <Blur

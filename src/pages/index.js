@@ -2,7 +2,6 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
-import Layout from "../global-components/Layout/Layout";
 import Hero from "../page-components/index/Hero";
 import PopularQ from "../page-components/index/PopularQ";
 import Sale from "../page-components/index/Sale";
@@ -13,7 +12,7 @@ export default function Index({ data }) {
   const t = data.file.childIndexJson;
 
   return (
-    <Layout page="homeOL">
+    <>
       <Head
         title={t.title}
         description={t.description}
@@ -58,7 +57,7 @@ export default function Index({ data }) {
         title8={t.title8}
         TechnologyText={data.TechnologyText.childIndexInfoJson.Text}
       />
-    </Layout>
+    </>
   );
 }
 

@@ -1,9 +1,12 @@
 // Components==============
 import { motion } from "framer-motion";
-import { changeLocale, IntlContextConsumer } from "gatsby-plugin-intl";
+import { Link } from "gatsby";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { HamburgerContext } from "../global-components/Layout/Layout";
+import {
+  HamburgerContext,
+  LocaleContext
+} from "../global-components/Layout/Layout";
 // ========================
 
 const Flex = styled(motion.div)`
@@ -34,7 +37,7 @@ const NL = styled.button`
   position: absolute;
   right: 0;
   font-size: 18px;
-  opacity: ${({ language }) => (language === "nl" ? 1 : 0)};
+  opacity: ${({ locale }) => (locale === "nl" ? 1 : 0)};
 
   @media screen and (min-width: 850px) {
     position: initial;
@@ -42,27 +45,28 @@ const NL = styled.button`
     opacity: 1;
   }
 
-  font-weight: ${({ theme: { fontWeight }, language }) =>
-    language === "nl" ? fontWeight.bold : fontWeight.normal};
+  font-weight: ${({ theme: { fontWeight }, locale }) =>
+    locale === "nl" ? fontWeight.bold : fontWeight.normal};
 `;
 
 const EN = styled.button`
   position: absolute;
   right: 0;
   font-size: 18px;
-  opacity: ${({ language }) => (language === "en" ? 1 : 0)};
+  opacity: ${({ locale }) => (locale === "en" ? 1 : 0)};
 
   @media screen and (min-width: 850px) {
     position: initial;
     opacity: 1;
   }
 
-  font-weight: ${({ theme: { fontWeight }, language }) =>
-    language === "en" ? fontWeight.bold : fontWeight.normal};
+  font-weight: ${({ theme: { fontWeight }, locale }) =>
+    locale === "en" ? fontWeight.bold : fontWeight.normal};
 `;
 
-export default function LanguageSwitch({ inView2 }) {
+export default function LanguageSwitch({ inView2, path }) {
   const { menuState } = useContext(HamburgerContext);
+  const locale = useContext(LocaleContext);
 
   const variants = {
     visible: {
@@ -80,38 +84,29 @@ export default function LanguageSwitch({ inView2 }) {
     typeof window !== "undefined" && window.matchMedia("(min-width: 850px)");
 
   return (
-    <IntlContextConsumer>
-      {({ language }) => {
-        return (
-          <Flex
-            animate={
-              (inView2 === false && menuState === "closed"
-                ? "visible"
-                : inView2 === false && menuState === "open") || query.matches
-                ? "visible"
-                : (inView2 === true && menuState === "open") || query.matches
-                ? "visible"
-                : (inView2 === true && menuState === "closed") ||
-                  query.matches !== true
-                ? "hidden"
-                : "hidden"
-            }
-            variants={variants}
-            initial={{
-              opacity: 1
-            }}
-            onClick={() =>
-              language === "en" ? changeLocale("nl") : changeLocale("en")
-            }
-          >
-            <NL language={language}>NL</NL>
-            <span>/</span>
-            <EN onClick={() => changeLocale("en")} language={language}>
-              EN
-            </EN>
-          </Flex>
-        );
-      }}
-    </IntlContextConsumer>
+    <Link to={locale === "en" ? `${path}` : `/en${path}`}>
+      <Flex
+        animate={
+          (inView2 === false && menuState === "closed"
+            ? "visible"
+            : inView2 === false && menuState === "open") || query.matches
+            ? "visible"
+            : (inView2 === true && menuState === "open") || query.matches
+            ? "visible"
+            : (inView2 === true && menuState === "closed") ||
+              query.matches !== true
+            ? "hidden"
+            : "hidden"
+        }
+        variants={variants}
+        initial={{
+          opacity: 1
+        }}
+      >
+        <NL locale={locale}>NL</NL>
+        <span>/</span>
+        <EN locale={locale}>EN</EN>
+      </Flex>
+    </Link>
   );
 }

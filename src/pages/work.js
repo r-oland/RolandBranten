@@ -2,7 +2,6 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
-import Layout from "../global-components/Layout/Layout";
 import Content from "../page-components/work/Content";
 // =========================
 
@@ -10,7 +9,7 @@ export default function Work({ data }) {
   const t = data.file.childWorkJson;
 
   return (
-    <Layout page="workOL">
+    <>
       <Head
         title={t.SEO[0].title}
         description={t.SEO[0].description}
@@ -32,7 +31,7 @@ export default function Work({ data }) {
         ComponentsFloat={data.ComponentsFloat.childImageSharp.fluid}
         ComponentsFloat2={data.ComponentsFloat2.childImageSharp.fluid}
       />
-    </Layout>
+    </>
   );
 }
 
