@@ -21,7 +21,7 @@ export default function Success() {
 
   return (
     <>
-      <Head title="Success" path="success" />
+      <Head title="Success" path="success" noIndex="noindex" />
       <Wrapper>
         <h2>{intl[locale].success}</h2>;
       </Wrapper>

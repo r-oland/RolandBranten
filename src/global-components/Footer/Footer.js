@@ -54,19 +54,16 @@ export default function Footer({ path }) {
   const locale = useContext(LocaleContext);
 
   const hideFooterPages =
-    path === "/success" ||
-    path === "/404" ||
-    path === "/en/404" ||
-    path === "/en/success";
+    path === "/success/" || path === "/404/" || path === "/404.html/";
 
   const oneLiner =
-    path === "/en" || path === "/"
+    path === "/"
       ? intl[locale].homeOL
-      : path === "/en/work" || path === "/work"
+      : path === "/work/"
       ? intl[locale].workOL
-      : path === "/en/about" || path === "/about"
+      : path === "/about/"
       ? intl[locale].aboutOL
-      : path === "/en/faq" || path === "/faq"
+      : path === "/faq/"
       ? intl[locale].faqOL
       : null;
 

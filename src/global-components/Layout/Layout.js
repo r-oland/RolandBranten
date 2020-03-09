@@ -92,7 +92,7 @@ export default function Layout({ children, path, pageContext }) {
                 <SForm />
                 <Nav path={path} oldPath={pageContext.oldPath} />
                 <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
-                <Footer path={path} />
+                <Footer path={pageContext.oldPath} />
                 <GlobalStyles />
               </ObserverContext.Provider>
             </FaqContext.Provider>

@@ -35,6 +35,7 @@ export default function NotFound() {
         description="Could not found the page you where looking for"
         keywords="404, unavailable, not found"
         path="404"
+        noIndex="noindex"
       />
       <Container404 style={{ marginTop: "2em" }}>
         <h2>{intl[locale].notFound}</h2>
