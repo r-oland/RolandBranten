@@ -16,8 +16,10 @@ export default function HTML(props) {
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <noscript>
-          This website requires JavaScript. Please enable this in your browser
-          setting to continue.
+          This website requires JavaScript. Please{" "}
+          <a href="https://enable-javascript.com/" target="new">
+            enable this in your browser
+          </a>
         </noscript>
         <div
           key={`body`}
