@@ -44,14 +44,12 @@ export const FaqContext = React.createContext();
 export const ObserverContext = React.createContext();
 export const LocaleContext = React.createContext();
 
-export default function Layout({ children, path, pageContext }) {
+export default function Layout({ children, path, pageContext, location }) {
   const [menuState, setMenuState] = useState("closed");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [FAQSelected, setFAQSelected] = usePersistedState(`FAQSelected`, null);
   const [ref, inView] = useInView({ threshold: 0 });
   const [ref2, inView2] = useInView({ threshold: 0 });
-
-  console.log(pageContext);
 
   const locale = pageContext.language;
 
@@ -84,6 +82,8 @@ export default function Layout({ children, path, pageContext }) {
     inView,
     inView2
   };
+
+  if (location.pathname === "/offline-plugin-app-shell-fallback") return null;
 
   return (
     <ThemeProvider theme={Variables}>
