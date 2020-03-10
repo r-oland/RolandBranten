@@ -1,5 +1,6 @@
 // Components==============
 import React, { useState } from "react";
+import { hot } from "react-hot-loader/root";
 import { useInView } from "react-intersection-observer";
 import styled, { ThemeProvider } from "styled-components";
 import SForm from "../../single-components/SForm";
@@ -44,7 +45,7 @@ export const FaqContext = React.createContext();
 export const ObserverContext = React.createContext();
 export const LocaleContext = React.createContext();
 
-export default function Layout({ children, path, pageContext, location }) {
+function Layout({ children, path, pageContext, location }) {
   const [menuState, setMenuState] = useState("closed");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [FAQSelected, setFAQSelected] = usePersistedState(`FAQSelected`, null);
@@ -110,3 +111,5 @@ export default function Layout({ children, path, pageContext, location }) {
     </ThemeProvider>
   );
 }
+
+export default hot(Layout);

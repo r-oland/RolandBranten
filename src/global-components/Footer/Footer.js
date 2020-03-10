@@ -54,7 +54,7 @@ export default function Footer({ path }) {
   const locale = useContext(LocaleContext);
 
   const hideFooterPages =
-    path === "/success/" || path === "/404/" || path === "/404.html/";
+    path === "/work/" || path === "/about/" || path === "/faq/" || path === "/";
 
   const oneLiner =
     path === "/"
@@ -70,7 +70,7 @@ export default function Footer({ path }) {
   return (
     <div
       style={{
-        display: hideFooterPages ? "none" : "block"
+        display: hideFooterPages ? "block" : "none"
       }}
     >
       <Wrapper>
