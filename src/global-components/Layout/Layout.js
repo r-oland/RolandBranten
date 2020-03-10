@@ -51,6 +51,8 @@ export default function Layout({ children, path, pageContext }) {
   const [ref, inView] = useInView({ threshold: 0 });
   const [ref2, inView2] = useInView({ threshold: 0 });
 
+  console.log(pageContext);
+
   const locale = pageContext.language;
 
   const changeMenu = () => {
