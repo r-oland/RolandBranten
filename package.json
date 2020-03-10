@@ -11,7 +11,7 @@
     "develop": "gatsby develop -H 192.168.2.146 ",
     "local": "gatsby develop -H 192.168.56.1 -p 8001 ",
     "mobile": "gatsby develop -H 192.168.43.132 -p 8001 ",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -H 192.168.2.146 ",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {

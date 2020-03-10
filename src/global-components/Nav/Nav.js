@@ -20,7 +20,7 @@ import FluidMenu from "./FluidMenu";
 const NavWrapper = styled(motion.div)`
   z-index: 153;
   position: absolute;
-  width: 100vw;
+  width: 100%;
   transition: 0.4s;
 
   @media screen and (min-width: 850px) {
@@ -69,7 +69,7 @@ const MenuItems = styled.ul`
       transition: 0.2s;
       &:hover {
         color: ${({ theme: { primary }, inView, path }) =>
-          inView === false && (path === "en" || path === "/en")
+          inView === false && (path === "/" || path === "/en")
             ? `white`
             : primary.s7};
       }
@@ -97,7 +97,7 @@ export default function Nav({ path, oldPath }) {
 
   return (
     <div>
-      <NavWrapper inView={inView} path={path}>
+      <NavWrapper inView={inView}>
         <FlexContainer>
           <MTLink to="/">
             <Logo
@@ -126,7 +126,7 @@ export default function Nav({ path, oldPath }) {
           </MTLink>
 
           <Flex>
-            <MenuItems inView={inView}>
+            <MenuItems inView={inView} path={path}>
               <li>
                 <MTLink to="/about">{intl[locale].nav1}</MTLink>
               </li>

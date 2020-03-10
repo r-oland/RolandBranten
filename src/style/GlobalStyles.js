@@ -20,7 +20,6 @@ const GlobalStyles = createGlobalStyle`
    html {
       font-family: Raleway;
       background-color: ${({ theme: { gray } }) => gray.s1};
-      overflow-x: hidden;
 
       input, select, textarea, label{
          font-family: Raleway;

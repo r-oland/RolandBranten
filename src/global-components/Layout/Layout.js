@@ -34,6 +34,10 @@ const Wrapper = styled.div`
   }
 `;
 
+const OverFlow = styled.div`
+  overflow: hidden;
+`;
+
 export const HamburgerContext = React.createContext();
 export const ModalContext = React.createContext();
 export const FaqContext = React.createContext();
@@ -88,11 +92,13 @@ export default function Layout({ children, path, pageContext }) {
               <ObserverContext.Provider value={observerValue}>
                 <ObserverRef ref={ref} />
                 <ObserverRef2 ref={ref2} />
-                <IEWarning />
-                <SForm />
-                <Nav path={path} oldPath={pageContext.oldPath} />
-                <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
-                <Footer path={pageContext.oldPath} />
+                <OverFlow>
+                  <IEWarning />
+                  <SForm />
+                  <Nav path={path} oldPath={pageContext.oldPath} />
+                  <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
+                  <Footer path={pageContext.oldPath} />
+                </OverFlow>
                 <GlobalStyles />
               </ObserverContext.Provider>
             </FaqContext.Provider>
