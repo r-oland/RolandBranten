@@ -199,13 +199,12 @@ export default function ChatLink({
 
   function Me({ children, to, faq }) {
     return (
-      <Left>
-        <MTLink
-          to={to}
-          onClick={() => {
-            setFAQSelected(faq);
-          }}
-        >
+      <Left
+        onClick={() => {
+          setFAQSelected(faq);
+        }}
+      >
+        <MTLink to={to}>
           <LeftSvg />
           <Sender>Me</Sender>
           <Message>{children}</Message>
@@ -216,13 +215,12 @@ export default function ChatLink({
 
   function Roland({ children, to, faq }) {
     return (
-      <Right>
-        <MTLink
-          to={to}
-          onClick={() => {
-            setFAQSelected(faq);
-          }}
-        >
+      <Right
+        onClick={() => {
+          setFAQSelected(faq);
+        }}
+      >
+        <MTLink to={to}>
           <RightSvg />
           <Sender>Roland</Sender>
           <Message>{children}</Message>

@@ -13,7 +13,7 @@
     "gatsby-ssr.js": true,
     "package-lock.json": true,
     "package.json": true,
-    "wrapPageElement.js": true,
+    // "wrapPageElement.js": true,
     "jsconfig.json": true
   },
 

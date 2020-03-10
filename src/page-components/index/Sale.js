@@ -330,15 +330,13 @@ export default function Sale({
         </Grid>
 
         <LinkOL>{linkOL}</LinkOL>
-        <Link as="div">
-          <MTLink
-            to="/faq"
-            onClick={() => {
-              setFAQSelected(0);
-            }}
-          >
-            {linkButton}
-          </MTLink>
+        <Link
+          as="div"
+          onClick={() => {
+            setFAQSelected(0);
+          }}
+        >
+          <MTLink to="/faq">{linkButton}</MTLink>
         </Link>
       </CustomContainer>
     </Wrapper>

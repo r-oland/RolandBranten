@@ -133,15 +133,12 @@ export default function Nav({ path, oldPath }) {
               <li>
                 <MTLink to="/work">{intl[locale].nav2}</MTLink>
               </li>
-              <li>
-                <MTLink
-                  to="/faq"
-                  onClick={() => {
-                    setFAQSelected(null);
-                  }}
-                >
-                  {intl[locale].nav3}
-                </MTLink>
+              <li
+                onClick={() => {
+                  setFAQSelected(null);
+                }}
+              >
+                <MTLink to="/faq">{intl[locale].nav3}</MTLink>
               </li>
               <li>
                 <button onClick={handleChange}>{intl[locale].nav4}</button>
