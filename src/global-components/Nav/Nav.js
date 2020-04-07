@@ -11,7 +11,7 @@ import {
   HamburgerContext,
   LocaleContext,
   ModalContext,
-  ObserverContext
+  ObserverContext,
 } from "../Layout/Layout";
 import FluidHamburger from "./FluidHamburger";
 import FluidMenu from "./FluidMenu";
@@ -133,12 +133,14 @@ export default function Nav({ path, oldPath }) {
               <li>
                 <MTLink to="/work">{intl[locale].nav2}</MTLink>
               </li>
-              <li
-                onClick={() => {
-                  setFAQSelected(null);
-                }}
-              >
-                <MTLink to="/faq">{intl[locale].nav3}</MTLink>
+              <li>
+                <button
+                  onClick={() => {
+                    setFAQSelected(null);
+                  }}
+                >
+                  <MTLink to="/faq">{intl[locale].nav3}</MTLink>
+                </button>
               </li>
               <li>
                 <button onClick={handleChange}>{intl[locale].nav4}</button>

@@ -5,7 +5,7 @@ import {
   Button,
   Container,
   flexUnit,
-  StyledUnderline
+  StyledUnderline,
 } from "../../style/Mixins";
 import { Images, Text } from "./TextImages";
 // =========================
@@ -85,6 +85,7 @@ export default function Content({
   BizData,
   BrantenData,
   ComponentsData,
+  RogierData,
   biz,
   bizFloat,
   bizFloat2,
@@ -93,7 +94,10 @@ export default function Content({
   BrantenFloat2,
   Components,
   ComponentsFloat,
-  ComponentsFloat2
+  ComponentsFloat2,
+  Rogier,
+  RogierFloat,
+  RogierFloat2,
 }) {
   const Project = (text, image, link, align) => {
     return (
@@ -136,30 +140,47 @@ export default function Content({
     "right"
   );
 
+  const RogierText = Text(RogierData);
+  const RogierImages = Images(
+    Rogier,
+    RogierFloat,
+    RogierFloat2,
+    "Components",
+    "right"
+  );
+
   const BizLogisticsSection = Project(
     BizText,
     BizImages,
     "https://www.bizlogistics.nl/",
-    "right"
+    "left"
   );
 
   const BrantenMaatwerkSection = Project(
     BrantenText,
     BrantenImages,
     "https://www.brantenmaatwerk.nl/",
-    "left"
+    "right"
   );
 
   const ComponentsSection = Project(
     ComponentsText,
     ComponentsImages,
     "https://componentsrb.netlify.com/",
+    "left"
+  );
+
+  const RogierSection = Project(
+    RogierText,
+    RogierImages,
+    "https://rogierovervliet.nl/",
     "right"
   );
 
   return (
     <Wrapper>
       <Container>
+        {RogierSection}
         {BizLogisticsSection}
         {BrantenMaatwerkSection}
         {ComponentsSection}
