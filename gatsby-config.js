@@ -16,6 +16,17 @@ module.exports = {
     `gatsby-plugin-netlify`,
     "gatsby-transformer-json",
     {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "mlhs3v8e",
+        dataset: "production",
+        token: process.env.SANITY_TOKEN,
+        graphqlTag: "default",
+        watchMode: true,
+        overlayDrafts: true
+      }
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         exclude: [

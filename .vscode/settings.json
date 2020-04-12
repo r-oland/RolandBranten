@@ -1,6 +1,7 @@
 {
   "files.exclude": {
     "src/html.js": true,
+    ".env": true,
     ".cache": true,
     "icon": true,
     "node_modules": true,
@@ -13,29 +14,36 @@
     "gatsby-ssr.js": true,
     "package-lock.json": true,
     "package.json": true,
-    "wrapPageElement.js": true
+    "wrapPageElement.js": true,
+    "jsconfig.json": true
   },
-
   "files.associations": {
     "*.js": "javascriptreact"
   },
-
   "vsicons.associations.folders": [
     {
       "icon": "config",
-      "extensions": ["react"]
+      "extensions": [
+        "react"
+      ]
     },
     {
       "icon": "paket",
-      "extensions": ["global-components"]
+      "extensions": [
+        "global-components"
+      ]
     },
     {
       "icon": "model",
-      "extensions": ["page-components"]
+      "extensions": [
+        "page-components"
+      ]
     },
     {
       "icon": "component",
-      "extensions": ["single-components"]
+      "extensions": [
+        "single-components"
+      ]
     }
   ],
   "cSpell.language": "nl, en"
