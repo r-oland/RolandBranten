@@ -1,4 +1,5 @@
-import "intersection-observer";
-import CustomLayout from "./wrapPageElement";
+import page from "./page";
+import root from "./root";
 
-export const wrapPageElement = CustomLayout;
+export const wrapPageElement = page;
+export const wrapRootElement = root;
