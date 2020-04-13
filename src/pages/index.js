@@ -1,122 +1,106 @@
 // Components==============
 import { graphql } from "gatsby";
-import React from "react";
+import React, { useContext } from "react";
 import Head from "../global-components/Layout/Head";
+import { LocaleContext } from "../global-components/Layout/Layout";
 import Hero from "../macro-index/Hero";
-import PopularQ from "../macro-index/PopularQ";
 import Sale from "../macro-index/Sale";
-import Technologies from "../macro-index/Technologies";
 // =========================
 
 export default function Index({ data }) {
-  const t = data.file.childIndexJson;
+  const lang = useContext(LocaleContext);
+  const d = data.sanityHome;
+
+  const hero = {
+    title: d.title[lang],
+    headshot: d.headshot.asset.fluid,
+    explanation: d.explanation[lang],
+  };
+
+  const sale = {
+    title: d.saleTitle,
+    salePoints: d._rawSalePoints,
+  };
 
   return (
     <>
       <Head
-        title={t.title}
-        description={t.description}
-        keywords={t.keywords}
+        title={d.SEO[0].title[lang]}
+        description={d.SEO[0].description[lang]}
+        keywords={d.SEO[0].keywords[lang]}
         path=""
       />
-      <Hero
-        title={t.title}
-        description={t.description}
-        keywords={t.keywords}
-        hello={t.hello}
-        explanation={t.explanation}
-        headshot={data.Headshot.childImageSharp.fluid}
-      />
-      <Sale
-        title1={t.title1}
-        title2={t.title2}
-        explanation2={t.explanation2}
-        title3={t.title3}
-        explanation3={t.explanation3}
-        title4={t.title4}
-        explanation4={t.explanation4}
-        title5={t.title5}
-        explanation5={t.explanation5}
-        title6={t.title6}
-        explanation6={t.explanation6}
-        source={t.source}
-        linkOL={t.linkOL}
-        linkButton={t.linkButton}
-      />
-      <PopularQ
-        title7={t.title7}
-        img={data.ProfilePic.childImageSharp.fluid}
-        question1={t.question1}
-        answer1={t.answer1}
-        question2={t.question2}
-        answer2={t.answer2}
-        question3={t.question3}
-        answer3={t.answer3}
-      />
-      <Technologies
-        title8={t.title8}
-        TechnologyText={data.TechnologyText.childIndexInfoJson.Text}
-      />
+      <Hero content={hero} />
+      <Sale content={sale} />
+      {/* <PopularQ /> */}
+      {/* <Technologies />  */}
     </>
   );
 }
 
 export const query = graphql`
-  query Home($language: String) {
-    file(name: { eq: $language }, relativeDirectory: { eq: "index" }) {
-      childIndexJson {
-        title
-        description
-        keywords
-        hello
-        explanation
-        title1
-        title2
-        explanation2
-        title3
-        explanation3
-        title4
-        explanation4
-        title5
-        explanation5
-        title6
-        explanation6
-        source
-        linkOL
-        linkButton
-        title7
-        question1
-        answer1
-        question2
-        answer2
-        question3
-        answer3
-        title8
-      }
-    }
-    TechnologyText: file(
-      name: { eq: $language }
-      relativeDirectory: { eq: "indexInfo" }
-    ) {
-      childIndexInfoJson {
-        Text {
-          text
+  query home {
+    sanityHome {
+      SEO {
+        description {
+          en
+          nl
+        }
+        title {
+          en
+          nl
+        }
+        keywords {
+          en
+          nl
         }
       }
-    }
-    Headshot: file(relativePath: { eq: "Roland-Branten.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 900, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+      title {
+        en
+        nl
+      }
+      headshot {
+        asset {
+          fluid(maxWidth: 800) {
+            ...GatsbySanityImageFluid_withWebp
+          }
         }
       }
-    }
-    ProfilePic: file(relativePath: { eq: "Profile.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+      explanation {
+        en
+        nl
+      }
+      saleTitle {
+        en
+        nl
+      }
+      _rawSalePoints
+      questionsTitle {
+        en
+        nl
+      }
+      headshot2 {
+        asset {
+          fluid(maxWidth: 150) {
+            ...GatsbySanityImageFluid_withWebp
+          }
         }
       }
+      questions {
+        answer {
+          nl
+          en
+        }
+        question {
+          en
+          nl
+        }
+      }
+      techTitle {
+        en
+        nl
+      }
+      _rawTechnologies
     }
   }
 `;

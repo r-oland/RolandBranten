@@ -4,28 +4,7 @@ import Img from "gatsby-image";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import { H2, H3, L } from "../style/Mixins";
 // =========================
-
-const Name = styled(H2)`
-  margin: ${({ theme: { spacing } }) => `${spacing.s7} 0 ${spacing.s3}`};
-
-  @media screen and (min-width: 800px) {
-    margin: ${({ theme: { spacing } }) => `${spacing.s6} 0 ${spacing.s1}`};
-  }
-`;
-
-const Type = styled(H3)``;
-
-const Work = styled(L)`
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
-  margin: ${({ theme: { spacing } }) => `${spacing.s2} 0 ${spacing.s8}`};
-  letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing.wide};
-
-  @media screen and (min-width: 800px) {
-    margin: ${({ theme: { spacing } }) => `${spacing.s6} 0 ${spacing.s7}`};
-  }
-`;
 
 const ImgWrapper = styled.div`
   display: grid;
@@ -63,16 +42,6 @@ const Float2 = styled(motion.div)`
   left: 5%;
 `;
 
-export const Text = (data) => {
-  return (
-    <>
-      <Name>{data.name}</Name>
-      <Type>{data.type}</Type>
-      <Work>{data.work}</Work>
-    </>
-  );
-};
-
 const floatVariants = {
   inSight: {
     y: [0, 10, 0],
@@ -83,8 +52,7 @@ const floatVariants = {
     scale: [1, 1, 1],
   },
 };
-
-export const Images = (Business, float, float2, alt, align) => {
+export default function Images({ align, content, alt }) {
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: false,
@@ -92,7 +60,7 @@ export const Images = (Business, float, float2, alt, align) => {
 
   return (
     <ImgWrapper ref={ref} align={align}>
-      <Main fluid={Business} alt={`${alt}1`} />
+      <Main fluid={content.main} alt={`${alt}1`} />
       <Float
         animate={inView ? "inSight" : "outOfSight"}
         variants={floatVariants}
@@ -102,7 +70,7 @@ export const Images = (Business, float, float2, alt, align) => {
           delay: 1,
         }}
       >
-        <Img fluid={float} alt={`${alt}2`} />
+        <Img fluid={content.float1} alt={`${alt}2`} />
       </Float>
       <Float2
         animate={inView ? "inSight" : "outOfSight"}
@@ -112,8 +80,8 @@ export const Images = (Business, float, float2, alt, align) => {
           duration: 5,
         }}
       >
-        <Img fluid={float2} alt={`${alt}3`} />
+        <Img fluid={content.float2} alt={`${alt}3`} />
       </Float2>
     </ImgWrapper>
   );
-};
+}

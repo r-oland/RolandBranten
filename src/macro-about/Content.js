@@ -88,6 +88,10 @@ const Text = styled.div`
   @media screen and (min-width: 800px) {
     padding-bottom: ${({ theme: { spacing } }) => spacing.s10};
   }
+
+  p {
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
+  }
 `;
 
 const Grid = styled.div`
@@ -128,8 +132,13 @@ export default function Content({ content }) {
       : content.title.evening;
   };
 
+  function removeFirst(arr, index) {
+    return index !== 0;
+  }
+
   const text = content.text[lang];
-  const firstText = text.shift();
+  const firstText = text[0];
+  const lastText = text.filter(removeFirst);
 
   return (
     <Wrapper>
@@ -145,7 +154,7 @@ export default function Content({ content }) {
               <IMG fluid={content.image} alt="Roland Branten" />
             </PictureWrapMobile>
             <Text>
-              <Block content={text} />
+              <Block content={lastText} />{" "}
             </Text>
           </div>
           <PictureWrapDesktop>

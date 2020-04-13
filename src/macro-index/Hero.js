@@ -43,7 +43,7 @@ const Wrapper2 = styled(Container)`
   }
 `;
 
-const Hello = styled(H2)`
+const Title = styled(H2)`
   padding: ${({ theme: { spacing } }) => `${spacing.s5} 0 ${spacing.s2}`};
 
   @media screen and (min-width: 850px) {
@@ -139,7 +139,9 @@ const Divider1MSvg = styled(Divider1MImp)`
   }
 `;
 
-export default function Hero({ hello, explanation, headshot }) {
+export default function Hero({ content }) {
+  const { title, explanation, headshot } = content;
+
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: false,
@@ -157,7 +159,7 @@ export default function Hero({ hello, explanation, headshot }) {
         <Divider1MSvg />;
         <Divider1DSvg />
         <Wrapper2>
-          <Hello> {hello}</Hello>
+          <Title> {title}</Title>
           <h1 ref={ref}>
             Freelance <br /> web <TextSwitchAnimation inView={inView} />
           </h1>

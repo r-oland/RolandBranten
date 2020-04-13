@@ -1,8 +1,12 @@
 // Components==============
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { LocaleContext } from "../global-components/Layout/Layout";
+import intl from "../intl/intl";
 import { Button, Container, flexUnit, StyledUnderline } from "../style/Mixins";
-import { Images, Text } from "./TextImages";
+import Images from "./Images";
+import Text from "./Text";
+
 // =========================
 
 const Wrapper = styled.div`
@@ -75,111 +79,59 @@ const LinkD = styled(Button)`
   }
 `;
 
-export default function Content({
-  button,
-  BizData,
-  BrantenData,
-  ComponentsData,
-  RogierData,
-  biz,
-  bizFloat,
-  bizFloat2,
-  Branten,
-  BrantenFloat,
-  BrantenFloat2,
-  Components,
-  ComponentsFloat,
-  ComponentsFloat2,
-  Rogier,
-  RogierFloat,
-  RogierFloat2,
-}) {
-  const Project = (text, image, link, align) => {
+function isEven(value) {
+  if (value % 2 === 0) return false;
+  else return true;
+}
+
+export default function Content({ content }) {
+  const lang = useContext(LocaleContext);
+
+  const Projects = content.jobs.map((edge, index) => {
+    console.log(edge);
+
+    const align = isEven(index) ? "left" : "right";
+
+    const textContent = {
+      name: edge.name,
+      type: edge.type[lang],
+      work: edge.work,
+    };
+
+    const imageContent = {
+      main: edge.mainImage.asset.fluid,
+      float1: edge.float1.asset.fluid,
+      float2: edge.float2.asset.fluid,
+      alt: edge.name,
+    };
+
     return (
-      <ProjectWrapper>
+      <ProjectWrapper key={index}>
         <Background />
         <Flex align={align}>
           <div>
-            {text}
-            <LinkD as="a" href={link} target="_blank" rel="noopener noreferrer">
-              {button}
+            <Text content={textContent} />
+            <LinkD
+              as="a"
+              href={edge.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {intl[lang].workButton}
             </LinkD>
           </div>
-          {image}
+          <Images content={imageContent} />
         </Flex>
-        <LinkM as="a" href={link} target="_blank" rel="noopener noreferrer">
-          {button}
+        <LinkM as="a" href={edge.url} target="_blank" rel="noopener noreferrer">
+          {intl[lang].workButton}
         </LinkM>
       </ProjectWrapper>
     );
-  };
-
-  const BizText = Text(BizData);
-  const BizImages = Images(biz, bizFloat, bizFloat2, "Biz-logistics", "right");
-
-  const BrantenText = Text(BrantenData);
-  const BrantenImages = Images(
-    Branten,
-    BrantenFloat,
-    BrantenFloat2,
-    "Branten-maatwerk",
-    "left"
-  );
-
-  const ComponentsText = Text(ComponentsData);
-  const ComponentsImages = Images(
-    Components,
-    ComponentsFloat,
-    ComponentsFloat2,
-    "Components",
-    "right"
-  );
-
-  const RogierText = Text(RogierData);
-  const RogierImages = Images(
-    Rogier,
-    RogierFloat,
-    RogierFloat2,
-    "Components",
-    "right"
-  );
-
-  const BizLogisticsSection = Project(
-    BizText,
-    BizImages,
-    "https://www.bizlogistics.nl/",
-    "left"
-  );
-
-  const BrantenMaatwerkSection = Project(
-    BrantenText,
-    BrantenImages,
-    "https://www.brantenmaatwerk.nl/",
-    "right"
-  );
-
-  const ComponentsSection = Project(
-    ComponentsText,
-    ComponentsImages,
-    "https://componentsrb.netlify.com/",
-    "left"
-  );
-
-  const RogierSection = Project(
-    RogierText,
-    RogierImages,
-    "https://rogierovervliet.nl/",
-    "right"
-  );
+  });
 
   return (
     <Wrapper>
-      <Container>
-        {RogierSection}
-        {BizLogisticsSection}
-        {BrantenMaatwerkSection}
-        {ComponentsSection}
-      </Container>
+      <Container>{Projects}</Container>
     </Wrapper>
   );
 }
