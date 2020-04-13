@@ -2,7 +2,7 @@
 import Img from "gatsby-image";
 import React from "react";
 import styled from "styled-components";
-import { Container, H3 } from "../../style/Mixins";
+import { Container, H3 } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -124,7 +124,7 @@ export default function Content({ firstText, text, title, picture }) {
       : title.evening;
   };
 
-  const aboutText = text.map(edge => {
+  const aboutText = text.map((edge) => {
     return (
       <div key={edge.text}>
         <p>{edge.text}</p>

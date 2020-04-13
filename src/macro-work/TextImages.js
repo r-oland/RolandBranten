@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import { H2, H3, L } from "../../style/Mixins";
+import { H2, H3, L } from "../style/Mixins";
 // =========================
 
 const Name = styled(H2)`
@@ -63,7 +63,7 @@ const Float2 = styled(motion.div)`
   left: 5%;
 `;
 
-export const Text = data => {
+export const Text = (data) => {
   return (
     <>
       <Name>{data.name}</Name>
@@ -76,18 +76,18 @@ export const Text = data => {
 const floatVariants = {
   inSight: {
     y: [0, 10, 0],
-    scale: [1, 1.03, 1]
+    scale: [1, 1.03, 1],
   },
   outOfSight: {
     y: [0, 0, 0],
-    scale: [1, 1, 1]
-  }
+    scale: [1, 1, 1],
+  },
 };
 
 export const Images = (Business, float, float2, alt, align) => {
   const [ref, inView] = useInView({
     threshold: 0,
-    triggerOnce: false
+    triggerOnce: false,
   });
 
   return (
@@ -99,7 +99,7 @@ export const Images = (Business, float, float2, alt, align) => {
         transition={{
           loop: Infinity,
           duration: 5,
-          delay: 1
+          delay: 1,
         }}
       >
         <Img fluid={float} alt={`${alt}2`} />
@@ -109,7 +109,7 @@ export const Images = (Business, float, float2, alt, align) => {
         variants={floatVariants}
         transition={{
           loop: Infinity,
-          duration: 5
+          duration: 5,
         }}
       >
         <Img fluid={float2} alt={`${alt}3`} />

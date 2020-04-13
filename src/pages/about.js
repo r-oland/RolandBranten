@@ -2,7 +2,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
-import Content from "../page-components/about/Content";
+import Content from "../macro-about/Content";
 // =========================
 
 export default function About({ data }) {

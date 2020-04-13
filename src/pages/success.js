@@ -1,9 +1,9 @@
 // Components==============
 import React, { useContext } from "react";
 import styled from "styled-components";
-import intl from "../data/intl/intl.json";
 import Head from "../global-components/Layout/Head";
 import { LocaleContext } from "../global-components/Layout/Layout";
+import intl from "../intl/intl.js";
 // ========================
 
 const Wrapper = styled.div`

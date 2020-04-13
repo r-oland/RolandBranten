@@ -2,7 +2,7 @@
 import { Button, Container, H2, H3, L, S } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import intl from "../../data/intl/intl.json";
+import intl from "../../intl/intl.js";
 import { StyledUnderline } from "../../style/Mixins";
 import { LocaleContext, ModalContext } from "../Layout/Layout";
 // =========================
@@ -70,7 +70,7 @@ export default function Footer({ path }) {
   return (
     <div
       style={{
-        display: hideFooterPages ? "block" : "none"
+        display: hideFooterPages ? "block" : "none",
       }}
     >
       <Wrapper>

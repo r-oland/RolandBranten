@@ -8,7 +8,7 @@
     "public": true,
     ".gitignore": true,
     "desktop.ini": true,
-    "gatsby-browser.js": true,
+    // "gatsby-browser.js": true,
     "gatsby-node.js": true,
     // "gatsby-config.js": true,
     "gatsby-ssr.js": true,
@@ -23,27 +23,19 @@
   "vsicons.associations.folders": [
     {
       "icon": "config",
-      "extensions": [
-        "react"
-      ]
+      "extensions": ["react"]
     },
     {
       "icon": "paket",
-      "extensions": [
-        "global-components"
-      ]
+      "extensions": ["global-components"]
     },
     {
       "icon": "model",
-      "extensions": [
-        "page-components"
-      ]
+      "extensions": ["page-components"]
     },
     {
       "icon": "component",
-      "extensions": [
-        "single-components"
-      ]
+      "extensions": ["micro-components"]
     }
   ],
   "cSpell.language": "nl, en"

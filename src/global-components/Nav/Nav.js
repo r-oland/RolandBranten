@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Container } from "mixins";
 import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
-import intl from "../../data/intl/intl.json";
-import LanguageSwitch from "../../single-components/LanguageSwitch";
-import MTLink from "../../single-components/MTLink";
+import intl from "../../intl/intl.js";
+import LanguageSwitch from "../../micro-components/LanguageSwitch";
+import MTLink from "../../micro-components/MTLink";
 import {
   FaqContext,
   HamburgerContext,

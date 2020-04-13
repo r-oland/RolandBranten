@@ -1,12 +1,7 @@
 // Components==============
 import React from "react";
 import styled from "styled-components";
-import {
-  Button,
-  Container,
-  flexUnit,
-  StyledUnderline,
-} from "../../style/Mixins";
+import { Button, Container, flexUnit, StyledUnderline } from "../style/Mixins";
 import { Images, Text } from "./TextImages";
 // =========================
 

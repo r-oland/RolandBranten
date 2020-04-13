@@ -5,9 +5,9 @@ import Img from "gatsby-image";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import BlobAnimation from "../../single-components/BlobAnimation";
-import TextSwitchAnimation from "../../single-components/TextSwitchAnimation";
-import { Container, flexUnit, H2 } from "../../style/Mixins";
+import BlobAnimation from "../micro-components/BlobAnimation";
+import TextSwitchAnimation from "../micro-components/TextSwitchAnimation";
+import { Container, flexUnit, H2 } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -143,12 +143,12 @@ export default function Hero({ hello, explanation, headshot }) {
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: false,
-    rootMargin: "500px"
+    rootMargin: "500px",
   });
 
   const [blob, blobInView] = useInView({
     threshold: 0,
-    triggerOnce: false
+    triggerOnce: false,
   });
 
   return (

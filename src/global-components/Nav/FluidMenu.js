@@ -2,13 +2,13 @@
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import intl from "../../data/intl/intl.json";
-import MTLink from "../../single-components/MTLink";
+import intl from "../../intl/intl.js";
+import MTLink from "../../micro-components/MTLink";
 import {
   FaqContext,
   HamburgerContext,
   LocaleContext,
-  ModalContext
+  ModalContext,
 } from "../Layout/Layout";
 // =========================
 
@@ -70,14 +70,14 @@ export default function FluidMenu() {
         animate={menuState === "open" ? `visible` : `hidden`}
         variants={{
           visible: {
-            display: "flex"
+            display: "flex",
           },
 
           hidden: {
             transitionEnd: {
-              display: "none"
-            }
-          }
+              display: "none",
+            },
+          },
         }}
         initial={false}
       >
@@ -122,15 +122,15 @@ export default function FluidMenu() {
         variants={{
           visible: {
             opacity: 0.7,
-            display: "block"
+            display: "block",
           },
 
           hidden: {
             opacity: 0,
             transitionEnd: {
-              display: "none"
-            }
-          }
+              display: "none",
+            },
+          },
         }}
         initial={false}
       />

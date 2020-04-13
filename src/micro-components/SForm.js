@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { Button, flexUnit, StyledUnderline } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import text from "../data/modal.json";
 import {
   LocaleContext,
-  ModalContext
+  ModalContext,
 } from "../global-components/Layout/Layout";
+import text from "../intl/modal.js";
 // =========================
 
 const FormCard = styled(motion.div)`
@@ -92,22 +92,22 @@ const formVariants = {
     x: "150%",
     y: "-50%",
     transitionEnd: {
-      display: "none"
-    }
-  }
+      display: "none",
+    },
+  },
 };
 
 const BgVariants = {
   open: {
     opacity: 0.8,
-    display: "block"
+    display: "block",
   },
   closed: {
     opacity: 0,
     transitionEnd: {
-      display: "none"
-    }
-  }
+      display: "none",
+    },
+  },
 };
 
 export default function SForm() {

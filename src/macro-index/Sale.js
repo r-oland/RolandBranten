@@ -4,14 +4,14 @@ import Divider2MImp from "assets/Divider2M.inline.svg";
 import React, { useContext } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import { FaqContext } from "../../global-components/Layout/Layout";
-import Bounce from "../../single-components/Bounce";
-import Castle from "../../single-components/Castle";
-import MTLink from "../../single-components/MTLink";
-import RocketShip from "../../single-components/RocketShip";
-import SEO from "../../single-components/SEO";
-import Wallet from "../../single-components/Wallet";
-import { Container, H2, H3, L, StyledUnderline } from "../../style/Mixins";
+import { FaqContext } from "../global-components/Layout/Layout";
+import Bounce from "../micro-components/Bounce";
+import Castle from "../micro-components/Castle";
+import MTLink from "../micro-components/MTLink";
+import RocketShip from "../micro-components/RocketShip";
+import SEO from "../micro-components/SEO";
+import Wallet from "../micro-components/Wallet";
+import { Container, H2, H3, L, StyledUnderline } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -243,26 +243,26 @@ export default function Sale({
   explanation6,
   source,
   linkOL,
-  linkButton
+  linkButton,
 }) {
   const [ship, shipInView] = useInView({ threshold: 0, triggerOnce: false });
   const { setFAQSelected } = useContext(FaqContext);
 
   const [castle, castleInView] = useInView({
     threshold: 0,
-    triggerOnce: false
+    triggerOnce: false,
   });
 
   const [wallet, walletInView] = useInView({
     threshold: 0.3,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   const [seo, seoInView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const [bounce, bounceInView] = useInView({
     threshold: 0.3,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   return (

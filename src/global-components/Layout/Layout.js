@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { hot } from "react-hot-loader/root";
 import { useInView } from "react-intersection-observer";
 import styled, { ThemeProvider } from "styled-components";
-import SForm from "../../single-components/SForm";
-import usePersistedState from "../../single-components/usePersistedState";
+import SForm from "../../micro-components/SForm";
+import usePersistedState from "../../micro-components/usePersistedState";
 import GlobalStyles from "../../style/GlobalStyles";
 import { Variables } from "../../style/themes";
 import Footer from "../Footer/Footer";
@@ -64,24 +64,24 @@ function Layout({ children, path, pageContext, location }) {
 
   const contextValue = {
     menuState,
-    changeMenu
+    changeMenu,
   };
 
   const modalValue = {
     modalIsOpen,
-    handleChange
+    handleChange,
   };
 
   const faqValue = {
     FAQSelected,
-    setFAQSelected
+    setFAQSelected,
   };
 
   const observerValue = {
     ref,
     ref2,
     inView,
-    inView2
+    inView2,
   };
 
   if (location.pathname === "/offline-plugin-app-shell-fallback") return null;

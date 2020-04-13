@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { FaqContext } from "../../global-components/Layout/Layout";
-import { Container } from "../../style/Mixins";
+import { FaqContext } from "../global-components/Layout/Layout";
+import { Container } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -120,40 +120,40 @@ const Answer = styled(motion.div)`
 const lineVariants = {
   open: {
     scale: 0.975,
-    display: "block"
+    display: "block",
   },
   closed: {
     scale: 0.1,
     transitionEnd: {
-      display: "none"
-    }
-  }
+      display: "none",
+    },
+  },
 };
 
 const crossVariants = {
   selected: {
     rotate: 0,
-    display: "block"
+    display: "block",
   },
   ignore: {
     rotate: 90,
     transitionEnd: {
-      display: "none"
-    }
-  }
+      display: "none",
+    },
+  },
 };
 
 const answerVariants = {
   open: {
     height: "auto",
     opacity: 1,
-    visibility: "visible"
+    visibility: "visible",
   },
   closed: {
     height: 0,
     opacity: 0,
-    visibility: "hidden"
-  }
+    visibility: "hidden",
+  },
 };
 
 export default function Content({ FaqList, title }) {
@@ -197,7 +197,7 @@ export default function Content({ FaqList, title }) {
                 variants={crossVariants}
                 initial={false}
                 transition={{
-                  duration: 0.2
+                  duration: 0.2,
                 }}
                 d="M5.5 0h4v14.9h-4z"
               />

@@ -2,10 +2,10 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
-import Hero from "../page-components/index/Hero";
-import PopularQ from "../page-components/index/PopularQ";
-import Sale from "../page-components/index/Sale";
-import Technologies from "../page-components/index/Technologies";
+import Hero from "../macro-index/Hero";
+import PopularQ from "../macro-index/PopularQ";
+import Sale from "../macro-index/Sale";
+import Technologies from "../macro-index/Technologies";
 // =========================
 
 export default function Index({ data }) {

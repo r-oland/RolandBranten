@@ -8,7 +8,7 @@ import NetlifyImg from "assets/Netlify.svg";
 import ReactImg from "assets/React.svg";
 import React from "react";
 import styled from "styled-components";
-import { Container, H2 } from "../../style/Mixins";
+import { Container, H2 } from "../style/Mixins";
 
 // =========================
 
@@ -156,7 +156,7 @@ const Divider3MSvg = styled(Divider3MImp)`
 `;
 
 export default function Technologies({ title8, TechnologyText }) {
-  const Text = TechnologyText.map(edge => {
+  const Text = TechnologyText.map((edge) => {
     const text = edge.text;
 
     return (

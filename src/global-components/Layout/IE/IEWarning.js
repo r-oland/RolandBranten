@@ -2,7 +2,7 @@
 import { flexUnit } from "mixins";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import intl from "../../../data/intl/intl.json";
+import intl from "../../../intl/intl.js";
 import { LocaleContext } from "../Layout";
 import IEModal from "./IEModal";
 // =========================

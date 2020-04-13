@@ -2,8 +2,8 @@
 
 import React from "react";
 import styled from "styled-components";
-import ChatLink from "../../single-components/ChatLink/ChatLink";
-import { Container, H2 } from "../../style/Mixins";
+import ChatLink from "../micro-components/ChatLink/ChatLink";
+import { Container, H2 } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -23,7 +23,7 @@ export default function PopularQ({
   question2,
   answer2,
   question3,
-  answer3
+  answer3,
 }) {
   return (
     <Wrapper>
