@@ -4,7 +4,10 @@ import Img from "gatsby-image";
 import { S } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { FaqContext } from "../../global-components/Layout/Layout";
+import {
+  FaqContext,
+  LocaleContext,
+} from "../../global-components/Layout/Layout";
 import MTLink from "../MTLink";
 import Arrow from "./Arrow.svg";
 import Cross from "./Cross.svg";
@@ -186,16 +189,9 @@ const Message = styled(S)`
   position: relative;
 `;
 
-export default function ChatLink({
-  img,
-  question1,
-  answer1,
-  question2,
-  answer2,
-  question3,
-  answer3
-}) {
+export default function ChatLink({ img, questions }) {
   const { setFAQSelected } = useContext(FaqContext);
+  const lang = useContext(LocaleContext);
 
   function Me({ children, to, faq }) {
     return (
@@ -229,6 +225,21 @@ export default function ChatLink({
     );
   }
 
+  const qna = questions.map((e, i) => {
+    const faqSelector = i === 0 ? 1 : i === 1 ? 0 : i === 2 ? 2 : null;
+
+    return (
+      <div key={i}>
+        <Me to="/faq" faq={faqSelector}>
+          {e.question[lang]}
+        </Me>
+        <Roland to="/faq" faq={faqSelector}>
+          {e.answer[lang]}
+        </Roland>
+      </div>
+    );
+  });
+
   return (
     <ChatWrapper>
       <Top>
@@ -243,26 +254,7 @@ export default function ChatLink({
           <CrossSVG src={Cross} alt="Cross" />
         </Flex>
       </Top>
-      <ChatArea>
-        <Me to="/faq" faq={1}>
-          {question1}
-        </Me>
-        <Roland to="/faq" faq={1}>
-          {answer1}
-        </Roland>
-        <Me to="/faq" faq={0}>
-          {question2}
-        </Me>
-        <Roland to="/faq" faq={0}>
-          {answer2}
-        </Roland>
-        <Me to="/faq" faq={2}>
-          {question3}
-        </Me>
-        <Roland to="/faq" faq={2}>
-          {answer3}
-        </Roland>
-      </ChatArea>
+      <ChatArea>{qna}</ChatArea>
     </ChatWrapper>
   );
 }

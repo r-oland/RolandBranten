@@ -15,29 +15,12 @@ const Title = styled(H2)`
   margin-bottom: ${({ theme: { spacing } }) => spacing.s6};
 `;
 
-export default function PopularQ({
-  title7,
-  img,
-  question1,
-  answer1,
-  question2,
-  answer2,
-  question3,
-  answer3,
-}) {
+export default function PopularQ({ content }) {
   return (
     <Wrapper>
       <Container>
-        <Title>{title7}</Title>
-        <ChatLink
-          img={img}
-          question1={question1}
-          answer1={answer1}
-          question2={question2}
-          answer2={answer2}
-          question3={question3}
-          answer3={answer3}
-        />
+        <Title>{content.title}</Title>
+        <ChatLink img={content.headshot} questions={content.questions} />
       </Container>
     </Wrapper>
   );

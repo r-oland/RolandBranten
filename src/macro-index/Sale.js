@@ -2,16 +2,13 @@
 import Divider2DImp from "assets/Divider2D.inline.svg";
 import Divider2MImp from "assets/Divider2M.inline.svg";
 import React, { useContext } from "react";
-import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import { FaqContext } from "../global-components/Layout/Layout";
-import Bounce from "../micro-components/Bounce";
-import Castle from "../micro-components/Castle";
+import { FaqContext, LocaleContext } from "../global-components/Layout/Layout";
+import intl from "../intl/intl";
+import Block from "../micro-components/Block";
 import MTLink from "../micro-components/MTLink";
-import RocketShip from "../micro-components/RocketShip";
-import SEO from "../micro-components/SEO";
-import Wallet from "../micro-components/Wallet";
-import { Container, H2, H3, L, StyledUnderline } from "../style/Mixins";
+import { Container, flexUnit, H3, StyledUnderline } from "../style/Mixins";
+import useIllustrations from "./useIllustrations";
 // =========================
 
 const Wrapper = styled.div`
@@ -26,7 +23,7 @@ const Wrapper = styled.div`
     }
   }
 
-  .rocket {
+  #TitleRocketShip {
     margin-top: ${({ theme: { spacing } }) => spacing.s7};
 
     @media screen and (min-width: 1000px) {
@@ -34,7 +31,7 @@ const Wrapper = styled.div`
     }
   }
 
-  #aboveWallet {
+  #ExplanationWallet {
     margin-bottom: 0;
   }
 `;
@@ -60,13 +57,17 @@ const Title = styled(H3)`
   }
 `;
 
-const Explanation = styled(L)`
+const Explanation = styled.div`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
   margin-bottom: ${({ theme: { spacing } }) => spacing.s8};
   max-width: 510px;
 
   @media screen and (min-width: 1000px) {
     margin: 0;
+  }
+
+  p {
+    ${flexUnit(2.5, 18, 19, "vw", "font-size")};
   }
 `;
 
@@ -122,26 +123,12 @@ const Grid = styled.div`
 
     .L {
       grid-column: 1;
+      grid-row: 1;
     }
 
     .R {
       grid-column: 2;
-    }
-
-    #R1 {
       grid-row: 1;
-    }
-    #R2 {
-      grid-row: 2;
-    }
-    #R3 {
-      grid-row: 3;
-    }
-    #R4 {
-      grid-row: 4;
-    }
-    #R5 {
-      grid-row: 5;
     }
   }
 `;
@@ -166,41 +153,6 @@ const Divider2DSvg = styled(Divider2DImp)`
 
   @media screen and (min-width: 700px) {
     display: block;
-  }
-`;
-
-const Source = styled.p`
-  color: ${({ theme: { gray } }) => gray.s6};
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
-  margin-top: ${({ theme: { spacing } }) => spacing.s6};
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
-`;
-
-const Sources = styled.a`
-  cursor: pointer;
-  display: block;
-  color: ${({ theme: { gray } }) => gray.s6};
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
-  text-decoration: underline;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s2};
-
-  &:hover {
-    color: ${({ theme: { primary } }) => primary.s7};
-  }
-`;
-
-const SourceWrap = styled.div`
-  @media screen and (min-width: 700px) {
-    position: absolute;
-    width: 400px;
-  }
-
-  right: 10%;
-
-  bottom: -110px;
-
-  @media screen and (min-width: 1250px) {
-    left: 7.5vw;
   }
 `;
 
@@ -229,40 +181,43 @@ const Link = styled(StyledUnderline)`
   }
 `;
 
-export default function Sale({
-  title1,
-  title2,
-  explanation2,
-  title3,
-  explanation3,
-  title4,
-  explanation4,
-  title5,
-  explanation5,
-  title6,
-  explanation6,
-  source,
-  linkOL,
-  linkButton,
-}) {
-  const [ship, shipInView] = useInView({ threshold: 0, triggerOnce: false });
+function isEven(value) {
+  if (value % 2 === 0) return false;
+  else return true;
+}
+
+export default function Sale({ content }) {
+  const lang = useContext(LocaleContext);
   const { setFAQSelected } = useContext(FaqContext);
+  const illustrations = useIllustrations();
 
-  const [castle, castleInView] = useInView({
-    threshold: 0,
-    triggerOnce: false,
+  const combinedContent = content.salePoints.map((e, index) => {
+    const illustration = illustrations[index];
+    const combinedArr = { ...e, illustration };
+
+    return combinedArr;
   });
 
-  const [wallet, walletInView] = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
+  const salePoints = combinedContent.map((e, i) => {
+    return (
+      <Grid key={i}>
+        <TWrap className={isEven(i) ? "R" : "L"}>
+          <Title id={`Title${e.illustration.type.displayName}`}>
+            {e.title[lang]}
+          </Title>
+          <Explanation id={`Explanation${e.illustration.type.displayName}`}>
+            <Block content={e.description[lang]} />
+          </Explanation>
+        </TWrap>
 
-  const [seo, seoInView] = useInView({ threshold: 0.1, triggerOnce: true });
-
-  const [bounce, bounceInView] = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
+        <SvgWrap
+          id={`Svg${e.illustration.type.displayName}`}
+          className={isEven(i) ? "L" : "R"}
+        >
+          {e.illustration}
+        </SvgWrap>
+      </Grid>
+    );
   });
 
   return (
@@ -270,73 +225,16 @@ export default function Sale({
       <Divider2DSvg />
       <Divider2MSvg />
       <CustomContainer>
-        <h2>
-          JAMstack sites <H2 as="span">{title1}</H2>
-        </h2>
-        <Grid>
-          <TWrap className="L" id="R1">
-            <Title className="rocket">{title2}</Title>
-            <Explanation>{explanation2}</Explanation>
-          </TWrap>
-
-          <SvgWrap className="R" id="R1">
-            <RocketShip ship={ship} shipInView={shipInView} />
-          </SvgWrap>
-          <TWrap className="R" id="R2">
-            <Title>{title3}</Title>
-            <Explanation>{explanation3}</Explanation>
-          </TWrap>
-          <SvgWrap className="L" id="R2">
-            <Castle castle={castle} castleInView={castleInView} />
-          </SvgWrap>
-          <TWrap className="L" id="R3">
-            <Title>{title4}</Title>
-            <Explanation id="aboveWallet">{explanation4}</Explanation>
-          </TWrap>
-          <SvgWrap className="R" id="R3">
-            <Wallet wallet={wallet} walletInView={walletInView} />
-          </SvgWrap>
-          <TWrap className="R" id="R4">
-            <Title>{title5}</Title>
-            <Explanation>{explanation5}</Explanation>
-          </TWrap>
-          <SvgWrap className="L" id="R4">
-            <SEO seo={seo} seoInView={seoInView} />
-          </SvgWrap>
-          <TWrap className="L" id="R5">
-            <Title>{title6}</Title>
-            <Explanation>{explanation6}</Explanation>
-          </TWrap>
-          <SvgWrap className="R" id="R5">
-            <Bounce bounce={bounce} bounceInView={bounceInView} />
-            <SourceWrap className="R">
-              <Source>{source}:</Source>
-              <Sources
-                href="https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Google Deep Neural Network Bounce Rate Tests
-              </Sources>
-              <Sources
-                href="https://backlinko.com/page-speed-stats"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Backlinko page speed test
-              </Sources>
-            </SourceWrap>
-          </SvgWrap>
-        </Grid>
-
-        <LinkOL>{linkOL}</LinkOL>
+        <h2>{content.title[lang]}</h2>
+        {salePoints}
+        <LinkOL>{intl[lang].saleEnd}</LinkOL>
         <Link
           as="div"
           onClick={() => {
             setFAQSelected(0);
           }}
         >
-          <MTLink to="/faq">{linkButton}</MTLink>
+          <MTLink to="/faq">{intl[lang].saleButton}</MTLink>
         </Link>
       </CustomContainer>
     </Wrapper>

@@ -6,8 +6,10 @@ import GatsbyImg from "assets/Gatsby.svg";
 import GraphQlImg from "assets/GraphQl.svg";
 import NetlifyImg from "assets/Netlify.svg";
 import ReactImg from "assets/React.svg";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { LocaleContext } from "../global-components/Layout/Layout";
+import Block from "../micro-components/Block";
 import { Container, H2 } from "../style/Mixins";
 
 // =========================
@@ -37,6 +39,10 @@ const Title = styled(H2)`
 const TextWrapper = styled.div`
   margin: 0 auto ${({ theme: { spacing } }) => spacing.s7};
   max-width: 900px;
+
+  p {
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
+  }
 `;
 
 const NameTags = styled.p`
@@ -155,23 +161,16 @@ const Divider3MSvg = styled(Divider3MImp)`
   }
 `;
 
-export default function Technologies({ title8, TechnologyText }) {
-  const Text = TechnologyText.map((edge) => {
-    const text = edge.text;
-
-    return (
-      <div key={text}>
-        <p>{text}</p>
-        <br />
-      </div>
-    );
-  });
+export default function Technologies({ content }) {
+  const lang = useContext(LocaleContext);
 
   return (
     <Wrapper>
       <Container>
-        <Title>{title8}</Title>
-        <TextWrapper>{Text}</TextWrapper>
+        <Title>{content.title[lang]}</Title>
+        <TextWrapper>
+          <Block content={content.text[lang]} />
+        </TextWrapper>
         <Grid>
           <Data>Data</Data>
           <DataWrapper>

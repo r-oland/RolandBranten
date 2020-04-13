@@ -4,7 +4,9 @@ import React, { useContext } from "react";
 import Head from "../global-components/Layout/Head";
 import { LocaleContext } from "../global-components/Layout/Layout";
 import Hero from "../macro-index/Hero";
+import PopularQ from "../macro-index/PopularQ";
 import Sale from "../macro-index/Sale";
+import Technologies from "../macro-index/Technologies";
 // =========================
 
 export default function Index({ data }) {
@@ -22,6 +24,17 @@ export default function Index({ data }) {
     salePoints: d._rawSalePoints,
   };
 
+  const questions = {
+    title: d.questionsTitle[lang],
+    headshot: d.headshot2.asset.fluid,
+    questions: d.questions,
+  };
+
+  const technologies = {
+    title: d.techTitle,
+    text: d._rawTechnologies,
+  };
+
   return (
     <>
       <Head
@@ -32,8 +45,8 @@ export default function Index({ data }) {
       />
       <Hero content={hero} />
       <Sale content={sale} />
-      {/* <PopularQ /> */}
-      {/* <Technologies />  */}
+      <PopularQ content={questions} />
+      <Technologies content={technologies} />
     </>
   );
 }
