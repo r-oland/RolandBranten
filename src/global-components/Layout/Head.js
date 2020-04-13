@@ -6,8 +6,8 @@ import { LocaleContext } from "./Layout";
 // =========================
 
 export default function Head({ title, description, keywords, path, noIndex }) {
-  const locale = useContext(LocaleContext);
-  const canonicalLoc = locale === "en" ? "en/" : "";
+  const lang = useContext(LocaleContext);
+  const canonicalLoc = lang === "en" ? "en/" : "";
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -48,7 +48,7 @@ export default function Head({ title, description, keywords, path, noIndex }) {
         hreflang="x-default"
       />
       <title>{`${siteTitle} | ${title}`}</title>
-      <html lang={locale} />
+      <html lang={lang} />
     </Helmet>
   );
 }

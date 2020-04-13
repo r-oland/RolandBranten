@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import {
   HamburgerContext,
-  LocaleContext
+  LocaleContext,
 } from "../global-components/Layout/Layout";
 // ========================
 
@@ -37,7 +37,7 @@ const NL = styled.button`
   position: absolute;
   right: 0;
   font-size: 18px;
-  opacity: ${({ locale }) => (locale === "nl" ? 1 : 0)};
+  opacity: ${({ lang }) => (lang === "nl" ? 1 : 0)};
 
   @media screen and (min-width: 850px) {
     position: initial;
@@ -45,46 +45,46 @@ const NL = styled.button`
     opacity: 1;
   }
 
-  font-weight: ${({ theme: { fontWeight }, locale }) =>
-    locale === "nl" ? fontWeight.bold : fontWeight.normal};
+  font-weight: ${({ theme: { fontWeight }, lang }) =>
+    lang === "nl" ? fontWeight.bold : fontWeight.normal};
 `;
 
 const EN = styled.button`
   position: absolute;
   right: 0;
   font-size: 18px;
-  opacity: ${({ locale }) => (locale === "en" ? 1 : 0)};
+  opacity: ${({ lang }) => (lang === "en" ? 1 : 0)};
 
   @media screen and (min-width: 850px) {
     position: initial;
     opacity: 1;
   }
 
-  font-weight: ${({ theme: { fontWeight }, locale }) =>
-    locale === "en" ? fontWeight.bold : fontWeight.normal};
+  font-weight: ${({ theme: { fontWeight }, lang }) =>
+    lang === "en" ? fontWeight.bold : fontWeight.normal};
 `;
 
 export default function LanguageSwitch({ inView2, path }) {
   const { menuState } = useContext(HamburgerContext);
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   const variants = {
     visible: {
       opacity: 1,
-      visibility: "visible"
+      visibility: "visible",
     },
 
     hidden: {
       opacity: 0,
-      visibility: "hidden"
-    }
+      visibility: "hidden",
+    },
   };
 
   const query =
     typeof window !== "undefined" && window.matchMedia("(min-width: 850px)");
 
   return (
-    <Link to={locale === "en" ? `${path}` : `/en${path}`}>
+    <Link to={lang === "en" ? `${path}` : `/en${path}`}>
       <Flex
         animate={
           (inView2 === false && menuState === "closed"
@@ -100,12 +100,12 @@ export default function LanguageSwitch({ inView2, path }) {
         }
         variants={variants}
         initial={{
-          opacity: 1
+          opacity: 1,
         }}
       >
-        <NL locale={locale}>NL</NL>
+        <NL lang={lang}>NL</NL>
         <span>/</span>
-        <EN locale={locale}>EN</EN>
+        <EN lang={lang}>EN</EN>
       </Flex>
     </Link>
   );

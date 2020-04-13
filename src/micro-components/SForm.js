@@ -115,7 +115,7 @@ export default function SForm() {
 
   const { modalIsOpen, handleChange } = useContext(ModalContext);
 
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   return (
     <div>
@@ -152,41 +152,41 @@ export default function SForm() {
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value={formName} />
           {/* The `hidden` fields are required to support form submissions without JavaScript */}
-          <p>{text[locale].greeting}</p>{" "}
+          <p>{text[lang].greeting}</p>{" "}
           <input
             name="Name"
             id="name"
-            placeholder={text[locale].yourName}
+            placeholder={text[lang].yourName}
             required
           />{" "}
-          <p>{text[locale].partOf}</p>{" "}
+          <p>{text[lang].partOf}</p>{" "}
           <input
             name="Company name"
             id="companyName"
-            placeholder={text[locale].CompanyName}
+            placeholder={text[lang].CompanyName}
           />
-          <p>{text[locale].reason}</p>
+          <p>{text[lang].reason}</p>
           <textarea
             name="Message"
             id="message"
-            placeholder={text[locale].describe}
+            placeholder={text[lang].describe}
             required
           />
           <br />
-          <p>{text[locale].kindWords}</p>{" "}
+          <p>{text[lang].kindWords}</p>{" "}
           <input
             type="email"
             name="Email-adres"
             id="email"
-            placeholder={text[locale].email}
+            placeholder={text[lang].email}
             required
           />
           <p>.</p>
           <br />
-          <Button id="submit">{text[locale].send}</Button>
+          <Button id="submit">{text[lang].send}</Button>
           <br />
           <p>
-            {text[locale].preference}{" "}
+            {text[lang].preference}{" "}
             <a href="mailto:info@rolandbranten.nl">
               <StyledUnderline>info@rolandbranten.nl</StyledUnderline>
             </a>

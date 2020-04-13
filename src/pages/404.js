@@ -26,7 +26,7 @@ const Container404 = styled(Container)`
 `;
 
 export default function NotFound() {
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function NotFound() {
         noIndex="noindex"
       />
       <Container404 style={{ marginTop: "2em" }}>
-        <h2>{intl[locale].notFound}</h2>
+        <h2>{intl[lang].notFound}</h2>
         {/* eslint-disable-next-line */}
         <Smiley>😟</Smiley>
       </Container404>

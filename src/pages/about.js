@@ -1,57 +1,58 @@
 // Components==============
 import { graphql } from "gatsby";
-import React from "react";
+import React, { useContext } from "react";
 import Head from "../global-components/Layout/Head";
+import { LocaleContext } from "../global-components/Layout/Layout";
+import intl from "../intl/intl";
 import Content from "../macro-about/Content";
 // =========================
 
 export default function About({ data }) {
-  const t = data.file.childAboutJson;
+  const lang = useContext(LocaleContext);
+  const d = data.sanityAbout;
+
+  const content = {
+    title: intl[lang].aboutTitle,
+    text: d._rawText,
+    image: d.image.asset.fluid,
+  };
 
   return (
     <>
       <Head
-        title={t.SEO[0].title}
-        description={t.SEO[0].description}
-        keywords={t.SEO[0].keywords}
+        title={d.SEO[0].title[lang]}
+        description={d.SEO[0].description[lang]}
+        keywords={d.SEO[0].keywords[lang]}
         path="about"
       />
-      <Content
-        firstText={t.FirstText[0].firstText}
-        text={t.Text}
-        title={t.Title[0]}
-        picture={data.AboutPicture.childImageSharp.fluid}
-      />
+      <Content content={content} />
     </>
   );
 }
 
 export const query = graphql`
-  query About($language: String) {
-    file(name: { eq: $language }, relativeDirectory: { eq: "about" }) {
-      childAboutJson {
-        FirstText {
-          firstText
-        }
-        Text {
-          text
-        }
-        Title {
-          morning
-          afternoon
-          evening
-        }
-        SEO {
-          title
-          keywords
-          description
+  query About {
+    sanityAbout {
+      _rawText
+      image {
+        asset {
+          fluid(maxWidth: 500) {
+            ...GatsbySanityImageFluid_withWebp
+          }
         }
       }
-    }
-    AboutPicture: file(relativePath: { eq: "Roland-About.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+      SEO {
+        description {
+          en
+          nl
+        }
+        title {
+          en
+          nl
+        }
+        keywords {
+          en
+          nl
         }
       }
     }

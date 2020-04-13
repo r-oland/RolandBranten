@@ -35,10 +35,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const OverFlow = styled.div`
-  overflow: hidden;
-`;
-
 export const HamburgerContext = React.createContext();
 export const ModalContext = React.createContext();
 export const FaqContext = React.createContext();
@@ -52,7 +48,7 @@ function Layout({ children, path, pageContext, location }) {
   const [ref, inView] = useInView({ threshold: 0 });
   const [ref2, inView2] = useInView({ threshold: 0 });
 
-  const locale = pageContext.language;
+  const lang = pageContext.language;
 
   const changeMenu = () => {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
@@ -88,20 +84,18 @@ function Layout({ children, path, pageContext, location }) {
 
   return (
     <ThemeProvider theme={Variables}>
-      <LocaleContext.Provider value={locale}>
+      <LocaleContext.Provider value={lang}>
         <HamburgerContext.Provider value={contextValue}>
           <ModalContext.Provider value={modalValue}>
             <FaqContext.Provider value={faqValue}>
               <ObserverContext.Provider value={observerValue}>
                 <ObserverRef ref={ref} />
                 <ObserverRef2 ref={ref2} />
-                <OverFlow>
-                  <IEWarning />
-                  <SForm />
-                  <Nav path={path} oldPath={pageContext.oldPath} />
-                  <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
-                  <Footer path={pageContext.oldPath} />
-                </OverFlow>
+                <IEWarning />
+                <SForm />
+                <Nav path={path} oldPath={pageContext.oldPath} />
+                <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
+                <Footer path={pageContext.oldPath} />
                 <GlobalStyles />
               </ObserverContext.Provider>
             </FaqContext.Provider>

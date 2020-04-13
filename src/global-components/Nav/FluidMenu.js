@@ -62,7 +62,7 @@ export default function FluidMenu() {
   const { menuState, changeMenu } = useContext(HamburgerContext);
   const { handleChange } = useContext(ModalContext);
   const { setFAQSelected } = useContext(FaqContext);
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   return (
     <Hide>
@@ -83,17 +83,17 @@ export default function FluidMenu() {
       >
         <button onClick={changeMenu}>
           <MTLink to="/" activeClassName="active">
-            {intl[locale].nav0}
+            {intl[lang].nav0}
           </MTLink>
         </button>
         <button onClick={changeMenu}>
           <MTLink to="/about" activeClassName="active">
-            {intl[locale].nav1}
+            {intl[lang].nav1}
           </MTLink>
         </button>
         <button onClick={changeMenu}>
           <MTLink to="/work" activeClassName="active">
-            {intl[locale].nav2}
+            {intl[lang].nav2}
           </MTLink>
         </button>
         <button
@@ -103,7 +103,7 @@ export default function FluidMenu() {
           }}
         >
           <MTLink to="/faq" activeClassName="active">
-            {intl[locale].nav3}
+            {intl[lang].nav3}
           </MTLink>
         </button>
         <button
@@ -113,7 +113,7 @@ export default function FluidMenu() {
             changeMenu();
           }}
         >
-          {intl[locale].nav4}
+          {intl[lang].nav4}
         </button>
       </Menu>
       <Blur

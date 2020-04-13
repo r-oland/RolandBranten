@@ -17,13 +17,11 @@ const intl = {
     workButton: "Visit site",
 
     // ABOUT
-    aboutTitle: [
-      {
-        morning: "Good morning! I'm Roland.",
-        afternoon: "Hi there ! I'm Roland.",
-        evening: "Good evening! I'm Roland.",
-      },
-    ],
+    aboutTitle: {
+      morning: "Good morning! I'm Roland.",
+      afternoon: "Hi there ! I'm Roland.",
+      evening: "Good evening! I'm Roland.",
+    },
 
     // FOOTER
     homeOL: "Impressed already?",
@@ -69,13 +67,11 @@ const intl = {
     workButton: "Visit site",
 
     // ABOUT
-    aboutTitle: [
-      {
-        morning: "Goedemorgen! Mijn naam is Roland.",
-        afternoon: "Goedemiddag! Mijn naam is Roland.",
-        evening: "Goedeavond! Mijn naam is Roland.",
-      },
-    ],
+    aboutTitle: {
+      morning: "Goedemorgen! Mijn naam is Roland.",
+      afternoon: "Goedemiddag! Mijn naam is Roland.",
+      evening: "Goedeavond! Mijn naam is Roland.",
+    },
 
     // FOOTER
     homeOL: "Onder de indruk?",

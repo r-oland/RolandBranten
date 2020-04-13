@@ -54,7 +54,7 @@ const OverflowDiv = styled.div`
 `;
 
 export default function IEModal({ modalIsOpen, children, handleChange }) {
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   return (
     <div>
@@ -62,7 +62,7 @@ export default function IEModal({ modalIsOpen, children, handleChange }) {
       <Modal modalIsOpen={modalIsOpen}>
         <OverflowDiv>
           <button className="close" onClick={handleChange}>
-            {intl[locale].ignore}
+            {intl[lang].ignore}
           </button>
           {children}
         </OverflowDiv>

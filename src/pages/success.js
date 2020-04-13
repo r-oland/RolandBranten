@@ -17,13 +17,13 @@ const Wrapper = styled.div`
 `;
 
 export default function Success() {
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   return (
     <>
       <Head title="Success" path="success" noIndex="noindex" />
       <Wrapper>
-        <h2>{intl[locale].success}</h2>;
+        <h2>{intl[lang].success}</h2>;
       </Wrapper>
     </>
   );

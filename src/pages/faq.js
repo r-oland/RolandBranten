@@ -1,46 +1,55 @@
 // Components==============
 import { graphql } from "gatsby";
-import React from "react";
+import React, { useContext } from "react";
 import Head from "../global-components/Layout/Head";
+import { LocaleContext } from "../global-components/Layout/Layout";
 import Content from "../macro-faq/Content";
 // =========================
 
 export default function About({ data }) {
-  const t = data.file.childFaqJson;
+  const d = data.sanityFaq;
+  const lang = useContext(LocaleContext);
+
+  const content = {
+    title: d.title[lang],
+    faqs: d._rawFaqs,
+  };
 
   return (
     <>
       <Head
-        title={t.SEO[0].title}
-        description={t.SEO[0].description}
-        keywords={t.SEO[0].keywords}
+        title={d.SEO[0].title[lang]}
+        description={d.SEO[0].description[lang]}
+        keywords={d.SEO[0].keywords[lang]}
         path="faq"
       />
-      <Content FaqList={t.FaqList} title={t.Title[0].title} />
+      <Content content={content} />
     </>
   );
 }
 
 export const query = graphql`
-  query Faq($language: String) {
-    file(name: { eq: $language }, relativeDirectory: { eq: "faq" }) {
-      childFaqJson {
-        FaqList {
-          Question
-          Answers {
-            answer
-            class
-          }
+  query faq {
+    sanityFaq {
+      SEO {
+        description {
+          en
+          nl
         }
-        SEO {
-          description
-          keywords
-          title
+        title {
+          en
+          nl
         }
-        Title {
-          title
+        keywords {
+          en
+          nl
         }
       }
+      title {
+        en
+        nl
+      }
+      _rawFaqs
     }
   }
 `;

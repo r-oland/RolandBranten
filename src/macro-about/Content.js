@@ -1,7 +1,9 @@
 // Components==============
 import Img from "gatsby-image";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { LocaleContext } from "../global-components/Layout/Layout";
+import Block from "../micro-components/Block";
 import { Container, H3 } from "../style/Mixins";
 // =========================
 
@@ -23,7 +25,7 @@ const Title = styled(H3)`
   }
 `;
 
-const FirstText = styled.p`
+const FirstText = styled.div`
   margin-bottom: ${({ theme: { spacing } }) => spacing.s9};
 
   @media screen and (min-width: 800px) {
@@ -111,27 +113,23 @@ const PictureWrapDesktop = styled.div`
   }
 `;
 
-export default function Content({ firstText, text, title, picture }) {
+export default function Content({ content }) {
+  const lang = useContext(LocaleContext);
+
   const timeOfDay = () => {
     const time = new Date().getHours();
 
     return time >= 18
-      ? title.evening
+      ? content.title.evening
       : time >= 12
-      ? title.afternoon
+      ? content.title.afternoon
       : time >= 5
-      ? title.morning
-      : title.evening;
+      ? content.title.morning
+      : content.title.evening;
   };
 
-  const aboutText = text.map((edge) => {
-    return (
-      <div key={edge.text}>
-        <p>{edge.text}</p>
-        <br />
-      </div>
-    );
-  });
+  const text = content.text[lang];
+  const firstText = text.shift();
 
   return (
     <Wrapper>
@@ -139,16 +137,20 @@ export default function Content({ firstText, text, title, picture }) {
         <Grid>
           <div>
             <Title>{timeOfDay()}</Title>
-            <FirstText>{firstText}</FirstText>
+            <FirstText>
+              <Block content={firstText} />
+            </FirstText>
             <PictureWrapMobile>
               <Background />
-              <IMG fluid={picture} alt="Roland Branten" />
+              <IMG fluid={content.image} alt="Roland Branten" />
             </PictureWrapMobile>
-            <Text>{aboutText}</Text>
+            <Text>
+              <Block content={text} />
+            </Text>
           </div>
           <PictureWrapDesktop>
             <Background />
-            <IMG fluid={picture} alt="Roland Branten" />
+            <IMG fluid={content.image} alt="Roland Branten" />
           </PictureWrapDesktop>
         </Grid>
       </Container>

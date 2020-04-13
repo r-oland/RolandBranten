@@ -93,7 +93,7 @@ export default function Nav({ path, oldPath }) {
   const themeContext = useContext(ThemeContext);
   const { handleChange } = useContext(ModalContext);
   const { setFAQSelected } = useContext(FaqContext);
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   return (
     <div>
@@ -128,10 +128,10 @@ export default function Nav({ path, oldPath }) {
           <Flex>
             <MenuItems inView={inView} path={path}>
               <li>
-                <MTLink to="/about">{intl[locale].nav1}</MTLink>
+                <MTLink to="/about">{intl[lang].nav1}</MTLink>
               </li>
               <li>
-                <MTLink to="/work">{intl[locale].nav2}</MTLink>
+                <MTLink to="/work">{intl[lang].nav2}</MTLink>
               </li>
               <li>
                 <button
@@ -139,11 +139,11 @@ export default function Nav({ path, oldPath }) {
                     setFAQSelected(null);
                   }}
                 >
-                  <MTLink to="/faq">{intl[locale].nav3}</MTLink>
+                  <MTLink to="/faq">{intl[lang].nav3}</MTLink>
                 </button>
               </li>
               <li>
-                <button onClick={handleChange}>{intl[locale].nav4}</button>
+                <button onClick={handleChange}>{intl[lang].nav4}</button>
               </li>
             </MenuItems>
             <LanguageSwitch inView2={inView2} path={oldPath} />

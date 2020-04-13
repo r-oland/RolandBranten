@@ -2,7 +2,8 @@
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { FaqContext } from "../global-components/Layout/Layout";
+import { FaqContext, LocaleContext } from "../global-components/Layout/Layout";
+import Block from "../micro-components/Block";
 import { Container } from "../style/Mixins";
 // =========================
 
@@ -85,35 +86,17 @@ const Answer = styled(motion.div)`
     margin-bottom: ${({ theme: { spacing } }) => spacing.s3};
   }
 
-  .bold {
-    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-  }
-
-  .end {
-    padding-bottom: ${({ theme: { spacing } }) => spacing.s5};
-  }
-
-  .boldSpan {
-    font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
-    display: inline;
-    margin: 0;
-  }
-
-  .inline {
-    display: inline;
-  }
-
-  .inline2 {
-    display: inline;
-  }
-
-  .paddingTop {
-    padding-top: ${({ theme: { spacing } }) => spacing.s4};
-  }
-
-  .li {
+  h4 {
     margin-bottom: ${({ theme: { spacing } }) => spacing.s2};
-    padding-left: ${({ theme: { spacing } }) => spacing.s5};
+    margin-top: ${({ theme: { spacing } }) => spacing.s5};
+  }
+
+  ol {
+    padding-left: ${({ theme: { spacing } }) => spacing.s7};
+
+    li {
+      margin-bottom: ${({ theme: { spacing } }) => spacing.s2};
+    }
   }
 `;
 
@@ -156,18 +139,12 @@ const answerVariants = {
   },
 };
 
-export default function Content({ FaqList, title }) {
+export default function Content({ content }) {
+  const lang = useContext(LocaleContext);
   const { FAQSelected, setFAQSelected } = useContext(FaqContext);
 
-  const list = FaqList.map((edge, index) => {
+  const list = content.faqs.map((edge, index) => {
     const num = index < 9 ? `0${index + 1}` : index + 1;
-    const answers = edge.Answers.map((edge, index) => {
-      return (
-        <p className={edge.class} key={index}>
-          {edge.answer}
-        </p>
-      );
-    });
 
     return (
       <div key={index}>
@@ -179,7 +156,7 @@ export default function Content({ FaqList, title }) {
             variants={lineVariants}
             initial={false}
           />
-          <Question>{edge.Question}</Question>
+          <Question>{edge.question[lang]}</Question>
           <Svg
             xmlns="http://www.w3.org/2000/svg"
             width="19"
@@ -210,7 +187,7 @@ export default function Content({ FaqList, title }) {
             variants={answerVariants}
             initial={false}
           >
-            {answers}
+            <Block content={edge.answer[lang]} />
           </Answer>
         </Grid>
       </div>
@@ -220,7 +197,7 @@ export default function Content({ FaqList, title }) {
   return (
     <Wrapper>
       <Container>
-        <Title>{title}</Title>
+        <Title>{content.title}</Title>
         {list}
       </Container>
     </Wrapper>

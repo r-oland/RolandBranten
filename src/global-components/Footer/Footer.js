@@ -51,20 +51,20 @@ const Copyright = styled(S)``;
 
 export default function Footer({ path }) {
   const { handleChange } = useContext(ModalContext);
-  const locale = useContext(LocaleContext);
+  const lang = useContext(LocaleContext);
 
   const hideFooterPages =
     path === "/work/" || path === "/about/" || path === "/faq/" || path === "/";
 
   const oneLiner =
     path === "/"
-      ? intl[locale].homeOL
+      ? intl[lang].homeOL
       : path === "/work/"
-      ? intl[locale].workOL
+      ? intl[lang].workOL
       : path === "/about/"
-      ? intl[locale].aboutOL
+      ? intl[lang].aboutOL
       : path === "/faq/"
-      ? intl[locale].faqOL
+      ? intl[lang].faqOL
       : null;
 
   return (
@@ -76,10 +76,10 @@ export default function Footer({ path }) {
       <Wrapper>
         <Container>
           <OneLiner>{oneLiner}</OneLiner>
-          <FollowUp1>{intl[locale].followUp1}</FollowUp1>
-          <FollowUp2>{intl[locale].followUp2}</FollowUp2>
+          <FollowUp1>{intl[lang].followUp1}</FollowUp1>
+          <FollowUp2>{intl[lang].followUp2}</FollowUp2>
           <Button style={{ marginBottom: "2.5em" }} onClick={handleChange}>
-            {intl[locale].button}
+            {intl[lang].button}
           </Button>
         </Container>
       </Wrapper>
@@ -103,7 +103,7 @@ export default function Footer({ path }) {
               LinkedIn
             </StyledUnderline>
           </FlexLinks>
-          <Copyright>{intl[locale].copyright}</Copyright>
+          <Copyright>{intl[lang].copyright}</Copyright>
         </Flex>
       </Wrapper2>
     </div>

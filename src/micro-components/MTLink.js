@@ -5,8 +5,8 @@ import { LocaleContext } from "../global-components/Layout/Layout";
 // =========================
 
 export default function MTLink({ children, to }) {
-  const locale = useContext(LocaleContext);
-  const localeLink = locale === "nl" ? "" : "/en";
+  const lang = useContext(LocaleContext);
+  const localeLink = lang === "nl" ? "" : "/en";
 
   return <Link to={`${localeLink}${to}`}> {children}</Link>;
 }
