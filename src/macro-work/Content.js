@@ -17,7 +17,7 @@ const ProjectWrapper = styled.div`
   position: relative;
   padding-bottom: ${({ theme: { spacing } }) => spacing.s10};
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     max-width: 1200px;
     padding: ${({ theme: { spacing } }) => `${spacing.s4} ${spacing.s9}`};
     margin: ${({ theme: { spacing } }) => `${spacing.s10} auto ${spacing.s11}`};
@@ -41,7 +41,7 @@ const Background = styled.div`
     left: -8%;
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     width: 100%;
     left: 0;
     bottom: 0;
@@ -50,7 +50,7 @@ const Background = styled.div`
 `;
 
 const Flex = styled.div`
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     display: flex;
     justify-content: space-between;
 
@@ -66,7 +66,7 @@ const LinkM = styled(StyledUnderline)`
   left: 50%;
   transform: translateX(-50%);
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     display: none;
   }
 `;
@@ -74,7 +74,7 @@ const LinkM = styled(StyledUnderline)`
 const LinkD = styled(Button)`
   display: none;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     display: inline;
   }
 `;
@@ -118,7 +118,7 @@ export default function Content({ content }) {
               {intl[lang].workButton}
             </LinkD>
           </div>
-          <Images content={imageContent} />
+          <Images content={imageContent} align={align} />
         </Flex>
         <LinkM as="a" href={edge.url} target="_blank" rel="noopener noreferrer">
           {intl[lang].workButton}

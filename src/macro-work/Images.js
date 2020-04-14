@@ -9,8 +9,8 @@ import styled from "styled-components";
 const ImgWrapper = styled.div`
   display: grid;
 
-  @media screen and (min-width: 800px) {
-    width: 50%;
+  @media screen and (min-width: 900px) {
+    width: 55%;
 
     transform: ${({ align }) =>
       align === "left" ? "translate(-40px, 25px)" : "translate(50px, 30px)"};

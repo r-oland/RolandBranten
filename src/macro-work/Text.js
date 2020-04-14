@@ -7,7 +7,7 @@ import { H2, H3, L } from "../style/Mixins";
 const Name = styled(H2)`
   margin: ${({ theme: { spacing } }) => `${spacing.s7} 0 ${spacing.s3}`};
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     margin: ${({ theme: { spacing } }) => `${spacing.s6} 0 ${spacing.s1}`};
   }
 `;
@@ -19,7 +19,7 @@ const Work = styled(L)`
   margin: ${({ theme: { spacing } }) => `${spacing.s2} 0 ${spacing.s8}`};
   letter-spacing: ${({ theme: { letterSpacing } }) => letterSpacing.wide};
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     margin: ${({ theme: { spacing } }) => `${spacing.s6} 0 ${spacing.s7}`};
   }
 `;
