@@ -6,7 +6,7 @@ module.exports = {
     title: `Roland Branten`,
     description: `I'm a freelance web developer/designer from Eindhoven. I develop next level React websites by utilizing the JAMstack`,
     author: `Roland Branten`,
-    siteUrl: `https://rolandbranten.nl`
+    siteUrl: `https://rolandbranten.nl`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,8 +23,8 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
         graphqlTag: "default",
         watchMode: true,
-        overlayDrafts: true
-      }
+        overlayDrafts: true,
+      },
     },
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -35,30 +35,23 @@ module.exports = {
           `/*/404.html`,
           `/*/offline-plugin-app-shell-fallback`,
           `/*/success`,
-          `/success`
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data`
-      }
+          `/success`,
+        ],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/src/assets`
-      }
+        path: `${__dirname}/src/assets`,
+      },
     },
     {
       resolve: "gatsby-plugin-root-import",
       options: {
         assets: path.join(__dirname, "src/assets"),
-        mixins: path.join(__dirname, "src/style/Mixins")
-      }
+        mixins: path.join(__dirname, "src/style/Mixins"),
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -74,19 +67,19 @@ module.exports = {
         localize: [
           {
             start_url: `/en/`,
-            lang: `en`
-          }
-        ]
-      }
+            lang: `en`,
+          },
+        ],
+      },
     },
     `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /\.inline\.svg$/
-        }
-      }
-    }
-  ]
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+  ],
 };

@@ -1,17 +1,11 @@
 // Components==============
-import ContentfulImg from "assets/Contentful.svg";
 import Divider3DImp from "assets/Divider3D.inline.svg";
 import Divider3MImp from "assets/Divider3M.inline.svg";
-import GatsbyImg from "assets/Gatsby.svg";
-import GraphQlImg from "assets/GraphQl.svg";
-import NetlifyImg from "assets/Netlify.svg";
-import ReactImg from "assets/React.svg";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { LocaleContext } from "../global-components/Layout/Layout";
 import Block from "../micro-components/Block";
 import { Container, H2 } from "../style/Mixins";
-
 // =========================
 
 const Wrapper = styled.div`
@@ -26,6 +20,10 @@ const Wrapper = styled.div`
 
   img {
     width: 50px;
+  }
+
+  #sanity {
+    width: 45px;
   }
 
   margin-bottom: ${({ theme: { spacing } }) => spacing.s12};
@@ -174,8 +172,12 @@ export default function Technologies({ content }) {
         <Grid>
           <Data>Data</Data>
           <DataWrapper>
-            <img src={GraphQlImg} alt="GraphQL" />
-            <img src={ContentfulImg} alt="Contentful" />
+            <img src={content.illustrations.data1.asset.url} alt="GraphQL" />
+            <img
+              src={content.illustrations.data2.asset.url}
+              alt="Sanity"
+              id="sanity"
+            />
           </DataWrapper>
           <Arrow1 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.75 28.75">
             <path
@@ -187,8 +189,8 @@ export default function Technologies({ content }) {
           </Arrow1>
           <Tools>Tools</Tools>
           <ToolWrapper>
-            <img src={GatsbyImg} alt="Gatsby" />
-            <img src={ReactImg} alt="React" />
+            <img src={content.illustrations.tools1.asset.url} alt="Gatsby" />
+            <img src={content.illustrations.tools2.asset.url} alt="React" />
           </ToolWrapper>
           <Arrow2 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.75 28.75">
             <path
@@ -200,7 +202,7 @@ export default function Technologies({ content }) {
           </Arrow2>
           <Deploy>Deploy</Deploy>
 
-          <Netlify src={NetlifyImg} alt="Netlify" />
+          <Netlify src={content.illustrations.deploy.asset.url} alt="Netlify" />
         </Grid>
       </Container>
       <Divider3DSvg />

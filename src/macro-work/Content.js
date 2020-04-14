@@ -88,8 +88,6 @@ export default function Content({ content }) {
   const lang = useContext(LocaleContext);
 
   const Projects = content.jobs.map((edge, index) => {
-    console.log(edge);
-
     const align = isEven(index) ? "left" : "right";
 
     const textContent = {

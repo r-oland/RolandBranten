@@ -33,6 +33,7 @@ export default function Index({ data }) {
   const technologies = {
     title: d.techTitle,
     text: d._rawTechnologies,
+    illustrations: d.illustrations,
   };
 
   return (
@@ -114,6 +115,33 @@ export const query = graphql`
         nl
       }
       _rawTechnologies
+      illustrations {
+        data1 {
+          asset {
+            url
+          }
+        }
+        data2 {
+          asset {
+            url
+          }
+        }
+        tools1 {
+          asset {
+            url
+          }
+        }
+        tools2 {
+          asset {
+            url
+          }
+        }
+        deploy {
+          asset {
+            url
+          }
+        }
+      }
     }
   }
 `;
