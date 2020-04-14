@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { hot } from "react-hot-loader/root";
 import { useInView } from "react-intersection-observer";
 import styled, { ThemeProvider } from "styled-components";
-import SForm from "../../micro-components/SForm";
+import SForm from "../../macro-contact/SForm";
 import usePersistedState from "../../micro-components/usePersistedState";
 import GlobalStyles from "../../style/GlobalStyles";
 import { Variables } from "../../style/themes";

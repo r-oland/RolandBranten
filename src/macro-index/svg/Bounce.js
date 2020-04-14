@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { LocaleContext } from "../global-components/Layout/Layout";
-import intl from "../intl/intl";
+import { LocaleContext } from "../../global-components/Layout/Layout";
+import intl from "../../intl/intl";
 // =========================
 
 const Svg = styled.svg`

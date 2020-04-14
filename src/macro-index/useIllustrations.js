@@ -1,10 +1,10 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import Bounce from "../micro-components/Bounce";
-import Castle from "../micro-components/Castle";
-import RocketShip from "../micro-components/RocketShip";
-import SEO from "../micro-components/SEO";
-import Wallet from "../micro-components/Wallet";
+import Bounce from "./svg/Bounce";
+import Castle from "./svg/Castle";
+import RocketShip from "./svg/RocketShip";
+import SEO from "./svg/SEO";
+import Wallet from "./svg/Wallet";
 // =========================
 
 export default function useIllustrations() {

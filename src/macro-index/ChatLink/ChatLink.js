@@ -8,7 +8,7 @@ import {
   FaqContext,
   LocaleContext,
 } from "../../global-components/Layout/Layout";
-import MTLink from "../MTLink";
+import MTLink from "../../micro-components/MTLink";
 import Arrow from "./Arrow.svg";
 import Cross from "./Cross.svg";
 import LeftImp from "./Left.inline.svg";

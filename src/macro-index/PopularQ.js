@@ -2,8 +2,8 @@
 
 import React from "react";
 import styled from "styled-components";
-import ChatLink from "../micro-components/ChatLink/ChatLink";
 import { Container, H2 } from "../style/Mixins";
+import ChatLink from "./ChatLink/ChatLink";
 // =========================
 
 const Wrapper = styled.div`
