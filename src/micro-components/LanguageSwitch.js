@@ -1,6 +1,7 @@
 // Components==============
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
+import { useMediaQ } from "hooks-roland";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import {
@@ -80,8 +81,7 @@ export default function LanguageSwitch({ inView2, path }) {
     },
   };
 
-  const query =
-    typeof window !== "undefined" && window.matchMedia("(min-width: 850px)");
+  const query = useMediaQ("min", 850);
 
   return (
     <Link to={lang === "en" ? `${path}` : `/en${path}`}>
@@ -89,12 +89,11 @@ export default function LanguageSwitch({ inView2, path }) {
         animate={
           (inView2 === false && menuState === "closed"
             ? "visible"
-            : inView2 === false && menuState === "open") || query.matches
+            : inView2 === false && menuState === "open") || query
             ? "visible"
-            : (inView2 === true && menuState === "open") || query.matches
+            : (inView2 === true && menuState === "open") || query
             ? "visible"
-            : (inView2 === true && menuState === "closed") ||
-              query.matches !== true
+            : (inView2 === true && menuState === "closed") || query !== true
             ? "hidden"
             : "hidden"
         }

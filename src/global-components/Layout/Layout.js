@@ -1,10 +1,10 @@
 // Components==============
+import { useStorage } from "hooks-roland";
 import React, { useState } from "react";
 import { hot } from "react-hot-loader/root";
 import { useInView } from "react-intersection-observer";
 import styled, { ThemeProvider } from "styled-components";
 import SForm from "../../macro-contact/SForm";
-import usePersistedState from "../../micro-components/usePersistedState";
 import GlobalStyles from "../../style/GlobalStyles";
 import { Variables } from "../../style/themes";
 import Footer from "../Footer/Footer";
@@ -44,7 +44,8 @@ export const LocaleContext = React.createContext();
 function Layout({ children, path, pageContext, location }) {
   const [menuState, setMenuState] = useState("closed");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [FAQSelected, setFAQSelected] = usePersistedState(`FAQSelected`, null);
+  const [FAQSelected, setFAQSelected] = useStorage(`FAQSelected`, null);
+
   const [ref, inView] = useInView({ threshold: 0 });
   const [ref2, inView2] = useInView({ threshold: 0 });
 

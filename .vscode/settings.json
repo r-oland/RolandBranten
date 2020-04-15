@@ -6,7 +6,7 @@
     "icon": true,
     "node_modules": true,
     "public": true,
-    // ".gitignore": true,
+    ".gitignore": true,
     "desktop.ini": true,
     "gatsby-browser.js": true,
     "gatsby-node.js": true,

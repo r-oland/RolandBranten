@@ -1,5 +1,6 @@
 // Components==============
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useScrollFreeze } from "hooks-roland";
 import { Button, flexUnit, StyledUnderline } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -85,114 +86,113 @@ const Form = styled.form`
   }
 `;
 
-const formVariants = {
-  open: { opacity: 1, x: "-50%", y: "-50%", display: "block" },
-  closed: {
-    opacity: 0,
-    x: "150%",
-    y: "-50%",
-    transitionEnd: {
-      display: "none",
-    },
-  },
-};
-
-const BgVariants = {
-  open: {
-    opacity: 0.8,
-    display: "block",
-  },
-  closed: {
-    opacity: 0,
-    transitionEnd: {
-      display: "none",
-    },
-  },
-};
-
 export default function SForm() {
-  const formName = "Contact form";
-
   const { modalIsOpen, handleChange } = useContext(ModalContext);
 
   const lang = useContext(LocaleContext);
 
-  return (
-    <div>
-      <Shader
-        animate={modalIsOpen ? "open" : "closed"}
-        variants={BgVariants}
-        initial={false}
-        onClick={handleChange}
-      />
-      <FormCard
-        animate={modalIsOpen ? "open" : "closed"}
-        variants={formVariants}
-        initial={false}
-      >
-        <svg
+  function FormComponent() {
+    useScrollFreeze();
+
+    const formName = "Contact form";
+
+    return (
+      <>
+        <Shader
+          animate={{ opacity: 0.8 }}
+          initial={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
           onClick={handleChange}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 29.25 29.25"
-          id="cross"
+        />
+        <FormCard
+          animate={{ opacity: 1, x: "-50%", y: "-50%", display: "block" }}
+          initial={{
+            opacity: 0,
+            x: "150%",
+            y: "-50%",
+            transitionEnd: {
+              display: "none",
+            },
+          }}
+          exit={{
+            opacity: 0,
+            x: "150%",
+            y: "-50%",
+            transitionEnd: {
+              display: "none",
+            },
+          }}
         >
-          <path
-            fill="#2b2b2b"
-            d="M14.625 0A14.625 14.625 0 1029.25 14.625 14.623 14.623 0 0014.625 0zm3.705 19.92l-3.705-3.706-3.705 3.705a1.124 1.124 0 11-1.589-1.589l3.705-3.705-3.705-3.705a1.124 1.124 0 011.589-1.589l3.705 3.705 3.705-3.705a1.124 1.124 0 111.589 1.589l-3.705 3.705 3.705 3.705a1.129 1.129 0 010 1.589 1.116 1.116 0 01-1.589.001z"
-          />
-        </svg>
-        <Form
-          id={formName}
-          name={formName}
-          method="post"
-          action="/success/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value={formName} />
-          {/* The `hidden` fields are required to support form submissions without JavaScript */}
-          <p>{text[lang].greeting}</p>{" "}
-          <input
-            name="Name"
-            id="name"
-            placeholder={text[lang].yourName}
-            required
-          />{" "}
-          <p>{text[lang].partOf}</p>{" "}
-          <input
-            name="Company name"
-            id="companyName"
-            placeholder={text[lang].CompanyName}
-          />
-          <p>{text[lang].reason}</p>
-          <textarea
-            name="Message"
-            id="message"
-            placeholder={text[lang].describe}
-            required
-          />
-          <br />
-          <p>{text[lang].kindWords}</p>{" "}
-          <input
-            type="email"
-            name="Email-adres"
-            id="email"
-            placeholder={text[lang].email}
-            required
-          />
-          <p>.</p>
-          <br />
-          <Button id="submit">{text[lang].send}</Button>
-          <br />
-          <p>
-            {text[lang].preference}{" "}
-            <a href="mailto:info@rolandbranten.nl">
-              <StyledUnderline>info@rolandbranten.nl</StyledUnderline>
-            </a>
-          </p>
-        </Form>
-      </FormCard>
-    </div>
+          <svg
+            onClick={handleChange}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 29.25 29.25"
+            id="cross"
+          >
+            <path
+              fill="#2b2b2b"
+              d="M14.625 0A14.625 14.625 0 1029.25 14.625 14.623 14.623 0 0014.625 0zm3.705 19.92l-3.705-3.706-3.705 3.705a1.124 1.124 0 11-1.589-1.589l3.705-3.705-3.705-3.705a1.124 1.124 0 011.589-1.589l3.705 3.705 3.705-3.705a1.124 1.124 0 111.589 1.589l-3.705 3.705 3.705 3.705a1.129 1.129 0 010 1.589 1.116 1.116 0 01-1.589.001z"
+            />
+          </svg>
+          <Form
+            id={formName}
+            name={formName}
+            method="post"
+            action="/success/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value={formName} />
+            {/* The `hidden` fields are required to support form submissions without JavaScript */}
+            <p>{text[lang].greeting}</p>{" "}
+            <input
+              name="Name"
+              id="name"
+              placeholder={text[lang].yourName}
+              required
+            />{" "}
+            <p>{text[lang].partOf}</p>{" "}
+            <input
+              name="Company name"
+              id="companyName"
+              placeholder={text[lang].CompanyName}
+            />
+            <p>{text[lang].reason}</p>
+            <textarea
+              name="Message"
+              id="message"
+              placeholder={text[lang].describe}
+              required
+            />
+            <br />
+            <p>{text[lang].kindWords}</p>{" "}
+            <input
+              type="email"
+              name="Email-adres"
+              id="email"
+              placeholder={text[lang].email}
+              required
+            />
+            <p>.</p>
+            <br />
+            <Button id="submit">{text[lang].send}</Button>
+            <br />
+            <p>
+              {text[lang].preference}{" "}
+              <a href="mailto:info@rolandbranten.nl">
+                <StyledUnderline>info@rolandbranten.nl</StyledUnderline>
+              </a>
+            </p>
+          </Form>
+        </FormCard>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <AnimatePresence> {modalIsOpen && <FormComponent />}</AnimatePresence>
+    </>
   );
 }
