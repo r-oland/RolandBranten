@@ -33,7 +33,7 @@
     "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-json": "^2.2.27",
     "gatsby-transformer-sharp": "^2.3.17",
-    "hooks-roland": "^1.0.0",
+    "hooks-roland": "^1.0.1",
     "intersection-observer": "^0.7.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
