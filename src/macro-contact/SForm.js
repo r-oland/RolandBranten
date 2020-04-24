@@ -1,6 +1,6 @@
 // Components==============
 import { AnimatePresence, motion } from "framer-motion";
-import { useScrollFreeze } from "hooks-roland";
+import { useScrollFreeze } from "hooks-lib";
 import { Button, flexUnit, StyledUnderline } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";

@@ -1,7 +1,7 @@
 // Components==============
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
-import { useMediaQ } from "hooks-roland";
+import { useMediaQ } from "hooks-lib";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import {
