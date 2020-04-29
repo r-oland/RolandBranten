@@ -77,7 +77,7 @@ const intl = {
     homeOL: "Onder de indruk?",
     workOL: "Zie je mogelijkheden?",
     aboutOL: "Enthousiast aan het worden?",
-    aqOL: "Bevallen de antwoorden?",
+    faqOL: "Bevallen de antwoorden?",
     followUp1: "Ik ben momenteel beschikbaar voor freelance werk.",
     followUp2:
       "Als je een project hebt waar je graag mee aan de slag wil, je denkt mijn hulp ergens bij te kunnen gebruiken of je gewoon even hallo wil zeggen:",
