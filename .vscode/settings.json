@@ -13,11 +13,11 @@
     "gatsby-config.js": true,
     "gatsby-ssr.js": true,
     "package-lock.json": true,
-    // "package.json": true
+    "package.json": true,
     "wrapPageElement.js": true,
     "jsconfig.json": true,
-    "root.js": true,
-    "page.js": true,
+    // "root.js": true,
+    // "page.js": true,
     "netlify.toml": true
   },
   "files.associations": {
