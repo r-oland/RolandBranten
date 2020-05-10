@@ -81,6 +81,8 @@ function Layout({ children, path, pageContext, location }) {
     inView2,
   };
 
+  if (location.pathname === "/offline-plugin-app-shell-fallback") return null;
+
   return (
     <ThemeProvider theme={Variables}>
       <LocaleContext.Provider value={lang}>
