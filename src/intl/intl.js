@@ -4,7 +4,7 @@ const intl = {
     nav0: "home",
     nav1: "About me",
     nav2: "Work",
-    nav3: "FAQ",
+    nav3: "Blog",
     nav4: "Contact",
 
     // HOME
@@ -27,7 +27,7 @@ const intl = {
     homeOL: "Impressed already?",
     workOL: "Like what you see?",
     aboutOL: "Think I might be a good match?",
-    faqOL: "Like the Answers?",
+    blogOL: "Like the Answers?",
     followUp1: "I'm currently available for freelance work. ",
     followUp2:
       "If you have a project that you want to get started, think you can use my expertise with something or just fancy saying hey, then get in touch.",
@@ -54,7 +54,7 @@ const intl = {
     nav0: "home",
     nav1: "Over mij",
     nav2: "Werk",
-    nav3: "FAQ",
+    nav3: "Blog",
     nav4: "Contact",
 
     // HOME
@@ -77,7 +77,7 @@ const intl = {
     homeOL: "Onder de indruk?",
     workOL: "Zie je mogelijkheden?",
     aboutOL: "Enthousiast aan het worden?",
-    faqOL: "Bevallen de antwoorden?",
+    blogOL: "",
     followUp1: "Ik ben momenteel beschikbaar voor freelance werk.",
     followUp2:
       "Als je een project hebt waar je graag mee aan de slag wil, je denkt mijn hulp ergens bij te kunnen gebruiken of je gewoon even hallo wil zeggen:",

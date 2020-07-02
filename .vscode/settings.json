@@ -16,8 +16,8 @@
     "package.json": true,
     "wrapPageElement.js": true,
     "jsconfig.json": true,
-    // "root.js": true,
-    // "page.js": true,
+    "root.js": true,
+    "page.js": true,
     "netlify.toml": true
   },
   "files.associations": {

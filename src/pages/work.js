@@ -7,19 +7,19 @@ import Content from "../macro-work/Content";
 // =========================
 
 export default function Work({ data }) {
-  const d = data.sanityWork;
+  const seo = data.sanitySeo;
   const lang = useContext(LocaleContext);
 
   const content = {
-    jobs: d.jobs,
+    jobs: data.sanityWorkPage.projects,
   };
 
   return (
     <>
       <Head
-        title={d.SEO[0].title[lang]}
-        description={d.SEO[0].description[lang]}
-        keywords={d.SEO[0].keywords[lang]}
+        title={seo.title[lang]}
+        description={seo.description[lang]}
+        keywords={seo.keywords[lang]}
         path="work"
       />
       <Content content={content} />
@@ -29,29 +29,35 @@ export default function Work({ data }) {
 
 export const query = graphql`
   query work {
-    sanityWork {
-      SEO {
-        description {
-          en
-          nl
-        }
-        title {
-          en
-          nl
-        }
-        keywords {
-          en
-          nl
-        }
+    sanitySeo(page: { eq: "work" }) {
+      keywords {
+        en
+        nl
       }
-      jobs {
-        type {
-          en
-          nl
-        }
-        url
-        work
+      title {
+        en
+        nl
+      }
+      description {
+        en
+        nl
+      }
+    }
+    sanityWorkPage {
+      projects {
         name
+        url
+        source
+        type
+        technologies {
+          icon {
+            asset {
+              url
+              title
+            }
+          }
+        }
+        work
         mainImage {
           asset {
             fluid(maxWidth: 800) {

@@ -5,7 +5,6 @@ import styled from "styled-components";
 import intl from "../../intl/intl.js";
 import MTLink from "../../micro-components/MTLink";
 import {
-  FaqContext,
   HamburgerContext,
   LocaleContext,
   ModalContext,
@@ -61,7 +60,6 @@ const Blur = styled(motion.div)`
 export default function FluidMenu() {
   const { menuState, changeMenu } = useContext(HamburgerContext);
   const { handleChange } = useContext(ModalContext);
-  const { setFAQSelected } = useContext(FaqContext);
   const lang = useContext(LocaleContext);
 
   return (
@@ -99,10 +97,9 @@ export default function FluidMenu() {
         <button
           onClick={() => {
             changeMenu();
-            setFAQSelected(null);
           }}
         >
-          <MTLink to="/faq" activeClassName="active">
+          <MTLink to="/blog" activeClassName="active">
             {intl[lang].nav3}
           </MTLink>
         </button>

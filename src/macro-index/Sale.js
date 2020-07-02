@@ -3,7 +3,7 @@ import Divider2DImp from "assets/Divider2D.inline.svg";
 import Divider2MImp from "assets/Divider2M.inline.svg";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { FaqContext, LocaleContext } from "../global-components/Layout/Layout";
+import { LocaleContext } from "../global-components/Layout/Layout";
 import intl from "../intl/intl";
 import Block from "../micro-components/Block";
 import MTLink from "../micro-components/MTLink";
@@ -188,7 +188,6 @@ function isEven(value) {
 
 export default function Sale({ content }) {
   const lang = useContext(LocaleContext);
-  const { setFAQSelected } = useContext(FaqContext);
   const illustrations = useIllustrations();
 
   const combinedContent = content.salePoints.map((e, index) => {
@@ -228,13 +227,8 @@ export default function Sale({ content }) {
         <h2>{content.title[lang]}</h2>
         {salePoints}
         <LinkOL>{intl[lang].saleEnd}</LinkOL>
-        <Link
-          as="div"
-          onClick={() => {
-            setFAQSelected(0);
-          }}
-        >
-          <MTLink to="/faq">{intl[lang].saleButton}</MTLink>
+        <Link as="div">
+          <MTLink to="/blog">{intl[lang].saleButton}</MTLink>
         </Link>
       </CustomContainer>
     </Wrapper>

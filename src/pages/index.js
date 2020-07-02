@@ -6,139 +6,115 @@ import { LocaleContext } from "../global-components/Layout/Layout";
 import Hero from "../macro-index/Hero";
 import PopularQ from "../macro-index/PopularQ";
 import Sale from "../macro-index/Sale";
-import Technologies from "../macro-index/Technologies";
 // =========================
 
 export default function Index({ data }) {
   const lang = useContext(LocaleContext);
   const d = data.sanityHome;
+  const seo = data.sanitySeo;
+
+  console.log(data);
 
   const hero = {
-    title: d.title[lang],
-    headshot: d.headshot.asset.fluid,
-    explanation: d.explanation[lang],
+    title: d.hero.title[lang],
+    headshot: d.hero.headshot.asset.fluid,
+    explanation: d.hero.explanation[lang],
   };
 
   const sale = {
-    title: d.saleTitle,
-    salePoints: d._rawSalePoints,
+    title: d.sale.title[lang],
+    salePoints: d.sale._rawSalePoints,
   };
 
   const questions = {
-    title: d.questionsTitle[lang],
-    headshot: d.headshot2.asset.fluid,
-    questions: d.questions,
+    title: d.chat.questionsTitle,
+    headshot: d.chat.headshot2.asset.fluid,
+    questions: d.chat.questions,
   };
 
-  const technologies = {
-    title: d.techTitle,
-    text: d._rawTechnologies,
-    illustrations: d.illustrations,
-  };
+  // const technologies = {
+  //   title: d.techTitle,
+  //   text: d._rawTechnologies,
+  //   illustrations: d.illustrations,
+  // };
 
   return (
     <>
       <Head
-        title={d.SEO[0].title[lang]}
-        description={d.SEO[0].description[lang]}
-        keywords={d.SEO[0].keywords[lang]}
+        title={seo.title[lang]}
+        description={seo.description[lang]}
+        keywords={seo.keywords[lang]}
         path=""
       />
       <Hero content={hero} />
       <Sale content={sale} />
       <PopularQ content={questions} />
-      <Technologies content={technologies} />
+      {/* <Technologies content={technologies} /> */}
     </>
   );
 }
 
 export const query = graphql`
   query home {
-    sanityHome {
-      SEO {
-        description {
-          en
-          nl
-        }
-        title {
-          en
-          nl
-        }
-        keywords {
-          en
-          nl
-        }
+    sanitySeo(page: { eq: "home" }) {
+      keywords {
+        en
+        nl
       }
       title {
         en
         nl
       }
-      headshot {
-        asset {
-          fluid(maxWidth: 800) {
-            ...GatsbySanityImageFluid_withWebp
-          }
-        }
-      }
-      explanation {
+      description {
         en
         nl
       }
-      saleTitle {
-        en
-        nl
-      }
-      _rawSalePoints
-      questionsTitle {
-        en
-        nl
-      }
-      headshot2 {
-        asset {
-          fluid(maxWidth: 150) {
-            ...GatsbySanityImageFluid_withWebp
-          }
-        }
-      }
-      questions {
-        answer {
-          nl
+    }
+    sanityHome {
+      hero {
+        title {
           en
+          nl
         }
-        question {
+        headshot {
+          asset {
+            fluid(maxWidth: 800) {
+              ...GatsbySanityImageFluid_withWebp
+            }
+          }
+        }
+        explanation {
           en
           nl
         }
       }
-      techTitle {
-        en
-        nl
+      sale {
+        title {
+          en
+          nl
+        }
+        _rawSalePoints
       }
-      _rawTechnologies
-      illustrations {
-        data1 {
+      chat {
+        title {
+          en
+          nl
+        }
+        headshot2 {
           asset {
-            url
+            fluid(maxWidth: 150) {
+              ...GatsbySanityImageFluid_withWebp
+            }
           }
         }
-        data2 {
-          asset {
-            url
+        questions {
+          answer {
+            nl
+            en
           }
-        }
-        tools1 {
-          asset {
-            url
-          }
-        }
-        tools2 {
-          asset {
-            url
-          }
-        }
-        deploy {
-          asset {
-            url
+          question {
+            en
+            nl
           }
         }
       }

@@ -1,5 +1,4 @@
 // Components==============
-import { useStorage } from "hooks-lib";
 import React, { useState } from "react";
 import { hot } from "react-hot-loader/root";
 import { useInView } from "react-intersection-observer";
@@ -37,14 +36,12 @@ const Wrapper = styled.div`
 
 export const HamburgerContext = React.createContext();
 export const ModalContext = React.createContext();
-export const FaqContext = React.createContext();
 export const ObserverContext = React.createContext();
 export const LocaleContext = React.createContext();
 
 function Layout({ children, path, pageContext, location }) {
   const [menuState, setMenuState] = useState("closed");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [FAQSelected, setFAQSelected] = useStorage(`FAQSelected`, null);
 
   const [ref, inView] = useInView({ threshold: 0 });
   const [ref2, inView2] = useInView({ threshold: 0 });
@@ -69,11 +66,6 @@ function Layout({ children, path, pageContext, location }) {
     handleChange,
   };
 
-  const faqValue = {
-    FAQSelected,
-    setFAQSelected,
-  };
-
   const observerValue = {
     ref,
     ref2,
@@ -88,18 +80,16 @@ function Layout({ children, path, pageContext, location }) {
       <LocaleContext.Provider value={lang}>
         <HamburgerContext.Provider value={contextValue}>
           <ModalContext.Provider value={modalValue}>
-            <FaqContext.Provider value={faqValue}>
-              <ObserverContext.Provider value={observerValue}>
-                <ObserverRef ref={ref} />
-                <ObserverRef2 ref={ref2} />
-                <IEWarning />
-                <SForm />
-                <Nav path={path} oldPath={pageContext.oldPath} />
-                <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
-                <Footer path={pageContext.oldPath} />
-                <GlobalStyles />
-              </ObserverContext.Provider>
-            </FaqContext.Provider>
+            <ObserverContext.Provider value={observerValue}>
+              <ObserverRef ref={ref} />
+              <ObserverRef2 ref={ref2} />
+              <IEWarning />
+              <SForm />
+              <Nav path={path} oldPath={pageContext.oldPath} />
+              <Wrapper path={pageContext.oldPath}>{children}</Wrapper>
+              <Footer path={pageContext.oldPath} />
+              <GlobalStyles />
+            </ObserverContext.Provider>
           </ModalContext.Provider>
         </HamburgerContext.Provider>
       </LocaleContext.Provider>

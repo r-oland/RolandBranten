@@ -7,7 +7,6 @@ import intl from "../../intl/intl.js";
 import LanguageSwitch from "../../micro-components/LanguageSwitch";
 import MTLink from "../../micro-components/MTLink";
 import {
-  FaqContext,
   HamburgerContext,
   LocaleContext,
   ModalContext,
@@ -92,7 +91,6 @@ export default function Nav({ path, oldPath }) {
   const { menuState } = useContext(HamburgerContext);
   const themeContext = useContext(ThemeContext);
   const { handleChange } = useContext(ModalContext);
-  const { setFAQSelected } = useContext(FaqContext);
   const lang = useContext(LocaleContext);
 
   return (
@@ -134,12 +132,8 @@ export default function Nav({ path, oldPath }) {
                 <MTLink to="/work">{intl[lang].nav2}</MTLink>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    setFAQSelected(null);
-                  }}
-                >
-                  <MTLink to="/faq">{intl[lang].nav3}</MTLink>
+                <button>
+                  <MTLink to="/blog">{intl[lang].nav3}</MTLink>
                 </button>
               </li>
               <li>

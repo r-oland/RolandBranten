@@ -97,10 +97,10 @@ export default function Content({ content }) {
     };
 
     const imageContent = {
-      main: edge.mainImage.asset.fluid,
-      float1: edge.float1.asset.fluid,
-      float2: edge.float2.asset.fluid,
-      alt: edge.name,
+      main: edge?.mainImage?.asset.fluid,
+      float1: edge?.float1?.asset.fluid,
+      float2: edge?.float2?.asset.fluid,
+      alt: edge?.name,
     };
 
     return (
@@ -118,7 +118,9 @@ export default function Content({ content }) {
               {intl[lang].workButton}
             </LinkD>
           </div>
-          <Images content={imageContent} align={align} />
+          {imageContent?.main && (
+            <Images content={imageContent} align={align} />
+          )}
         </Flex>
         <LinkM as="a" href={edge.url} target="_blank" rel="noopener noreferrer">
           {intl[lang].workButton}
