@@ -27,10 +27,12 @@ export default function IEWarning() {
   };
 
   return (
-    <div>
-      <IEModal modalIsOpen={modalIsOpen} handleChange={handleChange}>
-        <Text>{intl[lang].IEMessage}</Text>
-      </IEModal>
-    </div>
+    <>
+      {modalIsOpen && (
+        <IEModal modalIsOpen={modalIsOpen} handleChange={handleChange}>
+          <Text>{intl[lang].IEMessage}</Text>
+        </IEModal>
+      )}
+    </>
   );
 }

@@ -6,14 +6,13 @@ import { LocaleContext } from "../global-components/Layout/Layout";
 import Hero from "../macro-index/Hero";
 import PopularQ from "../macro-index/PopularQ";
 import Sale from "../macro-index/Sale";
+import Technologies from "../macro-index/Technologies";
 // =========================
 
 export default function Index({ data }) {
   const lang = useContext(LocaleContext);
   const d = data.sanityHome;
   const seo = data.sanitySeo;
-
-  console.log(data);
 
   const hero = {
     title: d.hero.title[lang],
@@ -27,16 +26,12 @@ export default function Index({ data }) {
   };
 
   const questions = {
-    title: d.chat.questionsTitle,
+    title: d.chat.title[lang],
     headshot: d.chat.headshot2.asset.fluid,
     questions: d.chat.questions,
   };
 
-  // const technologies = {
-  //   title: d.techTitle,
-  //   text: d._rawTechnologies,
-  //   illustrations: d.illustrations,
-  // };
+  const technologies = data.allSanityTechnologies.nodes;
 
   return (
     <>
@@ -48,14 +43,24 @@ export default function Index({ data }) {
       />
       <Hero content={hero} />
       <Sale content={sale} />
+      <Technologies content={technologies} />
       <PopularQ content={questions} />
-      {/* <Technologies content={technologies} /> */}
     </>
   );
 }
 
 export const query = graphql`
   query home {
+    allSanityTechnologies {
+      nodes {
+        name
+        icon {
+          asset {
+            url
+          }
+        }
+      }
+    }
     sanitySeo(page: { eq: "home" }) {
       keywords {
         en

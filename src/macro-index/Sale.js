@@ -14,6 +14,7 @@ import useIllustrations from "./useIllustrations";
 const Wrapper = styled.div`
   margin-top: ${({ theme: { spacing } }) => spacing.s9};
   position: relative;
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s13};
 
   h2 {
     text-align: center;
@@ -34,16 +35,8 @@ const Wrapper = styled.div`
   #ExplanationWallet {
     margin-bottom: 0;
   }
-`;
-
-const CustomContainer = styled(Container)`
-  @media screen and (min-width: 1000px) {
-    margin: 0 auto;
-    max-width: 78.5%;
-  }
-
-  @media screen and (min-width: 1600px) {
-    max-width: 70%;
+  #ExplanationSEO {
+    margin-left: auto;
   }
 `;
 
@@ -119,7 +112,7 @@ const Grid = styled.div`
   @media screen and (min-width: 1000px) {
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    grid-column-gap: ${({ theme: { spacing } }) => spacing.s9};
+    grid-column-gap: ${({ theme: { spacing } }) => spacing.s10};
 
     .L {
       grid-column: 1;
@@ -129,6 +122,8 @@ const Grid = styled.div`
     .R {
       grid-column: 2;
       grid-row: 1;
+      text-align: right;
+      justify-self: end;
     }
   }
 `;
@@ -157,21 +152,12 @@ const Divider2DSvg = styled(Divider2DImp)`
 `;
 
 const LinkOL = styled.p`
-  margin-top: ${({ theme: { spacing } }) => spacing.s9};
   text-align: center;
-
-  @media screen and (min-width: 700px) {
-    margin-top: ${({ theme: { spacing } }) => spacing.s12};
-  }
-
-  @media screen and (min-width: 1000px) {
-    margin-top: ${({ theme: { spacing } }) => spacing.s10};
-  }
 `;
 
 const Link = styled(StyledUnderline)`
   display: inline-block;
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   margin-top: ${({ theme: { spacing } }) => spacing.s4};
@@ -223,14 +209,14 @@ export default function Sale({ content }) {
     <Wrapper>
       <Divider2DSvg />
       <Divider2MSvg />
-      <CustomContainer>
-        <h2>{content.title[lang]}</h2>
+      <Container>
+        <h2>{content.title}</h2>
         {salePoints}
         <LinkOL>{intl[lang].saleEnd}</LinkOL>
         <Link as="div">
           <MTLink to="/blog">{intl[lang].saleButton}</MTLink>
         </Link>
-      </CustomContainer>
+      </Container>
     </Wrapper>
   );
 }

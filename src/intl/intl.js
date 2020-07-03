@@ -9,9 +9,8 @@ const intl = {
 
     // HOME
     sources: "sources",
-    saleEnd:
-      "Thoughts these where all the benefits of a JAMstack site.. have a second?",
-    saleButton: "Show me the rest",
+    saleEnd: "Are you curious how I achieve these accomplishment?",
+    saleButton: "I want to know more.",
 
     // WORK
     workButton: "Visit site",
@@ -28,7 +27,7 @@ const intl = {
     workOL: "Like what you see?",
     aboutOL: "Think I might be a good match?",
     blogOL: "Like the Answers?",
-    followUp1: "I'm currently available for freelance work. ",
+    followUp1: "I'm currently available for work. ",
     followUp2:
       "If you have a project that you want to get started, think you can use my expertise with something or just fancy saying hey, then get in touch.",
     button: "Message me",
@@ -59,9 +58,8 @@ const intl = {
 
     // HOME
     sources: "sources",
-    saleEnd:
-      "Dacht je dat dit de enige voordelen van een JAMstack site waren... Heb je een seconde?",
-    saleButton: "Toon me de rest",
+    saleEnd: "Wil je meer leren over hoe ik deze doelen bereik?",
+    saleButton: "Ik wil meer leren.",
 
     // WORK
     workButton: "Visit site",
@@ -78,7 +76,7 @@ const intl = {
     workOL: "Zie je mogelijkheden?",
     aboutOL: "Enthousiast aan het worden?",
     blogOL: "",
-    followUp1: "Ik ben momenteel beschikbaar voor freelance werk.",
+    followUp1: "Ik ben momenteel beschikbaar voor werk.",
     followUp2:
       "Als je een project hebt waar je graag mee aan de slag wil, je denkt mijn hulp ergens bij te kunnen gebruiken of je gewoon even hallo wil zeggen:",
     button: "Neem contact op",

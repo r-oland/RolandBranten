@@ -7,8 +7,9 @@ import { flexUnit } from "../style/Mixins";
 
 const TextArea = styled(motion.span)`
   font-family: Poppins;
-  ${flexUnit(4, 40, 55, "vw", "font-size")};
+  ${flexUnit(4, 30, 45, "vw", "font-size")};
   font-weight: 700;
+  line-height: 1;
 
   display: inline;
   color: ${({ theme: { white } }) => white};
@@ -16,38 +17,48 @@ const TextArea = styled(motion.span)`
 
 const variants = {
   done: { opacity: 1 },
-  changing: { opacity: 0 }
+  changing: { opacity: 0 },
 };
 
 export default function TextSwitchAnimation({ inView }) {
   // unmount with intersection observer to prevent unnecessary reerenders
 
-  const A = "Developer";
+  const A = "Front-end developer";
   const B = "Designer";
+  const C = "Freelancer";
+  const D = "Back-end developer";
 
   const [IsChanging, setIsChanging] = useState(false);
-  const [Content, setContent] = useState(A);
+  const [content, setContent] = useState(1);
 
   useEffect(() => {
     if (inView) {
       const timer1 = setTimeout(() => {
         setIsChanging(true);
-      }, 4000);
+      }, 3000);
       const timer2 = setTimeout(() => {
-        Content === A ? setContent(B) : setContent(A);
+        setContent((prev) => (prev === 4 ? 1 : prev + 1));
         setIsChanging(false);
-      }, 4500);
+      }, 3500);
 
       return () => {
         clearTimeout(timer1);
         clearTimeout(timer2);
       };
     }
-  }, [inView, Content]);
+  }, [inView, content]);
 
   return (
     <TextArea animate={IsChanging ? "changing" : "done"} variants={variants}>
-      {Content}
+      {content === 1
+        ? A
+        : content === 2
+        ? B
+        : content === 3
+        ? C
+        : content === 4
+        ? D
+        : A}
     </TextArea>
   );
 }

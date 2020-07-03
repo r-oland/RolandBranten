@@ -1,4 +1,5 @@
 // Components==============
+import Img from "gatsby-image";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { LocaleContext } from "../global-components/Layout/Layout";
@@ -6,7 +7,6 @@ import intl from "../intl/intl";
 import { Button, Container, flexUnit, StyledUnderline } from "../style/Mixins";
 import Images from "./Images";
 import Text from "./Text";
-
 // =========================
 
 const Wrapper = styled.div`
@@ -79,6 +79,16 @@ const LinkD = styled(Button)`
   }
 `;
 
+const Image = styled(Img)`
+  width: 100%;
+
+  @media screen and (min-width: 900px) {
+    width: 60%;
+    transform: ${({ align }) =>
+      align === "left" ? "translate(-40px, 25px)" : "translate(50px, 30px)"};
+  }
+`;
+
 function isEven(value) {
   if (value % 2 === 0) return false;
   else return true;
@@ -118,8 +128,12 @@ export default function Content({ content }) {
               {intl[lang].workButton}
             </LinkD>
           </div>
-          {imageContent?.main && (
+          {imageContent?.main && !imageContent?.float1 ? (
+            <Image fluid={imageContent.main} alt={edge.name} align={align} />
+          ) : imageContent?.main ? (
             <Images content={imageContent} align={align} />
+          ) : (
+            <></>
           )}
         </Flex>
         <LinkM as="a" href={edge.url} target="_blank" rel="noopener noreferrer">
