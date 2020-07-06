@@ -105,7 +105,8 @@ const Flex = styled.div`
 
     @media screen and (min-width: 1000px) {
       margin-left: ${({ theme: { spacing }, left }) => !left && spacing.s3};
-      margin-right: ${({ theme: { spacing }, left }) => left && spacing.s3};
+      margin-right: ${({ theme: { spacing }, left }) =>
+        left ? spacing.s3 : 0};
     }
   }
 `;

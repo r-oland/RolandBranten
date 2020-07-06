@@ -19,8 +19,7 @@ export default function ChatSvg() {
         stroke="#edf0f5"
         stroke-miterlimit="10"
         stroke-width="2"
-      >
-      </path>
+      ></path>
     </svg>
   );
 }

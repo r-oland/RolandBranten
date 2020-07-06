@@ -1,4 +1,5 @@
 // Components==============
+import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
 import ContentBlock from "./ContentBlock";

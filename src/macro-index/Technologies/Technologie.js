@@ -18,20 +18,16 @@ const Wrapper = styled(motion.div)`
   }
 
   img {
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
-    height: 12vw;
-
-    @media screen and (min-width: 700px) {
-      height: 70px;
-    }
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
+    height: 45px;
   }
 
   p {
-    display: none;
-
-    @media screen and (min-width: 900px) {
-      display: block;
-    }
+    font-size: 15px;
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
+    position: absolute;
+    bottom: -22.5px;
+    width: 200%;
   }
 `;
 

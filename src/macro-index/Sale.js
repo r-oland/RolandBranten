@@ -14,7 +14,11 @@ import useIllustrations from "./useIllustrations";
 const Wrapper = styled.div`
   margin-top: ${({ theme: { spacing } }) => spacing.s9};
   position: relative;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s13};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s9};
+
+  @media screen and (min-width: 1000px) {
+    margin-bottom: 0;
+  }
 
   h2 {
     text-align: center;
@@ -153,6 +157,7 @@ const Divider2DSvg = styled(Divider2DImp)`
 
 const LinkOL = styled.p`
   text-align: center;
+  margin-top: ${({ theme: { spacing } }) => spacing.s8};
 `;
 
 const Link = styled(StyledUnderline)`

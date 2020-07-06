@@ -1,11 +1,11 @@
 // Components==============
 import { motion } from "framer-motion";
+import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { S } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { LocaleContext } from "../../global-components/Layout/Layout";
-import MTLink from "../../micro-components/MTLink";
 import Arrow from "./Arrow.svg";
 import Cross from "./Cross.svg";
 import LeftImp from "./Left.inline.svg";
@@ -13,7 +13,7 @@ import RightImp from "./Right.inline.svg";
 // =========================
 
 const ChatWrapper = styled.div`
-  margin: 0 auto ${({ theme: { spacing } }) => spacing.s12};
+  margin: 0 auto ${({ theme: { spacing } }) => spacing.s11};
   background: ${({ theme: { white } }) => white};
   border-radius: 20px;
   overflow: hidden;
@@ -22,7 +22,7 @@ const ChatWrapper = styled.div`
 `;
 
 const Top = styled.div`
-  background: ${({ theme: { gray } }) => gray.s9};
+  background: ${({ theme: { primary } }) => primary.s7};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +36,7 @@ const Top = styled.div`
   p {
     font-size: 18px;
     font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-    color: white;
+    color: ${({ theme: { black } }) => black};
     padding-left: ${({ theme: { spacing } }) => spacing.s5};
 
     @media screen and (min-width: 950px) {
@@ -69,7 +69,7 @@ const Circle = styled.div`
   height: 50px;
 
   @media screen and (min-width: 950px) {
-    border: ${({ theme: { gray } }) => gray.s9} solid 6px;
+    border: ${({ theme: { gray } }) => gray.s9} solid 4px;
     position: absolute;
     top: -8px;
     width: 85px;
@@ -182,7 +182,7 @@ const Sender = styled.p`
 const Message = styled(S)`
   z-index: 10;
   padding: ${({ theme: { spacing } }) =>
-    `${spacing.s1} 0 ${spacing.s1} ${spacing.s6}`};
+    `${spacing.s1} 0 ${spacing.s3} ${spacing.s6}`};
   position: relative;
 `;
 
@@ -192,11 +192,11 @@ export default function ChatLink({ img, questions }) {
   function Me({ children, to }) {
     return (
       <Left>
-        <MTLink to={to}>
+        <Link to={to}>
           <LeftSvg />
           <Sender>Me</Sender>
           <Message>{children}</Message>
-        </MTLink>
+        </Link>
       </Left>
     );
   }
@@ -204,11 +204,11 @@ export default function ChatLink({ img, questions }) {
   function Roland({ children, to }) {
     return (
       <Right>
-        <MTLink to={to}>
+        <Link to={to}>
           <RightSvg />
           <Sender>Roland</Sender>
           <Message>{children}</Message>
-        </MTLink>
+        </Link>
       </Right>
     );
   }
@@ -216,8 +216,8 @@ export default function ChatLink({ img, questions }) {
   const qna = questions.map((e, i) => {
     return (
       <div key={i}>
-        <Me to="/blog">{e.question[lang]}</Me>
-        <Roland to="/blog">{e.answer[lang]}</Roland>
+        <Me to={e.link}>{e.question[lang]}</Me>
+        <Roland to={e.link}>{e.answer[lang]}</Roland>
       </div>
     );
   });

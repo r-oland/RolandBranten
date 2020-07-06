@@ -31,7 +31,7 @@ export default function Index({ data }) {
     questions: d.chat.questions,
   };
 
-  const technologies = data.allSanityTechnologies.nodes;
+  const technologies = data.sanityTechOrder;
 
   return (
     <>
@@ -51,9 +51,19 @@ export default function Index({ data }) {
 
 export const query = graphql`
   query home {
-    allSanityTechnologies {
-      nodes {
+    sanityTechOrder {
+      design {
         name
+        category
+        icon {
+          asset {
+            url
+          }
+        }
+      }
+      development {
+        name
+        category
         icon {
           asset {
             url
@@ -113,6 +123,7 @@ export const query = graphql`
           }
         }
         questions {
+          link
           answer {
             nl
             en
