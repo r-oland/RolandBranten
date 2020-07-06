@@ -38,7 +38,7 @@ const Grid = styled.div`
 `;
 
 export default function Technologies({ content }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   const technologies = content.map((e, index) => {
     return <Technologie key={index} icon={e.icon.asset.url} name={e.name} />;

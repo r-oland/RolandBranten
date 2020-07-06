@@ -89,7 +89,7 @@ const Form = styled.form`
 export default function SForm() {
   const { modalIsOpen, handleChange } = useContext(ModalContext);
 
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   function FormComponent() {
     useScrollFreeze();

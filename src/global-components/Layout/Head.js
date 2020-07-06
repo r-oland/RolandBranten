@@ -6,7 +6,7 @@ import { LocaleContext } from "./Layout";
 // =========================
 
 export default function Head({ title, description, keywords, path, noIndex }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
   const canonicalLoc = lang === "en" ? "en/" : "";
 
   const data = useStaticQuery(graphql`

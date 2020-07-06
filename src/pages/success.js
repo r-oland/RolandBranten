@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `;
 
 export default function Success() {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   return (
     <>

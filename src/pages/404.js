@@ -26,7 +26,7 @@ const Container404 = styled(Container)`
 `;
 
 export default function NotFound() {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   return (
     <>

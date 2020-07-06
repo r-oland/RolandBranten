@@ -34,7 +34,8 @@ const Flex = styled(motion.div)`
   }
 `;
 
-const NL = styled.button`
+const NL = styled.p`
+  display: inline;
   position: absolute;
   right: 0;
   font-size: 18px;
@@ -50,7 +51,8 @@ const NL = styled.button`
     lang === "nl" ? fontWeight.bold : fontWeight.normal};
 `;
 
-const EN = styled.button`
+const EN = styled.p`
+  display: inline;
   position: absolute;
   right: 0;
   font-size: 18px;
@@ -65,9 +67,29 @@ const EN = styled.button`
     lang === "en" ? fontWeight.bold : fontWeight.normal};
 `;
 
+const Switch = ({ children, path }) => {
+  const { lang, setLang } = useContext(LocaleContext);
+
+  if (!path) {
+    return (
+      <button
+        onClick={() => {
+          lang === "en" ? setLang("nl") : setLang("en");
+        }}
+      >
+        {children}
+      </button>
+    );
+  } else {
+    return (
+      <Link to={lang === "en" ? `${path}` : `/en${path}`}>{children}</Link>
+    );
+  }
+};
+
 export default function LanguageSwitch({ inView2, path }) {
   const { menuState } = useContext(HamburgerContext);
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   const variants = {
     visible: {
@@ -84,28 +106,28 @@ export default function LanguageSwitch({ inView2, path }) {
   const query = useMediaQ("min", 850);
 
   return (
-    <Link to={lang === "en" ? `${path}` : `/en${path}`}>
-      <Flex
-        animate={
-          (inView2 === false && menuState === "closed"
-            ? "visible"
-            : inView2 === false && menuState === "open") || query
-            ? "visible"
-            : (inView2 === true && menuState === "open") || query
-            ? "visible"
-            : (inView2 === true && menuState === "closed") || query !== true
-            ? "hidden"
-            : "hidden"
-        }
-        variants={variants}
-        initial={{
-          opacity: 1,
-        }}
-      >
+    <Flex
+      animate={
+        (inView2 === false && menuState === "closed"
+          ? "visible"
+          : inView2 === false && menuState === "open") || query
+          ? "visible"
+          : (inView2 === true && menuState === "open") || query
+          ? "visible"
+          : (inView2 === true && menuState === "closed") || query !== true
+          ? "hidden"
+          : "hidden"
+      }
+      variants={variants}
+      initial={{
+        opacity: 1,
+      }}
+    >
+      <Switch path={path}>
         <NL lang={lang}>NL</NL>
         <span>/</span>
         <EN lang={lang}>EN</EN>
-      </Flex>
-    </Link>
+      </Switch>
+    </Flex>
   );
 }

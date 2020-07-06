@@ -51,7 +51,7 @@ const Copyright = styled(S)``;
 
 export default function Footer({ path }) {
   const { handleChange } = useContext(ModalContext);
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   const hideFooterPages =
     path === "/work/" ||
@@ -74,6 +74,7 @@ export default function Footer({ path }) {
     <div
       style={{
         display: hideFooterPages ? "block" : "none",
+        paddingBottom: "1em",
       }}
     >
       <Wrapper>

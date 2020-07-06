@@ -91,7 +91,7 @@ export default function Nav({ path, oldPath }) {
   const { menuState } = useContext(HamburgerContext);
   const themeContext = useContext(ThemeContext);
   const { handleChange } = useContext(ModalContext);
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   return (
     <div>
@@ -140,7 +140,13 @@ export default function Nav({ path, oldPath }) {
                 <button onClick={handleChange}>{intl[lang].nav4}</button>
               </li>
             </MenuItems>
-            <LanguageSwitch inView2={inView2} path={oldPath} />
+            {
+              <LanguageSwitch
+                inView2={inView2}
+                path={oldPath}
+                pathName={path}
+              />
+            }
           </Flex>
         </FlexContainer>
       </NavWrapper>

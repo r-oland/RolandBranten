@@ -54,7 +54,7 @@ const OverflowDiv = styled.div`
 `;
 
 export default function IEModal({ modalIsOpen, children, handleChange }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   return (
     <div>

@@ -8,7 +8,7 @@ import Content from "../macro-about/Content";
 // =========================
 
 export default function About({ data }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
   const seo = data.sanitySeo;
   const d = data.sanityRoland;
 

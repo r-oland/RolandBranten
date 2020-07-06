@@ -118,10 +118,11 @@ export const Button = styled.button`
   ${flexUnit(2.5, 18, 19, "vw", "font-size")};
   background-color: ${({ theme: { primary } }) => primary.s4};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-  padding: ${({ theme: { spacing } }) => `${spacing.s2} ${spacing.s6}`};
+  padding: ${({ theme: { spacing } }) => `${spacing.s2} ${spacing.s5}`};
   display: inline-block;
   border-radius: ${({ theme: { borderRadius } }) => borderRadius};
   box-shadow: ${({ theme: { shadow } }) => shadow.small};
+  text-align: center;
 
   &:hover {
     background-color: ${({ theme: { primary } }) => primary.s5};

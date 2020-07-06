@@ -60,7 +60,7 @@ const Blur = styled(motion.div)`
 export default function FluidMenu() {
   const { menuState, changeMenu } = useContext(HamburgerContext);
   const { handleChange } = useContext(ModalContext);
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   return (
     <Hide>

@@ -10,7 +10,7 @@ import Technologies from "../macro-index/Technologies";
 // =========================
 
 export default function Index({ data }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
   const d = data.sanityHome;
   const seo = data.sanitySeo;
 

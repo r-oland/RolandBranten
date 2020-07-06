@@ -118,7 +118,7 @@ const PictureWrapDesktop = styled.div`
 `;
 
 export default function Content({ content }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   const timeOfDay = () => {
     const time = new Date().getHours();

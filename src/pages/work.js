@@ -3,16 +3,12 @@ import { graphql } from "gatsby";
 import React, { useContext } from "react";
 import Head from "../global-components/Layout/Head";
 import { LocaleContext } from "../global-components/Layout/Layout";
-import Content from "../macro-work/Content";
+import Content from "../macro-work";
 // =========================
 
 export default function Work({ data }) {
   const seo = data.sanitySeo;
-  const lang = useContext(LocaleContext);
-
-  const content = {
-    jobs: data.sanityWorkPage.projects,
-  };
+  const { lang } = useContext(LocaleContext);
 
   return (
     <>
@@ -22,7 +18,7 @@ export default function Work({ data }) {
         keywords={seo.keywords[lang]}
         path="work"
       />
-      <Content content={content} />
+      <Content content={data.sanityWorkPage.projects} />
     </>
   );
 }
@@ -45,11 +41,18 @@ export const query = graphql`
     }
     sanityWorkPage {
       projects {
+        smallPage
         name
         url
         source
         type
+        period
+        description {
+          en
+          nl
+        }
         technologies {
+          name
           icon {
             asset {
               url

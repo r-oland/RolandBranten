@@ -119,7 +119,7 @@ const Divider1MSvg = styled(Divider1MImp)`
 export default function Hero({ content }) {
   const { title, explanation, headshot } = content;
 
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   const [ref, inView] = useInView({
     threshold: 0,
@@ -139,7 +139,7 @@ export default function Hero({ content }) {
       <Grid>
         <CustomContainer>
           <Title>{title}</Title>
-          <h1 ref={ref}>{lang === "en" ? "and I'm a" : "en ik ben een"} </h1>
+          <h1 ref={ref}>{lang === "en" ? "I'm a" : "Ik ben een"} </h1>
           <TextSwitchAnimation inView={inView} />
           <Explanation>{explanation}</Explanation>
         </CustomContainer>

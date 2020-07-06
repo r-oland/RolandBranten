@@ -187,7 +187,7 @@ const Message = styled(S)`
 `;
 
 export default function ChatLink({ img, questions }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
 
   function Me({ children, to }) {
     return (

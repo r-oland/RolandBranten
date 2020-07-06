@@ -173,7 +173,7 @@ function isEven(value) {
 }
 
 export default function Sale({ content }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
   const illustrations = useIllustrations();
 
   const combinedContent = content.salePoints.map((e, index) => {

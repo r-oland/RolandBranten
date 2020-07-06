@@ -1,5 +1,5 @@
 // Components==============
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { hot } from "react-hot-loader/root";
 import { useInView } from "react-intersection-observer";
 import styled, { ThemeProvider } from "styled-components";
@@ -46,7 +46,14 @@ function Layout({ children, path, pageContext, location }) {
   const [ref, inView] = useInView({ threshold: 0 });
   const [ref2, inView2] = useInView({ threshold: 0 });
 
-  const lang = pageContext.language;
+  const blogPage = !pageContext.language;
+  const [lang, setLang] = useState(blogPage ? "nl" : pageContext.language);
+
+  useEffect(() => {
+    if (!blogPage) {
+      setLang(pageContext.language);
+    }
+  }, [path, pageContext.language, blogPage, setLang]);
 
   const changeMenu = () => {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
@@ -54,6 +61,11 @@ function Layout({ children, path, pageContext, location }) {
 
   const handleChange = () => {
     modalIsOpen === true ? setModalIsOpen(false) : setModalIsOpen(true);
+  };
+
+  const localeValue = {
+    lang,
+    setLang,
   };
 
   const contextValue = {
@@ -77,7 +89,7 @@ function Layout({ children, path, pageContext, location }) {
 
   return (
     <ThemeProvider theme={Variables}>
-      <LocaleContext.Provider value={lang}>
+      <LocaleContext.Provider value={localeValue}>
         <HamburgerContext.Provider value={contextValue}>
           <ModalContext.Provider value={modalValue}>
             <ObserverContext.Provider value={observerValue}>

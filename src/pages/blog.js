@@ -3,10 +3,11 @@ import { graphql } from "gatsby";
 import React, { useContext } from "react";
 import Head from "../global-components/Layout/Head";
 import { LocaleContext } from "../global-components/Layout/Layout";
+import Content from "../macro-blog";
 // =========================
 
 export default function Blog({ data }) {
-  const lang = useContext(LocaleContext);
+  const { lang } = useContext(LocaleContext);
   const seo = data.sanitySeo;
 
   return (
@@ -17,6 +18,7 @@ export default function Blog({ data }) {
         keywords={seo.keywords[lang]}
         path="blog"
       />
+      <Content content={data.allSanityBlog.nodes} />
     </>
   );
 }
@@ -35,6 +37,19 @@ export const query = graphql`
       description {
         en
         nl
+      }
+    }
+    allSanityBlog(sort: { fields: date, order: ASC }) {
+      nodes {
+        title
+        image {
+          asset {
+            fluid {
+              src
+            }
+          }
+        }
+        date
       }
     }
   }
