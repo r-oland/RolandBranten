@@ -96,6 +96,11 @@ const GlobalStyles = createGlobalStyle`
       ${flexUnit(2, 20, 35, "vw", "font-size")};
    }
 
+   h4 {
+      font-family: Poppins;
+      ${flexUnit(2, 19, 24, "vw", "font-size")};
+   }
+
    p,
    a,
    strong,

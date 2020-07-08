@@ -29,7 +29,7 @@ const FollowUp2 = styled(L)`
 const Wrapper2 = styled.div`
   text-align: center;
   max-width: 1250px;
-  margin: 0 auto;
+  margin: 0 auto 1em;
 
   @media screen and (min-width: 900px) {
     margin-top: ${({ theme: { spacing } }) => spacing.s6};
@@ -51,13 +51,7 @@ const Copyright = styled(S)``;
 
 export default function Footer({ path }) {
   const { handleChange } = useContext(ModalContext);
-  const { lang } = useContext(LocaleContext);
-
-  const hideFooterPages =
-    path === "/work/" ||
-    path === "/about/" ||
-    path === "/blog/" ||
-    path === "/";
+  const { lang, isBlogPage } = useContext(LocaleContext);
 
   const oneLiner =
     path === "/"
@@ -68,48 +62,51 @@ export default function Footer({ path }) {
       ? intl[lang].aboutOL
       : path === "/blog/"
       ? intl[lang].blogOL
+      : isBlogPage
+      ? intl[lang].blogPostOL
       : null;
 
   return (
-    <div
-      style={{
-        display: hideFooterPages ? "block" : "none",
-        paddingBottom: "1em",
-      }}
-    >
-      <Wrapper>
-        <Container>
-          <OneLiner>{oneLiner}</OneLiner>
-          <FollowUp1>{intl[lang].followUp1}</FollowUp1>
-          <FollowUp2>{intl[lang].followUp2}</FollowUp2>
-          <Button style={{ marginBottom: "2.5em" }} onClick={handleChange}>
-            {intl[lang].button}
-          </Button>
-        </Container>
-      </Wrapper>
-      <Wrapper2>
-        <Flex>
-          <FlexLinks>
-            <StyledUnderline
-              as="a"
-              href="https://github.com/r-oland"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github
-            </StyledUnderline>
-            <StyledUnderline
-              as="a"
-              href="https://www.linkedin.com/in/rolandbranten"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </StyledUnderline>
-          </FlexLinks>
-          <Copyright>{intl[lang].copyright}</Copyright>
-        </Flex>
-      </Wrapper2>
-    </div>
+    <>
+      {oneLiner && (
+        <>
+          <Wrapper>
+            <Container>
+              <OneLiner>{oneLiner}</OneLiner>
+              <FollowUp1>
+                {isBlogPage ? intl[lang].followUp1V2 : intl[lang].followUp1}
+              </FollowUp1>
+              <FollowUp2>{intl[lang].followUp2}</FollowUp2>
+              <Button style={{ marginBottom: "2.5em" }} onClick={handleChange}>
+                {intl[lang].button}
+              </Button>
+            </Container>
+          </Wrapper>
+          <Wrapper2>
+            <Flex>
+              <FlexLinks>
+                <StyledUnderline
+                  as="a"
+                  href="https://github.com/r-oland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </StyledUnderline>
+                <StyledUnderline
+                  as="a"
+                  href="https://www.linkedin.com/in/rolandbranten"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </StyledUnderline>
+              </FlexLinks>
+              <Copyright>{intl[lang].copyright}</Copyright>
+            </Flex>
+          </Wrapper2>
+        </>
+      )}
+    </>
   );
 }

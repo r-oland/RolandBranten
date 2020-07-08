@@ -26,8 +26,11 @@ const intl = {
     homeOL: "Impressed already?",
     workOL: "Like what you see?",
     aboutOL: "Think I might be a good match?",
-    blogOL: "Like the Answers?",
-    followUp1: "I'm currently available for work. ",
+    blogOL: "Hi, you there!",
+    blogPostOL: "Did you learn something new?",
+    followUp1: "I'm currently available for work.",
+    followUp1V2:
+      "If so, I'm available for work and there's more where that came from!",
     followUp2:
       "If you have a project that you want to get started, think you can use my expertise with something or just fancy saying hey, then get in touch.",
     button: "Message me",
@@ -73,10 +76,13 @@ const intl = {
 
     // FOOTER
     homeOL: "Onder de indruk?",
-    workOL: "Zie je mogelijkheden?",
-    aboutOL: "Enthousiast aan het worden?",
-    blogOL: "",
+    workOL: "Bevalt het wat je ziet?",
+    aboutOL: "Denk je dat ik een match ben?",
+    blogOL: "Hé, jij daar!",
+    blogPostOL: "Ben je iets wijzer geworden?",
     followUp1: "Ik ben momenteel beschikbaar voor werk.",
+    followUp1V2:
+      "Zo ja, ik ben momenteel beschikbaar voor werk en er is meer waar dat vandaan kwam!",
     followUp2:
       "Als je een project hebt waar je graag mee aan de slag wil, je denkt mijn hulp ergens bij te kunnen gebruiken of je gewoon even hallo wil zeggen:",
     button: "Neem contact op",

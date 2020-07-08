@@ -1,10 +1,12 @@
 // Components==============
+import { motion } from "framer-motion";
 import Img from "gatsby-image";
+import { useMediaQ } from "hooks-lib";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { LocaleContext } from "../global-components/Layout/Layout";
 import Block from "../micro-components/Block";
-import { Container, H3 } from "../style/Mixins";
+import { Container, flexUnit } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -16,7 +18,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled(H3)`
+const Title = styled(motion.h3)`
+  font-family: Poppins;
+  ${flexUnit(2, 20, 35, "vw", "font-size")};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
   margin: ${({ theme: { spacing } }) => `${spacing.s5} 0 ${spacing.s4}`};
 
@@ -25,7 +29,7 @@ const Title = styled(H3)`
   }
 `;
 
-const FirstText = styled.div`
+const FirstText = styled(motion.div)`
   margin-bottom: ${({ theme: { spacing } }) => spacing.s9};
 
   @media screen and (min-width: 800px) {
@@ -33,7 +37,7 @@ const FirstText = styled.div`
   }
 `;
 
-const PictureWrapMobile = styled.div`
+const PictureWrapMobile = styled(motion.div)`
   position: relative;
   margin: ${({ theme: { spacing } }) => `${spacing.s8} 0  ${spacing.s9}`};
 
@@ -81,7 +85,7 @@ const IMG = styled(Img)`
   }
 `;
 
-const Text = styled.div`
+const Text = styled(motion.div)`
   padding-top: ${({ theme: { spacing } }) => spacing.s4};
   padding-bottom: ${({ theme: { spacing } }) => spacing.s7};
 
@@ -94,7 +98,7 @@ const Text = styled.div`
   }
 `;
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   @media screen and (min-width: 800px) {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -105,59 +109,53 @@ const Grid = styled.div`
   }
 `;
 
-const PictureWrapDesktop = styled.div`
-  display: none;
+const PictureWrapDesktop = styled(motion.div)`
+  display: none !important;
   position: relative;
 
   @media screen and (min-width: 800px) {
-    display: block;
+    display: block !important;
     max-width: calc(200px + 8vw);
     align-self: center;
-    transform: translateX(5vw);
+    transfrom: translateX(5vw);
   }
 `;
 
 export default function Content({ content }) {
   const { lang } = useContext(LocaleContext);
-
-  const timeOfDay = () => {
-    const time = new Date().getHours();
-
-    return time >= 18
+  const time = new Date().getHours();
+  const timeOfDay =
+    time >= 18
       ? content.title.evening
       : time >= 12
       ? content.title.afternoon
       : time >= 5
       ? content.title.morning
       : content.title.evening;
-  };
-
-  function removeFirst(arr, index) {
-    return index !== 0;
-  }
 
   const text = content.text[lang];
   const firstText = text[0];
-  const lastText = text.filter(removeFirst);
+  const lastText = text.filter((_, index) => index !== 0);
+  const query = useMediaQ("min", 800);
 
   return (
     <Wrapper>
       <Container>
-        <Grid>
+        <Grid animate="mount" initial="unMounted" variants={framerParent}>
           <div>
-            <Title>{timeOfDay()}</Title>
-            <FirstText>
+            <Title variants={framerFadeIn}>{timeOfDay}</Title>
+            <FirstText variants={framerFadeIn}>
               <Block content={firstText} />
             </FirstText>
-            <PictureWrapMobile>
+            <PictureWrapMobile variants={!query && framerScale}>
               <Background />
               <IMG fluid={content.image} alt="Roland Branten" />
             </PictureWrapMobile>
-            <Text>
+            <Text variants={framerFadeIn}>
               <Block content={lastText} />{" "}
             </Text>
           </div>
-          <PictureWrapDesktop>
+          <PictureWrapDesktop variants={query && framerSlideIn}>
             <Background />
             <IMG fluid={content.image} alt="Roland Branten" />
           </PictureWrapDesktop>
@@ -166,3 +164,26 @@ export default function Content({ content }) {
     </Wrapper>
   );
 }
+
+const framerParent = {
+  mount: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const framerFadeIn = {
+  mount: { opacity: 1, y: 0 },
+  unMounted: { opacity: 0, y: -10 },
+};
+
+const framerScale = {
+  mount: { scale: 1, transition: { damping: 5 } },
+  unMounted: { scale: 0 },
+};
+
+const framerSlideIn = {
+  mount: { x: "5vw", opacity: 1 },
+  unMounted: { x: "20vw ", opacity: 0 },
+};

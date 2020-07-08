@@ -6,7 +6,7 @@ import { LocaleContext } from "./Layout";
 // =========================
 
 export default function Head({ title, description, keywords, path, noIndex }) {
-  const { lang } = useContext(LocaleContext);
+  const { lang, isBlogPage } = useContext(LocaleContext);
   const canonicalLoc = lang === "en" ? "en/" : "";
 
   const data = useStaticQuery(graphql`
@@ -21,34 +21,50 @@ export default function Head({ title, description, keywords, path, noIndex }) {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Helmet>
-      <meta name="theme-color" content="#FFFFFF" />
-      <meta name="author" content="Roland Branten"></meta>
-      <meta name="designer" content="Roland Branten"></meta>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="robots" content={noIndex}></meta>
-      <link
-        rel="canonical"
-        href={`https://www.rolandbranten.nl/${canonicalLoc}${path}`}
-      />
-      <link
-        rel="alternate"
-        href={`https://www.rolandbranten.nl/${path}`}
-        hreflang="nl"
-      />
-      <link
-        rel="alternate"
-        href={`https://www.rolandbranten.nl/en/${path}`}
-        hreflang="en"
-      />
-      <link
-        rel="alternate"
-        href={`https://www.rolandbranten.nl/en/${path}`}
-        hreflang="x-default"
-      />
-      <title>{`${siteTitle} | ${title}`}</title>
-      <html lang={lang} />
-    </Helmet>
+    <>
+      {!isBlogPage ? (
+        <Helmet>
+          <meta name="theme-color" content="#FFFFFF" />
+          <meta name="author" content="Roland Branten"></meta>
+          <meta name="designer" content="Roland Branten"></meta>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords} />
+          <meta name="robots" content={noIndex}></meta>
+          <link
+            rel="canonical"
+            href={`https://www.rolandbranten.nl/${canonicalLoc}${path}`}
+          />
+          <link
+            rel="alternate"
+            href={`https://www.rolandbranten.nl/${path}`}
+            hreflang="nl"
+          />
+          <link
+            rel="alternate"
+            href={`https://www.rolandbranten.nl/en/${path}`}
+            hreflang="en"
+          />
+          <link
+            rel="alternate"
+            href={`https://www.rolandbranten.nl/en/${path}`}
+            hreflang="x-default"
+          />
+          <title>{`${siteTitle} | ${title}`}</title>
+          <html lang={lang} />
+        </Helmet>
+      ) : (
+        <Helmet>
+          <meta name="theme-color" content="#FFFFFF" />
+          <meta name="author" content="Roland Branten"></meta>
+          <meta name="designer" content="Roland Branten"></meta>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords} />
+          <meta name="robots" content={noIndex}></meta>
+          <link rel="canonical" href={`https://www.rolandbranten.nl/${path}`} />
+          <title>{`${siteTitle} | ${title}`}</title>
+          <html lang="en" />
+        </Helmet>
+      )}
+    </>
   );
 }

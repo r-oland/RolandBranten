@@ -39,17 +39,19 @@ export const query = graphql`
         nl
       }
     }
-    allSanityBlog(sort: { fields: date, order: ASC }) {
+    allSanityBlog(sort: { fields: date, order: DESC }) {
       nodes {
         title
+        subTitle
+        readTime
         image {
           asset {
-            fluid {
-              src
+            fluid(maxWidth: 500) {
+              ...GatsbySanityImageFluid_withWebp
             }
           }
         }
-        date
+        date(fromNow: true)
       }
     }
   }

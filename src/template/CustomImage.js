@@ -8,11 +8,13 @@ const Image = styled(Img)`
   width: 300px;
 `;
 
-export default function ImageBlock({ content }) {
+export default function CustomImage({ fluid, image, type, name }) {
   return (
     <>
-      {content.image ? (
-        <Image fluid={content.image.asset.fluid} alt={content.name} />
+      {type === "gatsby-image" && fluid ? (
+        <Image fluid={fluid} alt={name} />
+      ) : type === "image" && image ? (
+        <img src={image} alt={name} />
       ) : (
         <> </>
       )}

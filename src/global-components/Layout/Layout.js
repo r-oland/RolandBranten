@@ -47,7 +47,7 @@ function Layout({ children, path, pageContext, location }) {
   const [ref2, inView2] = useInView({ threshold: 0 });
 
   const blogPage = !pageContext.language;
-  const [lang, setLang] = useState(blogPage ? "nl" : pageContext.language);
+  const [lang, setLang] = useState(blogPage ? "en" : pageContext.language);
 
   useEffect(() => {
     if (!blogPage) {
@@ -66,6 +66,7 @@ function Layout({ children, path, pageContext, location }) {
   const localeValue = {
     lang,
     setLang,
+    isBlogPage: !pageContext.language,
   };
 
   const contextValue = {
