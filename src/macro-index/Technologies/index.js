@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled(H2)`
+  position: relative;
   text-align: center;
   color: ${({ theme: { white } }) => white};
   margin-bottom: ${({ theme: { spacing } }) => spacing.s7};
