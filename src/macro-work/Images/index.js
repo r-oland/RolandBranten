@@ -1,15 +1,15 @@
 // Components==============
 import React from "react";
-import LongPage from "./LongPage";
-import ShortPage from "./ShortPage";
+import Long from "./Long";
+import Short from "./Short";
 import Single from "./Single";
 // =========================
 
 export default function Images({ left, images, alt, smallPage }) {
   if (images.float1 !== undefined && !smallPage) {
-    return <LongPage left={left} images={images} alt={alt} />;
+    return <Long left={left} images={images} alt={alt} />;
   } else if (images.float1 !== undefined && smallPage) {
-    return <ShortPage left={left} images={images} alt={alt} />;
+    return <Short left={left} images={images} alt={alt} />;
   } else {
     return <Single left={left} images={images} alt={alt} />;
   }

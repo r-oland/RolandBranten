@@ -10,7 +10,6 @@ import styled from "styled-components";
 const Wrapper = styled(motion.div)`
   display: grid;
   position: relative;
-
   right: -10%;
 
   @media screen and (min-width: 1000px) {
@@ -22,44 +21,33 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Main = styled(Img)`
-  position: relative;
   grid-column: 1;
   grid-row: 1;
   right: 10%;
-  width: 80%;
 `;
 
 const Float = styled(motion.div)`
   position: relative;
   grid-column: 1;
   grid-row: 1;
-  width: 60%;
-  height: 60%;
-  bottom: -47%;
-  left: -13%;
-
-  @media screen and (min-width: 1000px) {
-    bottom: -50%;
-    left: -1%;
-  }
+  bottom: -10%;
+  left: 38%;
+  width: 50%;
+  height: 50%;
 `;
 
 const Float2 = styled(motion.div)`
   position: relative;
   grid-column: 1;
   grid-row: 1;
-  bottom: 8%;
-  left: 40%;
-  width: 55%;
-  height: 55%;
+  bottom: -23%;
+  left: -15%;
 
-  @media screen and (min-width: 1000px) {
-    bottom: 0%;
-    left: 42%;
-  }
+  width: 50%;
+  height: 50%;
 `;
 
-export default function ShortPage({ left, images, alt }) {
+export default function Long({ left, images, alt }) {
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: false,
