@@ -2,11 +2,12 @@
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
 import { useMediaQ } from "hooks-lib";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import {
   HamburgerContext,
   LocaleContext,
+  ObserverContext,
 } from "../global-components/Layout/Layout";
 // ========================
 
@@ -35,6 +36,7 @@ const Flex = styled(motion.div)`
 `;
 
 const NL = styled.p`
+  color: ${({ whiteFont }) => whiteFont && "white"};
   display: inline;
   position: absolute;
   right: 0;
@@ -52,6 +54,7 @@ const NL = styled.p`
 `;
 
 const EN = styled.p`
+  color: ${({ whiteFont }) => whiteFont && "white"};
   display: inline;
   position: absolute;
   right: 0;
@@ -67,17 +70,60 @@ const EN = styled.p`
     lang === "en" ? fontWeight.bold : fontWeight.normal};
 `;
 
+const EnglishMessage = styled.p`
+  position: absolute;
+  right: -60px;
+  bottom: -110px;
+  width: 80vw;
+  font-size: 14px;
+  text-align: right;
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
+  pointer-events: none;
+  background: ${({ theme: { white } }) => white};
+  padding: ${({ theme: { spacing } }) => `${spacing.s4} ${spacing.s4}`};
+  border-radius: ${({ theme: { borderRadius } }) => borderRadius};
+  box-shadow: ${({ theme: { shadow } }) => shadow.small};
+
+  @media screen and (min-width: 350px) {
+    width: 290px;
+    bottom: -90px;
+  }
+  @media screen and (min-width: 850px) {
+    right: 0;
+    bottom: -80px;
+  }
+`;
+
 const Switch = ({ children, path }) => {
   const { lang, setLang } = useContext(LocaleContext);
+  const [displayMessage, setDisplayMessage] = useState(false);
 
-  if (!path) {
+  const toggleDislayMessage = () => {
+    setDisplayMessage(true);
+    setTimeout(() => {
+      setDisplayMessage(false);
+    }, 3500);
+  };
+
+  if (!path || path === "/blog/") {
     return (
       <button
         onClick={() => {
-          lang === "en" ? setLang("nl") : setLang("en");
+          if (lang === "en") {
+            setLang("nl");
+            toggleDislayMessage();
+          }
+
+          if (lang === "nl") setLang("en");
         }}
+        style={{ position: "relative" }}
       >
         {children}
+        {displayMessage && (
+          <EnglishMessage>
+            Blog posts are only available in english
+          </EnglishMessage>
+        )}
       </button>
     );
   } else {
@@ -87,9 +133,13 @@ const Switch = ({ children, path }) => {
   }
 };
 
-export default function LanguageSwitch({ inView2, path }) {
+export default function LanguageSwitch({ path }) {
   const { menuState } = useContext(HamburgerContext);
-  const { lang } = useContext(LocaleContext);
+  const { lang, isBlogPage } = useContext(LocaleContext);
+  const { inView, inView2 } = useContext(ObserverContext);
+  const query = useMediaQ("min", 850);
+
+  const whiteFont = query && isBlogPage && !inView;
 
   const variants = {
     visible: {
@@ -102,8 +152,6 @@ export default function LanguageSwitch({ inView2, path }) {
       visibility: "hidden",
     },
   };
-
-  const query = useMediaQ("min", 850);
 
   return (
     <Flex
@@ -124,9 +172,13 @@ export default function LanguageSwitch({ inView2, path }) {
       }}
     >
       <Switch path={path}>
-        <NL lang={lang}>NL</NL>
-        <span>/</span>
-        <EN lang={lang}>EN</EN>
+        <NL lang={lang} whiteFont={whiteFont}>
+          NL
+        </NL>
+        <span style={{ color: whiteFont && "white" }}>/</span>
+        <EN lang={lang} whiteFont={whiteFont}>
+          EN
+        </EN>
       </Switch>
     </Flex>
   );

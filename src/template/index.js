@@ -1,23 +1,10 @@
 // Components==============
 import { graphql } from "gatsby";
 import React from "react";
-import styled from "styled-components";
 import Head from "../global-components/Layout/Head";
-import { Container } from "../style/Mixins";
 import Content from "./Content";
 import Header from "./Header";
 // =========================
-
-const Wrapper = styled.div`
-  margin: 0 auto;
-  margin-top: ${({ theme: { spacing } }) => spacing.s8};
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s10};
-  background: ${({ theme: { white } }) => white};
-  border-radius: ${({ theme: { borderRadius } }) => borderRadius};
-  box-shadow: ${({ theme: { shadow } }) => shadow.small};
-  max-width: 825px;
-  overflow: hidden;
-`;
 
 export default function index({ data }) {
   const headerContent = {
@@ -41,12 +28,8 @@ export default function index({ data }) {
         path={`blog/${slug}`}
       />
 
-      <Container>
-        <Wrapper>
-          <Header content={headerContent} />
-          <Content content={data.sanityBlog._rawContent} />
-        </Wrapper>
-      </Container>
+      <Header content={headerContent} />
+      <Content content={data.sanityBlog._rawContent} />
     </>
   );
 }
@@ -61,7 +44,7 @@ export const query = graphql`
       readTime
       image {
         asset {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 1600) {
             ...GatsbySanityImageFluid_withWebp
           }
         }

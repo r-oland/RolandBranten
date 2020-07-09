@@ -6,6 +6,7 @@ import { S } from "mixins";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { LocaleContext } from "../../global-components/Layout/Layout";
+import MTLink from "../../micro-components/MTLink";
 import Arrow from "./Arrow.svg";
 import Cross from "./Cross.svg";
 import LeftImp from "./Left.inline.svg";
@@ -186,39 +187,56 @@ const Message = styled(S)`
   position: relative;
 `;
 
+const To = ({ children, to }) => {
+  const isExternal = to.substring(0, 4) === "http";
+  const isBlogPost = to.substring(0, 5) === "/blog";
+
+  if (isExternal) {
+    return (
+      <a href={to} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  } else if (isBlogPost) {
+    return <Link to={to}>{children}</Link>;
+  } else {
+    return <MTLink to={to}>{children}</MTLink>;
+  }
+};
+
+function Me({ children, to }) {
+  return (
+    <Left>
+      <To to={to}>
+        <LeftSvg />
+        <Sender>Me</Sender>
+        <Message>{children}</Message>
+      </To>
+    </Left>
+  );
+}
+
+function Roland({ children, to }) {
+  return (
+    <Right>
+      <To to={to}>
+        <RightSvg />
+        <Sender>Roland</Sender>
+        <Message>{children}</Message>
+      </To>
+    </Right>
+  );
+}
+
 export default function ChatLink({ img, questions }) {
   const { lang } = useContext(LocaleContext);
 
-  function Me({ children, to }) {
-    return (
-      <Left>
-        <Link to={to}>
-          <LeftSvg />
-          <Sender>Me</Sender>
-          <Message>{children}</Message>
-        </Link>
-      </Left>
-    );
-  }
-
-  function Roland({ children, to }) {
-    return (
-      <Right>
-        <Link to={to}>
-          <RightSvg />
-          <Sender>Roland</Sender>
-          <Message>{children}</Message>
-        </Link>
-      </Right>
-    );
-  }
-
   const qna = questions.map((e, i) => {
     return (
-      <div key={i}>
+      <React.Fragment key={i}>
         <Me to={e.link}>{e.question[lang]}</Me>
         <Roland to={e.link}>{e.answer[lang]}</Roland>
-      </div>
+      </React.Fragment>
     );
   });
 

@@ -4,10 +4,8 @@ import Divider2MImp from "assets/Divider2M.inline.svg";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { LocaleContext } from "../global-components/Layout/Layout";
-import intl from "../intl/intl";
 import Block from "../micro-components/Block";
-import MTLink from "../micro-components/MTLink";
-import { Container, flexUnit, H3, StyledUnderline } from "../style/Mixins";
+import { Container, flexUnit, H3 } from "../style/Mixins";
 import useIllustrations from "./useIllustrations";
 // =========================
 
@@ -38,9 +36,6 @@ const Wrapper = styled.div`
 
   #ExplanationWallet {
     margin-bottom: 0;
-  }
-  #ExplanationSEO {
-    margin-left: auto;
   }
 `;
 
@@ -155,23 +150,6 @@ const Divider2DSvg = styled(Divider2DImp)`
   }
 `;
 
-const LinkOL = styled.p`
-  text-align: center;
-  margin-top: ${({ theme: { spacing } }) => spacing.s8};
-`;
-
-const Link = styled(StyledUnderline)`
-  display: inline-block;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: ${({ theme: { spacing } }) => spacing.s4};
-
-  a {
-    font-size: 18px;
-  }
-`;
-
 function isEven(value) {
   if (value % 2 === 0) return false;
   else return true;
@@ -217,10 +195,6 @@ export default function Sale({ content }) {
       <Container>
         <h2>{content.title}</h2>
         {salePoints}
-        <LinkOL>{intl[lang].saleEnd}</LinkOL>
-        <Link as="div">
-          <MTLink to="/blog">{intl[lang].saleButton}</MTLink>
-        </Link>
       </Container>
     </Wrapper>
   );

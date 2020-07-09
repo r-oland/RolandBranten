@@ -11,24 +11,27 @@ const sanityConfig = { projectId: "mlhs3v8e", dataset: "production" };
 
 export default function Block({ content }) {
   const serializers = {
+    container: ({ children }) => <> {children} </>,
+
     // Types
 
     types: {
       customImage: ({ node }) => {
+        const urlFor = (source) => urlBuilder(sanityConfig).image(source);
+        const image = urlFor(node?.image?.asset?._ref).width(800);
+
         const fluid = getFluidGatsbyImage(
           node?.image?.asset._ref,
-          { maxWidth: 500, toFormat: "webp" },
+          { maxWidth: 800, toFormat: "webp" },
           sanityConfig
         );
-
-        const urlFor = (source) => urlBuilder(sanityConfig).image(source);
-        const image = urlFor(node?.image?.asset?._ref).width(500);
 
         return (
           <CustomImage
             fluid={fluid}
             name={node?.name}
             type={node?.type}
+            fullWidth={node?.fullWidth}
             image={image}
           />
         );

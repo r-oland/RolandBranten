@@ -2,74 +2,26 @@
 import React from "react";
 import styled from "styled-components";
 import Block from "../micro-components/Block";
+import { BlockStyling } from "../micro-components/BlockStyling";
+import { Container } from "../style/Mixins";
+import Author from "./Author";
 // =========================
 
-const Padding = styled.div`
-  padding: ${({ theme: { spacing } }) => `0 ${spacing.s5} ${spacing.s5}`};
-
-  @media screen and (min-width: 700px) {
-    padding: ${({ theme: { spacing } }) => `0 ${spacing.s9} ${spacing.s9}`};
-  }
-`;
-const BlockStyling = styled.div`
-  p {
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
-    line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
-  }
-
-  blockquote::before {
-    content: open-quote;
-  }
-
-  blockquote::after {
-    content: close-quote;
-  }
-
-  blockquote {
-    quotes: "“" "”" "‘" "’";
-  }
-
-  ul {
-    margin-left: ${({ theme: { spacing } }) => spacing.s7};
-
-    li {
-      list-style: initial;
-    }
-  }
-
-  ol {
-    margin-left: ${({ theme: { spacing } }) => spacing.s7};
-
-    li {
-      list-style: upper-greek;
-    }
-  }
-
-  a {
-    cursor: pointer;
-    border-bottom: 1px solid
-      ${({ theme: { primary } }) => primary.s4.replace("1)", "0.3)")};
-    box-shadow: 0px -4px 0px ${({ theme: { primary } }) =>
-        primary.s4.replace("1)", "0.3)")} inset;
-    transition: 0.2s;
-
-    &:hover {
-      border-bottom: 1px solid
-        ${({ theme: { primary } }) => primary.s4.replace("1)", "0)")};
-      box-shadow: 0px -4px 0px ${({ theme: { primary } }) =>
-          primary.s4.replace("1)", "0)")} inset;
-      background-color: ${({ theme: { primary } }) =>
-        primary.s4.replace("1)", "0.3)")};
-    }
-  }
+const Wrapper = styled(BlockStyling)`
+  margin: 0 auto;
+  margin-top: ${({ theme: { spacing } }) => `calc(15vh - ${spacing.s9})`};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s10};
+  max-width: 750px;
+  overflow: hidden;
 `;
 
 export default function Content({ content }) {
   return (
-    <Padding>
-      <BlockStyling>
+    <Container>
+      <Wrapper>
         <Block content={content} />
-      </BlockStyling>
-    </Padding>
+        <Author />
+      </Wrapper>
+    </Container>
   );
 }

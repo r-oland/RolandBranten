@@ -1,17 +1,28 @@
 // Components==============
+import { motion } from "framer-motion";
 import Img from "gatsby-image";
 import React from "react";
 import styled from "styled-components";
+import ScrollIndicator from "./ScrollIndicator";
 // =========================
 
-const Relative = styled.div`
+const Wrapper = styled(motion.div)`
   position: relative;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s8};
+  margin-top: ${({ theme: { spacing } }) => spacing.s6};
+
+  @media screen and (min-width: 850px) {
+    margin-top: 0;
+    top: -${({ theme: { spacing } }) => spacing.s9};
+    height: 85vh;
+  }
 `;
 
 const Image = styled(Img)`
   img {
     filter: blur(2px) brightness(0.4);
+  }
+  @media screen and (min-width: 850px) {
+    height: 85vh;
   }
 `;
 
@@ -25,9 +36,9 @@ const Info = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h2``;
+const Title = styled(motion.h2)``;
 
-const Flex = styled.div`
+const Flex = styled(motion.div)`
   display: none;
   align-items: center;
   justify-content: center;
@@ -69,17 +80,33 @@ export default function Header({ content }) {
 
   return (
     <>
-      <Relative>
+      <Wrapper animate="mounted" initial="unMounted" variants={framerParent}>
         <Image fluid={image} alt={title} />
         <Info>
-          <Title>{title}</Title>
-          <Flex>
+          <Title variants={framerFadeIn}>{title}</Title>
+          <Flex variants={framerFadeIn}>
             <strong className="date">{date}</strong>
             <div />
             <p className="readTime">{readTime} mins read</p>
           </Flex>
         </Info>
-      </Relative>
+        <motion.div variants={framerFadeIn}>
+          <ScrollIndicator />
+        </motion.div>
+      </Wrapper>
     </>
   );
 }
+
+const framerParent = {
+  mounted: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const framerFadeIn = {
+  mounted: { opacity: 1, y: 0 },
+  unMounted: { opacity: 0, y: -10 },
+};
