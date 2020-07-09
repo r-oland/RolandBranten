@@ -1,6 +1,6 @@
 // Components==============
 import { useMediaQ } from "hooks-lib";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Technologie from "./Technologie";
 // =========================
@@ -59,6 +59,9 @@ export default function DevTech({ content }) {
   const tools = content.filter((e) => e.category === "tool");
   const query = useMediaQ("min", 700);
   const query2 = useMediaQ("min", 1300);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), [setMounted]);
 
   const arr = [
     { title: "Languages", tech: languages },
@@ -73,14 +76,18 @@ export default function DevTech({ content }) {
     });
 
     return (
-      <React.Fragment key={index}>
-        <Wrapper>
-          <h3>{e.title}</h3>
-          <Grid>{techCollection}</Grid>
-        </Wrapper>
-        {query && !query2 && index !== 1 && index !== 3 && <Bar />}
-        {query2 && index !== 3 && <Bar />}
-      </React.Fragment>
+      <>
+        {mounted && (
+          <React.Fragment key={index}>
+            <Wrapper>
+              <h3>{e.title}</h3>
+              <Grid>{techCollection}</Grid>
+            </Wrapper>
+            {query && !query2 && index !== 1 && index !== 3 && <Bar />}
+            {query2 && index !== 3 && <Bar />}
+          </React.Fragment>
+        )}
+      </>
     );
   });
 
