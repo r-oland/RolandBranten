@@ -29,10 +29,6 @@ const Wrapper = styled.div`
       margin-top: 0;
     }
   }
-
-  #Explanation2 {
-    margin-bottom: 0;
-  }
 `;
 
 const Title = styled(H3)`
@@ -97,9 +93,11 @@ const Grid = styled.div`
     align-items: center;
     grid-column-gap: ${({ theme: { spacing } }) => spacing.s10};
     margin: ${({ theme: { spacing }, index }) =>
-      index !== 3
-        ? `${spacing.s12} 0 ${spacing.s12}`
-        : `${spacing.s12} 0 ${spacing.s8}`};
+      index === 3
+        ? `${spacing.s12} 0 ${spacing.s8}`
+        : index === 0
+        ? `${spacing.s11} 0 ${spacing.s12}`
+        : `${spacing.s12} 0 ${spacing.s12}`};
 
     .L {
       grid-column: 1;
@@ -118,6 +116,9 @@ const Grid = styled.div`
     margin: 14em 0 14em;
 
     margin: ${({ index }) => (index !== 3 ? `14em 0 14em` : `14em 0 4em`)};
+
+    margin: ${({ index }) =>
+      index === 3 ? `15em 0 4em` : index === 0 ? `8em 0 15em` : `15em 0 15em`};
   }
 `;
 
