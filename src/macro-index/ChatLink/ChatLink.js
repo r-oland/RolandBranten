@@ -232,7 +232,7 @@ function Roland({ children, to }) {
 
 export default function ChatLink({ img, questions }) {
   const { lang } = useContext(LocaleContext);
-  const [ref, inView] = useInView({ threshold: 0 });
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   const qna = questions.map((e, i) => {
     return (
