@@ -7,7 +7,11 @@ import ChatLink from "./ChatLink/ChatLink";
 // =========================
 
 const Wrapper = styled.div`
-  margin-top: ${({ theme: { spacing } }) => spacing.s12};
+  margin-top: ${({ theme: { spacing } }) => spacing.s10};
+
+  @media screen and (min-width: 768px) {
+    margin-top: ${({ theme: { spacing } }) => spacing.s12};
+  }
 `;
 
 export default function PopularQ({ content }) {

@@ -1,6 +1,7 @@
 // Components==============
 import Divider1DImp from "assets/Divider1D.inline.svg";
 import Divider1MImp from "assets/Divider1M.inline.svg";
+import { motion } from "framer-motion";
 import Img from "gatsby-image";
 import React, { useContext } from "react";
 import { useInView } from "react-intersection-observer";
@@ -8,7 +9,7 @@ import styled from "styled-components";
 import { LocaleContext } from "../global-components/Layout/Layout";
 import BlobAnimation from "../micro-components/BlobAnimation";
 import TextSwitchAnimation from "../micro-components/TextSwitchAnimation";
-import { Container, flexUnit, H2 } from "../style/Mixins";
+import { Container, flexUnit } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
@@ -40,7 +41,7 @@ const Grid = styled.div`
   }
 `;
 
-const CustomContainer = styled(Container)`
+const Text = styled(motion.div)`
   grid-row: 1;
 
   @media screen and (min-width: 850px) {
@@ -49,7 +50,11 @@ const CustomContainer = styled(Container)`
   }
 `;
 
-const Title = styled(H2)`
+const Title = styled(motion.p)`
+  font-family: Poppins;
+  ${flexUnit(3, 25, 38, "vw", "font-size")};
+  font-weight: 700;
+
   padding: ${({ theme: { spacing } }) => `${spacing.s7} 0 ${spacing.s1}`};
 
   @media screen and (min-width: 850px) {
@@ -61,7 +66,7 @@ const Title = styled(H2)`
   }
 `;
 
-const Explanation = styled.div`
+const Explanation = styled(motion.div)`
   max-width: 500px;
   ${flexUnit(2.5, 18, 19, "vw", "font-size")};
   line-height: ${({ theme: { lineHeight } }) => lineHeight.s5};
@@ -137,12 +142,18 @@ export default function Hero({ content }) {
       <Divider1MSvg />
       <Divider1DSvg />
       <Grid>
-        <CustomContainer>
-          <Title>{title}</Title>
-          <h1 ref={ref}>{lang === "en" ? "I'm a" : "Ik ben een"} </h1>
-          <TextSwitchAnimation inView={inView} />
-          <Explanation>{explanation}</Explanation>
-        </CustomContainer>
+        <Container>
+          <Text animate="mount" initial="initial" variants={parent}>
+            <Title variants={child}>{title}</Title>
+            <motion.div variants={child}>
+              <h1 ref={ref} variants={child}>
+                {lang === "en" ? "I'm a" : "Ik ben een"}{" "}
+              </h1>
+              <TextSwitchAnimation inView={inView} />
+            </motion.div>
+            <Explanation variants={child}>{explanation}</Explanation>
+          </Text>
+        </Container>
         <IMG
           style={{ overflow: "initial" }}
           fluid={headshot}
@@ -153,3 +164,22 @@ export default function Hero({ content }) {
     </Wrapper>
   );
 }
+
+const parent = {
+  mount: {
+    transition: {
+      staggerChildren: 0.35,
+    },
+  },
+};
+
+const child = {
+  mount: {
+    opacity: 1,
+    x: 0,
+  },
+  initial: {
+    opacity: 0,
+    x: 10,
+  },
+};

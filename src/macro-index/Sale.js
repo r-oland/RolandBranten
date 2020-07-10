@@ -20,13 +20,9 @@ const Wrapper = styled.div`
 
   h2 {
     text-align: center;
-
-    @media screen and (min-width: 1000px) {
-      margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
-    }
   }
 
-  #TitleRocketShip {
+  #Title0 {
     margin-top: ${({ theme: { spacing } }) => spacing.s7};
 
     @media screen and (min-width: 1000px) {
@@ -34,14 +30,13 @@ const Wrapper = styled.div`
     }
   }
 
-  #ExplanationWallet {
+  #Explanation2 {
     margin-bottom: 0;
   }
 `;
 
 const Title = styled(H3)`
   margin: ${({ theme: { spacing } }) => `${spacing.s10} 0 ${spacing.s4}`};
-  max-width: 600px;
 
   @media screen and (min-width: 1000px) {
     margin-top: 0;
@@ -52,7 +47,6 @@ const Title = styled(H3)`
 const Explanation = styled.div`
   line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
   margin-bottom: ${({ theme: { spacing } }) => spacing.s8};
-  max-width: 510px;
 
   @media screen and (min-width: 1000px) {
     margin: 0;
@@ -94,16 +88,6 @@ const SvgWrap = styled.div`
   }
 `;
 
-const TWrap = styled.div`
-  @media screen and (min-width: 1000px) {
-    margin: ${({ theme: { spacing } }) => `${spacing.s12} 0 ${spacing.s12}`};
-  }
-
-  @media screen and (min-width: 1600px) {
-    margin: 14em 0 14em;
-  }
-`;
-
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -112,6 +96,10 @@ const Grid = styled.div`
     grid-template-columns: 1fr 1fr;
     align-items: center;
     grid-column-gap: ${({ theme: { spacing } }) => spacing.s10};
+    margin: ${({ theme: { spacing }, index }) =>
+      index !== 3
+        ? `${spacing.s12} 0 ${spacing.s12}`
+        : `${spacing.s12} 0 ${spacing.s8}`};
 
     .L {
       grid-column: 1;
@@ -124,6 +112,12 @@ const Grid = styled.div`
       text-align: right;
       justify-self: end;
     }
+  }
+
+  @media screen and (min-width: 1600px) {
+    margin: 14em 0 14em;
+
+    margin: ${({ index }) => (index !== 3 ? `14em 0 14em` : `14em 0 4em`)};
   }
 `;
 
@@ -168,22 +162,14 @@ export default function Sale({ content }) {
 
   const salePoints = combinedContent.map((e, i) => {
     return (
-      <Grid key={i}>
-        <TWrap className={isEven(i) ? "R" : "L"}>
-          <Title id={`Title${e.illustration.type.displayName}`}>
-            {e.title[lang]}
-          </Title>
-          <Explanation id={`Explanation${e.illustration.type.displayName}`}>
+      <Grid key={i} index={i}>
+        <div className={isEven(i) ? "R" : "L"}>
+          <Title id={`Title${i}`}>{e.title[lang]}</Title>
+          <Explanation id={`Explanation${i}`}>
             <Block content={e.description[lang]} />
           </Explanation>
-        </TWrap>
-
-        <SvgWrap
-          id={`Svg${e.illustration.type.displayName}`}
-          className={isEven(i) ? "L" : "R"}
-        >
-          {e.illustration}
-        </SvgWrap>
+        </div>
+        <SvgWrap className={isEven(i) ? "L" : "R"}>{e.illustration}</SvgWrap>
       </Grid>
     );
   });

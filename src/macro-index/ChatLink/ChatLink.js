@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { S } from "mixins";
 import React, { useContext } from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { LocaleContext } from "../../global-components/Layout/Layout";
 import MTLink from "../../micro-components/MTLink";
@@ -90,7 +91,7 @@ const Image = styled(Img)`
   bottom: 0;
 `;
 
-const ChatArea = styled.div`
+const ChatArea = styled(motion.div)`
   padding: ${({ theme: { spacing } }) =>
     ` ${spacing.s7} ${spacing.s3} ${spacing.s5}`};
   display: flex;
@@ -144,11 +145,12 @@ const LeftSvg = styled(LeftImp)`
 `;
 
 const Right = styled(BoxStyling)`
+  position: relative;
   padding: ${({ theme: { spacing } }) =>
     `${spacing.s1} ${spacing.s6} ${spacing.s1} ${spacing.s4}`};
   margin-left: auto;
   @media screen and (min-width: 950px) {
-    transform: translateY(-30px);
+    top: -30px;
   }
 
   &:hover {
@@ -206,7 +208,7 @@ const To = ({ children, to }) => {
 
 function Me({ children, to }) {
   return (
-    <Left>
+    <Left whileHover={{ x: 10 }} variants={child}>
       <To to={to}>
         <LeftSvg />
         <Sender>Me</Sender>
@@ -218,7 +220,7 @@ function Me({ children, to }) {
 
 function Roland({ children, to }) {
   return (
-    <Right>
+    <Right whileHover={{ x: -10 }} variants={child}>
       <To to={to}>
         <RightSvg />
         <Sender>Roland</Sender>
@@ -230,6 +232,7 @@ function Roland({ children, to }) {
 
 export default function ChatLink({ img, questions }) {
   const { lang } = useContext(LocaleContext);
+  const [ref, inView] = useInView({ threshold: 0 });
 
   const qna = questions.map((e, i) => {
     return (
@@ -254,7 +257,31 @@ export default function ChatLink({ img, questions }) {
           <CrossSVG src={Cross} alt="Cross" />
         </Flex>
       </Top>
-      <ChatArea>{qna}</ChatArea>
+      <ChatArea
+        animate={inView && "mount"}
+        initial="initial"
+        variants={parent}
+        ref={ref}
+      >
+        {qna}
+      </ChatArea>
     </ChatWrapper>
   );
 }
+
+const parent = {
+  mount: {
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const child = {
+  mount: {
+    opacity: 1,
+    y: 0,
+  },
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+};
