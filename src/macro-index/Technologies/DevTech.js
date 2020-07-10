@@ -1,6 +1,5 @@
 // Components==============
-import { useMediaQ } from "hooks-lib";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Technologie from "./Technologie";
 // =========================
@@ -46,7 +45,10 @@ const Bar = styled.div`
   display: none;
 
   @media screen and (min-width: 700px) {
-    display: block;
+    display: ${({ index }) => (index !== 1 && index !== 3 ? "block" : "none")};
+  }
+  @media screen and (min-width: 1300px) {
+    display: ${({ index }) => index !== 3 && "block"};
   }
 `;
 
@@ -57,11 +59,6 @@ export default function DevTech({ content }) {
   );
   const platforms = content.filter((e) => e.category === "platform");
   const tools = content.filter((e) => e.category === "tool");
-  const query = useMediaQ("min", 700);
-  const query2 = useMediaQ("min", 1300);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), [setMounted]);
 
   const arr = [
     { title: "Languages", tech: languages },
@@ -76,18 +73,13 @@ export default function DevTech({ content }) {
     });
 
     return (
-      <>
-        {mounted && (
-          <React.Fragment key={index}>
-            <Wrapper>
-              <h3>{e.title}</h3>
-              <Grid>{techCollection}</Grid>
-            </Wrapper>
-            {query && !query2 && index !== 1 && index !== 3 && <Bar />}
-            {query2 && index !== 3 && <Bar />}
-          </React.Fragment>
-        )}
-      </>
+      <React.Fragment key={index}>
+        <Wrapper>
+          <h3>{e.title}</h3>
+          <Grid>{techCollection}</Grid>
+        </Wrapper>
+        <Bar index={index} />
+      </React.Fragment>
     );
   });
 
