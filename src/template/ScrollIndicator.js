@@ -35,20 +35,16 @@ export default function ScrollIndicator() {
         stroke="white"
         strokeWidth="6"
       />
-      <motion.rect
-        x="18"
-        y="47.5"
-        width="17"
-        height="30"
-        rx="8.5"
-        fill="white"
+      <motion.g
         animate={{ y: [0, -27.5, 0] }}
         transition={{
           loop: Infinity,
           duration: 1.7,
           repeatDelay: 0.4,
         }}
-      />
+      >
+        <rect x="18" y="47.5" width="17" height="30" rx="8.5" fill="white" />
+      </motion.g>
     </Svg>
   );
 }
