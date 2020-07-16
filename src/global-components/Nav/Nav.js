@@ -1,6 +1,6 @@
 // Components==============
 import { motion } from "framer-motion";
-import { useMediaQ } from "hooks-lib";
+import { useClient, useMediaQ } from "hooks-lib";
 import { Container } from "mixins";
 import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
@@ -65,8 +65,8 @@ const MenuItems = styled.ul`
       color: ${({ whiteFont }) => whiteFont && "white"};
 
       &:hover {
-        color: ${({ theme: { primary }, inView, path }) =>
-          inView === false && (path === "/" || path === "/en")
+        color: ${({ theme: { primary }, inView, path, isClient }) =>
+          inView === false && (path === "/" || path === "/en") && isClient
             ? `white`
             : primary.s7};
       }
@@ -90,6 +90,7 @@ export default function Nav({ path, oldPath }) {
   const { handleChange } = useContext(ModalContext);
   const { lang, isBlogPage } = useContext(LocaleContext);
   const query = useMediaQ("min", 850);
+  const { isClient, key } = useClient();
 
   const whiteFont = query && isBlogPage && !inView;
 
@@ -112,7 +113,12 @@ export default function Nav({ path, oldPath }) {
           </MTLink>
 
           <Flex>
-            <MenuItems inView={inView} path={path} whiteFont={whiteFont}>
+            <MenuItems
+              inView={inView}
+              path={path}
+              whiteFont={whiteFont}
+              isClient={isClient}
+            >
               <li>
                 <MTLink to="/about">{intl[lang].nav1}</MTLink>
               </li>
