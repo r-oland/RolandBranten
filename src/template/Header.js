@@ -20,6 +20,7 @@ const Wrapper = styled(motion.div)`
 const Image = styled(Img)`
   img {
     filter: blur(2px) brightness(0.4);
+    transform: scale(1.05);
   }
   @media screen and (min-width: 850px) {
     height: 85vh;

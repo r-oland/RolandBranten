@@ -65,8 +65,8 @@ const MenuItems = styled.ul`
       color: ${({ whiteFont }) => whiteFont && "white"};
 
       &:hover {
-        color: ${({ theme: { primary }, inView, path, isClient }) =>
-          inView === false && (path === "/" || path === "/en") && isClient
+        color: ${({ theme: { primary }, inView, path }) =>
+          inView === false && (path === "/" || path === "/en")
             ? `white`
             : primary.s7};
       }
@@ -90,13 +90,13 @@ export default function Nav({ path, oldPath }) {
   const { handleChange } = useContext(ModalContext);
   const { lang, isBlogPage } = useContext(LocaleContext);
   const query = useMediaQ("min", 850);
-  const { isClient, key } = useClient();
+  const { key } = useClient();
 
   const whiteFont = query && isBlogPage && !inView;
 
   return (
     <>
-      <NavWrapper inView={inView}>
+      <NavWrapper inView={inView} key={key}>
         <FlexContainer>
           <MTLink to="/">
             <Logo
@@ -113,12 +113,7 @@ export default function Nav({ path, oldPath }) {
           </MTLink>
 
           <Flex>
-            <MenuItems
-              inView={inView}
-              path={path}
-              whiteFont={whiteFont}
-              isClient={isClient}
-            >
+            <MenuItems inView={inView} path={path} whiteFont={whiteFont}>
               <li>
                 <MTLink to="/about">{intl[lang].nav1}</MTLink>
               </li>
@@ -134,13 +129,7 @@ export default function Nav({ path, oldPath }) {
                 <button onClick={handleChange}>{intl[lang].nav4}</button>
               </li>
             </MenuItems>
-            {
-              <LanguageSwitch
-                inView2={inView2}
-                path={oldPath}
-                pathName={path}
-              />
-            }
+            <LanguageSwitch inView2={inView2} path={oldPath} pathName={path} />
           </Flex>
         </FlexContainer>
       </NavWrapper>
