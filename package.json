@@ -8,10 +8,8 @@
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build ",
     "start": "npm run develop",
-    "develop": "gatsby develop -H 192.168.2.146 ",
-    "local": "gatsby develop -H 192.168.56.1 -p 8001 ",
-    "mobile": "gatsby develop -H 192.168.43.132 -p 8001 ",
-    "serve": "gatsby serve -H 192.168.2.146 ",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {
