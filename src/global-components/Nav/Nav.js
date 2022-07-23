@@ -121,11 +121,6 @@ export default function Nav({ path, oldPath }) {
                 <MTLink to="/work">{intl[lang].nav2}</MTLink>
               </li>
               <li>
-                <button>
-                  <MTLink to="/blog">{intl[lang].nav3}</MTLink>
-                </button>
-              </li>
-              <li>
                 <button onClick={handleChange}>{intl[lang].nav4}</button>
               </li>
             </MenuItems>

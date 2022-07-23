@@ -36,7 +36,7 @@ const intl = {
     button: "Message me",
     location1: "Developed with",
     location2: "in Eindhoven, the Netherlands",
-    copyright: "© 2020 Roland Branten | All rights reserved. ",
+    copyright: "All rights reserved.",
 
     // 404
     notFound: "I could not find what you where looking for",
@@ -88,7 +88,7 @@ const intl = {
     button: "Neem contact op",
     location1: "Ontwikkeld met",
     location2: "in Eindhoven",
-    copyright: "© 2020 Roland Branten | Alle rechten voorbehouden. ",
+    copyright: "Alle rechten voorbehouden.",
 
     // 404
     notFound: "Sorry! Deze pagina bestaat niet (meer)..",

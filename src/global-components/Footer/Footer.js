@@ -102,7 +102,10 @@ export default function Footer({ path }) {
                   LinkedIn
                 </StyledUnderline>
               </FlexLinks>
-              <Copyright>{intl[lang].copyright}</Copyright>
+              <Copyright>
+                © {new Date().getFullYear()} Roland Branten |{" "}
+                {intl[lang].copyright}
+              </Copyright>
             </Flex>
           </Wrapper2>
         </>

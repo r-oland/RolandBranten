@@ -1,6 +1,5 @@
 // Components==============
 import React, { useEffect, useState } from "react";
-import { hot } from "react-hot-loader/root";
 import { useInView } from "react-intersection-observer";
 import styled, { ThemeProvider } from "styled-components";
 import SForm from "../../macro-contact/SForm";
@@ -110,4 +109,4 @@ function Layout({ children, path, pageContext, location }) {
   );
 }
 
-export default hot(Layout);
+export default Layout;
