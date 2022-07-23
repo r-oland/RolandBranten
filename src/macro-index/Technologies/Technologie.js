@@ -9,17 +9,24 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   text-align: center;
-  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(147deg)
-    brightness(104%) contrast(101%);
 
   &:hover {
-    filter: invert(78%) sepia(91%) saturate(2470%) hue-rotate(343deg)
-      brightness(104%) contrast(98%);
+    img {
+      filter: invert(78%) sepia(91%) saturate(2470%) hue-rotate(343deg)
+        brightness(104%) contrast(98%);
+    }
+
+    p {
+      color: ${({ theme }) => theme.primary.s4};
+    }
   }
 
   img {
     margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
     height: 45px;
+
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(147deg)
+      brightness(104%) contrast(101%);
   }
 
   p {
