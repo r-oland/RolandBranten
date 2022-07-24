@@ -19,7 +19,7 @@ const ChatWrapper = styled.div`
   background: ${({ theme: { white } }) => white};
   border-radius: 20px;
   overflow: hidden;
-  max-width: 900px;
+  max-width: 850px;
   box-shadow: ${({ theme: { shadow } }) => shadow.small};
 `;
 
@@ -31,20 +31,7 @@ const Top = styled.div`
   padding: ${({ theme: { spacing } }) => ` ${spacing.s2} ${spacing.s5} `};
 
   @media screen and (min-width: 950px) {
-    padding: ${({ theme: { spacing } }) => ` ${spacing.s5} ${spacing.s5} `};
     margin-bottom: ${({ theme: { spacing } }) => spacing.s5};
-  }
-
-  p {
-    font-size: 18px;
-    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-    color: ${({ theme: { black } }) => black};
-    padding-left: ${({ theme: { spacing } }) => spacing.s5};
-
-    @media screen and (min-width: 950px) {
-      padding-left: ${({ theme: { spacing } }) => spacing.s10};
-      font-size: 20px;
-    }
   }
 `;
 
@@ -67,44 +54,39 @@ const CrossSVG = styled.img`
 const Circle = styled.div`
   border-radius: 100%;
   overflow: hidden;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
+  border: ${({ theme: { gray } }) => gray.s9} solid 2px;
+`;
 
-  @media screen and (min-width: 950px) {
-    border: ${({ theme: { gray } }) => gray.s9} solid 4px;
-    position: absolute;
-    top: -8px;
-    width: 85px;
-    height: 85px;
+const NameWrapper = styled.div`
+  padding-left: ${({ theme: { spacing } }) => spacing.s3};
+  display: grid;
+
+  strong {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
   }
 `;
 
 const Image = styled(Img)`
-  width: 50px;
-
-  @media screen and (min-width: 950px) {
-    width: 80px;
-  }
-
+  width: 100%;
   position: relative;
   left: 0;
   bottom: 0;
 `;
 
 const ChatArea = styled(motion.div)`
-  padding: ${({ theme: { spacing } }) =>
-    ` ${spacing.s7} ${spacing.s3} ${spacing.s5}`};
+  padding: ${({ theme: { spacing } }) => ` ${spacing.s8} ${spacing.s5} 0`};
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 600px) {
-    padding: ${({ theme: { spacing } }) =>
-      ` ${spacing.s6} ${spacing.s7} ${spacing.s6}`};
-  }
-
   @media screen and (min-width: 950px) {
     padding: ${({ theme: { spacing } }) =>
-      ` ${spacing.s6} ${spacing.s9} ${spacing.s6}`};
+      ` ${spacing.s5} ${spacing.s5} ${spacing.s2}`};
   }
 `;
 
@@ -114,16 +96,16 @@ const BoxStyling = styled(motion.div)`
   max-width: 330px;
   height: 100%;
   text-align: left;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
+  margin-bottom: 2.5rem;
 
   @media screen and (min-width: 950px) {
-    margin-bottom: -20px;
+    margin-bottom: 5px;
   }
 `;
 
 const Left = styled(BoxStyling)`
   padding: ${({ theme: { spacing } }) =>
-    `${spacing.s1} ${spacing.s4} ${spacing.s1} ${spacing.s6}`};
+    `${spacing.s3} ${spacing.s4} ${spacing.s3} ${spacing.s7}`};
   &:hover {
     #color {
       fill: ${({ theme: { primary } }) => primary.s4};
@@ -147,10 +129,11 @@ const LeftSvg = styled(LeftImp)`
 const Right = styled(BoxStyling)`
   position: relative;
   padding: ${({ theme: { spacing } }) =>
-    `${spacing.s1} ${spacing.s6} ${spacing.s1} ${spacing.s4}`};
+    `${spacing.s3} ${spacing.s6} ${spacing.s3} ${spacing.s4}`};
   margin-left: auto;
+
   @media screen and (min-width: 950px) {
-    top: -30px;
+    top: -20px;
   }
 
   &:hover {
@@ -175,17 +158,22 @@ const RightSvg = styled(RightImp)`
 `;
 
 const Sender = styled.p`
-  padding: ${({ theme: { spacing } }) => `0 ${spacing.s3} `};
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
-  color: ${({ theme: { gray } }) => gray.s7};
+  padding-left: ${({ theme: { spacing } }) => spacing.s4};
+  font-size: 14px;
+  color: ${({ theme: { gray } }) => gray.s4};
   z-index: 10;
-  position: relative;
+  position: absolute;
+  top: -22px;
+  left: 0;
+
+  strong {
+    font-size: 14px;
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
+  }
 `;
 
 const Message = styled(S)`
   z-index: 10;
-  padding: ${({ theme: { spacing } }) =>
-    `${spacing.s1} 0 ${spacing.s3} ${spacing.s6}`};
   position: relative;
 `;
 
@@ -206,24 +194,36 @@ const To = ({ children, to }) => {
   }
 };
 
-function Me({ children, to }) {
+function Me({ children, to, index }) {
+  const date = new Date(new Date().getTime() - 75000 * index);
+  const day = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+  const time = `${date.getHours()}:${("0" + date.getMinutes()).slice(-2)}`;
+
   return (
     <Left whileHover={{ x: 10 }} variants={child}>
       <To to={to}>
         <LeftSvg />
-        <Sender>Me</Sender>
+        <Sender style={{ paddingLeft: "2rem" }}>
+          <strong>Me</strong> {day} {time}
+        </Sender>
         <Message>{children}</Message>
       </To>
     </Left>
   );
 }
 
-function Roland({ children, to }) {
+function Roland({ children, to, index }) {
+  const date = new Date(new Date().getTime() - 75000 * index);
+  const day = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+  const time = `${date.getHours()}:${("0" + date.getMinutes()).slice(-2)}`;
+
   return (
     <Right whileHover={{ x: -10 }} variants={child}>
       <To to={to}>
         <RightSvg />
-        <Sender>Roland</Sender>
+        <Sender>
+          <strong>Roland</strong> {day} {time}
+        </Sender>
         <Message>{children}</Message>
       </To>
     </Right>
@@ -237,8 +237,12 @@ export default function ChatLink({ img, questions }) {
   const qna = questions.map((e, i) => {
     return (
       <React.Fragment key={i}>
-        <Me to={e.link}>{e.question[lang]}</Me>
-        <Roland to={e.link}>{e.answer[lang]}</Roland>
+        <Me to={e.link} index={questions.length - 1 - i}>
+          {e.question[lang]}
+        </Me>
+        <Roland to={e.link} index={questions.length - 1 - i}>
+          {e.answer[lang]}
+        </Roland>
       </React.Fragment>
     );
   });
@@ -250,7 +254,10 @@ export default function ChatLink({ img, questions }) {
           <Circle>
             <Image fluid={img} alt="Roland-headshot" />
           </Circle>
-          <p>Roland</p>
+          <NameWrapper>
+            <strong>Roland</strong>
+            <p>Online</p>
+          </NameWrapper>
         </Flex>
         <Flex>
           <ArrowSVG src={Arrow} alt="Arrow" />
